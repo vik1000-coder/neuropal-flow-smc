@@ -7,6 +7,9 @@ chosen={'fresh_report':R/'archive/fresh/replication_20260911/REPORT_FINAL.md',
         'repaired_path_methods':R/'archive/original/FLOW_REPAIRED_LAG_METHODS_20260828.md'}
 OLD='/Users/vik/Developer/new_sbtg_neuro/'
 receipts=[]
+manifest=json.loads((R/'data/archive_manifest.json').read_text())['files']
+release_only={row['path'] for row in manifest if row['storage']=='release'}
+git_paths={row['path'] for row in manifest if row['storage']=='git'}
 for name,p in chosen.items():
     missing=[]
     def link(m):
@@ -18,7 +21,12 @@ for name,p in chosen.items():
             elif part.startswith('generator_tradeoffs_20260913/'):q=R/'archive/synthetic'/part
             else:q=R/'archive/original'/part
         else:q=p.parent/target
-        if q.exists():return '['+m.group(1)+']('+os.path.relpath(q,OUT)+')'
+        if q.exists():
+            relative=str(q.resolve().relative_to(R))
+            stored_in_release=relative in release_only or (q.is_dir() and not any(p.startswith(relative+'/') for p in git_paths))
+            if stored_in_release:
+                return '['+m.group(1)+'](https://github.com/vik1000-coder/neuropal-flow-smc/releases/tag/v1.0-data)'+f' (restore `{relative}`)'
+            return '['+m.group(1)+']('+os.path.relpath(q,OUT)+')'
         missing.append(target);return m.group(1)+' *(historical link unavailable; see original)*'
     text=re.sub(r'\[([^\]]*)\]\(([^)]+)\)',link,p.read_text())
     original=os.path.relpath(p,OUT)

@@ -1,0 +1,13 @@
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+[combined] 28 total worms; 56 neurons; 20 complete-case worms (17 OH16230 + 3 OH15500); signal=raw
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+clean54 17 54 folds [0, 1, 2, 3, 4] checkpoint receipts pass
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+historical80 20 80 folds [0, 1, 2, 3, 4] checkpoint receipts pass
+All frozen snapshot files and 30 checkpoint receipts pass after relocation.

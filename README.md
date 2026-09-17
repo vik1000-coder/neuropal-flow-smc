@@ -20,6 +20,7 @@ lag-minus-lag-1 discoveries. These are model-relative observational responses.
 - [Collection guide and evidence status](docs/COLLECTIONS.md)
 - [Code review and documentation corrections](docs/CODE_REVIEW.md)
 - [Reproduction instructions](docs/REPRODUCING.md)
+- [Verification record](docs/VERIFICATION.md)
 - [Fresh replication final report](docs/reports/fresh_report.md)
 - [Nine-generator synthetic comparison](docs/reports/synthetic_summary.md)
 - [Original conditional-model report](archive/original/reports/conditional_flow_model_report_20260901/conditional_flow_model_report_20260901.pdf)
