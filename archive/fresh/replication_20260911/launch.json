@@ -1,0 +1,12 @@
+{
+  "pid": 92093,
+  "started_utc": "2026-09-11T16:12:08.001721+00:00",
+  "command": [
+    "caffeinate",
+    "-i",
+    "/Users/vik/Developer/new_sbtg_neuro/.venv/bin/python",
+    "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/dispatcher.py"
+  ],
+  "spec_id": "a1070d62c99aa323a9200e2c079b0d87e920f4c40ba5ce353ad26f2fc63d7777",
+  "authorization": "User authorized fresh retraining, sampling, tests and unlimited necessary local runtime on 2026-09-11."
+}

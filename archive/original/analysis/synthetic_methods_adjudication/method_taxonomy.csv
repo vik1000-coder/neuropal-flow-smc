@@ -1,0 +1,19 @@
+method_family,quantity_learned,optimization_objective,normalized_law,claim_ceiling,role
+Ridge / VAR / Granger,conditional mean or linear transition,least squares + ridge/sparsity,normalized only for forecast variants,P1/D1/M1,linear baselines
+Student-t ridge,"conditional mean, scale, heavy-tailed forecast",Student-t likelihood,yes,P1/D1/M1,robust parametric baseline
+Gaussian NLL,conditional Gaussian mean and log-variance,penalized normalized likelihood,yes,P1/D1/M1/M2 fields,strict parametric comparator
+SID quadratic Hyvarinen,conditional Gaussian response score; mean/log-variance readouts,"Hyvarinen score matching, closed-form ridge solve",Gaussian reconstruction,P1/D1/M1/M2 readouts,score-matching route
+SID quadratic DSM,Gaussian-corrupted conditional response score,"denoising score matching, closed-form ridge solve",Gaussian reconstruction,P1/D1/M1/M2 readouts,stabilized SID
+Gaussian MLP NLL,nonlinear Gaussian conditional law,neural normalized likelihood,yes,P1/D1/M1/M2 readouts,neural likelihood
+Gaussian MLP DSM,corrupted nonlinear Gaussian response score,neural DSM; NLL early stopping,parameter heads,P1/D1/M1/M2 readouts,objective-parity DSM
+MDN,factorized multimodal conditional density,mixture likelihood,yes,P1/D1/M1/M2 readouts,flexible likelihood baseline
+Conditional score MLP,corrupted response score,Gaussian/Student-t DSM,no,score diagnostics,unnormalized score baseline
+SBTG,joint score of consecutive standardized states,joint-state Gaussian/Student-t DSM,no,reduced-form localization,not SID dispersion
+History Gaussian / AR-MDN,normalized p(y|h) and history score,NLL,yes,finite law and history tangent,direct density routes
+Interaction ratio critic,joint/product interaction ratio,binary classification,no,interaction-only contrast,history-only term unidentified
+Conditional diffusion,noisy response score and approximate sampler,VE denoising score matching,no clean likelihood,noisy-law score,mixed reconstruction needed
+Signed classifier,bounded central finite witness,balanced classification + calibration,no,finite supported contrast,direct target estimator
+Signed Riesz dictionary,projection onto fixed response features,regularized moment solve,no,restricted channel functionals,dictionary-limited
+Latent neuromodulated SSM,release/concentration/receptor state and emissions,penalized sequential likelihood,yes,P1/L1/C1,gauge-limited
+Conditional bridge,endpoint law and reference-relative paths,ridge endpoint + Brownian reference,yes,P1/D2,reference-dependent
+Changepoint probes,mean/rule/dispersion/tail/general change,calibrated scan statistics,not a forecast,detection/localization,needs confusion controls

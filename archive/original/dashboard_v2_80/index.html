@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore model-relative effects and uncertainty across the historical 80-neuron atlas.">
+  <title>Historical 80-neuron atlas · effects &amp; uncertainty</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to figures</a>
+  <header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true">n</span><h1>Neural atlas <span>v2 · 80</span></h1></div><div class="top-meta">20 historical traces <span>·</span> 80 pooled head/tail classes <span>·</span> seed 1701</div><a id="original-link" hidden>Original explorer ↗</a></header>
+  <main id="main">
+    <section class="selection" aria-label="Select a modeled effect">
+      <div class="pair-controls"><label>Source<select id="source" aria-label="Source neuron"></select></label><span class="direction" aria-hidden="true">→</span><label>Target<select id="target" aria-label="Target neuron"></select></label><button id="swap" class="icon-button" aria-label="Swap source and target" title="Swap source and target">⇄</button></div>
+      <label class="outcome-control">Measure<select id="channel" aria-label="Outcome"></select></label>
+      <label class="context-control">Context<select id="context" aria-label="Stimulus context"></select></label>
+      <details class="options"><summary>Options</summary><div class="options-panel"><label>Estimator<select id="method" aria-label="Estimator"></select></label><label class="check"><input type="checkbox" id="worms" checked> Show individual traces</label><button id="reset" class="text-button">Reset selection</button></div></details>
+    </section>
+    <div class="preset-row"><span>Example pairs</span><div id="presets"></div><span id="load-status" role="status" aria-live="polite"></span></div>
+    <div class="lineage-banner"><strong>Historical sensitivity dataset.</strong> Head and tail recordings were pseudo-paired and missing traces were donor-imputed. Treat every effect as model-relative evidence, not as a causal or anatomical connection.</div>
+    <div class="view-row"><nav class="view-tabs" aria-label="Dashboard views"><button class="active" data-view="effects" aria-pressed="true">Model effects</button><button data-view="signals" aria-pressed="false">Recorded activity</button><button data-view="references" aria-pressed="false">Reference checks</button></nav><button id="download" class="text-button">↓ Download figure data</button></div>
+    <div id="global-error" class="error" role="alert" hidden></div>
+
+    <section id="effects-view" class="view">
+      <div class="effect-layout">
+        <article class="plot-card hero-plot" id="effect-card" aria-busy="true">
+          <div class="card-heading"><div><h2 id="effect-title">Effect over forecast time</h2><p id="effect-subtitle">High-source minus low-source prediction</p></div><div class="segmented" aria-label="Horizontal axis"><button data-axis="horizon" class="active" aria-pressed="true">Forecast time</button><button data-axis="lag" aria-pressed="false">History lag</button></div></div>
+          <div id="timing-control" class="timing-control"></div>
+          <div id="effect-chart" class="chart big-chart"><div class="loading">Loading the selected effect and its uncertainty…</div></div>
+          <div class="legend"><span><i class="line effect"></i>Mean effect</span><span><i class="swatch band"></i>Pointwise 95% interval</span><span id="worm-legend"><i class="line faint"></i>Individual historical traces</span><span id="direct-legend" hidden></span></div>
+          <p class="chart-note">Intervals resample the 20 historical traces while holding the fitted generator fixed. They do not include generator refits, donor-imputation uncertainty, or correction for exploring atlas cells.</p>
+        </article>
+        <aside class="estimate-card" aria-label="Selected estimate and evidence"><div class="label" id="estimate-pair">Selected effect</div><div class="estimate-value" id="estimate-value">—</div><div id="estimate-ci" class="estimate-ci">95% interval</div><p id="estimate-units">Source-gap-normalized units</p><div id="selected-timing" class="selected-timing"></div><div class="evidence-list" id="evidence-summary"></div><p class="boundary">Model-relative association from a historical pseudo-paired dataset. Not a causal connection or a physical transmission delay.</p></aside>
+      </div>
+      <div class="secondary-grid">
+        <article class="plot-card"><div class="card-heading"><div><h2>Variation across historical traces</h2><p id="worm-subtitle">One dot is one pseudo-paired trace from the fixed seed-1701 model.</p></div><span class="count-tag" id="worm-count">20</span></div><div id="worm-chart" class="chart worm-chart"></div><p class="chart-note">The dots reveal heterogeneity hidden by the mean. They are not 20 independent simultaneous whole-animal recordings.</p></article>
+        <article class="plot-card"><div class="card-heading"><div><h2>Sampler support</h2><p id="control-subtitle">Validity, ESS, and repaired-root ancestry at the selected lag.</p></div></div><div id="control-chart" class="chart control-chart"></div><div id="control-caption" class="chart-note"></div></article>
+      </div>
+      <details id="prediction-details" class="detail-section" hidden><summary><span>Predicted activity distributions</span></summary><div class="detail-body"><div id="prediction-controls"></div><div id="prediction-chart"></div><p id="prediction-caption"></p></div></details>
+      <details id="targets-details" class="detail-section"><summary><span>All targets for this source</span><span class="summary-note">80 estimates and intervals</span></summary><div class="detail-body"><p class="chart-note">Alphabetical order. Select a row to explore that target. Intervals are descriptive, not a significance ranking.</p><div id="targets-chart" class="target-grid"></div></div></details>
+      <details class="detail-section"><summary><span>How to read the uncertainty</span></summary><div class="uncertainty-guide"><div><h3>Interval for the mean</h3><p>The shaded pointwise interval resamples 20 historical traces. The trained seed-1701 generator stays fixed.</p></div><div><h3>Variation between traces</h3><p>Individual lines and dots expose model-effect heterogeneity. Pseudo-pairing and donor imputation limit an animal-level interpretation.</p></div><div><h3>Sampler support</h3><p>Validity, effective sample size, source gap, and repaired-root ancestry help diagnose finite-particle behavior. They cannot correct model or data errors.</p></div><div><h3>Generator sensitivity</h3><p>The main atlas uses one seed selected by held-out predictive score. Reference checks retain the stronger two-seed result as a separate sensitivity view.</p></div></div><p class="detail-boundary" id="ci-method"></p></details>
+    </section>
+
+    <section id="signals-view" class="view" hidden>
+      <div class="signal-intro"><div><h2>Historical recorded activity</h2><p>Signals around one actual chemical onset per trace. These are the pseudo-paired, donor-imputed inputs, not repaired model paths.</p></div><div class="inline-controls"><label>Actual event<select id="signal-chemical" aria-label="Recorded chemical event"><option value="butanone">Butanone</option><option value="pentanedione">Pentanedione</option><option value="nacl">NaCl</option></select></label><label>Show<select id="signal-worm" aria-label="Historical trace"><option value="all">All 20 traces</option></select></label></div></div>
+      <div class="plot-card"><div class="card-heading"><h2 id="source-signal-title">Source activity</h2><span class="muted">Display z-score</span></div><div id="source-signal-chart" class="chart signal-chart"></div></div>
+      <div class="plot-card signal-second"><div class="card-heading"><h2 id="target-signal-title">Target activity</h2><span class="muted">Display z-score</span></div><div id="target-signal-chart" class="chart signal-chart"></div></div>
+      <div class="legend" id="signal-legend"><span><i class="line effect"></i>Median across traces</span><span><i class="swatch band"></i>10th–90th percentile</span><span><i class="line faint"></i>Individual traces</span><span><i class="swatch stimulus"></i>Stimulus present</span></div><p class="chart-note">Preprocessed calcium signals are standardized within each trace and neuron for display. Shading shows observed trace variation; it is not measurement uncertainty or a confidence interval. Missing observations remain gaps.</p>
+    </section>
+
+    <section id="references-view" class="view" hidden><div class="signal-intro"><div><h2>External reference checks</h2><p>Randi/Cook and Bentley neuromodulator edge-ranking comparisons. These checks do not validate causal connections.</p></div><label>Reference<select id="reference-filter" aria-label="External reference"></select></label></div><div id="reference-chart" class="reference-grid"></div><article class="plot-card reference-table-card"><div class="card-heading"><div><h2>Exact saved comparisons</h2><p>The Bentley views include dopamine, serotonin, tyramine, octopamine, combined monoamines, neuropeptides, and their union.</p></div></div><div class="table-scroll" id="reference-table"></div></article><p class="chart-note">AUROC describes binary edge ranking (chance = 0.5); AUPRC should be read relative to reference prevalence; Spearman describes continuous rank agreement. Randi/Cook source-bootstrap intervals exclude generator refits and imputation uncertainty. Bentley best-lag results use within-source permutations and global multiple-test adjustment, and the displayed lag is not a physical transmission delay.</p></section>
+    <footer><span id="provenance">Read-only · loading verified data</span><span>Historical model evidence ≠ biological confirmation</span></footer>
+  </main><div id="tooltip" role="tooltip" hidden></div>
+</body>
+</html>

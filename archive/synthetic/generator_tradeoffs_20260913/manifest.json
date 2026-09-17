@@ -1,0 +1,28 @@
+{
+  "files": {
+    "benchmark.py": "77a1b1f5b2d62474dd8c96fd442afe0178c83dc59a0a9e1787660044cbf11798",
+    "analyze.py": "cd4bb0e3fb4682644f0a3aab8cbd5c6990ae4ed0409e353711eeb72b9213dbcb",
+    "supervise.py": "a067b1d8d77bcf3d79ca2f42b5e8e76d74a5f3221b6f2544973dc0def141d4c4",
+    "PROTOCOL.md": "b714d0d1708e6f286197ba9d4b5df709633cd5b715543cb03a50fdf33b33f83f",
+    "test_benchmark.py": "3230fa64d735735e251c25936522171346882934228e674e28d5bc5c20256f57",
+    "source/elliptical.py": "f623de364272f2d23a129fa3b5d9428326012ec6885efd5354d30c261b369cfb",
+    "source/sampler_core.py": "a23269c09f2df9ad24ae0fb89d3f73b87b400778737135814634d7be1a45e648",
+    "source/history_tangent_benchmark/metrics.py": "d2ce01622487a7cbe4064e60bfceb575e62cb971b311b474f5fcf9f6242b4d24",
+    "source/history_tangent_benchmark/runner.py": "882133e647ffd6f479a34f90e00318b0e36bf65816cda44c6f439813c565bc56",
+    "source/history_tangent_benchmark/config.py": "1dde48f74f2403e5d6c045a47becb41d60872f188df5f46a1eb2206cbe01fa2a",
+    "source/history_tangent_benchmark/models.py": "2585987c46d4ed3b6ea6f4ff1244add96b5ebdd89125d6da7c98a03a96139801",
+    "source/history_tangent_benchmark/g8_readouts.py": "bc5250c264f88ee56892ed9c3a5f35f04f67207b8ce6876adfe8d4fbd507c5a9",
+    "source/history_tangent_benchmark/finite_contrast_runner.py": "fa7f701b0d6857145b530b1cd4d59836e425c36411e4779d2feeb57482a60b0d",
+    "source/history_tangent_benchmark/finite_contrast.py": "e63af2a0b769d744fecd5033a34af340163df30be2a89f899c4552a8b3dace67",
+    "source/history_tangent_benchmark/__init__.py": "ff58375f8e0d0b26eda46c94aa21d214a67b9f1ba66c7a4ece89eb07f93472c7",
+    "source/history_tangent_benchmark/cli.py": "2d395e8ef68f19ff0e60d93e0352cb27539b54f687fe983170d4bf03d8c26594",
+    "source/history_tangent_benchmark/sweep.py": "164e628fa10ae61fb0625f12752443df3fc33f9be624de7ab83438b38c80be1a",
+    "source/history_tangent_benchmark/dgps.py": "3e40ba159eb761dd29ac5b0ab726f51137aaa9c8d74522c16458f02c1b0974bb",
+    "source/history_tangent_benchmark/serialization.py": "77e3cc44e8a52e2e1194800d03cd90b62a80b7ea55aff06feec70d49437fadb7",
+    "source/history_tangent_benchmark/stochastic_interpolant.py": "197b4cccc7053ad95e61f5128aef4a0b7628fd4c6cacfc69866b38c6908ee7da",
+    "source/history_tangent_benchmark/reporting.py": "88a0fd68c82563c74a0401e80829a73d4810f38599e075188c7fd6e05dfc7328"
+  },
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "dependency_freeze": "appnope==0.1.4\nasttokens==3.0.2\nattrs==26.1.0\ncomm==0.2.3\ncontourpy==1.3.3\ncoverage==7.15.0\ncycler==0.12.1\ndebugpy==1.8.21\ndecorator==5.3.1\net_xmlfile==2.0.0\nexecuting==2.2.1\nfastjsonschema==2.21.2\nfilelock==3.29.7\nfonttools==4.63.0\nfsspec==2026.6.0\nh5py==3.16.0\niniconfig==2.3.0\nipykernel==7.3.0\nipython==9.15.0\nipython_pygments_lexers==1.1.1\njedi==0.20.0\nJinja2==3.1.6\njoblib==1.5.3\njsonschema==4.26.0\njsonschema-specifications==2025.9.1\njupyter_client==8.9.1\njupyter_core==5.9.1\nkiwisolver==1.5.0\nmarkdown2==2.5.5\nMarkupSafe==3.0.3\nmatplotlib==3.11.0\nmatplotlib-inline==0.2.2\nmpmath==1.3.0\nnarwhals==2.23.0\nnbclient==0.11.0\nnbformat==5.10.4\nnest-asyncio2==1.7.2\nnetworkx==3.6.1\nnumpy==2.5.1\noasis-deconv==0.3.1\nopenpyxl==3.1.5\npackaging==26.2\npandas==3.0.3\nparso==0.8.7\npatsy==1.0.2\npdoc==16.0.0\npexpect==4.9.0\npillow==12.3.0\nplatformdirs==4.10.0\npluggy==1.6.0\nprompt_toolkit==3.0.52\npsutil==7.2.2\nptyprocess==0.7.0\npure_eval==0.2.3\npyarrow==24.0.0\nPygments==2.20.0\npyparsing==3.3.2\npytest==9.1.1\npytest-cov==7.1.0\npython-dateutil==2.9.0.post0\nPyYAML==6.0.3\npyzmq==27.1.0\nreferencing==0.37.0\nrpds-py==2026.6.3\nscikit-learn==1.9.0\nscipy==1.18.0\nseaborn==0.13.2\nsetuptools==83.0.0\n# Editable install with no version control (sid_neuromod==0.1.0)\n-e /Users/vik/Developer/new_sbtg_neuro/sid_neuromod\nsix==1.17.0\nstack-data==0.6.3\nstatsmodels==0.14.6\nsympy==1.14.0\ntabulate==0.10.0\nthreadpoolctl==3.6.0\ntorch==2.13.0\ntornado==6.5.7\ntraitlets==5.15.1\ntyping_extensions==4.16.0\nurllib3==2.7.0\nwcwidth==0.8.2\nwormneuroatlas==0.0.7.3\nzuko==1.6.0\n"
+}

@@ -1,0 +1,1326 @@
+{
+  "tasks": 192,
+  "datasets": 12,
+  "per_task_counts": {
+    "bimodal_101_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_101_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_202_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "bimodal_303_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_101_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_202_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "heavy_tailed_303_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_101_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_202_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "linear_gaussian_303_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_101_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_202_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_edm_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_edm_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_flow_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_flow_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_gaussian_diag_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_gaussian_diag_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_gaussian_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_gaussian_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_gp_rbf_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_ridge_0": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_student_rank2_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_student_rank2_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_transformer_mdn4_1701": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    },
+    "nonlinear_heteroskedastic_303_transformer_mdn4_2903": {
+      "predictive": 72,
+      "effect": 6,
+      "derivative": 27,
+      "small_bank": 36
+    }
+  },
+  "gaussian_reference_checks": [
+    {
+      "path": "linear_gaussian_303_boundary_rare.json",
+      "estimate": 0.22738542718896637,
+      "analytic_truth": 0.22357606247261536,
+      "tolerance": 0.042336925116348186,
+      "qualified": true,
+      "absolute_discrepancy": 0.003809364716351016,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_101_boundary_common.json",
+      "estimate": 0.2234671384615309,
+      "analytic_truth": 0.22303875790872166,
+      "tolerance": 0.022112477043255436,
+      "qualified": true,
+      "absolute_discrepancy": 0.0004283805528092488,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_202_extrapolated_rare.json",
+      "estimate": 0.2250748832161421,
+      "analytic_truth": 0.22282082867147748,
+      "tolerance": 0.02,
+      "qualified": true,
+      "absolute_discrepancy": 0.0022540545446646243,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_101_extrapolated_common.json",
+      "estimate": 0.10450193128577318,
+      "analytic_truth": 0.22303875790872166,
+      "tolerance": 0.09647309298742068,
+      "qualified": false,
+      "absolute_discrepancy": 0.11853682662294848,
+      "interpretation": "unresolved numerical reference; discrepancy retained"
+    },
+    {
+      "path": "linear_gaussian_202_central_common.json",
+      "estimate": 0.2220897428646985,
+      "analytic_truth": 0.22282082867147746,
+      "tolerance": 0.02,
+      "qualified": true,
+      "absolute_discrepancy": 0.0007310858067789694,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_101_boundary_rare.json",
+      "estimate": 0.21840944201207557,
+      "analytic_truth": 0.22303875790872166,
+      "tolerance": 0.05393234161663801,
+      "qualified": true,
+      "absolute_discrepancy": 0.004629315896646086,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_303_extrapolated_common.json",
+      "estimate": 0.1596341877927939,
+      "analytic_truth": 0.2235760624726154,
+      "tolerance": 0.15668201857653602,
+      "qualified": false,
+      "absolute_discrepancy": 0.06394187467982151,
+      "interpretation": "unresolved numerical reference; discrepancy retained"
+    },
+    {
+      "path": "linear_gaussian_303_extrapolated_rare.json",
+      "estimate": 0.22352707737578545,
+      "analytic_truth": 0.22357606247261536,
+      "tolerance": 0.02,
+      "qualified": true,
+      "absolute_discrepancy": 4.8985096829906594e-05,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_202_extrapolated_common.json",
+      "estimate": 0.11968554788873102,
+      "analytic_truth": 0.22282082867147746,
+      "tolerance": 0.7393536734022425,
+      "qualified": false,
+      "absolute_discrepancy": 0.10313528078274643,
+      "interpretation": "unresolved numerical reference; discrepancy retained"
+    },
+    {
+      "path": "linear_gaussian_202_boundary_common.json",
+      "estimate": 0.22058548988205784,
+      "analytic_truth": 0.22282082867147746,
+      "tolerance": 0.02,
+      "qualified": true,
+      "absolute_discrepancy": 0.0022353387894196164,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_202_central_rare.json",
+      "estimate": 0.1518894398324001,
+      "analytic_truth": 0.22282082867147748,
+      "tolerance": 0.34351723297778786,
+      "qualified": false,
+      "absolute_discrepancy": 0.07093138883907738,
+      "interpretation": "unresolved numerical reference; discrepancy retained"
+    },
+    {
+      "path": "linear_gaussian_303_central_rare.json",
+      "estimate": 0.13933572840478534,
+      "analytic_truth": 0.22357606247261536,
+      "tolerance": 0.18961800457919673,
+      "qualified": false,
+      "absolute_discrepancy": 0.08424033406783002,
+      "interpretation": "unresolved numerical reference; discrepancy retained"
+    },
+    {
+      "path": "linear_gaussian_303_boundary_common.json",
+      "estimate": 0.21838407148964956,
+      "analytic_truth": 0.2235760624726154,
+      "tolerance": 0.02,
+      "qualified": true,
+      "absolute_discrepancy": 0.005191990982965855,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_202_boundary_rare.json",
+      "estimate": 0.22532896466059496,
+      "analytic_truth": 0.22282082867147748,
+      "tolerance": 0.03139989606617109,
+      "qualified": true,
+      "absolute_discrepancy": 0.002508135989117477,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_101_central_common.json",
+      "estimate": 0.22179087436553482,
+      "analytic_truth": 0.22303875790872166,
+      "tolerance": 0.02,
+      "qualified": true,
+      "absolute_discrepancy": 0.001247883543186834,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_101_extrapolated_rare.json",
+      "estimate": 0.22412534937116615,
+      "analytic_truth": 0.22303875790872166,
+      "tolerance": 0.02,
+      "qualified": true,
+      "absolute_discrepancy": 0.0010865914624444972,
+      "interpretation": "analytic accuracy checked"
+    },
+    {
+      "path": "linear_gaussian_101_central_rare.json",
+      "estimate": 0.14329181320034087,
+      "analytic_truth": 0.22303875790872166,
+      "tolerance": 0.05017362884247312,
+      "qualified": false,
+      "absolute_discrepancy": 0.07974694470838078,
+      "interpretation": "unresolved numerical reference; discrepancy retained"
+    },
+    {
+      "path": "linear_gaussian_303_central_common.json",
+      "estimate": 0.22363714689832292,
+      "analytic_truth": 0.2235760624726154,
+      "tolerance": 0.02,
+      "qualified": true,
+      "absolute_discrepancy": 6.108442570751382e-05,
+      "interpretation": "analytic accuracy checked"
+    }
+  ],
+  "paired_data_identity": "passed",
+  "error_decomposition": "passed",
+  "finite_predictive_outputs": "passed",
+  "scope": "Algebra, counts, receipts and Gaussian oracle. Does not certify model accuracy or establish general superiority."
+}

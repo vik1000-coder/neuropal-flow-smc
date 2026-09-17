@@ -1,0 +1,62 @@
+{
+  "name": "frozen_v2_changepoint_matched_null",
+  "mechanistic": {
+    "n_neurons": 6,
+    "n_modulators": 2,
+    "n_steps": 960,
+    "burn_in": 480,
+    "mechanism": "null",
+    "effect_strength": 1.2,
+    "tail_threshold": 0.35,
+    "shape_tail_z": 2.0,
+    "seed": 71
+  },
+  "benchmark": {
+    "methods": [
+      "mean_cusum",
+      "variance_reliability",
+      "conditional_rule_chow",
+      "residual_tail_shape",
+      "energy_distance",
+      "mmd_rbf"
+    ],
+    "n_calibration": 199,
+    "n_null_test": 100,
+    "n_changed": 100,
+    "alpha": 0.05,
+    "boundary_fraction": 0.5,
+    "tolerance": 30,
+    "observation": "latent_neural",
+    "seed": 47000,
+    "min_segment": 160,
+    "stride": 4,
+    "scan_window": 96,
+    "ridge": 0.1,
+    "residual_mode": "frozen_prefix",
+    "reference_fraction": 0.25,
+    "crossfit_folds": 5,
+    "crossfit_purge": 6,
+    "tail_thresholds": [2.0, 3.0],
+    "variance_estimator": "block_median",
+    "variance_block_size": 48,
+    "variance_channel_aggregation": "max",
+    "residual_lags": 1,
+    "residual_nonlinear": false,
+    "residual_ewma_decays": [],
+    "summary_confidence": 0.95,
+    "post_change_strengths": {
+      "mean": {
+        "mean_multiplier": 1.0
+      },
+      "dispersion": {
+        "logvariance_multiplier": 4.0
+      },
+      "matched_tail": {
+        "tail_logit_multiplier": 1.5,
+        "tail_base_probability": 0.1,
+        "tail_low_scale": 0.5,
+        "tail_high_scale": 3.0
+      }
+    }
+  }
+}

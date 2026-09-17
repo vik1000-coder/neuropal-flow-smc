@@ -1,0 +1,16 @@
+{
+  "case_id": "g71_d607_m6001_flow_matching",
+  "data_seed": 607,
+  "energy_score_fair": 0.7002896347795504,
+  "generator_seed": 71,
+  "minus_best_epoch": 58,
+  "minus_fit_seconds": 0.5883450420224108,
+  "model_name": "flow_matching",
+  "model_seed": 6001,
+  "plus_best_epoch": 59,
+  "plus_fit_seconds": 0.5884001249796711,
+  "quartic_nrmse": 0.9728593138271352,
+  "quartic_slope": 0.027200494154158174,
+  "status": "ok",
+  "wall_seconds": 1.4161794589890633
+}

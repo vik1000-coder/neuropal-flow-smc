@@ -1,0 +1,22 @@
+{
+  "case_id": "bd88a92f811f283d0b1d",
+  "data_seed": 601,
+  "energy_score_fair_exact": 2.405895978086932,
+  "generator_id": "g6_rough_history",
+  "generator_seed": 67,
+  "model_seed": 6001,
+  "rejection_acceptance_rate": 0.36228551211745974,
+  "rejection_accepted_samples": 6144,
+  "rejection_attempts_per_slot_per_round": 6,
+  "rejection_effective_proposals": 16959,
+  "rejection_generated_proposals": 39636,
+  "rejection_max_generated_proposals_in_one_batch": 4092,
+  "rejection_max_proposals_for_one_sample": 22,
+  "rejection_proposal_batch_size_cap": 4096,
+  "rejection_rounds": 4,
+  "rejection_seed": 46604,
+  "rejection_theoretical_acceptance_lower_bound": 0.1353352832366127,
+  "samples_per_second_exact": 354081.0575879819,
+  "status": "ok",
+  "wall_seconds": 0.02658599999267608
+}

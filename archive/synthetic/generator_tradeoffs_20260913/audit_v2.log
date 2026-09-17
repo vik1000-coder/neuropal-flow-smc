@@ -1,0 +1,8 @@
+{
+  "tasks": 192,
+  "datasets": 12,
+  "paired_data_identity": "passed",
+  "error_decomposition": "passed",
+  "finite_predictive_outputs": "passed",
+  "scope": "Algebra, counts, receipts and Gaussian oracle. Does not certify model accuracy or establish general superiority."
+}

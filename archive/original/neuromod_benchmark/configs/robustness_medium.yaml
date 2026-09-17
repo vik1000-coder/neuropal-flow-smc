@@ -1,0 +1,38 @@
+name: robustness_medium
+output_dir: outputs/robustness_medium
+seeds: [0, 1, 2]
+coefficient_cvs: [0.0, 0.15, 0.35]
+views: [complete_state, calcium]
+history_lags: [1]
+horizon: 1
+n_predictive_samples: 16
+hierarchy_counts: {train: 6, validation: 2, test: 3}
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 5.0
+  max_output_gb: 0.5
+  nice: 19
+  stop_free_disk_gb: 4.0
+observation_variants:
+  - {name: reference}
+  - {name: high_measurement_noise, measurement_noise_multiplier: 2.5}
+  - {name: slow_calcium, calcium_decay_multiplier: 2.0}
+scenarios:
+  - id: null
+    params: {n_neurons: 8, n_modulators: 2, n_steps: 480, burn_in: 700, mechanism: null, effect_strength: 0.45, ligand_pulse_rate_hz: 0.08, ligand_pulse_amplitude: 2.5}
+  - id: mixed
+    params: {n_neurons: 8, n_modulators: 2, n_steps: 480, burn_in: 700, mechanism: mixed, effect_strength: 0.8, ligand_pulse_rate_hz: 0.08, ligand_pulse_amplitude: 2.5}
+methods:
+  - {name: ridge_var, tune: {ridge: [0.1, 1.0, 10.0]}}
+  - {name: heteroskedastic_ridge, tune: {mean_ridge: [0.1, 1.0], variance_ridge: [1.0, 10.0]}}
+  - {name: student_t_ridge, params: {mean_ridge: 1.0, variance_ridge: 10.0}, tune: {df: [3.5, 7.0, 15.0]}}
+  - {name: gaussian_nll, params: {maxiter: 250}, tune: {ridge: [0.001, 0.01, 0.1]}}
+  - {name: sid_dsm, params: {n_corruptions: 3}, tune: {ridge: [0.01, 0.1, 1.0], sigma_fraction: [0.1, 0.25]}}
+  - {name: pysindy_discrete_official, tune: {degree: [1, 2], threshold: [0.01, 0.05], alpha: [0.001, 0.03]}}
+  - {name: pcmci_parcorr, params: {tau_max: 1}, tune: {pc_alpha: [0.05, 0.2]}}
+  - {name: var_lingam_official, params: {lags: 1, prune: false}}
+  - {name: gaussian_mlp_nll, params: {hidden: 64, layers: 2, max_epochs: 50, patience: 8, batch_size: 256}, tune: {dropout: [0.0, 0.1], weight_decay: [0.0001, 0.01]}}
+  - {name: mdn, params: {hidden: 64, layers: 2, max_epochs: 50, patience: 8, batch_size: 256}, tune: {components: [2, 3], weight_decay: [0.0001, 0.01]}}
+  - {name: sbtg_feature_student, params: {hidden: 48, layers: 2, feature_dim: 12, max_epochs: 45, patience: 7, batch_size: 256}, tune: {kernel_df: [3.5, 7.0], noise_scale: [0.1, 0.25]}}
+  - {name: latent_neuromodulated_ssm, params: {n_modulators: 2, max_epochs: 70, patience: 10, truncation: 96, warmup: 8}, tune: {effect_l1: [0.0001, 0.001], weight_decay: [0.0001, 0.01]}}

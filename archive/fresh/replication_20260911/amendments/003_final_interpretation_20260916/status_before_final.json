@@ -1,0 +1,10 @@
+{
+  "stage": "stopped_study_analysis",
+  "state": "awaiting_report_review",
+  "updated_utc": "2026-09-16T15:53:33.777651+00:00",
+  "pid": 93089,
+  "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log",
+  "report": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/REPORT_STOPPED.md",
+  "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916",
+  "further_sampling_authorized": false
+}

@@ -1,0 +1,11 @@
+{
+  "_comment": "Regression baseline for E1 hidden thermostat (seed 0, T=200000). Values are asserted within tolerances by tests/regression/test_regression.py.",
+  "variance_kernel_corr": 0.9976,
+  "variance_kernel_corr_min": 0.95,
+  "contraction_estimate": 0.805,
+  "contraction_oracle": 0.8052,
+  "gain_c1_oracle": 0.0948,
+  "n_significant_gain_lags": 12,
+  "mean_r2_max": 0.001,
+  "sigma_ledger_max_deviation_max": 0.20
+}

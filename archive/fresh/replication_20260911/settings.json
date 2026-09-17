@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "cohorts": ["historical80", "clean54"],
+  "seeds": [1701, 2903, 4307],
+  "fold_seed": 20260828,
+  "folds": [0,1,2,3,4],
+  "lags": [1,4,8,16],
+  "horizons": [1,2,4,8,16,32],
+  "primary_mc_seed": 202609110,
+  "repeat_mc_seed": 202619110,
+  "diagnostic_mc_seeds": [91101,91102,91103],
+  "bootstrap_replicates": 10000,
+  "min_free_disk_gb": 5,
+  "device": "mps"
+}

@@ -1,0 +1,6 @@
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+PREDICTION_MODEL_DONE historical80 2 2903 flow
+PREDICTION_MODEL_DONE historical80 2 2903 persistence_gaussian
+PREDICTION_MODEL_DONE historical80 2 2903 ridge_gaussian

@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/train.py", line 38, in <module>
+    ap=argparse.ArgumentParser();ap.add_argument('cohort',choices=SET['cohorts']);ap.add_argument('fold',type=int);ap.add_argument('seed',type=int);a=ap.parse_args();train(a.cohort,a.fold,a.seed)
+                                                                                                                                                                      ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/train.py", line 9, in train
+    c,folds=cohort_for(name)
+            ~~~~~~~~~~^^^^^^
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/common.py", line 28, in cohort_for
+    c=load_sbtg_cohort() if name=='historical80' else load_cohort(cohort_mode='oh16230_head')
+      ~~~~~~~~~~~~~~~~^^
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/source/conditional_neural_benchmark/data.py", line 473, in load_sbtg_cohort
+    from sid_elegans import combined_data as combined
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/source/sid_elegans/combined_data.py", line 26, in <module>
+    _spec.loader.exec_module(_prep)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/source/SBTG/pipeline/01_prepare_data.py", line 37, in <module>
+    import seaborn as sns
+  File "/Users/vik/Developer/new_sbtg_neuro/.venv/lib/python3.14/site-packages/seaborn/__init__.py", line 5, in <module>
+    from .relational import *  # noqa: F401,F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vik/Developer/new_sbtg_neuro/.venv/lib/python3.14/site-packages/seaborn/relational.py", line 21, in <module>
+    from ._statistics import EstimateAggregator, WeightedAggregator
+  File "/Users/vik/Developer/new_sbtg_neuro/.venv/lib/python3.14/site-packages/seaborn/_statistics.py", line 28, in <module>
+    from statistics import NormalDist
+ImportError: cannot import name 'NormalDist' from 'statistics' (consider renaming '/Users/vik/Developer/new_sbtg_neuro/replication_20260911/statistics.py' since it has the same name as the standard library module named 'statistics' and prevents importing that standard library module). Did you mean: 'normalize'?
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+TRIAL_START phase=replication model=flow_lr6e4 lag=8 fold=0 seed=2903
+TRIAL_DONE model=flow_lr6e4 energy=1.53715 balanced=1.54020 epoch=58 sec=35.0
+TRAINING_COMPLETE historical80 0 2903 extension_required False

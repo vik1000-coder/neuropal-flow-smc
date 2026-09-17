@@ -1,0 +1,99 @@
+schema_version: "1"
+study_id: sid_tier1_primary_20260714
+status: confirmatory_compact
+runbook_sha256: 2035e75d90dd1dd6911693d09ecaa0880cce5baaf7467e7d7f25076798bd9ea7
+
+seeds:
+  development: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008]
+  confirmatory: [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
+                 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,
+                 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030]
+
+data:
+  response_dim: 8
+  history_dim: 8
+  n_train: 8000
+  n_validation: 1600
+  n_calibration: 1600
+  n_test_histories: 96
+  endpoint_draws_per_side: 128
+  oracle_mc_draws: 2048
+
+registered_scales:
+  primary_delta: 0.12
+  delta_ladder: [0.025, 0.05, 0.12, 0.25, 0.5]
+  primary_sigma: 0.12
+  sigma_ladder: [0.0, 0.03, 0.06, 0.12, 0.25]
+  topology_epsilon: [1.0, 0.1, 0.01, 0.001, 0.0001, 0.0]
+
+static_mechanisms:
+  - m1_mean
+  - m2_covariance
+  - m3_cubic
+  - m3_bounded
+  - m3_local
+  - m3_asymmetric
+  - m4_quartic
+  - m4_tail
+  - m5_occupancy
+
+local_methods:
+  - B0_ZERO
+  - B2_RAW_MOMENTS
+  - S1_NLL_SCORE__A1_DENSITY_AD
+  - A2_RATIO_CRITIC
+  - S2_HYVARINEN__A7_HODGE
+  - S5_DSM_MULTI__A7_HODGE
+  - S6_GAUSS_DSM__A3_CENTER
+  - S7_ANCHORED_ENERGY__A3_CENTER
+
+finite_methods:
+  - B0_ZERO
+  - DIRECT_ENDPOINT_MOMENTS
+  - B2_RAW_MOMENTS_FINITE
+  - S1_NLL_ENDPOINTS
+  - A8_ENDPOINT_CLASSIFIER
+  - A10_SIGNED_RIESZ
+  - S7_SCORE_INTEGRATED_ENDPOINTS
+
+score_methods:
+  - S1_NLL_SCORE
+  - S2_HYVARINEN
+  - S5_DSM_MULTI
+  - S6_GAUSS_DSM
+  - S7_ANCHORED_ENERGY
+
+dynamic:
+  lags: 6
+  d1_n_train: 8000
+  d2_n_train: 8000
+  rho: 0.8
+  primary_pi: 0.30
+  endpoint_delta: 0.12
+
+inference:
+  primary_unit: dgp_seed
+  bootstrap_replicates: 2000
+  confidence_level: 0.95
+  recovery_nrmse_upper: 1.0
+  calibration_slope_interval: [0.8, 1.2]
+  advantage_ratio_upper: 0.90
+  nuisance_false_call_max: 0.10
+
+resource:
+  device: cpu
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 8.0
+  max_output_gb: 0.15
+  min_free_disk_gb: 2.0
+  nice: 12
+
+output_dir: runs/sid_tier1_primary_20260714
+
+notes:
+  - Confirmatory CIs use 30 top-level DGP seeds.
+  - Deterministic convex estimators use one fit per DGP seed; stochastic neural replicates are confined to the audited legacy lane.
+  - Response dimension is eight, but M3-M5 effects occupy a registered one-dimensional projection with seven independent nuisance coordinates.
+  - Tier 2 and Tier 3 remain gated on Tier 1 recovery and available disk.
+

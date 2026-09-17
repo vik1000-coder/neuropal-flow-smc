@@ -1,0 +1,16 @@
+{
+  "case_id": "g61_d601_m6007_diffusion_edm",
+  "data_seed": 601,
+  "energy_score_fair": 0.7031790400328837,
+  "generator_seed": 61,
+  "minus_best_epoch": 59,
+  "minus_fit_seconds": 0.6202426670060959,
+  "model_name": "diffusion_edm",
+  "model_seed": 6007,
+  "plus_best_epoch": 56,
+  "plus_fit_seconds": 0.625188915990293,
+  "quartic_nrmse": 0.7174519985551818,
+  "quartic_slope": 0.28319213616161243,
+  "status": "ok",
+  "wall_seconds": 1.495194041985087
+}

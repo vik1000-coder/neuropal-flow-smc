@@ -1,0 +1,71 @@
+{
+  "core_config_file_sha256": "81dd2dc9a2e54ffa12836a816c5afb3e9e5d55990c0d597724c1d6e48bbba29c",
+  "core_finished_unix": 1783923368.554844,
+  "core_manifest_path": "/Users/vik/Developer/new_sbtg_neuro/history_tangent_benchmark/results/stable_sid_core_20260713/run_manifest.json",
+  "core_manifest_sha256_untouched": "f6fb7502163455b7dc8b005d10a61d2aad2e345b8a0a0854b477a76263f4b99c",
+  "core_started_unix": 1783919879.015448,
+  "current_executable_src_digest": "538c83b1690a0268b7b8d49479695ce9804571a2114d95144f665bbdb9ad81b5",
+  "current_project_digest": "76dac3c6f8fbbe7d2996b9cff7384ebd74ee8ff998c5d34ed8a16133854612c5",
+  "failure_message": "free disk 3.87 GiB is below safety floor 4.00 GiB",
+  "failure_type": "RuntimeError",
+  "finished_unix": 1783926211.386476,
+  "finite_config_file_sha256": "9f0af8ec814ed624ea2be645651e9061e63f66a1e27c713ef624885dc1341e58",
+  "frozen_project_digest": "4578d97c43284d223a5dad3e5f1a4bc7843544b5657037079fc17e26d7d91b9d",
+  "guard_override_scope": "source_tree_sha256(PACKAGE_ROOT) during this finite-run process only",
+  "original_core_manifest_modified": false,
+  "post_start_allowlisted_files": [
+    {
+      "mtime_unix": 1783922580.1809368,
+      "relative_path": "DIFFUSION_VS_AR_SCIENTIFIC_REPORT.md",
+      "sha256": "b76251502f901bf4395372ca80a7c047854306da439b9527b32040e0bf486371",
+      "size_bytes": 11367
+    },
+    {
+      "mtime_unix": 1783922482.322316,
+      "relative_path": "DIFFUSION_VS_AUTOREGRESSION_AUDIT.md",
+      "sha256": "b9a87b32f66dc98441850a250e70215cd02449afb315a27677c5ed016c1a8950",
+      "size_bytes": 11342
+    },
+    {
+      "mtime_unix": 1783920172.1050656,
+      "relative_path": "configs/diffusion_vs_ar_g5_generation_calibration.yaml",
+      "sha256": "f2528a18c9ce5b7bf0f5c52a66887aab5a0169939855f89d0efe0f9f34198b1d",
+      "size_bytes": 2825
+    },
+    {
+      "mtime_unix": 1783920950.2357721,
+      "relative_path": "configs/diffusion_vs_ar_g5_generation_calibration_extended.yaml",
+      "sha256": "134f958d89a40e26c4c362ec1329133a27f09a12f7633d46574aa53e61eff877",
+      "size_bytes": 2797
+    },
+    {
+      "mtime_unix": 1783920564.2700374,
+      "relative_path": "configs/diffusion_vs_ar_invalidity_replication_a.yaml",
+      "sha256": "dd1922cfc282678228795dcada35cec5e8793f03379a3ef59b2711de0d2de236",
+      "size_bytes": 2972
+    },
+    {
+      "mtime_unix": 1783920612.9938772,
+      "relative_path": "configs/diffusion_vs_ar_invalidity_replication_b.yaml",
+      "sha256": "15700afc2ff28df4b1cf264205abffc0da11fc592b3e8556466b153e966f28b6",
+      "size_bytes": 2966
+    },
+    {
+      "mtime_unix": 1783922858.4402015,
+      "relative_path": "scripts/build_diffusion_vs_ar_report_payload.py",
+      "sha256": "dbc3bfb8bb9da8bd667bd5c7da7fc899070cfdcc151c50178bb3101f771dcb42",
+      "size_bytes": 20328
+    },
+    {
+      "mtime_unix": 1783922909.061025,
+      "relative_path": "scripts/summarize_diffusion_vs_ar.py",
+      "sha256": "dc19a57a72255439cc694a5e06be815b154847a85305dc5faade045d785c7045",
+      "size_bytes": 15340
+    }
+  ],
+  "reason": "The project-wide provenance digest includes unrelated reports, scripts, and configs created by parallel audit work. No executable source or frozen config changed after the core run started.",
+  "schema_version": "1",
+  "status": "run_failed",
+  "unexpected_post_start_files": [],
+  "validated_unix": 1783923587.377401
+}

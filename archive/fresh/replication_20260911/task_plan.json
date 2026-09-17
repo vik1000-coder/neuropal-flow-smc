@@ -1,0 +1,3494 @@
+[
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "0",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "1",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "2",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "3",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "4",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "0",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "1",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "2",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "3",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "4",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "0",
+      "4307"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "1",
+      "4307"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "2",
+      "4307"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "3",
+      "4307"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "historical80",
+      "4",
+      "4307"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "0",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "1",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "2",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "3",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "4",
+      "1701"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "0",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "1",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "2",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "3",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "4",
+      "2903"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "0",
+      "4307"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "1",
+      "4307"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "2",
+      "4307"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "3",
+      "4307"
+    ]
+  },
+  {
+    "stage": "training",
+    "args": [
+      "train.py",
+      "clean54",
+      "4",
+      "4307"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "2903",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "2903",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "2903",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "2903",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "4307",
+      "1",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "4307",
+      "4",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "4307",
+      "8",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "primary",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "4307",
+      "16",
+      "primary"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "1",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "4",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "8",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "mc_repeat",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "16",
+      "mc_repeat"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "1",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "4",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "8",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "direct",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "16",
+      "direct"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "0",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "1",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "2",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "3",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "historical80",
+      "4",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "1701",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "2903",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "2903",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "4307",
+      "0",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "0",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "1",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "2",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "3",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "matched_time",
+    "args": [
+      "sample.py",
+      "clean54",
+      "4",
+      "4307",
+      "7",
+      "matched_time"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "historical80",
+      "0"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "historical80",
+      "1"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "historical80",
+      "2"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "historical80",
+      "3"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "historical80",
+      "4"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "clean54",
+      "0"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "clean54",
+      "1"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "clean54",
+      "2"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "clean54",
+      "3"
+    ]
+  },
+  {
+    "stage": "diagnostics",
+    "args": [
+      "diagnostics.py",
+      "clean54",
+      "4"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "0",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "1",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "2",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "3",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "4",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "0",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "1",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "2",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "3",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "4",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "0",
+      "4307"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "1",
+      "4307"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "2",
+      "4307"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "3",
+      "4307"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "historical80",
+      "4",
+      "4307"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "0",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "1",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "2",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "3",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "4",
+      "1701"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "0",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "1",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "2",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "3",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "4",
+      "2903"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "0",
+      "4307"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "1",
+      "4307"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "2",
+      "4307"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "3",
+      "4307"
+    ]
+  },
+  {
+    "stage": "predictive_validation",
+    "args": [
+      "predictive.py",
+      "clean54",
+      "4",
+      "4307"
+    ]
+  },
+  {
+    "stage": "analysis",
+    "args": [
+      "analyze.py"
+    ]
+  },
+  {
+    "stage": "report",
+    "args": [
+      "report.py"
+    ]
+  }
+]

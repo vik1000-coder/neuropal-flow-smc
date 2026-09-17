@@ -1,0 +1,3 @@
+# Analysis amendment001 — 13 September2026
+
+All192 primary tasks completed with raw hash-bound receipts. Initial analyze.py failed while plotting an all-unqualified rare-query region: pandas dropped every all-NaN numeric column. Preserve analyze.py and manifest.json unchanged; preserve partial derived output in analysis_v1_incomplete and original failure in worker.log. New analyze_v2.py preserves full row/column vocabularies, marks all-missing families N/A, and explicitly labels entirely unqualified panels unresolved. No estimands, qualifications, fits, scores, raw files or model-selection rules changed. Only derived analysis/report generation is rerun.

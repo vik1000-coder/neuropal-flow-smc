@@ -1,0 +1,115 @@
+{
+  "decision": "go for bounded predictive-feature and typed covariance claims; no-go for unrestricted latent/full-law deployment",
+  "new_rows": 7615,
+  "all_new_validations_passed": true,
+  "all_new_failed_rows": 0,
+  "all_new_duplicate_full_rows": 0,
+  "e6_gap4_n128k_density_score_orth": {
+    "target_abs_error": 0.0035731670390723655,
+    "alpha_nrmse": 0.02869967242762368,
+    "coverage": 1.0
+  },
+  "e8_rho098_h64_n32k_mle_orth": {
+    "nrmse": 0.1411192834645188,
+    "coverage": 0.9916666666666666,
+    "rho_abs_error": 0.0005506145309971935
+  },
+  "e9_identified_dy8_n128k_orth_direct": {
+    "covariance_nrmse": 0.1057806840994063,
+    "response_angle": 2.7280894136143563,
+    "source_angle": 7.6379756306541156
+  },
+  "e9_identified_dy32_n32k_30_seed": {
+    "orth_direct_nrmse": 0.47527422125361707,
+    "low_rank_nrmse": 0.17708882954448998,
+    "orth_coverage": 0.9485953282828283,
+    "orth_null_fwer": 0.1,
+    "seeds": 30
+  },
+  "gate_matrix": [
+    {
+      "experiment": "E0",
+      "question": "Algebra, leakage, reproducibility",
+      "revised_decision": "PASS",
+      "evidence": "20/20 package tests; all new run validations pass",
+      "consequence": "Core implementation sound"
+    },
+    {
+      "experiment": "E1",
+      "question": "Regular equal-access recovery",
+      "revised_decision": "PASS / NO POINT WIN",
+      "evidence": "ORTH NRMSE 0.104; coverage 0.940; PLUG ratio 1.002",
+      "consequence": "Inference benefit, not point-error benefit"
+    },
+    {
+      "experiment": "E2",
+      "question": "Orthogonal remainder",
+      "revised_decision": "PASS",
+      "evidence": "Product-bias R2 > .99999997",
+      "consequence": "Theory realized under controlled nuisances"
+    },
+    {
+      "experiment": "E3",
+      "question": "One future/dependence",
+      "revised_decision": "PASS WITH HAC",
+      "evidence": "rho=.9 NRMSE .145/.093; HAC coverage .949/.951",
+      "consequence": "Blocked splits and HAC required"
+    },
+    {
+      "experiment": "E4",
+      "question": "Moment-blind law change",
+      "revised_decision": "PASS AT RESOLVING BANK",
+      "evidence": "Power 1.00/.867; moment FWER .067/.067",
+      "consequence": "Finite bank resolution is part of the claim"
+    },
+    {
+      "experiment": "E5",
+      "question": "Support motion",
+      "revised_decision": "PASS",
+      "evidence": "ORTH NRMSE .016 at zero noise; likelihood score undefined",
+      "consequence": "Distinctive weak-feature success"
+    },
+    {
+      "experiment": "E6",
+      "question": "Heavy tails/weak overlap",
+      "revised_decision": "CONDITIONAL PASS",
+      "evidence": "Targeted sieve stays biased; density-score ORTH reaches .0036 error and 1.00 coverage in gap4 at n=128k",
+      "consequence": "Replace fixed sieve; retain overlap warnings"
+    },
+    {
+      "experiment": "E7",
+      "question": "Heterogeneous cancellation",
+      "revised_decision": "PASS AT R=2",
+      "evidence": "Energy 3.982 vs 4.000; sign reversal recovered",
+      "consequence": "Declare history resolution"
+    },
+    {
+      "experiment": "E8",
+      "question": "Filtered latent recovery",
+      "revised_decision": "CONDITIONAL PASS",
+      "evidence": "rho=.98, T=64, n=32k: matched-model CF ORTH NRMSE .141; T=4 NRMSE 2.88",
+      "consequence": "Horizon/model correctness are hard gates"
+    },
+    {
+      "experiment": "E9",
+      "question": "Dense unknown geometry",
+      "revised_decision": "TYPED PASS / FULL-FEATURE FAIL",
+      "evidence": "Identified dy8 direct NRMSE .106 at 128k; dy32 low-rank .177 at 32k; full feature NRMSE 1.01",
+      "consequence": "Use structured covariance readout"
+    },
+    {
+      "experiment": "E10",
+      "question": "Flexible reusable-law baselines",
+      "revised_decision": "PASS POOLED / LOCAL",
+      "evidence": "Five MDN/NSF baselines, seven families, 30 fits per cell",
+      "consequence": "No universal family winner or scale frontier"
+    },
+    {
+      "experiment": "E11",
+      "question": "Path ordering",
+      "revised_decision": "PASS",
+      "evidence": "Full-path power 1.00; endpoint/unordered FWER .056",
+      "consequence": "Distinctive path-feature success"
+    }
+  ]
+}

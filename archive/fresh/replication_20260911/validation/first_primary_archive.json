@@ -1,0 +1,23 @@
+{
+  "checked_utc": "2026-09-11T17:37:22.789794+00:00",
+  "status": "pass",
+  "scope": "first complete primary archive schema, provenance, bounds, timing and finite arrays; no external-reference evaluation",
+  "archive_sha256": "59f55342d68c07dd790f8c3bae6714e44ff4d52c25bf83a9addc41f4e4618e8f",
+  "shape": [
+    4,
+    5,
+    3,
+    80,
+    6,
+    80
+  ],
+  "raw_response_channels": 7,
+  "bytes": 53680529,
+  "recorded_runtime_seconds": 1155.0112272090046,
+  "heldout_worm_indices": [
+    4,
+    5,
+    8,
+    18
+  ]
+}

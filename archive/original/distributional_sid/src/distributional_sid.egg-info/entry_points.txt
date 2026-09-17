@@ -1,0 +1,2 @@
+[console_scripts]
+distributional-sid = distributional_sid.cli:main

@@ -1,0 +1,10 @@
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+[combined] 28 total worms; 56 neurons; 20 complete-case worms (17 OH16230 + 3 OH15500); signal=raw
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=2 seed=1701
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=0.97709 balanced=0.98809 epoch=49 sec=126.9
+TRAINING_COMPLETE clean54 2 1701 extension_required True

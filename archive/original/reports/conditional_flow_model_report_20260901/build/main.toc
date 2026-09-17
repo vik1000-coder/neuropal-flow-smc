@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}The question and the answer}{3}{section.1}%
+\contentsline {section}{\numberline {2}Data, target, and validation design}{3}{section.2}%
+\contentsline {section}{\numberline {3}How the approach evolved}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The full density and energy-model screen}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The separate denoising-score objective screen}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}The selected conditional flow model}{7}{section.4}%
+\contentsline {section}{\numberline {5}Alternatives and what each tests}{8}{section.5}%
+\contentsline {section}{\numberline {6}What the metrics mean}{9}{section.6}%
+\contentsline {section}{\numberline {7}The two diagnostic experiments}{10}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Marginal uncertainty versus joint dependence}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Changing variance versus richer distribution shape}{10}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Current corrected-cohort results}{10}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The tail-calibration warning}{11}{subsection.8.1}%
+\contentsline {section}{\numberline {9}What variability the models are learning, and why flow worked well}{12}{section.9}%
+\contentsline {section}{\numberline {10}Does flow matching have a stability advantage?}{14}{section.10}%
+\contentsline {section}{\numberline {11}What the data do and do not imply}{15}{section.11}%
+\contentsline {section}{\numberline {12}Validation, limitations, and recommended use}{15}{section.12}%
+\contentsline {section}{\numberline {A}Reproducibility map}{16}{appendix.A}%
+\contentsline {section}{\numberline {B}A compact decision guide}{17}{appendix.B}%

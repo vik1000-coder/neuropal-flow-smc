@@ -1,0 +1,12 @@
+{
+  "time": "2026-09-11T16:18:44.555815+00:00",
+  "cause": "A newly authored statistics.py temporarily shadowed Python statistics during a worker import. No fit started in the failed worker. Renamed analysis utility to statistical_analysis.py.",
+  "failed_task": [
+    "train.py",
+    "historical80",
+    0,
+    2903
+  ],
+  "preserved_completed_fits": 5,
+  "scientific_settings_changed": false
+}

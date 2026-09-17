@@ -1,0 +1,62 @@
+\contentsline {section}{\numberline {1}The result in one page}{4}{section.1}%
+\contentsline {section}{\numberline {2}Claim axes and terminology}{4}{section.2}%
+\contentsline {section}{\numberline {3}Mathematical objects and why the original route became unstable}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Conditional law, mean, and variability}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}History score, SBTG operator, and derivative amplification}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Finite supported contrast}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Compatibility-aware repaired paths}{6}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Metrics and evaluation rules}{7}{section.4}%
+\contentsline {section}{\numberline {5}Synthetic data actually used}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Matched mechanistic objective panel}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}History-tangent generators G1--G8}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Distributional-versus-mean circuit battery}{8}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Every implemented method and what it technically estimated}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Classical dynamics and normalized predictive laws}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Score, diffusion, and SBTG variants}{10}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Finite, orthogonal, path, and inference methods}{12}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Experiment results: the SBTG repair sequence}{14}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Original window score and the marginal $g_k$ term}{14}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Edge-local nonlinear window energies}{14}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Null-contrast tuning did not close the gap}{15}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Direct conditional-score Jacobian and typed mechanism screen}{15}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Gradient-readout robustness ruled out a differentiation bug}{15}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Residual temporal-Jacobian: the strongest SBTG repair}{16}{subsection.7.6}%
+\contentsline {section}{\numberline {8}Matched conditional-law and physical-field adjudication}{16}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Training details}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Predictive law on matched-tail data}{17}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Physical additive-mean field}{17}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Physical stochastic-dispersion field}{17}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Predicting a variable law did not guarantee its derivative}{17}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Synaptic gating remained unsolved}{18}{subsection.8.6}%
+\contentsline {section}{\numberline {9}Mean-visible, mean-blind, and joint synthetic circuits}{18}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Earlier per-target battery}{18}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Later moment-ladder and joint-covariance adjudication}{18}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Point tangents, finite contrasts, and the ORTH repairs}{19}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Point-history-gradient readiness}{19}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Ten-seed finite central contrasts}{19}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Legacy tangent-model comparison}{20}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}E0--E11 adjudication after targeted repairs}{20}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}E6: fixing a representer bias floor}{21}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}E8: filtered latent recovery is an inverse problem}{21}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}E9: rank, inversion ridge, and typed covariance}{21}{subsection.10.7}%
+\contentsline {section}{\numberline {11}Changepoint experiments}{22}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Matched synthetic detection and confusion}{22}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}June full 14-method benchmark}{22}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}July score-dynamics follow-up}{23}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Real neural-data evidence}{24}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Cohorts and grouping}{24}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}The original biological signal attenuated under valid grouping}{24}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Eight real-data levers}{24}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Self-gain falsification}{25}{subsection.12.4}%
+\contentsline {section}{\numberline {13}Compatibility-aware response sampling}{26}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Corrected 54-neuron implementation}{26}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Four samplers}{26}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Sealed Stage-A estimator benchmark}{26}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}External correspondence on the corrected 54-neuron axis}{27}{subsection.13.4}%
+\contentsline {section}{\numberline {14}Model error and out-of-distribution queries}{27}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Predictive qualification across six families}{27}{subsection.14.1}%
+\contentsline {section}{\numberline {15}Historical 80-class atlas and current program}{28}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Prepared DANDI 000981 campaign}{29}{subsection.15.1}%
+\contentsline {section}{\numberline {16}What the complete program now supports}{29}{section.16}%
+\contentsline {section}{\numberline {17}Reproducibility and evidence map}{30}{section.17}%
+\contentsline {section}{\numberline {18}Conclusion}{31}{section.18}%

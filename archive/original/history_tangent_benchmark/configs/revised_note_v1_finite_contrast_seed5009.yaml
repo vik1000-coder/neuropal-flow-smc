@@ -1,0 +1,22 @@
+name: revised_note_v1_finite_contrast_seed5009
+base_output: results/revised_note_v1_base_20260712_adjudication
+output_dir: results/revised_note_v1_finite_contrast_20260712_seed5009
+technical_note: /Users/vik/Downloads/SBTG_Revised_Technical_Note_July_2026.pdf
+deltas: [0.05, 0.10, 0.20, 0.40]
+response_noise_sigmas: [0.0, 0.10]
+adapter_seed: 5009
+adapter_train_anchors: 512
+adapter_calibration_anchors: 256
+evaluation_anchors: 8
+evaluation_draws_per_side: 48
+riesz_draws_per_side: 64
+diffusion_center_draws: 16
+riesz_ridge: 0.01
+classifier_hidden: 48
+classifier_layers: 2
+classifier_epochs: 40
+classifier_batch_size: 256
+classifier_learning_rate: 0.001
+classifier_patience: 8
+min_free_disk_gb: 4.0
+max_output_gb: 0.10

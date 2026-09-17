@@ -1,0 +1,153 @@
+schema_version: "1"
+name: stable_sid_core_20260713
+tier: development
+output_dir: results/stable_sid_core_20260713
+
+# The Cartesian product gives eight independent system/data/initialization
+# combinations per generator-model cell.  These seeds were frozen after the
+# two one-seed developmental screens and before this run was inspected.
+generator_seeds: [61, 67]
+data_seeds: [601, 607]
+model_seeds: [6001, 6007]
+
+generators:
+  - id: g1_gaussian_sanity
+    kind: g1
+    params: {q: 8, dy: 8, hidden: 16}
+  - id: g2_covariance
+    kind: g2
+    params: {q: 8, dy: 8, hidden: 16, alpha_m: 0.3}
+  - id: g3_matched_skew
+    kind: g3
+    params: {q: 8, dy: 4}
+  - id: g4_separated_modes
+    kind: g4
+    params: {q: 8, dy: 8, n_components: 6, rank: 2,
+             mode_separation: 5.0, component_sigma: 0.65,
+             interaction_scale: 1.0}
+  - id: g5_near_manifold
+    kind: g5
+    params: {q: 12, dy: 32, latent_dim: 3, n_components: 8, rank: 3,
+             sigma_z: 0.5, sigma_obs: 0.10, mode_separation: 5.0}
+  - id: g6_rough_history
+    kind: g6
+    params: {q: 8, dy: 12, hidden: 20, omega: 12.0,
+             roughness_amplitude: 0.7}
+  - id: g7_concentrated_history
+    kind: g7
+    params: {q: 32, dy: 8, intrinsic_dim: 4, tau: 0.08, intrinsic: g4}
+  - id: g8_functional_shape
+    kind: g8
+    params: {q: 17, dy: 32, n_channels: 4, motif_rank: 4,
+             motif_scale: 0.45, noise_sd: 0.08,
+             correlated_noise_scale: 0.06, shape_sensitivity: 1.2}
+
+models:
+  - name: mean
+    kind: mean_mlp
+    params: {hidden: 64, layers: 2}
+    tune: {learning_rate: [0.001]}
+  - name: gaussian_nll
+    kind: heteroscedastic_gaussian
+    params: {hidden: 64, layers: 2}
+    tune: {learning_rate: [0.001]}
+  - name: gaussian_dsm
+    kind: constrained_gaussian_dsm
+    params: {hidden: 64, layers: 2, sigma_min: 0.02, sigma_max: 2.0}
+    tune: {learning_rate: [0.001]}
+  - name: autoregressive_mdn
+    kind: autoregressive_mdn
+    params: {hidden: 56, layers: 2, components: 8}
+    tune: {learning_rate: [0.001]}
+  - name: autoregressive_transformer
+    kind: autoregressive_transformer
+    generators: [g5_near_manifold, g8_functional_shape]
+    params: {d_model: 48, nhead: 4, transformer_layers: 2,
+             feedforward: 128, components: 8, dropout: 0.0,
+             permutation_seed: 0}
+    tune: {learning_rate: [0.001]}
+  - name: affine_flow
+    kind: conditional_affine_flow
+    params: {hidden: 64, layers: 2, coupling_layers: 6, max_log_scale: 1.5}
+    tune: {learning_rate: [0.001]}
+  - name: bounded_energy
+    kind: bounded_energy_ratio
+    params: {hidden: 64, layers: 2, tilt_bound: 1.0,
+             base_nll_weight: 0.25, oversample: 6,
+             centering_samples: 32}
+    tune: {learning_rate: [0.001]}
+  - name: diffusion_legacy
+    kind: conditional_vector_diffusion
+    params: {hidden: 64, layers: 2, sigma_min: 0.02, sigma_max: 3.0}
+    tune: {learning_rate: [0.001]}
+  - name: diffusion_edm
+    kind: conditional_edm_diffusion
+    params: {hidden: 64, layers: 2, sigma_min: 0.01, sigma_max: 4.0,
+             sigma_data: 0.5, sample_steps: 18, rho: 7.0}
+    tune: {learning_rate: [0.001]}
+  - name: diffusion_gaussian_anchored
+    kind: gaussian_anchored_edm
+    params: {hidden: 64, layers: 2, sigma_min: 0.01, sigma_max: 4.0,
+             sample_steps: 18, rho: 7.0, base_nll_weight: 0.5}
+    tune: {learning_rate: [0.001]}
+  - name: flow_matching
+    kind: conditional_flow_matching
+    params: {hidden: 64, layers: 2, sample_steps: 18}
+    tune: {learning_rate: [0.001]}
+  - name: flow_matching_gaussian_source
+    kind: gaussian_source_flow_matching
+    params: {hidden: 64, layers: 2, sample_steps: 18,
+             base_nll_weight: 0.25}
+    tune: {learning_rate: [0.001]}
+  - name: ratio_critic
+    kind: ratio_critic
+    params: {hidden: 56, layers: 2, rank: 32}
+    tune: {learning_rate: [0.001]}
+
+split:
+  validation_fraction: 0.2
+  validation_min: 1600
+  validation_max: 1600
+  test_size: 512
+  evaluation_histories: 12
+  conditional_oracle_draws: 48
+
+training:
+  n_train: 8000
+  device: cpu
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 256
+  max_epochs: 60
+  patience: 10
+  gradient_clip: 1.0
+
+evaluation:
+  energy_cases: 96
+  energy_samples: 64
+  tangent_pairs: 64
+  centering_histories: 8
+  centering_draws: 24
+  centering_target_draws: 8
+  finite_delta: 0.12
+  diffusion_sigma: 0.12
+  quadrature_points: 4
+
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 8.0
+  max_accelerator_gb: 0.1
+  max_output_gb: 0.40
+  min_free_disk_gb: 4.0
+  case_timeout_minutes: 90.0
+  checkpoint_minutes: 15.0
+  nice: 12
+
+metadata:
+  purpose: frozen multi-seed comparison of stable predictive-law backends and SID extraction routes
+  tuned_from: [stable_backend_tuning_20260713, anchored_backend_tuning_20260713]
+  primary_law_metric: fair multivariate energy score
+  primary_sid_metrics: [finite witness NRMSE, typed channel readout NRMSE]
+  inference_unit: paired generator/data/model seed cell
+  claim_boundary: predictive conditional laws and finite typed contrasts on exact synthetic data only

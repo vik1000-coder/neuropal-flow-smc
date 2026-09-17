@@ -1,0 +1,12 @@
+{
+  "endpoint_gate": "deterministic normalized selection at supported controls -1/+1",
+  "expected": 80,
+  "expert_input": "baseline history without declared control",
+  "observed": 80,
+  "schema_version": "1",
+  "status": "complete",
+  "successful": 80,
+  "total_train_budget": 8000,
+  "train_per_expert": 4000,
+  "validation_per_expert": 1000
+}

@@ -1,0 +1,44 @@
+schema_version: "1"
+name: g8_functional_path_smoke
+tier: smoke
+output_dir: results/g8_functional_path_smoke_20260713
+generator_seeds: [47]
+data_seeds: [407]
+model_seeds: [4007]
+
+generators:
+  - id: g8_shape_path
+    kind: g8
+    params: {q: 13, dy: 24, n_channels: 3, motif_rank: 3,
+             motif_scale: 0.45, noise_sd: 0.08,
+             correlated_noise_scale: 0.06, shape_sensitivity: 1.2}
+
+models:
+  - {name: mean, kind: mean_mlp, params: {hidden: 32, layers: 1}}
+  - {name: gaussian, kind: heteroscedastic_gaussian, params: {hidden: 32, layers: 1}}
+  - {name: gaussian_dsm, kind: constrained_gaussian_dsm, params: {hidden: 32, layers: 1, sigma_min: 0.02, sigma_max: 2.0}}
+  - {name: mdn, kind: autoregressive_mdn, params: {hidden: 24, layers: 1, components: 6}}
+  - {name: affine_flow, kind: conditional_affine_flow, params: {hidden: 28, layers: 1, coupling_layers: 4}}
+  - {name: bounded_energy, kind: bounded_energy_ratio, params: {hidden: 28, layers: 1, tilt_bound: 2.0, oversample: 3, centering_samples: 12}}
+  - {name: diffusion, kind: conditional_vector_diffusion, params: {hidden: 32, layers: 1, sigma_min: 0.02, sigma_max: 3.0}}
+  - {name: edm, kind: conditional_edm_diffusion, params: {hidden: 32, layers: 1, sigma_min: 0.01, sigma_max: 4.0, sigma_data: 0.8, sample_steps: 6}}
+  - {name: flow_matching, kind: conditional_flow_matching, params: {hidden: 32, layers: 1, sample_steps: 6}}
+  - {name: gaussian_source_flow, kind: gaussian_source_flow_matching, params: {hidden: 32, layers: 1, sample_steps: 6}}
+  - {name: ratio, kind: ratio_critic, params: {hidden: 28, layers: 1, rank: 16}}
+
+split: {validation_fraction: 0.2, validation_min: 128, validation_max: 128,
+        test_size: 96, evaluation_histories: 4, conditional_oracle_draws: 12}
+training: {n_train: 512, device: cpu, learning_rate: 0.001,
+           weight_decay: 0.0001, batch_size: 128, max_epochs: 3,
+           patience: 3, gradient_clip: 1.0}
+evaluation: {energy_cases: 12, energy_samples: 8, tangent_pairs: 8,
+             centering_histories: 2, centering_draws: 8,
+             centering_target_draws: 4, finite_delta: 0.15,
+             diffusion_sigma: 0.15, quadrature_points: 3}
+resource: {max_threads: 1, max_parallel_jobs: 1, max_rss_gb: 5.0,
+           max_accelerator_gb: 0.1, max_output_gb: 0.25,
+           min_free_disk_gb: 4.0, case_timeout_minutes: 20.0,
+           checkpoint_minutes: 5.0, nice: 12}
+metadata:
+  purpose: end-to-end correctness gate for exact correlated whole-path higher-shape DGP
+  claim: smoke only

@@ -1,0 +1,9 @@
+outputs/*
+!outputs/.gitkeep
+.venv/
+.causal_venv/
+.causal_packages/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+*.pyc

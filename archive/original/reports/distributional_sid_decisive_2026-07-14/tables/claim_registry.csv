@@ -1,0 +1,13 @@
+claim,decision,evidence,scope
+Orthogonal score is implemented correctly,SUPPORTED,"E0,E2",Exact algebra and population perturbations
+Declared bounded feature tangents are estimable in regular synthetic cells,SUPPORTED,"E1,E3,E5",IID and dependent Gaussian plus support-motion families
+ORTH improves point accuracy over PLUG/RIESZ,NOT SUPPORTED,"E1,E4",Paired error ratios include one
+ORTH supplies usable uncertainty where PLUG does not,SUPPORTED IN REGULAR CELLS,"E1,E3,E4,E8,E11",Requires HAC under dependence and fails under ill-posed deconvolution
+Finite characteristic banks add information beyond four moments,SUPPORTED AT DECLARED BANK,E4,Two exact moment-blind families
+Weak-feature route survives deterministic support motion,SUPPORTED,E5,Stable through sigma zero
+Current Riesz sieve is robust to heavy tails and weak overlap,REFUTED,E6,Tail/gap coverage failures
+Global zero means no local effect,REFUTED,E7,R=2 recovers sign reversal and energy
+Current method is ready for filtered neural observations,REFUTED,E8,Severe filtering and observation-model misspecification fail
+Characteristic route is best for unknown dense geometry,NOT SUPPORTED,E9,Direct covariance head is stronger
+ORTH dominates flexible normalized-law models,SUPPORTED POOLED AT LOCAL BUDGET,E10,Every pooled ratio passes; E1/E5/E9 have no universal ORTH winner
+Path-aware features detect order changes invisible to endpoints,SUPPORTED,E11,Generic path bank plus two null summaries

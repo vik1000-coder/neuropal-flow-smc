@@ -1,0 +1,5 @@
+# Supplementary Transformer entropy diagnostic
+
+Added13 September2026 after the fixed benchmark started, before examining its architecture scores. Exploratory, motivated by the user's softmax/uncertainty question. No fitted weights, selection rules or primary samples are changed.
+
+For each completed Transformer fit, reproduce its72 evaluation histories and256 predictive samples/history. Record expected categorical mixture-weight entropy (averaged over outputs and sampled autoregressive contexts) and Monte Carlo joint differential entropy -E log p(Y|H), including output-standardization Jacobian. Compare with saved conditional-mean error and interval coverage. The quantities have different units/interpretations; mixture-label entropy is representation-dependent and omits within-component variance. No independent-row significance tests: report per-law, region, dataset and seed aggregates and descriptive associations. Even successful error association here is not an externally validated uncertainty/OOD detector.

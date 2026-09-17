@@ -1,0 +1,5 @@
+{
+  "pid": 38703,
+  "command": "caffeinate -i python -B supervise.py",
+  "manifest_sha256": "111bd359ec7bb491964d0148ea38ee4f38c8ef742df5b00e9cd679306189ff31"
+}

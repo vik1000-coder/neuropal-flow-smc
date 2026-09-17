@@ -1,0 +1,105 @@
+schema_version: "1"
+name: diffusion_vs_ar_invalidity_replication_b
+tier: development
+output_dir: results/diffusion_vs_ar_invalidity_replication_20260713_b
+
+# Same frozen design as part A, split only to reduce wall-clock time.
+generator_seeds: [109, 113]
+data_seeds: [401]
+model_seeds: [1401]
+
+generators:
+  - id: g1
+    kind: g1
+    params: {q: 8, dy: 8}
+    models: [ar_t_o0, ar_t_o17, ar_t_o29, diffusion_legacy]
+  - id: g2
+    kind: g2
+    params: {q: 8, dy: 8, alpha_m: 0.0}
+    models: [ar_t_o0, ar_t_o17, ar_t_o29, diffusion_legacy]
+  - id: g3
+    kind: g3
+    params: {q: 8, dy: 1}
+    models: [ar_t_o0, diffusion_legacy]
+  - id: g4
+    kind: g4
+    params: {q: 8, dy: 8, n_components: 8, rank: 2,
+             mode_separation: 4.0, component_sigma: 1.0,
+             interaction_scale: 0.75}
+    models: [ar_t_o0, ar_t_o17, ar_t_o29, diffusion_legacy]
+  - id: g6
+    kind: g6
+    params: {q: 8, dy: 8, omega: 8.0, roughness_amplitude: 0.5}
+    models: [ar_t_o0, ar_t_o17, ar_t_o29, diffusion_legacy]
+
+models:
+  - name: ar_t_o0
+    kind: autoregressive_transformer
+    params: {d_model: 48, nhead: 4, transformer_layers: 2,
+             feedforward: 128, components: 8, dropout: 0.0,
+             permutation_seed: 0}
+    tune: {learning_rate: [0.001]}
+  - name: ar_t_o17
+    kind: autoregressive_transformer
+    params: {d_model: 48, nhead: 4, transformer_layers: 2,
+             feedforward: 128, components: 8, dropout: 0.0,
+             permutation_seed: 17}
+    generators: [g1, g2, g4, g6]
+    tune: {learning_rate: [0.001]}
+  - name: ar_t_o29
+    kind: autoregressive_transformer
+    params: {d_model: 48, nhead: 4, transformer_layers: 2,
+             feedforward: 128, components: 8, dropout: 0.0,
+             permutation_seed: 29}
+    generators: [g1, g2, g4, g6]
+    tune: {learning_rate: [0.001]}
+  - name: diffusion_legacy
+    kind: conditional_vector_diffusion
+    params: {hidden: 120, layers: 3, sigma_min: 0.01, sigma_max: 2.0}
+    tune: {learning_rate: [0.001]}
+
+split:
+  validation_fraction: 0.2
+  validation_min: 2000
+  validation_max: 2000
+  test_size: 512
+  evaluation_histories: 16
+  conditional_oracle_draws: 64
+
+training:
+  n_train: 10000
+  device: cpu
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 256
+  max_epochs: 100
+  patience: 20
+  gradient_clip: 1.0
+
+evaluation:
+  energy_cases: 64
+  energy_samples: 32
+  tangent_pairs: 64
+  centering_histories: 8
+  centering_draws: 32
+  centering_target_draws: 8
+  finite_delta: 0.1
+  diffusion_sigma: 0.05
+  quadrature_points: 4
+
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 10.0
+  max_accelerator_gb: 0.1
+  max_output_gb: 2.0
+  min_free_disk_gb: 4.0
+  case_timeout_minutes: 90.0
+  checkpoint_minutes: 10.0
+  nice: 10
+
+metadata:
+  purpose: independent-system replication of the failed validity pattern
+  inferential_unit: generator_seed
+  claim: diagnostic invalidity replication; not a winner-confirmation test
+  audit: DIFFUSION_VS_AUTOREGRESSION_AUDIT.md

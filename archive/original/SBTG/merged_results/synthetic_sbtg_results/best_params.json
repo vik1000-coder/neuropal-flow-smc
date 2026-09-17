@@ -1,0 +1,1290 @@
+{
+  "var": {
+    "low": {
+      "short": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 64,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.1529676396489819,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00021792449254410005,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.2692307692307692,
+          "f1_std": 0.3807498052542948
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.23084936673174447,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.003949307933565005,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.42422320862396956,
+          "f1_std": 0.2932452979682955
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.058823529411764705,
+          "f1_std": 0.0831890330807703
+        }
+      },
+      "long": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 32,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.12592918381551255,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00674787375023749,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.3869047619047619,
+          "f1_std": 0.277791949751858
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 32,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.1201109980161013,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.0065643390770696135,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.3457446808510638,
+          "f1_std": 0.2181499644086157
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.21071176885130374,
+          "f1_std": 0.0019932537876999187
+        }
+      }
+    },
+    "high": {
+      "short": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 64,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.2323345572178728,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00010512648564783114,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.24524256231573305,
+          "f1_std": 0.06709080689896485
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.2600697000548579,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.004708693704336154,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.4444444444444444,
+          "f1_std": 0.31426968052735443
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.08333333333333333,
+          "f1_std": 0.11785113019775792
+        }
+      },
+      "long": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 64,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.2497896410541809,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.001904767808428205,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.3838383838383838,
+          "f1_std": 0.22855976765625777
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 64,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.13639018176076195,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.002346599645859086,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.3646669815777043,
+          "f1_std": 0.16700679763498996
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.11666666666666667,
+          "f1_std": 0.1649915822768611
+        }
+      }
+    }
+  },
+  "poisson": {
+    "low": {
+      "short": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.15800285850198686,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.000197445091159542,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.21834625322997417,
+          "f1_std": 0.15165339234750247
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.19905603704055566,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.0001010982067907436,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.16904761904761906,
+          "f1_std": 0.0033671751485073865
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.1818687430478309,
+          "f1_std": 0.06213730335232174
+        }
+      },
+      "long": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.14603572387186856,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00010486008516556343,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.18927738927738927,
+          "f1_std": 0.19515487853726626
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 32,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.056846898299481544,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00019088591198098567,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.15037593984962405,
+          "f1_std": 0.010633184679496956
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.15782962177447862,
+          "f1_std": 0.01824630435723506
+        }
+      }
+    },
+    "high": {
+      "short": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.08216927423882647,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.000197445091159542,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.3558558558558559,
+          "f1_std": 0.031851656810204895
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.20116309107261116,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00011485840255786227,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.3582317073170732,
+          "f1_std": 0.02371394693003666
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.2078853046594982,
+          "f1_std": 0.020275463259829315
+        }
+      },
+      "long": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.05326223626611164,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00010222622398892723,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.2264957264957265,
+          "f1_std": 0.0060436477024491415
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.19905603704055566,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.0001010982067907436,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.22777777777777777,
+          "f1_std": 0.007856742013183872
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.26398601398601396,
+          "f1_std": 0.11620286264254454
+        }
+      }
+    }
+  },
+  "hawkes": {
+    "low": {
+      "short": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.15800285850198686,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.000197445091159542,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.1456582633053221,
+          "f1_std": 0.0713048854978031
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.22066171079490843,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00011176031347913798,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.1893879695298135,
+          "f1_std": 0.09324076809972336
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.1653846153846154,
+          "f1_std": 0.0924678098474716
+        }
+      },
+      "long": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.05326223626611164,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00010222622398892723,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.1564102564102564,
+          "f1_std": 0.12691660175143163
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 64,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.052375821236741324,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00010796824268554131,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.11693121693121693,
+          "f1_std": 0.04414740750265217
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.17578347578347578,
+          "f1_std": 0.11805258512117288
+        }
+      }
+    },
+    "high": {
+      "short": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.08454573783715345,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00015638768526427812,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.24358974358974358,
+          "f1_std": 0.1269166017514316
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 64,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.1799643055501628,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.0003441486697417687,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.20833333333333331,
+          "f1_std": 0.05892556509887898
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.16776315789473684,
+          "f1_std": 0.060476237864638925
+        }
+      },
+      "long": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.12874316359353838,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.0001022208523710026,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.25396825396825395,
+          "f1_std": 0.04489566864676492
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 64,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.08434426064165111,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.0001147083910555166,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": 1.0,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.299047619047619,
+          "f1_std": 0.08619968380178866
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.2972222222222222,
+          "f1_std": 0.14534972724390147
+        }
+      }
+    }
+  },
+  "tanh": {
+    "low": {
+      "short": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.08454573783715345,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00015638768526427812,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.3093283582089552,
+          "f1_std": 0.05751838742487587
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 32,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.09151668495144141,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00010602605300056496,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.5718954248366013,
+          "f1_std": 0.023108064744658374
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.1922268907563025,
+          "f1_std": 0.019311739822321677
+        }
+      },
+      "long": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.14092769273565564,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00015998881492631506,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.40384615384615385,
+          "f1_std": 0.08158924398306319
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 64,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.08250714302956942,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.0003396982571910356,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.3766891891891892,
+          "f1_std": 0.002388874260765378
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.18850902184235518,
+          "f1_std": 0.012758811816281466
+        }
+      }
+    },
+    "high": {
+      "short": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.1176625161172941,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.0001678524734015877,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.37444444444444447,
+          "f1_std": 0.020427529234278034
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.19352940137300328,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00016020234085819765,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.22625811688311687,
+          "f1_std": 0.010618080723986293
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.2533333333333333,
+          "f1_std": 0.01885618083164129
+        }
+      },
+      "long": {
+        "SBTG-Linear": {
+          "train_config_name": "linear_optuna_best",
+          "train_params": {
+            "name": "linear_optuna_best",
+            "model_type": "linear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 2,
+            "dsm_noise_std": 0.08454573783715345,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.00015638768526427812,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null
+          },
+          "stat_config_name": "hac7_alpha010_by",
+          "stat_params": {
+            "name": "hac7_alpha010_by",
+            "hac_max_lag": 7,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.4685615848406546,
+          "f1_std": 0.07064977314180831
+        },
+        "SBTG-FeatureBilinear": {
+          "train_config_name": "feature_bilinear_optuna_best",
+          "train_params": {
+            "name": "feature_bilinear_optuna_best",
+            "model_type": "feature_bilinear",
+            "dsm_hidden_dim": 128,
+            "dsm_num_layers": 3,
+            "dsm_noise_std": 0.19905603704055566,
+            "dsm_epochs": 100,
+            "dsm_lr": 0.0001010982067907436,
+            "dsm_batch_size": 128,
+            "train_frac": 0.8,
+            "window_length": 2,
+            "smooth_sigma": null,
+            "feature_dim": 16,
+            "structured_l1_lambda": 0.01
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.16765350877192983,
+          "f1_std": 0.030858388038623452
+        },
+        "SBTG-Minimal": {
+          "train_config_name": "minimal_tuned",
+          "train_params": {
+            "name": "minimal_tuned",
+            "tune_hp": true,
+            "n_hp_trials": 20,
+            "lags": [
+              1,
+              2
+            ],
+            "dsm_epochs": 100
+          },
+          "stat_config_name": "hac5_alpha010_by",
+          "stat_params": {
+            "name": "hac5_alpha010_by",
+            "hac_max_lag": 5,
+            "fdr_alpha": 0.1,
+            "fdr_method": "by",
+            "energy_test": true
+          },
+          "f1_mean": 0.264207650273224,
+          "f1_std": 0.04366287774539885
+        }
+      }
+    }
+  }
+}

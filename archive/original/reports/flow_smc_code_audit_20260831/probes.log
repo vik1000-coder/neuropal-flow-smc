@@ -1,0 +1,47 @@
+models keys ['base_seed', 'checkpoints', 'chemical_conditioning', 'common_noise_definition', 'episode_seed_definition', 'frozen_predictive_scores', 'generator_model_id', 'generator_stimulus_encoding', 'methods', 'requested_device', 'resolved_device', 'source_run_provenance', 'stimulus_encoding_selection']
+checkpoint entry keys ['fold', 'path', 'seed', 'sha256']
+Gaussian 1 32 0.008401607799837616
+Gaussian 1 128 0.005926940795354804
+Gaussian 1 1024 0.0019622012850695914
+Gaussian 4 32 0.004840943235330294
+Gaussian 4 128 0.003761821111008551
+Gaussian 4 1024 0.00431842740332183
+Gaussian 16 32 0.0003226479336596458
+Gaussian 16 128 0.0010339296206431957
+Gaussian 16 1024 0.001105282268690201
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+[combined] 28 total worms; 56 neurons; 20 complete-case worms (17 OH16230 + 3 OH15500); signal=raw
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+worm array shape (4, 17, 6, 54, 54)
+worm array shape (4, 17, 6, 54, 54)
+{
+  "results/neural_prediction_atlas_20260829": {
+    "checked": 466,
+    "failed": [
+      {
+        "path": "results/neural_prediction_atlas_20260829/../../EXPERIMENT_INDEX.md",
+        "ok": false
+      },
+      {
+        "path": "results/neural_prediction_atlas_20260829/../../EXPERIMENT_REGISTRY.csv",
+        "ok": false
+      }
+    ]
+  },
+  "results/neural_prediction_atlas_20260829/canonical": {
+    "checked": 12,
+    "failed": []
+  },
+  "results/neural_prediction_atlas_20260829/complete_family_evidence_20260830": {
+    "checked": 14,
+    "failed": []
+  },
+  "results/neural_prediction_atlas_20260829/sampling_null_controls_combined8_n128_20260830/analysis": {
+    "checked": 12,
+    "failed": []
+  }
+}

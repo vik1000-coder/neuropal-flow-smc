@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-09-16T15:24:29.059953+00:00",
+  "scope": "user-directed stopped-primary analysis",
+  "workers": {
+    "analyze_stopped.py": "4fbfefee23e928179dd16d6d05bb6c754649614822ababe79103492f0c0ee1f2",
+    "report_stopped.py": "3cd9a526a3b45f7b2cf7d9b3aa2a052c35d43523a36c91535ee430d175f9ba08",
+    "amendments/002_user_stop_20260916T152247Z/AMENDMENT.md": "eba01a60ba4af21785fcadf635cbd0fa97da62bf44c66f30d1f04328473d6380"
+  }
+}

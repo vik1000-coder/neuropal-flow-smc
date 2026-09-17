@@ -1,0 +1,21 @@
+{
+  "data_seeds": [
+    9101,
+    9109
+  ],
+  "delta": 1.0,
+  "expected_cases": 8,
+  "generator_seeds": [
+    73,
+    79,
+    83,
+    89
+  ],
+  "n_test_per_side": 10000,
+  "n_train_per_side": 4000,
+  "n_validation_per_side": 1000,
+  "observed_cases": 8,
+  "schema_version": "2",
+  "status": "complete",
+  "successful_cases": 8
+}

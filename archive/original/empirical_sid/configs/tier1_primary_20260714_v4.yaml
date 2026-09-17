@@ -1,0 +1,8 @@
+extends: tier1_primary_20260714_v3.yaml
+study_id: sid_tier1_primary_20260714_v4
+output_dir: runs/sid_tier1_primary_20260714_v4
+notes:
+  - This is the definitive confirmatory execution version.
+  - Every seed-level metric table references a compressed raw-array artifact and SHA-256 hash.
+  - v3 was stopped after 9 of 270 cells because raw arrays were not yet persisted; no v3 result enters inference.
+  - All v3 hypotheses, seeds, method settings, and thresholds remain unchanged.

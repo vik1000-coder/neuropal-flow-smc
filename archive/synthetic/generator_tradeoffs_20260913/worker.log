@@ -1,0 +1,263 @@
+COMPLETE 1/192 linear_gaussian_101_ridge_0
+COMPLETE 2/192 linear_gaussian_101_gp_rbf_0
+COMPLETE 3/192 linear_gaussian_101_gaussian_diag_1701
+COMPLETE 4/192 linear_gaussian_101_gaussian_diag_2903
+COMPLETE 5/192 linear_gaussian_101_gaussian_rank2_1701
+COMPLETE 6/192 linear_gaussian_101_gaussian_rank2_2903
+COMPLETE 7/192 linear_gaussian_101_student_rank2_1701
+COMPLETE 8/192 linear_gaussian_101_student_rank2_2903
+COMPLETE 9/192 linear_gaussian_101_mdn4_1701
+COMPLETE 10/192 linear_gaussian_101_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 11/192 linear_gaussian_101_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 12/192 linear_gaussian_101_transformer_mdn4_2903
+COMPLETE 13/192 linear_gaussian_101_flow_1701
+COMPLETE 14/192 linear_gaussian_101_flow_2903
+COMPLETE 15/192 linear_gaussian_101_edm_1701
+COMPLETE 16/192 linear_gaussian_101_edm_2903
+COMPLETE 17/192 linear_gaussian_202_ridge_0
+COMPLETE 18/192 linear_gaussian_202_gp_rbf_0
+COMPLETE 19/192 linear_gaussian_202_gaussian_diag_1701
+COMPLETE 20/192 linear_gaussian_202_gaussian_diag_2903
+COMPLETE 21/192 linear_gaussian_202_gaussian_rank2_1701
+COMPLETE 22/192 linear_gaussian_202_gaussian_rank2_2903
+COMPLETE 23/192 linear_gaussian_202_student_rank2_1701
+COMPLETE 24/192 linear_gaussian_202_student_rank2_2903
+COMPLETE 25/192 linear_gaussian_202_mdn4_1701
+COMPLETE 26/192 linear_gaussian_202_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 27/192 linear_gaussian_202_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 28/192 linear_gaussian_202_transformer_mdn4_2903
+COMPLETE 29/192 linear_gaussian_202_flow_1701
+COMPLETE 30/192 linear_gaussian_202_flow_2903
+COMPLETE 31/192 linear_gaussian_202_edm_1701
+COMPLETE 32/192 linear_gaussian_202_edm_2903
+COMPLETE 33/192 linear_gaussian_303_ridge_0
+COMPLETE 34/192 linear_gaussian_303_gp_rbf_0
+COMPLETE 35/192 linear_gaussian_303_gaussian_diag_1701
+COMPLETE 36/192 linear_gaussian_303_gaussian_diag_2903
+COMPLETE 37/192 linear_gaussian_303_gaussian_rank2_1701
+COMPLETE 38/192 linear_gaussian_303_gaussian_rank2_2903
+COMPLETE 39/192 linear_gaussian_303_student_rank2_1701
+COMPLETE 40/192 linear_gaussian_303_student_rank2_2903
+COMPLETE 41/192 linear_gaussian_303_mdn4_1701
+COMPLETE 42/192 linear_gaussian_303_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 43/192 linear_gaussian_303_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 44/192 linear_gaussian_303_transformer_mdn4_2903
+COMPLETE 45/192 linear_gaussian_303_flow_1701
+COMPLETE 46/192 linear_gaussian_303_flow_2903
+COMPLETE 47/192 linear_gaussian_303_edm_1701
+COMPLETE 48/192 linear_gaussian_303_edm_2903
+COMPLETE 49/192 nonlinear_heteroskedastic_101_ridge_0
+COMPLETE 50/192 nonlinear_heteroskedastic_101_gp_rbf_0
+COMPLETE 51/192 nonlinear_heteroskedastic_101_gaussian_diag_1701
+COMPLETE 52/192 nonlinear_heteroskedastic_101_gaussian_diag_2903
+COMPLETE 53/192 nonlinear_heteroskedastic_101_gaussian_rank2_1701
+COMPLETE 54/192 nonlinear_heteroskedastic_101_gaussian_rank2_2903
+COMPLETE 55/192 nonlinear_heteroskedastic_101_student_rank2_1701
+COMPLETE 56/192 nonlinear_heteroskedastic_101_student_rank2_2903
+COMPLETE 57/192 nonlinear_heteroskedastic_101_mdn4_1701
+COMPLETE 58/192 nonlinear_heteroskedastic_101_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 59/192 nonlinear_heteroskedastic_101_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 60/192 nonlinear_heteroskedastic_101_transformer_mdn4_2903
+COMPLETE 61/192 nonlinear_heteroskedastic_101_flow_1701
+COMPLETE 62/192 nonlinear_heteroskedastic_101_flow_2903
+COMPLETE 63/192 nonlinear_heteroskedastic_101_edm_1701
+COMPLETE 64/192 nonlinear_heteroskedastic_101_edm_2903
+COMPLETE 65/192 nonlinear_heteroskedastic_202_ridge_0
+COMPLETE 66/192 nonlinear_heteroskedastic_202_gp_rbf_0
+COMPLETE 67/192 nonlinear_heteroskedastic_202_gaussian_diag_1701
+COMPLETE 68/192 nonlinear_heteroskedastic_202_gaussian_diag_2903
+COMPLETE 69/192 nonlinear_heteroskedastic_202_gaussian_rank2_1701
+COMPLETE 70/192 nonlinear_heteroskedastic_202_gaussian_rank2_2903
+COMPLETE 71/192 nonlinear_heteroskedastic_202_student_rank2_1701
+COMPLETE 72/192 nonlinear_heteroskedastic_202_student_rank2_2903
+COMPLETE 73/192 nonlinear_heteroskedastic_202_mdn4_1701
+COMPLETE 74/192 nonlinear_heteroskedastic_202_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 75/192 nonlinear_heteroskedastic_202_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 76/192 nonlinear_heteroskedastic_202_transformer_mdn4_2903
+COMPLETE 77/192 nonlinear_heteroskedastic_202_flow_1701
+COMPLETE 78/192 nonlinear_heteroskedastic_202_flow_2903
+COMPLETE 79/192 nonlinear_heteroskedastic_202_edm_1701
+COMPLETE 80/192 nonlinear_heteroskedastic_202_edm_2903
+COMPLETE 81/192 nonlinear_heteroskedastic_303_ridge_0
+COMPLETE 82/192 nonlinear_heteroskedastic_303_gp_rbf_0
+COMPLETE 83/192 nonlinear_heteroskedastic_303_gaussian_diag_1701
+COMPLETE 84/192 nonlinear_heteroskedastic_303_gaussian_diag_2903
+COMPLETE 85/192 nonlinear_heteroskedastic_303_gaussian_rank2_1701
+COMPLETE 86/192 nonlinear_heteroskedastic_303_gaussian_rank2_2903
+COMPLETE 87/192 nonlinear_heteroskedastic_303_student_rank2_1701
+COMPLETE 88/192 nonlinear_heteroskedastic_303_student_rank2_2903
+COMPLETE 89/192 nonlinear_heteroskedastic_303_mdn4_1701
+COMPLETE 90/192 nonlinear_heteroskedastic_303_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 91/192 nonlinear_heteroskedastic_303_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 92/192 nonlinear_heteroskedastic_303_transformer_mdn4_2903
+COMPLETE 93/192 nonlinear_heteroskedastic_303_flow_1701
+COMPLETE 94/192 nonlinear_heteroskedastic_303_flow_2903
+COMPLETE 95/192 nonlinear_heteroskedastic_303_edm_1701
+COMPLETE 96/192 nonlinear_heteroskedastic_303_edm_2903
+COMPLETE 97/192 bimodal_101_ridge_0
+COMPLETE 98/192 bimodal_101_gp_rbf_0
+COMPLETE 99/192 bimodal_101_gaussian_diag_1701
+COMPLETE 100/192 bimodal_101_gaussian_diag_2903
+COMPLETE 101/192 bimodal_101_gaussian_rank2_1701
+COMPLETE 102/192 bimodal_101_gaussian_rank2_2903
+COMPLETE 103/192 bimodal_101_student_rank2_1701
+COMPLETE 104/192 bimodal_101_student_rank2_2903
+COMPLETE 105/192 bimodal_101_mdn4_1701
+COMPLETE 106/192 bimodal_101_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 107/192 bimodal_101_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 108/192 bimodal_101_transformer_mdn4_2903
+COMPLETE 109/192 bimodal_101_flow_1701
+COMPLETE 110/192 bimodal_101_flow_2903
+COMPLETE 111/192 bimodal_101_edm_1701
+COMPLETE 112/192 bimodal_101_edm_2903
+COMPLETE 113/192 bimodal_202_ridge_0
+COMPLETE 114/192 bimodal_202_gp_rbf_0
+COMPLETE 115/192 bimodal_202_gaussian_diag_1701
+COMPLETE 116/192 bimodal_202_gaussian_diag_2903
+COMPLETE 117/192 bimodal_202_gaussian_rank2_1701
+COMPLETE 118/192 bimodal_202_gaussian_rank2_2903
+COMPLETE 119/192 bimodal_202_student_rank2_1701
+COMPLETE 120/192 bimodal_202_student_rank2_2903
+COMPLETE 121/192 bimodal_202_mdn4_1701
+COMPLETE 122/192 bimodal_202_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 123/192 bimodal_202_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 124/192 bimodal_202_transformer_mdn4_2903
+COMPLETE 125/192 bimodal_202_flow_1701
+COMPLETE 126/192 bimodal_202_flow_2903
+COMPLETE 127/192 bimodal_202_edm_1701
+COMPLETE 128/192 bimodal_202_edm_2903
+COMPLETE 129/192 bimodal_303_ridge_0
+COMPLETE 130/192 bimodal_303_gp_rbf_0
+COMPLETE 131/192 bimodal_303_gaussian_diag_1701
+COMPLETE 132/192 bimodal_303_gaussian_diag_2903
+COMPLETE 133/192 bimodal_303_gaussian_rank2_1701
+COMPLETE 134/192 bimodal_303_gaussian_rank2_2903
+COMPLETE 135/192 bimodal_303_student_rank2_1701
+COMPLETE 136/192 bimodal_303_student_rank2_2903
+COMPLETE 137/192 bimodal_303_mdn4_1701
+COMPLETE 138/192 bimodal_303_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 139/192 bimodal_303_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 140/192 bimodal_303_transformer_mdn4_2903
+COMPLETE 141/192 bimodal_303_flow_1701
+COMPLETE 142/192 bimodal_303_flow_2903
+COMPLETE 143/192 bimodal_303_edm_1701
+COMPLETE 144/192 bimodal_303_edm_2903
+COMPLETE 145/192 heavy_tailed_101_ridge_0
+COMPLETE 146/192 heavy_tailed_101_gp_rbf_0
+COMPLETE 147/192 heavy_tailed_101_gaussian_diag_1701
+COMPLETE 148/192 heavy_tailed_101_gaussian_diag_2903
+COMPLETE 149/192 heavy_tailed_101_gaussian_rank2_1701
+COMPLETE 150/192 heavy_tailed_101_gaussian_rank2_2903
+COMPLETE 151/192 heavy_tailed_101_student_rank2_1701
+COMPLETE 152/192 heavy_tailed_101_student_rank2_2903
+COMPLETE 153/192 heavy_tailed_101_mdn4_1701
+COMPLETE 154/192 heavy_tailed_101_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 155/192 heavy_tailed_101_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 156/192 heavy_tailed_101_transformer_mdn4_2903
+COMPLETE 157/192 heavy_tailed_101_flow_1701
+COMPLETE 158/192 heavy_tailed_101_flow_2903
+COMPLETE 159/192 heavy_tailed_101_edm_1701
+COMPLETE 160/192 heavy_tailed_101_edm_2903
+COMPLETE 161/192 heavy_tailed_202_ridge_0
+COMPLETE 162/192 heavy_tailed_202_gp_rbf_0
+COMPLETE 163/192 heavy_tailed_202_gaussian_diag_1701
+COMPLETE 164/192 heavy_tailed_202_gaussian_diag_2903
+COMPLETE 165/192 heavy_tailed_202_gaussian_rank2_1701
+COMPLETE 166/192 heavy_tailed_202_gaussian_rank2_2903
+COMPLETE 167/192 heavy_tailed_202_student_rank2_1701
+COMPLETE 168/192 heavy_tailed_202_student_rank2_2903
+COMPLETE 169/192 heavy_tailed_202_mdn4_1701
+COMPLETE 170/192 heavy_tailed_202_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 171/192 heavy_tailed_202_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 172/192 heavy_tailed_202_transformer_mdn4_2903
+COMPLETE 173/192 heavy_tailed_202_flow_1701
+COMPLETE 174/192 heavy_tailed_202_flow_2903
+COMPLETE 175/192 heavy_tailed_202_edm_1701
+COMPLETE 176/192 heavy_tailed_202_edm_2903
+COMPLETE 177/192 heavy_tailed_303_ridge_0
+COMPLETE 178/192 heavy_tailed_303_gp_rbf_0
+COMPLETE 179/192 heavy_tailed_303_gaussian_diag_1701
+COMPLETE 180/192 heavy_tailed_303_gaussian_diag_2903
+COMPLETE 181/192 heavy_tailed_303_gaussian_rank2_1701
+COMPLETE 182/192 heavy_tailed_303_gaussian_rank2_2903
+COMPLETE 183/192 heavy_tailed_303_student_rank2_1701
+COMPLETE 184/192 heavy_tailed_303_student_rank2_2903
+COMPLETE 185/192 heavy_tailed_303_mdn4_1701
+COMPLETE 186/192 heavy_tailed_303_mdn4_2903
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 187/192 heavy_tailed_303_transformer_mdn4_1701
+/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+COMPLETE 188/192 heavy_tailed_303_transformer_mdn4_2903
+COMPLETE 189/192 heavy_tailed_303_flow_1701
+COMPLETE 190/192 heavy_tailed_303_flow_2903
+COMPLETE 191/192 heavy_tailed_303_edm_1701
+COMPLETE 192/192 heavy_tailed_303_edm_2903
+Matplotlib is building the font cache; this may take a moment.
+Traceback (most recent call last):
+  File "/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/analyze.py", line 89, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/analyze.py", line 55, in main
+    table.plot.bar(ax=ax,legend=False);ax.set_title(region);ax.set_ylabel(value.replace('_',' '));ax.tick_params(axis='x',rotation=60)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vik/Developer/new_sbtg_neuro/.venv/lib/python3.14/site-packages/pandas/plotting/_core.py", line 1432, in bar
+    return self(kind="bar", x=x, y=y, **kwargs)
+  File "/Users/vik/Developer/new_sbtg_neuro/.venv/lib/python3.14/site-packages/pandas/plotting/_core.py", line 1185, in __call__
+    return plot_backend.plot(data, kind=kind, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vik/Developer/new_sbtg_neuro/.venv/lib/python3.14/site-packages/pandas/plotting/_matplotlib/__init__.py", line 71, in plot
+    plot_obj.generate()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/vik/Developer/new_sbtg_neuro/.venv/lib/python3.14/site-packages/pandas/plotting/_matplotlib/core.py", line 516, in generate
+    self._compute_plot_data()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/vik/Developer/new_sbtg_neuro/.venv/lib/python3.14/site-packages/pandas/plotting/_matplotlib/core.py", line 716, in _compute_plot_data
+    raise TypeError("no numeric data to plot")
+TypeError: no numeric data to plot
+STAGE_FAILED analyze.py exit=1

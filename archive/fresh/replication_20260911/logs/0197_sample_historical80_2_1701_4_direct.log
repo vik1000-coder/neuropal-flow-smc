@@ -1,0 +1,7 @@
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+ATLAS_WORM_DONE method=direct_importance ell=4 fold=2 heldout_worm_index=7
+ATLAS_WORM_DONE method=direct_importance ell=4 fold=2 heldout_worm_index=14
+ATLAS_WORM_DONE method=direct_importance ell=4 fold=2 heldout_worm_index=15
+ATLAS_WORM_DONE method=direct_importance ell=4 fold=2 heldout_worm_index=16

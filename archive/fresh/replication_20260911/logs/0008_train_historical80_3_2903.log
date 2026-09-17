@@ -1,0 +1,6 @@
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+TRIAL_START phase=replication model=flow_lr6e4 lag=8 fold=3 seed=2903
+TRIAL_DONE model=flow_lr6e4 energy=1.54478 balanced=1.55300 epoch=56 sec=28.4
+TRAINING_COMPLETE historical80 3 2903 extension_required False

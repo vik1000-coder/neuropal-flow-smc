@@ -1,0 +1,16 @@
+numpy>=1.24,<2.0
+scipy>=1.10
+pandas>=1.5
+torch>=2.0
+scikit-learn>=1.2
+statsmodels>=0.14
+optuna>=3.0
+matplotlib>=3.7
+seaborn>=0.12
+networkx>=3.0
+openpyxl>=3.1
+h5py>=3.8
+tqdm>=4.65
+wormneuroatlas>=0.0.7.3
+tabulate>=0.9
+plotly>=5.0

@@ -1,0 +1,86 @@
+{
+  "status": "pass",
+  "completed_utc": "2026-09-16T17:03:38.277459+00:00",
+  "meaning": "artifact and numerical validation, not scientific success",
+  "snapshot_files": 670,
+  "primary_checkpoints": 30,
+  "frozen_sampling_archives": 294,
+  "original_analysis_files_unchanged": 36,
+  "numerical_summary_rows_checked": 64,
+  "raw_paired_cell_checks": [
+    {
+      "cohort": "historical80",
+      "panel": "derivative",
+      "raw_cell_checked": {
+        "fold": 0,
+        "phase": "baseline",
+        "lag": 1,
+        "source": "ADA",
+        "target": "ADE",
+        "horizon": 1
+      }
+    },
+    {
+      "cohort": "historical80",
+      "panel": "solver",
+      "raw_cell_checked": {
+        "fold": 0,
+        "phase": "baseline",
+        "lag": 1,
+        "source": "ADA",
+        "target": "ADE",
+        "horizon": 1
+      }
+    },
+    {
+      "cohort": "clean54",
+      "panel": "derivative",
+      "raw_cell_checked": {
+        "fold": 0,
+        "phase": "baseline",
+        "lag": 1,
+        "source": "ADE",
+        "target": "ADF",
+        "horizon": 1
+      }
+    },
+    {
+      "cohort": "clean54",
+      "panel": "solver",
+      "raw_cell_checked": {
+        "fold": 0,
+        "phase": "baseline",
+        "lag": 1,
+        "source": "ADE",
+        "target": "ADF",
+        "horizon": 1
+      }
+    }
+  ],
+  "published_metric_comparisons": 32,
+  "report_sha256": "306dd866f8fd99ec4d152328ff7a6530a73dcd17938de05d5095fbf7543ca411",
+  "visual_review": {
+    "status": "pass",
+    "reviewer": "Codex visual inspection",
+    "figure_count": 14,
+    "figures": [
+      "final_review_20260916/clean54/figures/lag_effect_matrices.png",
+      "final_review_20260916/clean54/figures/particle_convergence.png",
+      "final_review_20260916/clean54/figures/predictive_rollout.png",
+      "final_review_20260916/clean54/figures/reference_comparison.png",
+      "final_review_20260916/clean54/figures/reference_lag_profiles.png",
+      "final_review_20260916/clean54/figures/replication_stability.png",
+      "final_review_20260916/clean54/figures/source_support.png",
+      "final_review_20260916/historical80/figures/lag_effect_matrices.png",
+      "final_review_20260916/historical80/figures/particle_convergence.png",
+      "final_review_20260916/historical80/figures/predictive_rollout.png",
+      "final_review_20260916/historical80/figures/reference_comparison.png",
+      "final_review_20260916/historical80/figures/reference_lag_profiles.png",
+      "final_review_20260916/historical80/figures/replication_stability.png",
+      "final_review_20260916/historical80/figures/source_support.png"
+    ],
+    "notes": "All final PNGs viewed. Lag-profile subplot/suptitle collisions and horizontal-panel labels corrected in separate copies; source figures preserved."
+  },
+  "no_new_training_or_sampling": true,
+  "extended_training_sensitivity": "incomplete, excluded"
+}

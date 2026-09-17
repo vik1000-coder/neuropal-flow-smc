@@ -1,0 +1,21 @@
+{
+  "case_id": "6072db0569cd56244f67",
+  "classifier_probability_mean": 0.5342183113098145,
+  "classifier_probability_saturation": 0.0029296875,
+  "data_seed": 601,
+  "generator_seed": 61,
+  "guided_ess_fraction_median": 0.8340046045845628,
+  "guided_quartic_bias": -3.062834490131922,
+  "guided_quartic_nrmse": 0.662498863542647,
+  "guided_quartic_sd_across_anchors": 0.1585658433175979,
+  "guided_quartic_slope": 0.338276619595178,
+  "model_name": "flow_matching",
+  "model_seed": 6007,
+  "raw_quartic_bias": -4.603540837960233,
+  "raw_quartic_nrmse": 0.9964051139379603,
+  "raw_quartic_sd_across_anchors": 0.2972992807853361,
+  "raw_quartic_slope": 0.0054080248405837,
+  "status": "ok",
+  "truth": 4.6285722717824695,
+  "wall_seconds": 0.20859191598719917
+}

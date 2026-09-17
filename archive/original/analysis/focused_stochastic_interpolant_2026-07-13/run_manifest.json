@@ -1,0 +1,21 @@
+{
+  "anchor": "prefit frozen core heteroscedastic Gaussian",
+  "epsilon": 1.0,
+  "expected": 32,
+  "observed": 32,
+  "primary_steps": 128,
+  "resolution_steps": [
+    64,
+    128,
+    256
+  ],
+  "schedules": [
+    "linear",
+    "squared"
+  ],
+  "schema_version": "1",
+  "status": "complete",
+  "successful": 32,
+  "train_size": 8000,
+  "validation_size": 1600
+}

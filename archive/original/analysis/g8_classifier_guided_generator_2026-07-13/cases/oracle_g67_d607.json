@@ -1,0 +1,24 @@
+{
+  "bayes_guided_ess_fraction_median": 0.7771819442146686,
+  "bayes_guided_quartic_bias": 0.01160177599566714,
+  "bayes_guided_quartic_nrmse": 0.01737375754894677,
+  "bayes_guided_quartic_sd_across_anchors": 0.07461465561612769,
+  "bayes_guided_quartic_slope": 1.0028488627212655,
+  "case_id": "oracle_g67_d607",
+  "classifier_fit": {
+    "best_epoch": 20,
+    "fit_seconds": 0.9726895409985445,
+    "stopped_epoch": 35,
+    "validation_log_loss": 0.5899614095687866
+  },
+  "data_seed": 607,
+  "generator_seed": 67,
+  "guided_ess_fraction_median": 0.8084301356752339,
+  "guided_quartic_bias": -0.44597526507550234,
+  "guided_quartic_nrmse": 0.11132411012159184,
+  "guided_quartic_sd_across_anchors": 0.08711498489730705,
+  "guided_quartic_slope": 0.8904889813633234,
+  "model_name": "oracle_midpoint_law",
+  "status": "ok",
+  "truth": 4.072423675969165
+}

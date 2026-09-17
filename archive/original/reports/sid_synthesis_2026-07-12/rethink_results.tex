@@ -1,0 +1,117 @@
+\section{Expanded out-of-family neuromodulation benchmark}
+\label{sec:rethink-results}
+
+The theory document motivates a substantially harder target than the earlier matched
+complete-state benchmark: nonlinear high-dimensional dynamics, hidden modulators,
+non-Gaussian and correlated innovations, calcium filtering and saturation, shared
+artifact, partial observation, controlled operations, receptor kinetics, and
+semi-Markov state paths. We therefore retained the earlier suite as a unit and
+estimand-validation tier and executed a separate E1--E5 stress suite. No fitted method
+received the hidden modulator or regime state.
+
+The main run used 24 latent neurons, four hidden modulators, 12 training episodes, four
+validation episodes, six test episodes, horizons 1, 4, and 16, and three independent
+seeds. Seven fast methods ran in every cell. Gaussian and denoising neural networks,
+an MDN, and feature-bilinear SBTG ran on a predeclared subset of 42 representative
+stress cells. This produced 840 successful method--cell fits with no dropped failures.
+A separate 32-neuron confirmation produced 672 successful fits for the full fast panel.
+
+\subsection{Gaussian NLL is the empirical winner}
+
+Table~\ref{tab:rethink-nll} reports average test negative log likelihood (lower is
+better). Gaussian NLL ranks first in every scientific lane. This includes the
+out-of-family nonlinear reservoir (E1), the paired measurement stress (E2), joint
+noise/input/state/intervention shift (E3), stochastic release and receptor kinetics
+(E4), and semi-Markov state dynamics (E5). The result persists at 32 neurons. Thus the
+earlier Gaussian result was not only a consequence of giving a matched mechanistic
+method the exact complete state, although the new generators remain bounded and the
+available sample size still favors regularized low-complexity predictors.
+
+\begin{table}[ht]
+\centering
+\caption{Mean test NLL in the 24-neuron expanded benchmark. Lower is better. Neural methods use their predeclared representative-cell panel and are not averaged over the same case mix as the fast methods.}
+\label{tab:rethink-nll}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Method & E1 & E2 & E3 & E4 & E5 \\
+\midrule
+Gaussian NLL & 0.150 & -0.732 & -0.680 & -0.819 & -0.466 \\
+Ridge VAR & 0.169 & -0.714 & -0.671 & -0.804 & -0.424 \\
+Student-$t$ ridge & 0.255 & -0.645 & -0.600 & -0.728 & -0.331 \\
+Gaussian MLP NLL & 0.203 & -0.229 & -0.628 & -0.663 & -0.386 \\
+MDN & 0.206 & -0.217 & -0.608 & -0.634 & -0.393 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Across all 96 fast-panel cells at 24 neurons, Gaussian NLL improves on ridge VAR by
+0.0187 NLL units on average and wins 76.0\% of paired cells. At 32 neurons its advantage
+increases to approximately 0.055 NLL units and it wins approximately 95\% of comparable
+cells. With only three independent simulator seeds these are repeated-condition
+summaries, not a precise population confidence interval. Seed-level Gaussian-NLL skill
+over ridge is 0.001, 0.039, and 0.014 at 24 neurons, and 0.064, 0.031, and 0.070 at 32
+neurons.
+
+The nonlinear density models do not exploit a decisive advantage at this data scale.
+Gaussian MLP, DSM-trained Gaussian MLP, and MDN remain valid but generally trail the
+linear Gaussian likelihood. SBTG is a score-only model and is therefore excluded from
+the NLL table rather than assigned a fictitious likelihood. Its held-out DSM risk is
+finite across all 42 cells, but that native loss cannot establish predictive-law or
+typed-channel superiority over normalized-density baselines.
+
+\subsection{Unconstrained quadratic SID fails expected-risk and stability gates}
+
+The quadratic SID median fit can appear reasonable, but its expected predictive risk is
+not. At 24 neurons, the Hyv\"arinen and DSM variants pass their own numerical-validity
+diagnostic in 90.6\% and 92.7\% of cells, respectively. At 32 neurons these rates fall to
+82.3\% and 90.6\%. Rare crossings of the natural-variance boundary create extremely
+large means or variances, so mean NLL and mean normalized RMSE become catastrophic even
+when median NLL looks ordinary. This is not a cosmetic outlier issue: a probabilistic
+model used for forecasting or likelihood comparison must control expected loss.
+
+A post-benchmark diagnostic fit 432 additional SID models across 18 representative
+E1--E5 cells, crossing six ridge values and four corruption scales. Ridge 1 with DSM
+corruption $\sigma=1$ was the best validity-first setting: 100\% validity, median NLL
+$-0.526$, mean NLL $-0.351$, and mean normalized RMSE 0.769. The matched ridge-VAR mean
+NLL was $-0.435$. Ordinary tuning therefore can stabilize the implementation, but it
+does not make SID win. Moreover, some settings marked formally valid still had extreme
+RMSE, showing that the present diagnostic is weaker than the desired deployment gate.
+
+The theoretical implication is constructive: retain the score-identified estimands,
+but replace the unconstrained quadratic natural-variance map with a parameterization
+that enforces positive, bounded-away-from-zero scale and controls tail behavior by
+construction. A constrained log-scale model, calibrated fallback, or normalized
+density backend may serve SID readouts without inheriting this failure mode.
+
+\subsection{Paired intervention response favors direct regularized dynamics}
+
+E3 and E4 include common-random-number control and operated trajectories. We evaluate
+the difference between predicted operated and control outcomes against the true paired
+difference. Averaged across active operations, ridge, heteroskedastic ridge, and
+Student-$t$ ridge tie at response NRMSE 0.189; Gaussian NLL scores 0.194;
+DSM-SID 0.202; Hyv\"arinen SID 0.210; and the zero-response baseline 0.293. The methods
+capture part of the response through the evolving observed history, but all attenuate
+its magnitude. No current SID method has an intervention-transfer advantage.
+
+These response estimates are reduced-form. E4 uses stochastic release, saturating
+occupancy, adaptation, and receptor attenuation, but good fluorescence forecasting does
+not identify a unique ligand--receptor mechanism. Likewise, E5 establishes predictive
+performance under modulator-dependent semi-Markov switching; a dedicated HMM/HSMM
+state-recovery tournament remains necessary before claiming state or dwell-law recovery.
+
+\subsection{Updated decision}
+
+The expanded benchmark changes the priority ordering.
+
+\begin{enumerate}
+  \item Use Gaussian NLL and ridge as mandatory baselines and current practical defaults.
+  \item Stop treating unconstrained quadratic SID as a deployable predictive law.
+  \item Preserve finite typed SID contrasts as the main theoretical contribution, but
+        compute them from a stable normalized density, direct ratio/classifier, or a
+        positivity-constrained score backend.
+  \item Continue diffusion only in a declared home field---multimodal, implicit, or
+        sample-only conditional laws---and require it to beat MDN/flow/direct-ratio
+        baselines there.
+  \item Add explicit HMM/HSMM and direct response-kernel baselines before elevating the
+        E5 path-law or E4 mechanistic claims.
+\end{enumerate}

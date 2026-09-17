@@ -1,0 +1,21 @@
+{
+  "case_id": "065dc5abc4e61a8f2cce",
+  "classifier_probability_mean": 0.49298810958862305,
+  "classifier_probability_saturation": 0.0,
+  "data_seed": 601,
+  "generator_seed": 67,
+  "guided_ess_fraction_median": 0.83893176126743,
+  "guided_quartic_bias": -2.63194544467979,
+  "guided_quartic_nrmse": 0.6487084123603171,
+  "guided_quartic_sd_across_anchors": 0.24390231764934406,
+  "guided_quartic_slope": 0.35371521872575473,
+  "model_name": "autoregressive_mdn",
+  "model_seed": 6007,
+  "raw_quartic_bias": -3.8310725692988865,
+  "raw_quartic_nrmse": 0.9416579393561717,
+  "raw_quartic_sd_across_anchors": 0.18143795207616886,
+  "raw_quartic_slope": 0.05926473419120398,
+  "status": "ok",
+  "truth": 4.072423675969165,
+  "wall_seconds": 0.2134511669864878
+}

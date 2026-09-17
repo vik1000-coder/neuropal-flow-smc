@@ -1,0 +1,5 @@
+# Optional published-method baselines. Keep these out of the main workspace
+# environment; scripts/bootstrap_causal_env.sh installs them locally.
+tigramite==5.2.10.1
+lingam==1.12.2
+pysindy==2.1.0

@@ -1,0 +1,12 @@
+archive/original/SBTG/pipeline/17_neuron_ei_classification.py:1056: SyntaxWarning: "\|" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\|"? A raw string is also an option.
+archive/fresh/replication_20260911/inputs/published_sbtg/pipeline/17_neuron_ei_classification.py:1056: SyntaxWarning: "\|" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\|"? A raw string is also an option.
+archive/fresh/replication_20260911/source/SBTG/pipeline/17_neuron_ei_classification.py:1056: SyntaxWarning: "\|" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\|"? A raw string is also an option.
+{
+  "files_checked": 31768,
+  "bytes_checked": 14052503450,
+  "hash_errors": [],
+  "syntax_errors": [],
+  "python_files": 995,
+  "credential_pattern_matches": [],
+  "scope": "Byte and syntax checks are exhaustive for the archive; scientific logic review is separately scoped in CODE_REVIEW.md."
+}

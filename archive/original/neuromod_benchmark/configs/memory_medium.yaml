@@ -1,0 +1,35 @@
+name: memory_medium
+output_dir: outputs/memory_medium
+seeds: [0, 1, 2]
+views: [latent, calcium]
+max_lags: [1, 2, 4, 8, 16]
+validation_fraction: 0.2
+test_fraction: 0.2
+n_predictive_samples: 16
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 5.0
+  max_output_gb: 0.5
+  nice: 19
+  stop_free_disk_gb: 4.0
+scenarios:
+  - id: null
+    family: mechanistic
+    n_trajectories: 8
+    params: {n_neurons: 6, n_modulators: 2, n_steps: 500, burn_in: 750, mechanism: null, effect_strength: 0.45, ligand_pulse_rate_hz: 0.08, ligand_pulse_amplitude: 2.5}
+  - id: mixed
+    family: mechanistic
+    n_trajectories: 8
+    params: {n_neurons: 6, n_modulators: 2, n_steps: 500, burn_in: 750, mechanism: mixed, effect_strength: 0.8, ligand_pulse_rate_hz: 0.08, ligand_pulse_amplitude: 2.5}
+methods:
+  - {name: constant_gaussian}
+  - {name: ridge_var, tune: {ridge: [0.1, 1.0, 10.0]}}
+  - {name: heteroskedastic_ridge, tune: {mean_ridge: [0.1, 1.0], variance_ridge: [1.0, 10.0]}}
+  - {name: student_t_ridge, params: {mean_ridge: 1.0, variance_ridge: 10.0}, tune: {df: [3.5, 7.0, 15.0]}}
+  - {name: gaussian_nll, params: {maxiter: 220}, tune: {ridge: [0.001, 0.01, 0.1]}}
+  - {name: sid_dsm, params: {n_corruptions: 3}, tune: {ridge: [0.01, 0.1, 1.0], sigma_fraction: [0.1, 0.25]}}
+  - {name: gaussian_mlp_nll, params: {hidden: 56, layers: 2, max_epochs: 40, patience: 7, batch_size: 256}, tune: {dropout: [0.0, 0.1], weight_decay: [0.0001, 0.01]}}
+  - {name: mdn, params: {hidden: 56, layers: 2, max_epochs: 40, patience: 7, batch_size: 256}, tune: {components: [2, 3], weight_decay: [0.0001, 0.01]}}
+  - {name: score_mlp_student, params: {hidden: 56, layers: 2, max_epochs: 35, patience: 6, batch_size: 256, kernel_df: 5.0, noise_scale: 0.2}}
+  - {name: sbtg_feature_student, params: {hidden: 40, layers: 2, feature_dim: 10, max_epochs: 35, patience: 6, batch_size: 256, kernel_df: 5.0, noise_scale: 0.2}}

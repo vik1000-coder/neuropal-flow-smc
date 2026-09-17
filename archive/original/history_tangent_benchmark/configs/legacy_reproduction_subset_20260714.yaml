@@ -1,0 +1,81 @@
+schema_version: "1"
+name: legacy_reproduction_subset_20260714
+tier: development
+output_dir: results/legacy_reproduction_subset_20260714
+
+generator_seeds: [61]
+data_seeds: [601]
+model_seeds: [6001]
+
+generators:
+  - id: g1_gaussian_sanity
+    kind: g1
+    params: {q: 8, dy: 8, hidden: 16}
+  - id: g3_matched_skew
+    kind: g3
+    params: {q: 8, dy: 4}
+  - id: g8_functional_shape
+    kind: g8
+    params: {q: 17, dy: 32, n_channels: 4, motif_rank: 4,
+             motif_scale: 0.45, noise_sd: 0.08,
+             correlated_noise_scale: 0.06, shape_sensitivity: 1.2}
+
+models:
+  - name: gaussian_nll
+    kind: heteroscedastic_gaussian
+    params: {hidden: 64, layers: 2}
+    tune: {learning_rate: [0.001]}
+  - name: diffusion_edm
+    kind: conditional_edm_diffusion
+    params: {hidden: 64, layers: 2, sigma_min: 0.01, sigma_max: 4.0,
+             sigma_data: 0.5, sample_steps: 18, rho: 7.0}
+    tune: {learning_rate: [0.001]}
+  - name: ratio_critic
+    kind: ratio_critic
+    params: {hidden: 56, layers: 2, rank: 32}
+    tune: {learning_rate: [0.001]}
+
+split:
+  validation_fraction: 0.2
+  validation_min: 1600
+  validation_max: 1600
+  test_size: 512
+  evaluation_histories: 12
+  conditional_oracle_draws: 48
+
+training:
+  n_train: 8000
+  device: cpu
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 256
+  max_epochs: 60
+  patience: 10
+  gradient_clip: 1.0
+
+evaluation:
+  energy_cases: 96
+  energy_samples: 64
+  tangent_pairs: 64
+  centering_histories: 8
+  centering_draws: 24
+  centering_target_draws: 8
+  finite_delta: 0.12
+  diffusion_sigma: 0.12
+  quadrature_points: 4
+
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 8.0
+  max_accelerator_gb: 0.1
+  max_output_gb: 0.08
+  min_free_disk_gb: 2.0
+  case_timeout_minutes: 90.0
+  checkpoint_minutes: 15.0
+  nice: 12
+
+metadata:
+  purpose: deterministic compatibility audit against a frozen subset of stable_sid_core_20260713
+  source_run: stable_sid_core_20260713
+  hypothesis_decisions: none

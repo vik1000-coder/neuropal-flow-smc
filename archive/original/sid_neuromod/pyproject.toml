@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sid_neuromod"
+version = "0.1.0"
+description = "Score-identified dynamics: timescale-resolved distributional interactions in neural activity"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "sid_neuromod developers" }]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "scikit-learn>=1.2",
+    "statsmodels>=0.14",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "pyarrow>=12.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "hypothesis>=6.0", "ruff", "mypy"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    # expected: clamp on rare invalid eta2 on held-out histories (tested explicitly)
+    "ignore:invalid eta2:RuntimeWarning",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

@@ -1,0 +1,6 @@
+{
+  "utc": "2026-09-13T21:12:33.625832+00:00",
+  "original_analysis_sha256": "cd4bb0e3fb4682644f0a3aab8cbd5c6990ae4ed0409e353711eeb72b9213dbcb",
+  "replacement_analysis_sha256": "4fe9907f3e8f47eb1fb78c1e69ada3d457eaf45196cdd494741c2450c6abf099",
+  "scope": "Empty/unqualified plot handling only; raw results unchanged"
+}

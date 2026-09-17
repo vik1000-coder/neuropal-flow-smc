@@ -1,0 +1,15 @@
+{
+  "anchors": 12,
+  "delta": 0.12,
+  "excluded_models": [
+    "bounded_energy",
+    "ratio_critic"
+  ],
+  "failed": 0,
+  "model_draws_per_side": 512,
+  "oracle_draws_per_side": 2048,
+  "records": 96,
+  "schema_version": "1",
+  "status": "complete",
+  "successful": 96
+}

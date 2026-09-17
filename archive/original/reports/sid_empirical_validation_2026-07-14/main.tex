@@ -1,0 +1,676 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,float}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{pdflscape}
+\usepackage{lastpage}
+
+\hypersetup{colorlinks=true,linkcolor=MidnightBlue,urlcolor=MidnightBlue,citecolor=MidnightBlue}
+\graphicspath{{../../empirical_sid/runs/sid_tier1_primary_20260714_v4/results/final_figures/}}
+\setlist{nosep,leftmargin=1.4em}
+\captionsetup{font=small,labelfont=bf}
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{2em}
+\fancyhf{}
+\lhead{SID empirical validation}
+\rhead{14 July 2026}
+\cfoot{\thepage\ of \pageref{LastPage}}
+\newcommand{\NRMSE}{\mathrm{NRMSE}}
+\newcommand{\localtarget}{D_vT(P_h)}
+\newcommand{\finitetarget}{\Delta_{T,\delta}(h)}
+\newcommand{\SID}{\mathrm{SID}}
+\newcommand{\yes}{\textcolor{ForestGreen}{Yes}}
+\newcommand{\no}{\textcolor{BrickRed}{No}}
+\newcommand{\partialresult}{\textcolor{BurntOrange}{Partial}}
+\newcommand{\artifact}[1]{\nolinkurl{#1}}
+\IfFileExists{generated_results.tex}{\input{generated_results.tex}}{}
+
+\title{\textbf{Empirical Validation of Score-Derivative SID}\\
+\large Local versus finite targets, matched-model controls, dynamic lag recovery, and robustness}
+\author{Automated reproducible analysis of the \texttt{new\_sbtg\_neuro} project}
+\date{14 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report executes and audits the staged validation plan in
+\emph{SID\_EMPIRICAL\_VALIDATION\_RUNBOOK.md}.  The decisive result is not that one
+method wins everywhere.  Correctly specified normalized laws recover every tested
+static target and a matched stochastic-gain mixture recovers dynamic distributional
+lags, but these models are supplied the relevant mechanism family.  Among reusable
+observational estimators, direct moment regression is the most dependable: it
+recovers mean, covariance, several third-cumulant constructions, and dynamic
+variance/covariance/third-cumulant lags.  Clean score matching sometimes has lower
+NRMSE, but its effects are often attenuated by roughly one half.  Multi-noise and
+anchored denoising score routes do not provide a general advantage; the anchored
+route fails dynamic third cumulants and produces a large observation-only false
+effect.  The central bottleneck is the derivative from response score to history
+tangent and typed readout, not merely predictive-law fit.  Results support a
+targeted predictive-closure program, with score-derived SID retained as a
+best-case or reusable-law research direction rather than the current default.
+\end{abstract}
+
+\section*{Technical summary}
+
+\noindent\colorbox{gray!10}{\parbox{0.97\linewidth}{
+\textbf{Bottom line.}  Use direct targeted regression for a known functional;
+use a flexible normalized law when the same fitted law must answer many queries;
+use a contrast-aligned classifier for a supported finite intervention when its
+representation can express the relevant geometry.  The present score-derived SID
+implementations are not competitive with those baselines on calibrated typed
+effects, although clean Hyv\"arinen plus Hodge is a useful diagnostic and the
+anchored score improves with very large samples.
+}}
+
+\begin{itemize}
+\item \textbf{Validated artifacts.}  Tier 1 contains 270 static and 30 dynamic
+top-level DGP-seed cases, each with a metric table and compressed raw array archive.
+All 300 archive hashes match, all primary cells contain 30 common seeds, and no fit
+failed.  Tier 2 adds 270 hidden-state/observation-stress cases and 450 static
+sample/information cases on new seeds 3001--3030.  A separately frozen post-hoc
+fixed-amplitude diagnostic adds 270 cases on paired seeds 4001--4030.
+\item \textbf{Matched models are upper bounds, not evidence of generality.}  The
+static normalized model knows the signed-tilt basis and fits essentially one
+amplitude.  The dynamic ``correct MDN'' knows the gain vector, component noise, and
+family, fitting only the mixing law.
+\item \textbf{Derivative gap.}  Response-score NRMSE is often 0.04--0.30 while the
+corresponding reconstructed history tangent is at or above one, especially for
+quartic, tail, and occupancy mechanisms.  Differentiation, centering, and Hodge
+integration amplify small response-score errors.
+\item \textbf{Dynamic result.}  On observed stochastic gain, matched mixture NRMSE
+is about 0.05 and direct moment regression about 0.22--0.26 across variance,
+covariance, and third cumulant.  The anchored score reaches variance NRMSE about
+0.50 but is slightly under-calibrated, and third-cumulant NRMSE exceeds 1.3 with a
+wrong-sign slope.
+\item \textbf{Robustness result.}  With a hidden modulator, direct and Gaussian
+log-variance recovery improve smoothly with sample size.  The anchored score is
+unstable at 8,000 samples and becomes usable only at 32,000, still behind direct
+baselines.  Under an observation-only null its false variance effect is comparable
+to the true active clean effect.
+\item \textbf{Status of the broad claim.}  The evidence is a rigorous diagnostic
+validation of these implementations and DGP families, not a validated claim that
+SID recovers arbitrary moments in unknown high-dimensional nonlinear systems.
+Dense unknown response subspaces, multiple gain factors, and general neural
+predictive backends remain unresolved.
+\end{itemize}
+
+\section{Question and estimands}
+
+The scientific question is whether a predictive-law model can reveal how a source
+history direction changes a chosen future-response functional, particularly when
+the conditional mean is invariant but variance, covariance, skewness, tails, or
+mode occupancy change.  Two targets must remain separate.
+
+\subsection{Local target}
+
+For conditional law $P_h$ and history direction $v$,
+\[
+  \ell_v(y;h)=D_v\log p(y\mid h),\qquad
+  \localtarget = E_{P_h}\!\left[\mathrm{IF}_T(Y;P_h)\ell_v(Y;h)\right].
+\]
+The response score $s_y=\nabla_y\log p(y\mid h)$ is not $\ell_v$.  A score route
+first estimates $s_y$, differentiates it with respect to history to obtain a mixed
+field, reconstructs a centered history tangent (when topology permits), and only
+then integrates it against an influence function.
+
+\subsection{Finite target}
+
+For a supported central contrast,
+\[
+  \finitetarget = \frac{T(P_{h+\delta v})-T(P_{h-\delta v})}{2\delta}.
+\]
+A balanced endpoint classifier estimates a density-ratio witness for this finite
+signed measure.  This is not interchangeable with the local derivative, and the
+leaderboards in this report never mix them.
+
+\subsection{Recovery and advantage rules}
+
+The preregistered numerical recovery rule requires an upper 95\% DGP-bootstrap
+bound below $\NRMSE=1$, a calibration slope in $[0.8,1.2]$, correct signs, and an
+acceptable nuisance false-call rate.  A superiority claim additionally requires
+the upper paired error-ratio bound below 0.90 under the same information access.
+Because the Tier 1 target-only cases do not emit every nuisance functional, this
+report distinguishes \emph{numerical recovery} from the stronger fully validated
+recovery label.
+
+\section{Methods map}
+
+\begin{table}[H]
+\centering\small
+\caption{The four layers that earlier reports sometimes conflated.}
+\begin{tabularx}{\linewidth}{p{0.16\linewidth}p{0.25\linewidth}X p{0.18\linewidth}}
+\toprule
+Layer & Examples & Object learned or transformed & Primary failure mode\\
+\midrule
+Predictive backend & raw-moment ridge, Gaussian likelihood, matched tilt, matched
+gain mixture & $P(Y\mid H)$, selected moments, or structural parameters &
+misspecification; target variance\\
+Score estimator & clean Hyv\"arinen, multi-noise DSM, Gaussian DSM, anchored
+residual energy & $\nabla_y\log p_\sigma(y\mid h)$ & smoothing bias; derivative
+instability\\
+SID adapter & density AD, ratio critic, energy centering, score secant, Hodge &
+$D_v\log p$ or a finite density-ratio witness & centering; support topology;
+access mismatch\\
+Readout & mean, covariance, cumulants, tail, occupancy, lag tensor & typed
+$D_vT$ or $\Delta_{T,\delta}$ & influence-function variance; basis mismatch\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Methods tested in the new confirmatory suite}
+
+\begin{description}[style=nextline]
+\item[Direct raw moments (B2).] Polynomial history basis with heads for raw moments
+through order four (and event indicators where required), analytically converted to
+central functionals and differentiated.
+\item[Matched normalized law (S1/A1).] For M3--M5, the true signed-tilt basis
+$\psi(y)$ is supplied and only its amplitude is fitted.  For mean and covariance,
+Gaussian moment regressions are used.  This is a specification upper bound.
+\item[Ratio critic (A2).] Logistic joint-versus-shuffled classifier with explicit
+history--response interactions; the history derivative of its logit is centered
+and integrated against a typed influence function.
+\item[Clean Hyv\"arinen plus Hodge (S2/A7).] Polynomial response-score model fit by
+clean score matching; its history derivative is integrated over response space and
+centered.
+\item[Multi-noise DSM plus Hodge (S5/A7).] Polynomial denoising score fit at
+$\sigma\in\{0.03,0.06,0.12,0.25\}$.
+\item[Gaussian DSM control (S6).] Conditional Gaussian score obtained from fitted
+low-order moments; this diagnoses how much is available from a Gaussian core.
+\item[Anchored residual-energy DSM (S7).] Multi-noise residual score around the
+Gaussian core, with development-only ridge and noise ladder frozen before
+confirmation.
+\item[Finite adapters.] Direct endpoint Monte Carlo, finite differences of moment
+regression, normalized-law endpoints, endpoint classifier, signed Riesz dictionary,
+and a score-integrated endpoint density.
+\end{description}
+
+\section{Reproduction audit}
+
+The frozen legacy core contains 784 completed cases and the finite panel contains
+212,832 valid metric rows.  A new nine-case subset crossing G1, G3, and G8 with
+Gaussian likelihood, EDM diffusion, and ratio critic was rerun.  All 117 scientific
+metric values matched bitwise; 18 runtime-efficiency values varied with execution.
+The historical source-tree hash and current source-tree hash differ, so this is
+reported as a compatibility reproduction rather than exact source reproduction.
+
+The G8 contrast-aligned developmental experiment remains important: across four
+independent generator parameterizations (eight generator/data cells), a motif MLP
+has median typed-effect relative error 1.13\%, a typed quartic classifier 1.16\%,
+and a full-path/history MLP 3.05\%.  Linear and quadratic negative controls recover
+essentially none of the effect.  Thus the G8 failure of generic generative readouts
+is not non-identifiability; it is representation/readout misalignment.
+
+\IfFileExists{../../empirical_sid/runs/sid_tier1_primary_20260714_v4/results/final_figures/g8_typed_classifier.pdf}{
+\begin{figure}[H]\centering
+\includegraphics[width=0.82\linewidth]{g8_typed_classifier.pdf}
+\caption{G8 typed finite contrast: aligned classifiers recover the quartic path
+effect while lower-order negative controls do not.  This is developmental evidence
+with four independent systems, not a 30-system confirmation.}
+\end{figure}}{}
+
+\section{Oracle gates}
+
+Stage 0 executed 53 algebra/software checks covering normalization, positivity,
+moment orthogonality, local and finite identities, Gaussian corruption, dynamic lag
+derivatives, classifier conversion, and Hodge reconstruction.  All passed.  The
+topology ladder is decisive: Hodge reconstruction is numerically exact while bridge
+mass is positive, but a pure disconnected mixture-weight change is globally
+unrecoverable from within-component response gradients.
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.70\linewidth]{topology_hodge.pdf}
+\caption{Oracle Hodge reconstruction across the registered support-topology ladder.
+The disconnected endpoint is an identifiability failure, not an optimizer failure.}
+\end{figure}
+
+The oracle gates establish that the requested typed quantities are mathematically
+identifiable in the connected static systems and that the numerical readout formulas
+are correct.  They do not establish that a learned score supplies an accurate mixed
+field.
+
+\section{Score-estimator results}
+
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth]{derivative_gap_heatmap.pdf}
+\caption{Response-score and reconstructed history-tangent NRMSE use the same fitted
+score models.  Accurate response scores frequently fail after history
+differentiation and Hodge reconstruction.  A star denotes an upper 95\% bound below
+one.}
+\end{figure}
+
+The clean Hyv\"arinen estimator is the strongest generic score route in the static
+suite.  On the M3 variants its typed NRMSE is roughly 0.54--0.57, but calibration
+slopes are only about 0.47--0.49.  The apparent NRMSE win over direct moments is
+therefore shrinkage, not calibrated recovery.  Multi-noise DSM is consistently
+worse, and the Gaussian and anchored controls remain near zero-effect behavior on
+M3 while exploding on fourth-order targets.
+
+The derivative gap supports the following failure chain:
+\[
+\text{small score error}
+\ \not\Rightarrow\ 
+\text{small mixed-field error}
+\ \not\Rightarrow\ 
+\text{small centered-tangent error}
+\ \not\Rightarrow\ 
+\text{calibrated typed effect}.
+\]
+Stabilization reduces numerical variance but imposes a strong low-order/zero-effect
+bias.  More denoising noise does not repair this structural mismatch.
+
+\section{Local SID leaderboard}
+
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth]{static_local_heatmap.pdf}
+\caption{Mean local NRMSE over 30 top-level DGP seeds.  The matched normalized law
+is separated visually because it is supplied the DGP tilt basis.  Stars denote an
+upper 95\% bound below one; they do not by themselves certify calibration or
+nuisance specificity.}
+\end{figure}
+
+\IfFileExists{tables/local_key_results.tex}{\input{tables/local_key_results.tex}}{}
+
+The general observational conclusion is heterogeneous.  Direct moments recover
+M1 mean, M2 covariance, and all four M3 third-cumulant constructions numerically,
+with near-unit slopes.  The ratio critic is competitive on M1/M2 and two M3
+variants but needs conditional evaluation draws in this implementation.  No
+general method recovers M4 quartic at medium information.  M4 tail and M5 occupancy
+are additionally information-bound because positivity caps achieved
+$\Lambda$ at 0.128 and 0.949, respectively.  Their matched-model success proves the
+targets exist in the data but does not remove the information limitation for a
+generic learner.
+
+\section{Finite leaderboard}
+
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth]{static_finite_heatmap.pdf}
+\caption{Finite-target NRMSE at $\delta=0.12$.  Local and finite values are never
+pooled.  Endpoint labels or queries are stronger information access than
+observational regression.}
+\end{figure}
+
+Finite differences of fitted moment regression behave similarly to the local
+direct method.  Naive independent endpoint Monte Carlo is extremely noisy because
+two noisy functional estimates are divided by $2\delta$; common random numbers or
+analytic model moments are necessary.  The generic endpoint classifier and signed
+Riesz dictionary do not recover most static channels at this sample size.  This
+does not contradict G8: the successful G8 classifier uses a contrast-aligned
+quartic/motif representation and far more evaluation draws.
+
+\section{Higher-order findings}
+
+The experiments distinguish four ideas that should not be called simply
+``higher-order recovery.''
+
+\begin{enumerate}
+\item \textbf{Literal M3 skew.}  Raw cubic moment heads recover several signed-tilt
+constructions; clean score matching finds the direction but attenuates it.
+\item \textbf{M4 fourth central moment.}  Every general route fails at medium
+information, including direct fourth raw moments.  The matched normalized tilt
+recovers it, demonstrating estimation variance/basis mismatch rather than
+non-identifiability.
+\item \textbf{Tail and occupancy.}  These are event probabilities, not merely
+polynomial order.  Positivity prevents medium information in the registered family,
+so their negative result is a detection-boundary result as well as an adapter
+failure.
+\item \textbf{G8 path feature.}  The effect lives in a structured whole-path motif.
+An aligned classifier succeeds while generic law samplers and lower-order
+classifiers miss it.  Geometry and representation dominate nominal moment order.
+\end{enumerate}
+
+\section{Dynamic lag results}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.93\linewidth]{dynamic_nrmse.pdf}
+\caption{D1/D2 local lag-profile NRMSE with DGP-bootstrap intervals.  The matched
+gain mixture is a specification upper bound; direct moments are the strongest
+general observational baseline.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth]{dynamic_lag_profiles.pdf}
+\caption{Recovered source-to-target lag profiles, averaged across 30 DGP seeds.
+The score route follows variance imperfectly and reverses/loses the third-cumulant
+profile, whereas direct moments and the matched mixture preserve shape and sign.}
+\end{figure}
+
+On the D1 fixed-variance mean anchor, polynomial mean regression and Gaussian
+likelihood tie at NRMSE about 0.049, while the ratio critic is about 0.164.  This is
+the expected no-advantage result for a correctly specified mean problem.
+
+On D2, the matched mixture achieves NRMSE 0.054--0.057.  Direct moments achieve
+0.221 for covariance, 0.258 for variance, and 0.262 for third cumulant, all with
+near-unit slope and sign accuracy above 0.99.  The ratio critic is usable but worse.
+The anchored score has variance NRMSE 0.496 but slope 0.797, just outside the
+registered interval, and third-cumulant NRMSE 1.329 with a negative slope.  Original
+SBTG field norm is reported only as an unsigned localization diagnostic and is not
+reinterpreted as a tangent.
+
+\section{Baseline comparison and information access}
+
+\IfFileExists{tables/information_access.tex}{\input{tables/information_access.tex}}{}
+
+Several nominal method labels in the raw runner understate their access.  The audit
+therefore preserves the recorded label and adds an audited label:
+
+\begin{itemize}
+\item static and Tier 1 dynamic score readouts use true-DGP density quadrature for
+centering/integration, making their results favorable best-case score controls;
+\item ratio readouts use fresh conditional evaluation samples;
+\item the static matched law knows $\psi(y)$, and the dynamic matched mixture knows
+gain/noise structure;
+\item direct moment regression uses observational training and analytic model
+derivatives.
+\end{itemize}
+
+Consequently no score or matched-model result demonstrates observational advantage
+over direct moments.  The matched-model results instead quantify the benefit of
+correct structural knowledge.
+
+\section{Failure analysis}
+
+\begin{table}[H]
+\centering\small
+\caption{Where each route fails.}
+\begin{tabularx}{\linewidth}{p{0.22\linewidth}p{0.22\linewidth}X}
+\toprule
+Route & First failing stage & Evidence and interpretation\\
+\midrule
+Direct moments & readout variance/basis & M4 quartic NRMSE $>4$; tail and occupancy
+fail at low achieved information; works well for M1--M3 and D2\\
+Ratio critic & tangent/readout variance & competitive on simple laws, degrades with
+context and high-order targets; requires conditional evaluation queries here\\
+Clean Hyv\"arinen & calibration after Hodge & M3 NRMSE looks favorable but slope is
+about one half; fourth-order effects fail\\
+Multi-noise DSM & mixed-field derivative & response score is tolerable, history
+tangent and typed effects are poor\\
+Anchored score & stabilization bias and derivative variance & shrinks M3 toward
+zero, fails D2 third cumulant, unstable under hidden context, false effect under
+observation-only null\\
+Endpoint classifier/Riesz & witness variance/representation & generic static
+adapters fail; aligned G8 classifier succeeds\\
+Matched normalized laws & external validity & excellent in-family, but supplied the
+mechanism family and therefore not a generic solution\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Robustness and support}
+
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth]{tier2_dynamic.pdf}
+\caption{Tier 2 hidden-modulator and observation-filter stresses on new seeds
+3001--3030.  Direct/log-variance routes scale predictably; the anchored score is
+sample hungry and sensitive to observation filtering.}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth]{tier2_static_slices.pdf}
+\caption{Sample-size and achieved-information slices for bounded M3, M4 quartic,
+and M5 occupancy.  The top row is a preregistered local-alternative sequence:
+target $\Lambda=3$ is held fixed by recalibrating amplitude as $N$ changes.  The
+middle row is the post-hoc ordinary learning curve with amplitude fixed at its
+$N=8{,}000$ value.  The bottom row varies target information at $N=8{,}000$.
+Positivity bounds make some target values unattainable; actual achieved
+$\Lambda$ is used and stored.  The design is not a Cartesian product.}
+\end{figure}
+
+\IfFileExists{tables/tier2_key_results.tex}{\input{tables/tier2_key_results.tex}}{}
+
+The hidden-modulator experiment tests predictive closure: short context is easier
+because fewer lag coordinates are requested, sufficient context recovers the full
+12-lag source history, and overcomplete context adds eight true null lags.  At
+$N=32{,}000$ the anchored score can recover variance numerically, but it remains
+less efficient than direct/log-variance estimators.  This leaves open whether a
+more appropriate neural score architecture can close the gap; it does not support
+the current anchored polynomial implementation as the preferred route.
+
+The static sample-size row is not an ordinary fixed-effect learning curve.  It
+holds total local information near $\Lambda=3$, so the perturbation amplitude
+shrinks as $N$ grows.  It asks whether each estimator remains efficient under
+contiguous local alternatives.  The separate information row holds
+$N=8{,}000$ and varies target $\Lambda$; positivity bounds prevent event families
+from reaching every requested regime.
+
+The separately frozen post-hoc fixed-amplitude curve resolves the ambiguity.
+For M3 bounded skew, direct-moment NRMSE improves from 1.16 at $N=2{,}000$ to
+0.56 at $8{,}000$ and 0.28 at $32{,}000$, with slope near one throughout; the
+ratio critic improves from 1.12 to 0.69 to 0.45.  Clean score/Hodge stays near
+0.56 NRMSE at all three sizes and its slope stays near 0.46--0.48.  More data
+therefore repairs sampling error for the direct/ratio routes but reveals an
+attenuation plateau in the score route.  Because this diagnostic was motivated
+after the fixed-$\Lambda$ results were inspected, it is explanatory rather than
+confirmatory.
+
+M4 quartic is different.  At fixed amplitude, direct-moment NRMSE falls from
+6.85 to 3.77 to 1.94 as $N$ increases, so sampling error matters, but it still
+does not beat the zero estimator at $32{,}000$ (achieved $\Lambda\approx12$).
+Clean score/Hodge changes only from 4.68 to 4.38 to 4.07.  The matched normalized
+law improves from 0.22 to 0.12 to 0.06.  Thus the quartic target is learnable and
+additional data help the direct estimator, but the registered generic routes are
+far too inefficient and the score route shows another error plateau.
+
+M5 occupancy improves without crossing the recovery threshold.  At fixed
+amplitude, direct-event NRMSE falls from 4.31 to 2.88 to 1.47, the ratio critic
+from 4.37 to 2.27 to 1.27, and clean score/Hodge from 2.53 to 1.76 to 1.55.
+The matched law falls from 0.16 to 0.08 to 0.05.  At $32{,}000$, achieved
+$\Lambda\approx3.8$ is no longer intrinsically tiny, so the remaining failure is
+not explained by the original $N=8{,}000$ positivity boundary alone.
+
+The observation filter stress is more damaging.  Filtering spreads an active
+variance effect across adjacent source lags, which direct moments still recover.
+In the matched observation-only null, the score route emits a false variance
+profile comparable in RMS to the active clean effect.  Any real neural-data claim
+therefore requires an explicit observation-process null and deconvolution or
+measurement model.
+
+\section{Claim registry}
+
+\IfFileExists{tables/claim_registry.tex}{\input{tables/claim_registry.tex}}{}
+
+The evidence supports the derivative-gap hypothesis, calibrated direct recovery
+for several typed targets, topology dependence of Hodge reconstruction, and
+geometry dependence of higher-order recovery.  It rejects a general advantage for
+the tested stabilized score route and rejects treating original SBTG magnitude as
+a signed typed tangent.  It leaves unresolved generic dense high-dimensional SID,
+unknown affected subspaces, multi-source/target low-rank factors, and foundation
+model transfer.
+
+\section{Decision}
+
+\IfFileExists{tables/final_decision.tex}{\input{tables/final_decision.tex}}{}
+
+\paragraph{Recommended scientific direction.}
+Build the next method around \emph{targeted predictive closure}: a shared history
+encoder with calibrated heads for means, covariance factors, selected cumulants,
+tail/occupancy logits, and possibly characteristic-function or kernel features.
+Benchmark it against a flexible normalized MDN/flow when amortized multi-query use
+justifies learning the full law.  Retain ratio critics for supported contrasts and
+clean score/Hodge as an operator diagnostic.  Do not make the diffusion/DSM score
+route the primary estimator until it passes mixed-field, calibration, and
+observation-null gates.
+
+\paragraph{What would change this decision.}
+A convincing score-derived SID result would need: (i) a generic score backend with
+accurate history mixed fields on at least two independent high-order DGP families;
+(ii) calibrated typed effects with no oracle density quadrature; (iii) paired
+advantage over direct and normalized-law baselines under equal access and compute;
+(iv) robustness to hidden state and observation filters; and (v) dense unknown
+response geometry rather than a supplied affected coordinate.
+
+\section{Limitations and next experiments}
+
+\begin{enumerate}
+\item \textbf{Dense D4 benchmark.}  Rotate several independent gain factors into an
+unknown response subspace, use multiple source histories and timescales, and score
+the full source-by-target-by-lag tensor before low-rank factorization.
+\item \textbf{Fair flexible laws.}  Compare shared-encoder direct heads with a
+capacity-matched MDN and conditional flow; the current ``correct MDN'' is an upper
+bound, not a flexible baseline.
+\item \textbf{Score architecture.}  Replace the compact polynomial score with a
+time-series network, but gate it first on clean score, mixed-field, and tangent
+truth.  Explore explicit Jacobian regularization, integrability penalties, and
+joint history-response score formulations.
+\item \textbf{Readout without oracle quadrature.}  Estimate centering and influence
+functions from held-out observational samples or backend samples, propagate that
+uncertainty, and use common evaluation budgets.
+\item \textbf{Finite contrast efficiency.}  Use coupled/common-random-number
+sampling, calibrated density-ratio classifiers, conditional MMD, and analytic
+feature dictionaries where scientifically justified.
+\item \textbf{Observation model.}  Add calcium/voltage filtering, missingness,
+heteroskedastic noise, and a matched observation-only null before real-neural-data
+interpretation.
+\item \textbf{Mechanism confusion.}  Emit every readout on every DGP so the
+preregistered nuisance false-call requirement is directly estimable rather than
+inferred from target-only cases.
+\item \textbf{Unfinished runbook controls.}  Complete standalone standardized
+skewness, the full $\delta/\sigma$ ladders, teacher-contamination and stabilization
+ablations, heavy-tail/manifold stresses, and multiple stochastic neural
+initializations.  The compact estimators here are deterministic given a DGP seed
+and therefore do not substitute for those neural-backend tests.
+\end{enumerate}
+
+\section*{Further questions}
+
+\begin{itemize}
+\item Is the reusable object really the full response score, or a learned basis of
+influence functions/conditional characteristic functions that supports many typed
+queries more directly?
+\item Can the history tangent be learned directly with normalization/centering
+constraints, avoiding differentiation of a response score?
+\item Which neuromodulatory questions require local derivatives, and which are more
+naturally supported finite interventions?
+\item How should measurement dynamics and biological slow gain be jointly
+identified when both create lag spreading?
+\end{itemize}
+
+\appendix
+\section{Negative results and invalidated executions}
+
+Negative results were retained rather than removed from the boards.  The principal
+scientific failures are: all general M4 quartic routes at medium information;
+all general tail and occupancy routes in their boundary-limited registered
+families; generic static endpoint classifiers and signed Riesz witnesses; the
+multi-noise DSM history tangent; anchored-score D2 third cumulants; and the
+anchored-score observation-only null.  No failed confirmatory fit was silently
+dropped: both Tier 1 and Tier 2 validated with zero failed top-level cases.
+
+\begin{table}[H]\centering\small
+\caption{Developmental or invalidated executions excluded from confirmation.}
+\begin{tabularx}{\linewidth}{p{0.18\linewidth}p{0.24\linewidth}X}
+\toprule Run/version & Status & Reason and disposition\\\midrule
+Tier 1 v1 & Development only & Positive-noise score fields were centered against
+the wrong law; amendment 1 corrected the declared noised object before
+confirmation.\\
+Anchored tuning grid & Development only & One global ridge/noise setting was
+selected on eight development seeds; its poor development performance was retained
+and the setting frozen.\\
+Tier 1 v3 & Invalidated after 9/270 cells & Raw arrays were not persisted.  The run
+was stopped before results were inspected; v4 used identical scientific settings
+and new immutable CSV/NPZ pairs.\\
+Initial legacy audit launch & Rejected before data & The legacy tier enumeration
+rejected \texttt{audit\_reproduction}; it was changed to the valid
+\texttt{development} label without changing scientific settings.\\
+Legacy rerun & Compatibility only & All 117 scientific values were bitwise equal,
+but source-tree hashes differ and runtime fields are environment-dependent.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The full amendment trail is preserved in
+\artifact{empirical_sid/PREREGISTRATION_AMENDMENT_1.md} through
+\artifact{PREREGISTRATION_AMENDMENT_3.md} and
+\artifact{LEGACY_AUDIT_AMENDMENT_20260714.md}.
+
+\section{DGP and implementation details}
+
+The static primary suite uses response dimension eight, 8,000 training examples,
+96 evaluation histories, $\delta=0.12$, and 30 top-level seeds.  M3--M5 effects lie
+in a registered scalar projection with seven independent nuisance coordinates.
+Signed tilts are positive normalized laws
+\[
+  p_h(y)=\phi(y)\{1+a\tanh(h)\psi(y)\},
+\]
+with $\psi$ orthogonalized against lower-order nuisance polynomials.  This design
+isolates functional order but does not test discovery of an unknown dense response
+subspace.
+
+The static direct baseline uses ridge regression on the scalar history basis
+$1,h,\ldots,h^5$ with simultaneous raw-response heads through order four and an
+additional event-indicator head for tail/occupancy channels.  Central-functional
+derivatives are then computed analytically, including all mean-correction terms.
+The ratio critic is a joint-versus-shuffled logistic regression using cubic history
+features, response powers through five, smooth/local event features, and every
+history--response interaction; its logit derivative is centered with fresh
+conditional draws.  These are deliberately compact estimators, not neural
+foundation models.
+
+The score models use a tensor-product polynomial basis through cubic history and
+quintic scaled response, with a noise-coordinate block.  Clean Hyv\"arinen solves
+the empirical score-matching normal equations.  Multi-noise DSM uses corrupted
+samples at $\sigma\in\{0.03,0.06,0.12,0.25\}$; the anchored version subtracts a
+Gaussian score constructed from fitted mean/variance heads and regularizes the
+residual coefficients.  The mixed field is a central history secant, and in the
+one-dimensional affected coordinate Hodge reconstruction is numerical integration
+followed by mean-zero centering.  For the Tier 1 and static Tier 2 score boards,
+that centering/influence integration uses true-DGP density quadrature, intentionally
+giving the score route a favorable upper-control readout.
+
+D2 uses a Bernoulli stochastic-gain state centered to preserve conditional mean:
+\[
+  Y=a(S-\pi(h))+\epsilon,
+  \qquad \pi(h)=\operatorname{logit}^{-1}(\alpha+k^\top h).
+\]
+Its variance, covariance, and third-cumulant lag derivatives are analytic.  D3
+integrates a logistic-normal hidden modulator with Gauss--Hermite quadrature.  D5
+filters independent adjacent latent responses and adds observation noise; its
+variance derivative is the sum of current and shifted filtered contributions.
+
+\section{Statistical analysis}
+
+All primary intervals resample the top-level DGP seed 2,000 times.  Nested query
+draws are averaged within seed.  No confirmatory result selected a hyperparameter;
+anchored-score ridge and noise schedule were frozen on eight development seeds.
+Paired comparisons use common DGP seeds.  Test outcomes are never pooled with
+development runs or the aborted pre-raw-array execution.
+
+\IfFileExists{tables/compute_summary.tex}{\input{tables/compute_summary.tex}}{}
+
+All runs were executed sequentially on CPU with one BLAS/OpenMP thread.  The
+Tier 2 static process ran at reduced operating-system priority; completion checks
+also enforced paired CSV/NPZ counts, SHA-256 agreement, finite metrics, and a
+minimum 2\,GiB free-disk stop condition.  The machine-observed process resident
+set remained below 0.7\,GiB.
+
+\section{Artifact and reproducibility ledger}
+
+\IfFileExists{tables/artifact_ledger.tex}{\input{tables/artifact_ledger.tex}}{}
+
+Primary machine-readable outputs are \artifact{results/seed_level.parquet},
+\artifact{results/summary.csv}, \artifact{results/tables/paired_advantage.csv},
+the Tier 2 package, raw per-seed NPZ archives, manifests, frozen configuration, and
+source snapshots.  SHA-256 inventories and validation JSON files accompany both
+tiers.
+
+\section{Runbook completion checklist}
+
+\IfFileExists{tables/completion_checklist.tex}{\input{tables/completion_checklist.tex}}{}
+
+The program is complete for the implemented Tier 1 and registered Tier 2 cells.
+The broad runbook completion claim remains withheld because full learned
+mechanism-confusion matrices, dense D4 geometry, flexible MDN/flow robustness, and
+general neural score backends were not completed.  The scientifically correct
+label is therefore \textbf{diagnostic empirical validation}, not universal
+moment-recovery validation.
+
+\end{document}

@@ -1,0 +1,26 @@
+{
+  "control_delta": 1.0,
+  "expected": 36,
+  "generator_seeds": [
+    73,
+    79,
+    83,
+    89
+  ],
+  "n_per_side": 5000,
+  "observed": 36,
+  "schema_version": "1",
+  "sigmas": [
+    0.0,
+    0.02,
+    0.05,
+    0.08,
+    0.12,
+    0.2,
+    0.35,
+    0.6,
+    1.0
+  ],
+  "status": "complete",
+  "successful": 36
+}

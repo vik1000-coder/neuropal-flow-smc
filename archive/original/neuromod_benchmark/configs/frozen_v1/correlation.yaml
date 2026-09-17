@@ -1,0 +1,89 @@
+schema_version: "1"
+name: frozen_v1_correlation
+output_dir: outputs/frozen_v1/correlation
+history_lags: [1]
+horizons: [1]
+views: [complete_state, calcium]
+seeds: [3, 4, 5, 6, 7]
+validation_fraction: 0.2
+test_fraction: 0.2
+n_predictive_samples: 128
+resource:
+  max_threads: 2
+  max_parallel_jobs: 1
+  max_rss_gb: 6.0
+  max_output_gb: 0.8
+  nice: 19
+  checkpoint_minutes: 15
+  stop_free_disk_gb: 4.0
+scenarios:
+  - id: "null"
+    family: mechanistic
+    n_trajectories: 10
+    params: &correlation_base
+      n_neurons: 8
+      n_modulators: 2
+      n_steps: 900
+      burn_in: 1200
+      mechanism: "null"
+      effect_strength: 1.8
+      correlation_max_loading: 0.8
+      ligand_pulse_rate_hz: 0.08
+      ligand_pulse_amplitude: 2.5
+      tail_threshold: 0.35
+      shape_tail_z: 2.0
+  - id: correlation_routing
+    family: mechanistic
+    n_trajectories: 10
+    params: {<<: *correlation_base, mechanism: correlation_routing}
+methods:
+  - {name: constant_gaussian}
+  - name: ridge_var
+    tune: {ridge: [0.1, 1.0, 10.0]}
+  - name: heteroskedastic_ridge
+    tune: {mean_ridge: [0.1, 1.0], variance_ridge: [10.0, 100.0]}
+  - name: student_t_ridge
+    params: {mean_ridge: 1.0, variance_ridge: 10.0}
+    tune: {df: [3.5, 10.0]}
+  - name: ridge_full_covariance
+    tune: {ridge: [0.1, 1.0], covariance_shrinkage: [0.05, 0.25]}
+  - name: conditional_covariance_ridge
+    params: {mean_ridge: 1.0, variance_ridge: 10.0}
+    tune: {correlation_ridge: [1.0, 10.0], correlation_scale: [0.35, 0.65]}
+  - name: gaussian_nll
+    params: {maxiter: 300, ridge: 0.1}
+  - name: sid_dsm_s075
+    params: {ridge: 0.01, n_corruptions: 4, tail_threshold: 0.35}
+  - name: sid_dsm_s100
+    params: {ridge: 0.01, n_corruptions: 4, tail_threshold: 0.35}
+  - name: gaussian_mlp_nll
+    seeds: [3, 4, 5]
+    params: {hidden: 64, layers: 2, max_epochs: 60, patience: 9, batch_size: 256, tail_threshold: 0.35}
+    tune: {dropout: [0.0, 0.1], weight_decay: [0.0001, 0.01]}
+  - name: mdn_k3
+    seeds: [3, 4, 5]
+    params: {hidden: 64, layers: 2, max_epochs: 60, patience: 9, batch_size: 256, tail_threshold: 0.35, shape_tail_z: 2.0}
+    tune: {weight_decay: [0.0001, 0.01]}
+  - name: mdn_k7
+    seeds: [3, 4, 5]
+    params: {hidden: 64, layers: 2, max_epochs: 60, patience: 9, batch_size: 256, tail_threshold: 0.35, shape_tail_z: 2.0}
+    tune: {weight_decay: [0.0001, 0.01]}
+  - name: score_mlp_gaussian_s025
+    seeds: [3, 4, 5]
+    params: {hidden: 56, layers: 2, max_epochs: 50, patience: 8, batch_size: 256}
+    tune: {weight_decay: [0.0001, 0.01]}
+  - name: score_mlp_gaussian_s050
+    seeds: [3, 4, 5]
+    params: {hidden: 56, layers: 2, max_epochs: 50, patience: 8, batch_size: 256}
+    tune: {weight_decay: [0.0001, 0.01]}
+  - name: sbtg_linear_s025
+    seeds: [3, 4, 5]
+    params: {hidden: 48, layers: 2, max_epochs: 55, patience: 8, batch_size: 256, weight_decay: 0.0001, coupling_l1: 0.001}
+  - name: sbtg_feature_bilinear_s025
+    seeds: [3, 4, 5]
+    params: {hidden: 48, layers: 2, feature_dim: 12, max_epochs: 55, patience: 8, batch_size: 256}
+    tune: {weight_decay: [0.0001, 0.01]}
+  - name: sbtg_feature_bilinear_s050
+    seeds: [3, 4, 5]
+    params: {hidden: 48, layers: 2, feature_dim: 12, max_epochs: 55, patience: 8, batch_size: 256}
+    tune: {weight_decay: [0.0001, 0.01]}

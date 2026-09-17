@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/audit.py", line 40, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/audit.py", line 34, in main
+    tolerance=max(.02,6*r['se']);assert abs(r['estimate']-expected)<tolerance,(str(path),r,expected)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('/Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/oracle_references/linear_gaussian_101_extrapolated_common.json', {'n': 262144, 'estimate': 0.10450193128577318, 'se': 0.01607884883123678, 'min_ess': 1.7044354587982598, 'min_soft_probability': 7.990730903443797e-12, 'qualified': False, 'repeat_estimates': [0.13199493597222456, 0.0763093513020125, 0.10520150658308247]}, np.float64(0.22303875790872166))

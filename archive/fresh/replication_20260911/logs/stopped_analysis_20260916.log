@@ -1,0 +1,788 @@
+{"time": "2026-09-16T15:24:30.678887+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "freeze_completed_raw_data", "cohort": null, "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:24:38.581660+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "aggregate_primary", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+AGGREGATE historical80 primary 1701 1 0
+AGGREGATE historical80 primary 1701 1 1
+AGGREGATE historical80 primary 1701 1 2
+AGGREGATE historical80 primary 1701 1 3
+AGGREGATE historical80 primary 1701 1 4
+AGGREGATE historical80 primary 1701 4 0
+AGGREGATE historical80 primary 1701 4 1
+AGGREGATE historical80 primary 1701 4 2
+AGGREGATE historical80 primary 1701 4 3
+AGGREGATE historical80 primary 1701 4 4
+AGGREGATE historical80 primary 1701 8 0
+AGGREGATE historical80 primary 1701 8 1
+AGGREGATE historical80 primary 1701 8 2
+AGGREGATE historical80 primary 1701 8 3
+AGGREGATE historical80 primary 1701 8 4
+AGGREGATE historical80 primary 1701 16 0
+AGGREGATE historical80 primary 1701 16 1
+AGGREGATE historical80 primary 1701 16 2
+AGGREGATE historical80 primary 1701 16 3
+AGGREGATE historical80 primary 1701 16 4
+AGGREGATE historical80 primary 2903 1 0
+AGGREGATE historical80 primary 2903 1 1
+AGGREGATE historical80 primary 2903 1 2
+AGGREGATE historical80 primary 2903 1 3
+AGGREGATE historical80 primary 2903 1 4
+AGGREGATE historical80 primary 2903 4 0
+AGGREGATE historical80 primary 2903 4 1
+AGGREGATE historical80 primary 2903 4 2
+AGGREGATE historical80 primary 2903 4 3
+AGGREGATE historical80 primary 2903 4 4
+AGGREGATE historical80 primary 2903 8 0
+AGGREGATE historical80 primary 2903 8 1
+AGGREGATE historical80 primary 2903 8 2
+AGGREGATE historical80 primary 2903 8 3
+AGGREGATE historical80 primary 2903 8 4
+AGGREGATE historical80 primary 2903 16 0
+AGGREGATE historical80 primary 2903 16 1
+AGGREGATE historical80 primary 2903 16 2
+AGGREGATE historical80 primary 2903 16 3
+AGGREGATE historical80 primary 2903 16 4
+AGGREGATE historical80 primary 4307 1 0
+AGGREGATE historical80 primary 4307 1 1
+AGGREGATE historical80 primary 4307 1 2
+AGGREGATE historical80 primary 4307 1 3
+AGGREGATE historical80 primary 4307 1 4
+AGGREGATE historical80 primary 4307 4 0
+AGGREGATE historical80 primary 4307 4 1
+AGGREGATE historical80 primary 4307 4 2
+AGGREGATE historical80 primary 4307 4 3
+AGGREGATE historical80 primary 4307 4 4
+AGGREGATE historical80 primary 4307 8 0
+AGGREGATE historical80 primary 4307 8 1
+AGGREGATE historical80 primary 4307 8 2
+AGGREGATE historical80 primary 4307 8 3
+AGGREGATE historical80 primary 4307 8 4
+AGGREGATE historical80 primary 4307 16 0
+AGGREGATE historical80 primary 4307 16 1
+AGGREGATE historical80 primary 4307 16 2
+AGGREGATE historical80 primary 4307 16 3
+AGGREGATE historical80 primary 4307 16 4
+{"time": "2026-09-16T15:25:07.852320+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "aggregate_mc_repeat", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+AGGREGATE historical80 mc_repeat 1701 1 0
+AGGREGATE historical80 mc_repeat 1701 1 1
+AGGREGATE historical80 mc_repeat 1701 1 2
+AGGREGATE historical80 mc_repeat 1701 1 3
+AGGREGATE historical80 mc_repeat 1701 1 4
+AGGREGATE historical80 mc_repeat 1701 4 0
+AGGREGATE historical80 mc_repeat 1701 4 1
+AGGREGATE historical80 mc_repeat 1701 4 2
+AGGREGATE historical80 mc_repeat 1701 4 3
+AGGREGATE historical80 mc_repeat 1701 4 4
+AGGREGATE historical80 mc_repeat 1701 8 0
+AGGREGATE historical80 mc_repeat 1701 8 1
+AGGREGATE historical80 mc_repeat 1701 8 2
+AGGREGATE historical80 mc_repeat 1701 8 3
+AGGREGATE historical80 mc_repeat 1701 8 4
+AGGREGATE historical80 mc_repeat 1701 16 0
+AGGREGATE historical80 mc_repeat 1701 16 1
+AGGREGATE historical80 mc_repeat 1701 16 2
+AGGREGATE historical80 mc_repeat 1701 16 3
+AGGREGATE historical80 mc_repeat 1701 16 4
+{"time": "2026-09-16T15:25:23.636993+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "aggregate_direct", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+AGGREGATE historical80 direct 1701 1 0
+AGGREGATE historical80 direct 1701 1 1
+AGGREGATE historical80 direct 1701 1 2
+AGGREGATE historical80 direct 1701 1 3
+AGGREGATE historical80 direct 1701 1 4
+AGGREGATE historical80 direct 1701 4 0
+AGGREGATE historical80 direct 1701 4 1
+AGGREGATE historical80 direct 1701 4 2
+AGGREGATE historical80 direct 1701 4 3
+AGGREGATE historical80 direct 1701 4 4
+AGGREGATE historical80 direct 1701 8 0
+AGGREGATE historical80 direct 1701 8 1
+AGGREGATE historical80 direct 1701 8 2
+AGGREGATE historical80 direct 1701 8 3
+AGGREGATE historical80 direct 1701 8 4
+AGGREGATE historical80 direct 1701 16 0
+AGGREGATE historical80 direct 1701 16 1
+AGGREGATE historical80 direct 1701 16 2
+AGGREGATE historical80 direct 1701 16 3
+AGGREGATE historical80 direct 1701 16 4
+{"time": "2026-09-16T15:25:38.308725+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "aggregate_matched_time", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+AGGREGATE historical80 matched_time 1701 0 0
+AGGREGATE historical80 matched_time 1701 0 1
+AGGREGATE historical80 matched_time 1701 0 2
+AGGREGATE historical80 matched_time 1701 0 3
+AGGREGATE historical80 matched_time 1701 0 4
+AGGREGATE historical80 matched_time 1701 7 0
+AGGREGATE historical80 matched_time 1701 7 1
+AGGREGATE historical80 matched_time 1701 7 2
+AGGREGATE historical80 matched_time 1701 7 3
+AGGREGATE historical80 matched_time 1701 7 4
+AGGREGATE historical80 matched_time 2903 0 0
+AGGREGATE historical80 matched_time 2903 0 1
+AGGREGATE historical80 matched_time 2903 0 2
+AGGREGATE historical80 matched_time 2903 0 3
+AGGREGATE historical80 matched_time 2903 0 4
+AGGREGATE historical80 matched_time 2903 7 0
+AGGREGATE historical80 matched_time 2903 7 1
+AGGREGATE historical80 matched_time 2903 7 2
+AGGREGATE historical80 matched_time 2903 7 3
+AGGREGATE historical80 matched_time 2903 7 4
+AGGREGATE historical80 matched_time 4307 0 0
+AGGREGATE historical80 matched_time 4307 0 1
+AGGREGATE historical80 matched_time 4307 0 2
+AGGREGATE historical80 matched_time 4307 0 3
+AGGREGATE historical80 matched_time 4307 0 4
+AGGREGATE historical80 matched_time 4307 7 0
+AGGREGATE historical80 matched_time 4307 7 1
+AGGREGATE historical80 matched_time 4307 7 2
+AGGREGATE historical80 matched_time 4307 7 3
+AGGREGATE historical80 matched_time 4307 7 4
+{"time": "2026-09-16T15:25:40.904992+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "external_reference_comparison", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:28:47.436542+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "matrix_stability", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:28:58.489595+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "numerical_diagnostics", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:32:41.286308+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "predictive_evaluation", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:32:41.371787+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "aggregate_primary", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+AGGREGATE clean54 primary 1701 1 0
+AGGREGATE clean54 primary 1701 1 1
+AGGREGATE clean54 primary 1701 1 2
+AGGREGATE clean54 primary 1701 1 3
+AGGREGATE clean54 primary 1701 1 4
+AGGREGATE clean54 primary 1701 4 0
+AGGREGATE clean54 primary 1701 4 1
+AGGREGATE clean54 primary 1701 4 2
+AGGREGATE clean54 primary 1701 4 3
+AGGREGATE clean54 primary 1701 4 4
+AGGREGATE clean54 primary 1701 8 0
+AGGREGATE clean54 primary 1701 8 1
+AGGREGATE clean54 primary 1701 8 2
+AGGREGATE clean54 primary 1701 8 3
+AGGREGATE clean54 primary 1701 8 4
+AGGREGATE clean54 primary 1701 16 0
+AGGREGATE clean54 primary 1701 16 1
+AGGREGATE clean54 primary 1701 16 2
+AGGREGATE clean54 primary 1701 16 3
+AGGREGATE clean54 primary 1701 16 4
+AGGREGATE clean54 primary 2903 1 0
+AGGREGATE clean54 primary 2903 1 1
+AGGREGATE clean54 primary 2903 1 2
+AGGREGATE clean54 primary 2903 1 3
+AGGREGATE clean54 primary 2903 1 4
+AGGREGATE clean54 primary 2903 4 0
+AGGREGATE clean54 primary 2903 4 1
+AGGREGATE clean54 primary 2903 4 2
+AGGREGATE clean54 primary 2903 4 3
+AGGREGATE clean54 primary 2903 4 4
+AGGREGATE clean54 primary 2903 8 0
+AGGREGATE clean54 primary 2903 8 1
+AGGREGATE clean54 primary 2903 8 2
+AGGREGATE clean54 primary 2903 8 3
+AGGREGATE clean54 primary 2903 8 4
+AGGREGATE clean54 primary 2903 16 0
+AGGREGATE clean54 primary 2903 16 1
+AGGREGATE clean54 primary 2903 16 2
+AGGREGATE clean54 primary 2903 16 3
+AGGREGATE clean54 primary 2903 16 4
+AGGREGATE clean54 primary 4307 1 0
+AGGREGATE clean54 primary 4307 1 1
+AGGREGATE clean54 primary 4307 1 2
+AGGREGATE clean54 primary 4307 1 3
+AGGREGATE clean54 primary 4307 1 4
+AGGREGATE clean54 primary 4307 4 0
+AGGREGATE clean54 primary 4307 4 1
+AGGREGATE clean54 primary 4307 4 2
+AGGREGATE clean54 primary 4307 4 3
+AGGREGATE clean54 primary 4307 4 4
+AGGREGATE clean54 primary 4307 8 0
+AGGREGATE clean54 primary 4307 8 1
+AGGREGATE clean54 primary 4307 8 2
+AGGREGATE clean54 primary 4307 8 3
+AGGREGATE clean54 primary 4307 8 4
+AGGREGATE clean54 primary 4307 16 0
+AGGREGATE clean54 primary 4307 16 1
+AGGREGATE clean54 primary 4307 16 2
+AGGREGATE clean54 primary 4307 16 3
+AGGREGATE clean54 primary 4307 16 4
+{"time": "2026-09-16T15:32:52.605826+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "aggregate_mc_repeat", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+AGGREGATE clean54 mc_repeat 1701 1 0
+AGGREGATE clean54 mc_repeat 1701 1 1
+AGGREGATE clean54 mc_repeat 1701 1 2
+AGGREGATE clean54 mc_repeat 1701 1 3
+AGGREGATE clean54 mc_repeat 1701 1 4
+AGGREGATE clean54 mc_repeat 1701 4 0
+AGGREGATE clean54 mc_repeat 1701 4 1
+AGGREGATE clean54 mc_repeat 1701 4 2
+AGGREGATE clean54 mc_repeat 1701 4 3
+AGGREGATE clean54 mc_repeat 1701 4 4
+AGGREGATE clean54 mc_repeat 1701 8 0
+AGGREGATE clean54 mc_repeat 1701 8 1
+AGGREGATE clean54 mc_repeat 1701 8 2
+AGGREGATE clean54 mc_repeat 1701 8 3
+AGGREGATE clean54 mc_repeat 1701 8 4
+AGGREGATE clean54 mc_repeat 1701 16 0
+AGGREGATE clean54 mc_repeat 1701 16 1
+AGGREGATE clean54 mc_repeat 1701 16 2
+AGGREGATE clean54 mc_repeat 1701 16 3
+AGGREGATE clean54 mc_repeat 1701 16 4
+{"time": "2026-09-16T15:32:58.715035+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "aggregate_direct", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+AGGREGATE clean54 direct 1701 1 0
+AGGREGATE clean54 direct 1701 1 1
+AGGREGATE clean54 direct 1701 1 2
+AGGREGATE clean54 direct 1701 1 3
+AGGREGATE clean54 direct 1701 1 4
+AGGREGATE clean54 direct 1701 4 0
+AGGREGATE clean54 direct 1701 4 1
+AGGREGATE clean54 direct 1701 4 2
+AGGREGATE clean54 direct 1701 4 3
+AGGREGATE clean54 direct 1701 4 4
+AGGREGATE clean54 direct 1701 8 0
+AGGREGATE clean54 direct 1701 8 1
+AGGREGATE clean54 direct 1701 8 2
+AGGREGATE clean54 direct 1701 8 3
+AGGREGATE clean54 direct 1701 8 4
+AGGREGATE clean54 direct 1701 16 0
+AGGREGATE clean54 direct 1701 16 1
+AGGREGATE clean54 direct 1701 16 2
+AGGREGATE clean54 direct 1701 16 3
+AGGREGATE clean54 direct 1701 16 4
+{"time": "2026-09-16T15:33:04.431793+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "aggregate_matched_time", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+AGGREGATE clean54 matched_time 1701 0 0
+AGGREGATE clean54 matched_time 1701 0 1
+AGGREGATE clean54 matched_time 1701 0 2
+AGGREGATE clean54 matched_time 1701 0 3
+AGGREGATE clean54 matched_time 1701 0 4
+AGGREGATE clean54 matched_time 1701 7 0
+AGGREGATE clean54 matched_time 1701 7 1
+AGGREGATE clean54 matched_time 1701 7 2
+AGGREGATE clean54 matched_time 1701 7 3
+AGGREGATE clean54 matched_time 1701 7 4
+AGGREGATE clean54 matched_time 2903 0 0
+AGGREGATE clean54 matched_time 2903 0 1
+AGGREGATE clean54 matched_time 2903 0 2
+AGGREGATE clean54 matched_time 2903 0 3
+AGGREGATE clean54 matched_time 2903 0 4
+AGGREGATE clean54 matched_time 2903 7 0
+AGGREGATE clean54 matched_time 2903 7 1
+AGGREGATE clean54 matched_time 2903 7 2
+AGGREGATE clean54 matched_time 2903 7 3
+AGGREGATE clean54 matched_time 2903 7 4
+AGGREGATE clean54 matched_time 4307 0 0
+AGGREGATE clean54 matched_time 4307 0 1
+AGGREGATE clean54 matched_time 4307 0 2
+AGGREGATE clean54 matched_time 4307 0 3
+AGGREGATE clean54 matched_time 4307 0 4
+AGGREGATE clean54 matched_time 4307 7 0
+AGGREGATE clean54 matched_time 4307 7 1
+AGGREGATE clean54 matched_time 4307 7 2
+AGGREGATE clean54 matched_time 4307 7 3
+AGGREGATE clean54 matched_time 4307 7 4
+{"time": "2026-09-16T15:33:05.529537+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "external_reference_comparison", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:35:02.164979+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "matrix_stability", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:35:06.684381+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "numerical_diagnostics", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:37:38.428703+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "predictive_evaluation", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:37:38.507541+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "exact_joint_lag_inference", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+MAX_T_BLOCK historical80 1 336
+MAX_T_BLOCK historical80 2 336
+MAX_T_BLOCK historical80 3 336
+MAX_T_BLOCK historical80 4 336
+MAX_T_BLOCK historical80 5 336
+MAX_T_BLOCK historical80 6 336
+MAX_T_BLOCK historical80 7 336
+MAX_T_BLOCK historical80 8 336
+MAX_T_BLOCK historical80 9 336
+MAX_T_BLOCK historical80 10 336
+MAX_T_BLOCK historical80 11 336
+MAX_T_BLOCK historical80 12 336
+MAX_T_BLOCK historical80 13 336
+MAX_T_BLOCK historical80 14 336
+MAX_T_BLOCK historical80 15 336
+MAX_T_BLOCK historical80 16 336
+MAX_T_BLOCK historical80 17 336
+MAX_T_BLOCK historical80 18 336
+MAX_T_BLOCK historical80 19 336
+MAX_T_BLOCK historical80 20 336
+MAX_T_BLOCK historical80 21 336
+MAX_T_BLOCK historical80 22 336
+MAX_T_BLOCK historical80 23 336
+MAX_T_BLOCK historical80 24 336
+MAX_T_BLOCK historical80 25 336
+MAX_T_BLOCK historical80 26 336
+MAX_T_BLOCK historical80 27 336
+MAX_T_BLOCK historical80 28 336
+MAX_T_BLOCK historical80 29 336
+MAX_T_BLOCK historical80 30 336
+MAX_T_BLOCK historical80 31 336
+MAX_T_BLOCK historical80 32 336
+MAX_T_BLOCK historical80 33 336
+MAX_T_BLOCK historical80 34 336
+MAX_T_BLOCK historical80 35 336
+MAX_T_BLOCK historical80 36 336
+MAX_T_BLOCK historical80 37 336
+MAX_T_BLOCK historical80 38 336
+MAX_T_BLOCK historical80 39 336
+MAX_T_BLOCK historical80 40 336
+MAX_T_BLOCK historical80 41 336
+MAX_T_BLOCK historical80 42 336
+MAX_T_BLOCK historical80 43 336
+MAX_T_BLOCK historical80 44 336
+MAX_T_BLOCK historical80 45 336
+MAX_T_BLOCK historical80 46 336
+MAX_T_BLOCK historical80 47 336
+MAX_T_BLOCK historical80 48 336
+MAX_T_BLOCK historical80 49 336
+MAX_T_BLOCK historical80 50 336
+MAX_T_BLOCK historical80 51 336
+MAX_T_BLOCK historical80 52 336
+MAX_T_BLOCK historical80 53 336
+MAX_T_BLOCK historical80 54 336
+MAX_T_BLOCK historical80 55 336
+MAX_T_BLOCK historical80 56 336
+MAX_T_BLOCK historical80 57 336
+MAX_T_BLOCK historical80 58 336
+MAX_T_BLOCK historical80 59 336
+MAX_T_BLOCK historical80 60 336
+MAX_T_BLOCK historical80 61 336
+MAX_T_BLOCK historical80 62 336
+MAX_T_BLOCK historical80 63 336
+MAX_T_BLOCK historical80 64 336
+MAX_T_BLOCK historical80 65 336
+MAX_T_BLOCK historical80 66 336
+MAX_T_BLOCK historical80 67 336
+MAX_T_BLOCK historical80 68 336
+MAX_T_BLOCK historical80 69 336
+MAX_T_BLOCK historical80 70 336
+MAX_T_BLOCK historical80 71 336
+MAX_T_BLOCK historical80 72 336
+MAX_T_BLOCK historical80 73 336
+MAX_T_BLOCK historical80 74 336
+MAX_T_BLOCK historical80 75 336
+MAX_T_BLOCK historical80 76 336
+MAX_T_BLOCK historical80 77 336
+MAX_T_BLOCK historical80 78 336
+MAX_T_BLOCK historical80 79 336
+MAX_T_BLOCK historical80 80 336
+MAX_T_BLOCK historical80 81 336
+MAX_T_BLOCK historical80 82 336
+MAX_T_BLOCK historical80 83 336
+MAX_T_BLOCK historical80 84 336
+MAX_T_BLOCK historical80 85 336
+MAX_T_BLOCK historical80 86 336
+MAX_T_BLOCK historical80 87 336
+MAX_T_BLOCK historical80 88 336
+MAX_T_BLOCK historical80 89 336
+MAX_T_BLOCK historical80 90 336
+MAX_T_BLOCK historical80 91 336
+MAX_T_BLOCK historical80 92 336
+MAX_T_BLOCK historical80 93 336
+MAX_T_BLOCK historical80 94 336
+MAX_T_BLOCK historical80 95 336
+MAX_T_BLOCK historical80 96 336
+MAX_T_BLOCK historical80 97 336
+MAX_T_BLOCK historical80 98 336
+MAX_T_BLOCK historical80 99 336
+MAX_T_BLOCK historical80 100 336
+MAX_T_BLOCK historical80 101 336
+MAX_T_BLOCK historical80 102 336
+MAX_T_BLOCK historical80 103 336
+MAX_T_BLOCK historical80 104 336
+MAX_T_BLOCK historical80 105 336
+MAX_T_BLOCK historical80 106 336
+MAX_T_BLOCK historical80 107 336
+MAX_T_BLOCK historical80 108 336
+MAX_T_BLOCK historical80 109 336
+MAX_T_BLOCK historical80 110 336
+MAX_T_BLOCK historical80 111 336
+MAX_T_BLOCK historical80 112 336
+MAX_T_BLOCK historical80 113 336
+MAX_T_BLOCK historical80 114 336
+MAX_T_BLOCK historical80 115 336
+MAX_T_BLOCK historical80 116 336
+MAX_T_BLOCK historical80 117 336
+MAX_T_BLOCK historical80 118 336
+MAX_T_BLOCK historical80 119 336
+MAX_T_BLOCK historical80 120 336
+MAX_T_BLOCK historical80 121 336
+MAX_T_BLOCK historical80 122 336
+MAX_T_BLOCK historical80 123 336
+MAX_T_BLOCK historical80 124 336
+MAX_T_BLOCK historical80 125 336
+MAX_T_BLOCK historical80 126 336
+MAX_T_BLOCK historical80 127 336
+MAX_T_BLOCK historical80 128 336
+MAX_T_BLOCK historical80 129 336
+MAX_T_BLOCK historical80 130 336
+MAX_T_BLOCK historical80 131 336
+MAX_T_BLOCK historical80 132 336
+MAX_T_BLOCK historical80 133 336
+MAX_T_BLOCK historical80 134 336
+MAX_T_BLOCK historical80 135 336
+MAX_T_BLOCK historical80 136 336
+MAX_T_BLOCK historical80 137 336
+MAX_T_BLOCK historical80 138 336
+MAX_T_BLOCK historical80 139 336
+MAX_T_BLOCK historical80 140 336
+MAX_T_BLOCK historical80 141 336
+MAX_T_BLOCK historical80 142 336
+MAX_T_BLOCK historical80 143 336
+MAX_T_BLOCK historical80 144 336
+MAX_T_BLOCK historical80 145 336
+MAX_T_BLOCK historical80 146 336
+MAX_T_BLOCK historical80 147 336
+MAX_T_BLOCK historical80 148 336
+MAX_T_BLOCK historical80 149 336
+MAX_T_BLOCK historical80 150 336
+MAX_T_BLOCK historical80 151 336
+MAX_T_BLOCK historical80 152 336
+MAX_T_BLOCK historical80 153 336
+MAX_T_BLOCK historical80 154 336
+MAX_T_BLOCK historical80 155 336
+MAX_T_BLOCK historical80 156 336
+MAX_T_BLOCK historical80 157 336
+MAX_T_BLOCK historical80 158 336
+MAX_T_BLOCK historical80 159 336
+MAX_T_BLOCK historical80 160 336
+MAX_T_BLOCK historical80 161 336
+MAX_T_BLOCK historical80 162 336
+MAX_T_BLOCK historical80 163 336
+MAX_T_BLOCK historical80 164 336
+MAX_T_BLOCK historical80 165 336
+MAX_T_BLOCK historical80 166 336
+MAX_T_BLOCK historical80 167 336
+MAX_T_BLOCK historical80 168 336
+MAX_T_BLOCK historical80 169 336
+MAX_T_BLOCK historical80 170 336
+MAX_T_BLOCK historical80 171 336
+MAX_T_BLOCK historical80 172 336
+MAX_T_BLOCK historical80 173 336
+MAX_T_BLOCK historical80 174 336
+MAX_T_BLOCK historical80 175 336
+MAX_T_BLOCK historical80 176 336
+MAX_T_BLOCK historical80 177 336
+MAX_T_BLOCK historical80 178 336
+MAX_T_BLOCK historical80 179 336
+MAX_T_BLOCK historical80 180 336
+MAX_T_BLOCK historical80 181 336
+MAX_T_BLOCK historical80 182 336
+MAX_T_BLOCK historical80 183 336
+MAX_T_BLOCK historical80 184 336
+MAX_T_BLOCK historical80 185 336
+MAX_T_BLOCK historical80 186 336
+MAX_T_BLOCK historical80 187 336
+MAX_T_BLOCK historical80 188 336
+MAX_T_BLOCK historical80 189 336
+MAX_T_BLOCK historical80 190 336
+MAX_T_BLOCK historical80 191 336
+MAX_T_BLOCK historical80 192 336
+MAX_T_BLOCK historical80 193 336
+MAX_T_BLOCK historical80 194 336
+MAX_T_BLOCK historical80 195 336
+MAX_T_BLOCK historical80 196 336
+MAX_T_BLOCK historical80 197 336
+MAX_T_BLOCK historical80 198 336
+MAX_T_BLOCK historical80 199 336
+MAX_T_BLOCK historical80 200 336
+MAX_T_BLOCK historical80 201 336
+MAX_T_BLOCK historical80 202 336
+MAX_T_BLOCK historical80 203 336
+MAX_T_BLOCK historical80 204 336
+MAX_T_BLOCK historical80 205 336
+MAX_T_BLOCK historical80 206 336
+MAX_T_BLOCK historical80 207 336
+MAX_T_BLOCK historical80 208 336
+MAX_T_BLOCK historical80 209 336
+MAX_T_BLOCK historical80 210 336
+MAX_T_BLOCK historical80 211 336
+MAX_T_BLOCK historical80 212 336
+MAX_T_BLOCK historical80 213 336
+MAX_T_BLOCK historical80 214 336
+MAX_T_BLOCK historical80 215 336
+MAX_T_BLOCK historical80 216 336
+MAX_T_BLOCK historical80 217 336
+MAX_T_BLOCK historical80 218 336
+MAX_T_BLOCK historical80 219 336
+MAX_T_BLOCK historical80 220 336
+MAX_T_BLOCK historical80 221 336
+MAX_T_BLOCK historical80 222 336
+MAX_T_BLOCK historical80 223 336
+MAX_T_BLOCK historical80 224 336
+MAX_T_BLOCK historical80 225 336
+MAX_T_BLOCK historical80 226 336
+MAX_T_BLOCK historical80 227 336
+MAX_T_BLOCK historical80 228 336
+MAX_T_BLOCK historical80 229 336
+MAX_T_BLOCK historical80 230 336
+MAX_T_BLOCK historical80 231 336
+MAX_T_BLOCK historical80 232 336
+MAX_T_BLOCK historical80 233 336
+MAX_T_BLOCK historical80 234 336
+MAX_T_BLOCK historical80 235 336
+MAX_T_BLOCK historical80 236 336
+MAX_T_BLOCK historical80 237 336
+MAX_T_BLOCK historical80 238 336
+MAX_T_BLOCK historical80 239 336
+MAX_T_BLOCK historical80 240 336
+MAX_T_BLOCK historical80 241 336
+MAX_T_BLOCK historical80 242 336
+MAX_T_BLOCK historical80 243 336
+MAX_T_BLOCK historical80 244 336
+MAX_T_BLOCK historical80 245 336
+MAX_T_BLOCK historical80 246 336
+MAX_T_BLOCK historical80 247 336
+MAX_T_BLOCK historical80 248 336
+MAX_T_BLOCK historical80 249 336
+MAX_T_BLOCK historical80 250 336
+MAX_T_BLOCK historical80 251 336
+MAX_T_BLOCK historical80 252 336
+MAX_T_BLOCK historical80 253 336
+MAX_T_BLOCK historical80 254 336
+MAX_T_BLOCK historical80 255 336
+MAX_T_BLOCK historical80 256 336
+MAX_T_BLOCK historical80 257 336
+MAX_T_BLOCK historical80 258 336
+MAX_T_BLOCK historical80 259 336
+MAX_T_BLOCK historical80 260 336
+MAX_T_BLOCK historical80 261 336
+MAX_T_BLOCK historical80 262 336
+MAX_T_BLOCK historical80 263 336
+MAX_T_BLOCK historical80 264 336
+MAX_T_BLOCK historical80 265 336
+MAX_T_BLOCK historical80 266 336
+MAX_T_BLOCK historical80 267 336
+MAX_T_BLOCK historical80 268 336
+MAX_T_BLOCK historical80 269 336
+MAX_T_BLOCK historical80 270 336
+MAX_T_BLOCK historical80 271 336
+MAX_T_BLOCK historical80 272 336
+MAX_T_BLOCK historical80 273 336
+MAX_T_BLOCK historical80 274 336
+MAX_T_BLOCK historical80 275 336
+MAX_T_BLOCK historical80 276 336
+MAX_T_BLOCK historical80 277 336
+MAX_T_BLOCK historical80 278 336
+MAX_T_BLOCK historical80 279 336
+MAX_T_BLOCK historical80 280 336
+MAX_T_BLOCK historical80 281 336
+MAX_T_BLOCK historical80 282 336
+MAX_T_BLOCK historical80 283 336
+MAX_T_BLOCK historical80 284 336
+MAX_T_BLOCK historical80 285 336
+MAX_T_BLOCK historical80 286 336
+MAX_T_BLOCK historical80 287 336
+MAX_T_BLOCK historical80 288 336
+MAX_T_BLOCK historical80 289 336
+MAX_T_BLOCK historical80 290 336
+MAX_T_BLOCK historical80 291 336
+MAX_T_BLOCK historical80 292 336
+MAX_T_BLOCK historical80 293 336
+MAX_T_BLOCK historical80 294 336
+MAX_T_BLOCK historical80 295 336
+MAX_T_BLOCK historical80 296 336
+MAX_T_BLOCK historical80 297 336
+MAX_T_BLOCK historical80 298 336
+MAX_T_BLOCK historical80 299 336
+MAX_T_BLOCK historical80 300 336
+MAX_T_BLOCK historical80 301 336
+MAX_T_BLOCK historical80 302 336
+MAX_T_BLOCK historical80 303 336
+MAX_T_BLOCK historical80 304 336
+MAX_T_BLOCK historical80 305 336
+MAX_T_BLOCK historical80 306 336
+MAX_T_BLOCK historical80 307 336
+MAX_T_BLOCK historical80 308 336
+MAX_T_BLOCK historical80 309 336
+MAX_T_BLOCK historical80 310 336
+MAX_T_BLOCK historical80 311 336
+MAX_T_BLOCK historical80 312 336
+MAX_T_BLOCK historical80 313 336
+MAX_T_BLOCK historical80 314 336
+MAX_T_BLOCK historical80 315 336
+MAX_T_BLOCK historical80 316 336
+MAX_T_BLOCK historical80 317 336
+MAX_T_BLOCK historical80 318 336
+MAX_T_BLOCK historical80 319 336
+MAX_T_BLOCK historical80 320 336
+MAX_T_BLOCK historical80 321 336
+MAX_T_BLOCK historical80 322 336
+MAX_T_BLOCK historical80 323 336
+MAX_T_BLOCK historical80 324 336
+MAX_T_BLOCK historical80 325 336
+MAX_T_BLOCK historical80 326 336
+MAX_T_BLOCK historical80 327 336
+MAX_T_BLOCK historical80 328 336
+MAX_T_BLOCK historical80 329 336
+MAX_T_BLOCK historical80 330 336
+MAX_T_BLOCK historical80 331 336
+MAX_T_BLOCK historical80 332 336
+MAX_T_BLOCK historical80 333 336
+MAX_T_BLOCK historical80 334 336
+MAX_T_BLOCK historical80 335 336
+MAX_T_BLOCK historical80 336 336
+{"time": "2026-09-16T15:52:43.435104+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "lag_reference_permutations", "cohort": "historical80", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:52:45.799095+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "exact_joint_lag_inference", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+MAX_T_BLOCK clean54 1 168
+MAX_T_BLOCK clean54 2 168
+MAX_T_BLOCK clean54 3 168
+MAX_T_BLOCK clean54 4 168
+MAX_T_BLOCK clean54 5 168
+MAX_T_BLOCK clean54 6 168
+MAX_T_BLOCK clean54 7 168
+MAX_T_BLOCK clean54 8 168
+MAX_T_BLOCK clean54 9 168
+MAX_T_BLOCK clean54 10 168
+MAX_T_BLOCK clean54 11 168
+MAX_T_BLOCK clean54 12 168
+MAX_T_BLOCK clean54 13 168
+MAX_T_BLOCK clean54 14 168
+MAX_T_BLOCK clean54 15 168
+MAX_T_BLOCK clean54 16 168
+MAX_T_BLOCK clean54 17 168
+MAX_T_BLOCK clean54 18 168
+MAX_T_BLOCK clean54 19 168
+MAX_T_BLOCK clean54 20 168
+MAX_T_BLOCK clean54 21 168
+MAX_T_BLOCK clean54 22 168
+MAX_T_BLOCK clean54 23 168
+MAX_T_BLOCK clean54 24 168
+MAX_T_BLOCK clean54 25 168
+MAX_T_BLOCK clean54 26 168
+MAX_T_BLOCK clean54 27 168
+MAX_T_BLOCK clean54 28 168
+MAX_T_BLOCK clean54 29 168
+MAX_T_BLOCK clean54 30 168
+MAX_T_BLOCK clean54 31 168
+MAX_T_BLOCK clean54 32 168
+MAX_T_BLOCK clean54 33 168
+MAX_T_BLOCK clean54 34 168
+MAX_T_BLOCK clean54 35 168
+MAX_T_BLOCK clean54 36 168
+MAX_T_BLOCK clean54 37 168
+MAX_T_BLOCK clean54 38 168
+MAX_T_BLOCK clean54 39 168
+MAX_T_BLOCK clean54 40 168
+MAX_T_BLOCK clean54 41 168
+MAX_T_BLOCK clean54 42 168
+MAX_T_BLOCK clean54 43 168
+MAX_T_BLOCK clean54 44 168
+MAX_T_BLOCK clean54 45 168
+MAX_T_BLOCK clean54 46 168
+MAX_T_BLOCK clean54 47 168
+MAX_T_BLOCK clean54 48 168
+MAX_T_BLOCK clean54 49 168
+MAX_T_BLOCK clean54 50 168
+MAX_T_BLOCK clean54 51 168
+MAX_T_BLOCK clean54 52 168
+MAX_T_BLOCK clean54 53 168
+MAX_T_BLOCK clean54 54 168
+MAX_T_BLOCK clean54 55 168
+MAX_T_BLOCK clean54 56 168
+MAX_T_BLOCK clean54 57 168
+MAX_T_BLOCK clean54 58 168
+MAX_T_BLOCK clean54 59 168
+MAX_T_BLOCK clean54 60 168
+MAX_T_BLOCK clean54 61 168
+MAX_T_BLOCK clean54 62 168
+MAX_T_BLOCK clean54 63 168
+MAX_T_BLOCK clean54 64 168
+MAX_T_BLOCK clean54 65 168
+MAX_T_BLOCK clean54 66 168
+MAX_T_BLOCK clean54 67 168
+MAX_T_BLOCK clean54 68 168
+MAX_T_BLOCK clean54 69 168
+MAX_T_BLOCK clean54 70 168
+MAX_T_BLOCK clean54 71 168
+MAX_T_BLOCK clean54 72 168
+MAX_T_BLOCK clean54 73 168
+MAX_T_BLOCK clean54 74 168
+MAX_T_BLOCK clean54 75 168
+MAX_T_BLOCK clean54 76 168
+MAX_T_BLOCK clean54 77 168
+MAX_T_BLOCK clean54 78 168
+MAX_T_BLOCK clean54 79 168
+MAX_T_BLOCK clean54 80 168
+MAX_T_BLOCK clean54 81 168
+MAX_T_BLOCK clean54 82 168
+MAX_T_BLOCK clean54 83 168
+MAX_T_BLOCK clean54 84 168
+MAX_T_BLOCK clean54 85 168
+MAX_T_BLOCK clean54 86 168
+MAX_T_BLOCK clean54 87 168
+MAX_T_BLOCK clean54 88 168
+MAX_T_BLOCK clean54 89 168
+MAX_T_BLOCK clean54 90 168
+MAX_T_BLOCK clean54 91 168
+MAX_T_BLOCK clean54 92 168
+MAX_T_BLOCK clean54 93 168
+MAX_T_BLOCK clean54 94 168
+MAX_T_BLOCK clean54 95 168
+MAX_T_BLOCK clean54 96 168
+MAX_T_BLOCK clean54 97 168
+MAX_T_BLOCK clean54 98 168
+MAX_T_BLOCK clean54 99 168
+MAX_T_BLOCK clean54 100 168
+MAX_T_BLOCK clean54 101 168
+MAX_T_BLOCK clean54 102 168
+MAX_T_BLOCK clean54 103 168
+MAX_T_BLOCK clean54 104 168
+MAX_T_BLOCK clean54 105 168
+MAX_T_BLOCK clean54 106 168
+MAX_T_BLOCK clean54 107 168
+MAX_T_BLOCK clean54 108 168
+MAX_T_BLOCK clean54 109 168
+MAX_T_BLOCK clean54 110 168
+MAX_T_BLOCK clean54 111 168
+MAX_T_BLOCK clean54 112 168
+MAX_T_BLOCK clean54 113 168
+MAX_T_BLOCK clean54 114 168
+MAX_T_BLOCK clean54 115 168
+MAX_T_BLOCK clean54 116 168
+MAX_T_BLOCK clean54 117 168
+MAX_T_BLOCK clean54 118 168
+MAX_T_BLOCK clean54 119 168
+MAX_T_BLOCK clean54 120 168
+MAX_T_BLOCK clean54 121 168
+MAX_T_BLOCK clean54 122 168
+MAX_T_BLOCK clean54 123 168
+MAX_T_BLOCK clean54 124 168
+MAX_T_BLOCK clean54 125 168
+MAX_T_BLOCK clean54 126 168
+MAX_T_BLOCK clean54 127 168
+MAX_T_BLOCK clean54 128 168
+MAX_T_BLOCK clean54 129 168
+MAX_T_BLOCK clean54 130 168
+MAX_T_BLOCK clean54 131 168
+MAX_T_BLOCK clean54 132 168
+MAX_T_BLOCK clean54 133 168
+MAX_T_BLOCK clean54 134 168
+MAX_T_BLOCK clean54 135 168
+MAX_T_BLOCK clean54 136 168
+MAX_T_BLOCK clean54 137 168
+MAX_T_BLOCK clean54 138 168
+MAX_T_BLOCK clean54 139 168
+MAX_T_BLOCK clean54 140 168
+MAX_T_BLOCK clean54 141 168
+MAX_T_BLOCK clean54 142 168
+MAX_T_BLOCK clean54 143 168
+MAX_T_BLOCK clean54 144 168
+MAX_T_BLOCK clean54 145 168
+MAX_T_BLOCK clean54 146 168
+MAX_T_BLOCK clean54 147 168
+MAX_T_BLOCK clean54 148 168
+MAX_T_BLOCK clean54 149 168
+MAX_T_BLOCK clean54 150 168
+MAX_T_BLOCK clean54 151 168
+MAX_T_BLOCK clean54 152 168
+MAX_T_BLOCK clean54 153 168
+MAX_T_BLOCK clean54 154 168
+MAX_T_BLOCK clean54 155 168
+MAX_T_BLOCK clean54 156 168
+MAX_T_BLOCK clean54 157 168
+MAX_T_BLOCK clean54 158 168
+MAX_T_BLOCK clean54 159 168
+MAX_T_BLOCK clean54 160 168
+MAX_T_BLOCK clean54 161 168
+MAX_T_BLOCK clean54 162 168
+MAX_T_BLOCK clean54 163 168
+MAX_T_BLOCK clean54 164 168
+MAX_T_BLOCK clean54 165 168
+MAX_T_BLOCK clean54 166 168
+MAX_T_BLOCK clean54 167 168
+MAX_T_BLOCK clean54 168 168
+{"time": "2026-09-16T15:53:28.567859+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "lag_reference_permutations", "cohort": "clean54", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+{"time": "2026-09-16T15:53:29.816164+00:00", "stage": "stopped_study_analysis", "state": "running", "worker_pid": 93089, "phase": "report", "cohort": null, "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}
+REPORT_COMPLETE /Users/vik/Developer/new_sbtg_neuro/replication_20260911/REPORT_STOPPED.md
+{"time": "2026-09-16T15:53:33.777837+00:00", "stage": "stopped_study_analysis", "state": "awaiting_report_review", "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/stopped_analysis_20260916.log", "report": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/REPORT_STOPPED.md", "output": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/analysis_stopped_20260916", "further_sampling_authorized": false}

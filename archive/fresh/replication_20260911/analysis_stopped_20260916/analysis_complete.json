@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "scope": "complete primary study; extended sensitivity stopped by user and unresolved",
+  "spec_id": "a1070d62c99aa323a9200e2c079b0d87e920f4c40ba5ce353ad26f2fc63d7777",
+  "completed_utc": "2026-09-16T15:53:29.815576+00:00",
+  "analysis_source_sha256": "3a03fce1422366b9dfa90d6a5bcc24a4a5979456fc9d3661df2c7d33511c7a57",
+  "entrypoint_sha256": "4fbfefee23e928179dd16d6d05bb6c754649614822ababe79103492f0c0ee1f2"
+}

@@ -1,0 +1,13 @@
+test_energy_deterministic_limit (test_benchmark.Checks.test_energy_deterministic_limit) ... ok
+test_event_pairing_zero (test_benchmark.Checks.test_event_pairing_zero) ... ok
+test_gaussian_soft_conditioning_oracle (test_benchmark.Checks.test_gaussian_soft_conditioning_oracle) ... ok
+test_neural_interfaces (test_benchmark.Checks.test_neural_interfaces) ... /Users/vik/Developer/new_sbtg_neuro/generator_tradeoffs_20260913/source/history_tangent_benchmark/models.py:490: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+ok
+test_oracle_means (test_benchmark.Checks.test_oracle_means) ... ok
+test_true_derivative (test_benchmark.Checks.test_true_derivative) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.438s
+
+OK

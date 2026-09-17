@@ -1,0 +1,16 @@
+{
+  "auc_median": 0.49872204750000004,
+  "auc_range": [
+    0.49565227999999995,
+    0.50510728
+  ],
+  "cases": 8,
+  "classifier_absolute_effect_relative_to_g8_max": 0.0015969089529472627,
+  "classifier_absolute_effect_relative_to_g8_median": 9.358096942584522e-05,
+  "empirical_absolute_effect_relative_to_g8_median": 0.014584445529067316,
+  "schema_version": "1",
+  "status": "complete",
+  "test_per_side": 10000,
+  "train_per_side": 4000,
+  "validation_per_side": 1000
+}

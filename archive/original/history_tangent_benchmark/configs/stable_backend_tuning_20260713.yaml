@@ -1,0 +1,94 @@
+schema_version: "1"
+name: stable_backend_tuning_20260713
+tier: development
+output_dir: results/stable_backend_tuning_20260713
+
+# One independent triple is deliberate: this is a validation-only hyperparameter
+# screen.  The selected settings are frozen before the multi-seed comparison.
+generator_seeds: [41]
+data_seeds: [401]
+model_seeds: [4001]
+
+generators:
+  - id: g1_gaussian
+    kind: g1
+    params: {q: 8, dy: 8, hidden: 16}
+  - id: g4_multimodal
+    kind: g4
+    params: {q: 8, dy: 8, n_components: 6, rank: 2, mode_separation: 5.0,
+             component_sigma: 0.65, interaction_scale: 1.0}
+  - id: g5_manifold
+    kind: g5
+    params: {q: 12, dy: 24, latent_dim: 3, n_components: 8, rank: 3,
+             sigma_z: 0.5, sigma_obs: 0.12, mode_separation: 5.0}
+  - id: g6_rough
+    kind: g6
+    params: {q: 8, dy: 12, hidden: 20, omega: 12.0, roughness_amplitude: 0.7}
+
+# Learning-rate variants have identical architectures within a method.  The
+# native validation loss is used only to rank rates within that method, never
+# to rank different objectives against one another.
+models:
+  - {name: mean_lr1, kind: mean_mlp, params: {hidden: 64, layers: 2}, tune: {learning_rate: [0.001]}}
+  - {name: mean_lr3, kind: mean_mlp, params: {hidden: 64, layers: 2}, tune: {learning_rate: [0.0003]}}
+  - {name: gaussian_lr1, kind: heteroscedastic_gaussian, params: {hidden: 64, layers: 2}, tune: {learning_rate: [0.001]}}
+  - {name: gaussian_lr3, kind: heteroscedastic_gaussian, params: {hidden: 64, layers: 2}, tune: {learning_rate: [0.0003]}}
+  - {name: dsm_gaussian_lr1, kind: constrained_gaussian_dsm, params: {hidden: 64, layers: 2, sigma_min: 0.02, sigma_max: 2.0}, tune: {learning_rate: [0.001]}}
+  - {name: dsm_gaussian_lr3, kind: constrained_gaussian_dsm, params: {hidden: 64, layers: 2, sigma_min: 0.02, sigma_max: 2.0}, tune: {learning_rate: [0.0003]}}
+  - {name: mdn_lr1, kind: autoregressive_mdn, params: {hidden: 48, layers: 2, components: 8}, tune: {learning_rate: [0.001]}}
+  - {name: mdn_lr3, kind: autoregressive_mdn, params: {hidden: 48, layers: 2, components: 8}, tune: {learning_rate: [0.0003]}}
+  - {name: affine_flow_lr1, kind: conditional_affine_flow, params: {hidden: 56, layers: 2, coupling_layers: 6, max_log_scale: 1.5}, tune: {learning_rate: [0.001]}}
+  - {name: affine_flow_lr3, kind: conditional_affine_flow, params: {hidden: 56, layers: 2, coupling_layers: 6, max_log_scale: 1.5}, tune: {learning_rate: [0.0003]}}
+  - {name: legacy_diffusion_lr1, kind: conditional_vector_diffusion, params: {hidden: 64, layers: 2, sigma_min: 0.02, sigma_max: 3.0}, tune: {learning_rate: [0.001]}}
+  - {name: legacy_diffusion_lr3, kind: conditional_vector_diffusion, params: {hidden: 64, layers: 2, sigma_min: 0.02, sigma_max: 3.0}, tune: {learning_rate: [0.0003]}}
+  - {name: edm_lr1, kind: conditional_edm_diffusion, params: {hidden: 64, layers: 2, sigma_min: 0.01, sigma_max: 4.0, sigma_data: 0.8, sample_steps: 18}, tune: {learning_rate: [0.001]}}
+  - {name: edm_lr3, kind: conditional_edm_diffusion, params: {hidden: 64, layers: 2, sigma_min: 0.01, sigma_max: 4.0, sigma_data: 0.8, sample_steps: 18}, tune: {learning_rate: [0.0003]}}
+  - {name: flow_matching_lr1, kind: conditional_flow_matching, params: {hidden: 64, layers: 2, sample_steps: 18}, tune: {learning_rate: [0.001]}}
+  - {name: flow_matching_lr3, kind: conditional_flow_matching, params: {hidden: 64, layers: 2, sample_steps: 18}, tune: {learning_rate: [0.0003]}}
+  - {name: ratio_lr1, kind: ratio_critic, params: {hidden: 56, layers: 2, rank: 32}, tune: {learning_rate: [0.001]}}
+  - {name: ratio_lr3, kind: ratio_critic, params: {hidden: 56, layers: 2, rank: 32}, tune: {learning_rate: [0.0003]}}
+
+split:
+  validation_fraction: 0.2
+  validation_min: 600
+  validation_max: 600
+  test_size: 256
+  evaluation_histories: 8
+  conditional_oracle_draws: 32
+
+training:
+  n_train: 3000
+  device: cpu
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  batch_size: 256
+  max_epochs: 30
+  patience: 7
+  gradient_clip: 1.0
+
+evaluation:
+  energy_cases: 48
+  energy_samples: 24
+  tangent_pairs: 48
+  centering_histories: 6
+  centering_draws: 24
+  centering_target_draws: 6
+  finite_delta: 0.12
+  diffusion_sigma: 0.12
+  quadrature_points: 4
+
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 6.0
+  max_accelerator_gb: 0.1
+  max_output_gb: 0.75
+  min_free_disk_gb: 4.0
+  case_timeout_minutes: 45.0
+  checkpoint_minutes: 10.0
+  nice: 12
+
+metadata:
+  purpose: validation-only learning-rate screen for stabilized normalized, score, diffusion, and flow backends
+  selection_rule: mean native-validation rank within model kind across generators
+  claim: developmental; no scientific ranking or hypothesis decision

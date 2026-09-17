@@ -1,0 +1,16 @@
+{
+  "historical80": {
+    "strict_finite_offdiagonal_edges": 948,
+    "strict_sources_with_any_finite_edge": 12,
+    "strong_sources": 57,
+    "total_sources": 80,
+    "identical_arm_mse_max": 0.0
+  },
+  "clean54": {
+    "strict_finite_offdiagonal_edges": 0,
+    "strict_sources_with_any_finite_edge": 0,
+    "strong_sources": 33,
+    "total_sources": 54,
+    "identical_arm_mse_max": 0.0
+  }
+}

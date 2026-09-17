@@ -1,0 +1,10 @@
+\begin{table}[H]\centering\small
+\caption{Recorded sequential compute. Wall time is summed once per DGP-family/seed cell; peak memory is the maximum runner-recorded resident usage.}
+\begin{tabular}{lrrrr}\toprule
+Component & Cells & Total CPU-wall hours & Median sec/cell & Peak MiB\\\midrule
+Tier 1 static & 270 & 0.43 & 7.15 & 306 \\
+Tier 1 dynamic & 60 & 0.01 & 0.50 & n/a \\
+Tier 2 dynamic robustness & 270 & 0.07 & 0.30 & n/a \\
+Tier 2 static slices & 450 & 0.86 & 6.81 & 580 \\
+Post-hoc fixed-amplitude & 270 & 0.51 & 6.76 & 627 \\
+\bottomrule\end{tabular}\end{table}

@@ -1,0 +1,164 @@
+{
+  "decision": "no-go for general deployment; go for restricted predictive-feature research claims",
+  "gate_matrix": [
+    {
+      "experiment": "E0",
+      "question": "Algebra, leakage, reproducibility",
+      "decision": "PASS",
+      "evidence": "10/10 checks pass; 14 package tests pass",
+      "consequence": "Core implementation gate"
+    },
+    {
+      "experiment": "E1",
+      "question": "Equal-access Gaussian recovery",
+      "decision": "PASS / NO ADVANTAGE",
+      "evidence": "ORTH NRMSE 0.104, coverage 0.940; error ratio vs PLUG 1.002",
+      "consequence": "Inference benefit, not point-error benefit"
+    },
+    {
+      "experiment": "E2",
+      "question": "Controlled orthogonality",
+      "decision": "PASS",
+      "evidence": "Product-bias R\u00b2 > 0.99999997 in three perturbations",
+      "consequence": "Theory realized in population experiment"
+    },
+    {
+      "experiment": "E3",
+      "question": "One future/high-dimensional history",
+      "decision": "PASS WITH HAC",
+      "evidence": "Blocked rho=.9 NRMSE 0.145/0.093; HAC coverage 0.949/0.951",
+      "consequence": "Blocked splitting and dependence-aware SE required"
+    },
+    {
+      "experiment": "E4",
+      "question": "Moment-blind law change",
+      "decision": "PASS AFTER AMENDMENT",
+      "evidence": "Power 1.00/0.867; moment FWER 0.067/0.067",
+      "consequence": "High-frequency bank required; default bank failed"
+    },
+    {
+      "experiment": "E5",
+      "question": "Support motion/low-noise limit",
+      "decision": "PASS",
+      "evidence": "ORTH NRMSE 0.016 at \u03c3=0; likelihood score undefined",
+      "consequence": "Strong distinctive result"
+    },
+    {
+      "experiment": "E6",
+      "question": "Riesz stability and honest failure",
+      "decision": "FAIL",
+      "evidence": "Coverage 0 for t3 and gaps 3\u20134; warning calibration imperfect",
+      "consequence": "No general observational-identification claim"
+    },
+    {
+      "experiment": "E7",
+      "question": "Heterogeneous cancellation",
+      "decision": "PASS AT R=2",
+      "evidence": "Opposite signs in 100%; energy 3.982 vs truth 4.000",
+      "consequence": "Declare history-basis resolution"
+    },
+    {
+      "experiment": "E8",
+      "question": "Observation process",
+      "decision": "FAIL",
+      "evidence": "Moderate noise/missingness works; rho=.98 and misspecified deconvolution fail",
+      "consequence": "Hard latent-deployment gate remains closed"
+    },
+    {
+      "experiment": "E9",
+      "question": "Dense unknown geometry",
+      "decision": "FAIL",
+      "evidence": "Feature NRMSE 1.56\u20135.95; source angles remain 58\u201381 degrees",
+      "consequence": "Use typed head, but do not claim source recovery"
+    },
+    {
+      "experiment": "E10",
+      "question": "Flexible reusable-law baselines",
+      "decision": "PASS POOLED / LOCAL",
+      "evidence": "Pooled neural/ORTH ratios 1.57\u20131.77; exact MDN readout changes family rankings",
+      "consequence": "Aggregate advantage, not universal dominance or a scale frontier"
+    },
+    {
+      "experiment": "E11",
+      "question": "Path ordering",
+      "decision": "PASS",
+      "evidence": "Full-path power 1.00, NRMSE 0.209; endpoint/unordered ORTH FWER 0.056",
+      "consequence": "Second distinctive capability"
+    }
+  ],
+  "claim_registry": [
+    {
+      "claim": "Orthogonal score is implemented correctly",
+      "decision": "SUPPORTED",
+      "evidence": "E0,E2",
+      "scope": "Exact algebra and population perturbations"
+    },
+    {
+      "claim": "Declared bounded feature tangents are estimable in regular synthetic cells",
+      "decision": "SUPPORTED",
+      "evidence": "E1,E3,E5",
+      "scope": "IID and dependent Gaussian plus support-motion families"
+    },
+    {
+      "claim": "ORTH improves point accuracy over PLUG/RIESZ",
+      "decision": "NOT SUPPORTED",
+      "evidence": "E1,E4",
+      "scope": "Paired error ratios include one"
+    },
+    {
+      "claim": "ORTH supplies usable uncertainty where PLUG does not",
+      "decision": "SUPPORTED IN REGULAR CELLS",
+      "evidence": "E1,E3,E4,E8,E11",
+      "scope": "Requires HAC under dependence and fails under ill-posed deconvolution"
+    },
+    {
+      "claim": "Finite characteristic banks add information beyond four moments",
+      "decision": "SUPPORTED AT DECLARED BANK",
+      "evidence": "E4",
+      "scope": "Two exact moment-blind families"
+    },
+    {
+      "claim": "Weak-feature route survives deterministic support motion",
+      "decision": "SUPPORTED",
+      "evidence": "E5",
+      "scope": "Stable through sigma zero"
+    },
+    {
+      "claim": "Current Riesz sieve is robust to heavy tails and weak overlap",
+      "decision": "REFUTED",
+      "evidence": "E6",
+      "scope": "Tail/gap coverage failures"
+    },
+    {
+      "claim": "Global zero means no local effect",
+      "decision": "REFUTED",
+      "evidence": "E7",
+      "scope": "R=2 recovers sign reversal and energy"
+    },
+    {
+      "claim": "Current method is ready for filtered neural observations",
+      "decision": "REFUTED",
+      "evidence": "E8",
+      "scope": "Severe filtering and observation-model misspecification fail"
+    },
+    {
+      "claim": "Characteristic route is best for unknown dense geometry",
+      "decision": "NOT SUPPORTED",
+      "evidence": "E9",
+      "scope": "Direct covariance head is stronger"
+    },
+    {
+      "claim": "ORTH dominates flexible normalized-law models",
+      "decision": "SUPPORTED POOLED AT LOCAL BUDGET",
+      "evidence": "E10",
+      "scope": "Every pooled ratio passes; E1/E5/E9 have no universal ORTH winner"
+    },
+    {
+      "claim": "Path-aware features detect order changes invisible to endpoints",
+      "decision": "SUPPORTED",
+      "evidence": "E11",
+      "scope": "Generic path bank plus two null summaries"
+    }
+  ],
+  "selected_run_count": 15
+}

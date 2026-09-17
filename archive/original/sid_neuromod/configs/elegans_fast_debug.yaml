@@ -1,0 +1,36 @@
+dataset:
+  path: data/elegans/does_not_exist.npz   # triggers mock generation
+  dataset_id: mock_elegans_debug
+
+random_seed: 0
+
+splits:
+  mode: contiguous
+  train_fraction: 0.5
+  calibration_fraction: 0.2
+  debias_fraction: 0.1
+  test_fraction: 0.2
+
+target:
+  mode: delta
+  horizon_s: 0.5
+
+features:
+  source_signals: [raw_zscore]
+  timescales_s: [1, 2, 5, 10, 20]
+  include_behavior: true
+
+model:
+  class: quadratic_score
+  ridge: 1.0e-3
+
+inference:
+  alpha: 0.05
+  n_mc_sup_t: 2000
+
+outputs:
+  output_dir: output/elegans/fast_debug
+
+mock:
+  T: 2500
+  N: 5

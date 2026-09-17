@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "passed": 309,
+  "skipped": 2,
+  "log_sha256": "e7e5fd5b9db148e4f42c68417d08cb686e63ef702a2bcd7f4453b9d066be8a8a",
+  "scope": "copied source tests run with snapshot as cwd; skips retained",
+  "completed_utc": "2026-09-11T16:12:07.993734+00:00"
+}

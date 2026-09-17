@@ -1,0 +1,197 @@
+{
+  "status": "pass",
+  "comparisons": [
+    {
+      "reference": "randi_wild_type",
+      "lag": 1,
+      "max_numeric_error": 8.326672684688674e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "randi_wild_type",
+      "lag": 2,
+      "max_numeric_error": 8.326672684688674e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "randi_wild_type",
+      "lag": 3,
+      "max_numeric_error": 8.326672684688674e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "randi_wild_type",
+      "lag": 5,
+      "max_numeric_error": 8.326672684688674e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "randi_wild_type",
+      "lag": 8,
+      "max_numeric_error": 8.326672684688674e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "randi_wild_type",
+      "lag": 10,
+      "max_numeric_error": 8.326672684688674e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "randi_wild_type",
+      "lag": 15,
+      "max_numeric_error": 8.326672684688674e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "randi_wild_type",
+      "lag": 20,
+      "max_numeric_error": 8.326672684688674e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_struct",
+      "lag": 1,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_struct",
+      "lag": 2,
+      "max_numeric_error": 8.326672684688674e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_struct",
+      "lag": 3,
+      "max_numeric_error": 2.7755575615628914e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_struct",
+      "lag": 5,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_struct",
+      "lag": 8,
+      "max_numeric_error": 2.7755575615628914e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_struct",
+      "lag": 10,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_struct",
+      "lag": 15,
+      "max_numeric_error": 0.0,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_struct",
+      "lag": 20,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_chem",
+      "lag": 1,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_chem",
+      "lag": 2,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_chem",
+      "lag": 3,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_chem",
+      "lag": 5,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_chem",
+      "lag": 8,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_chem",
+      "lag": 10,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_chem",
+      "lag": 15,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_chem",
+      "lag": 20,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_gap",
+      "lag": 1,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_gap",
+      "lag": 2,
+      "max_numeric_error": 9.020562075079397e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_gap",
+      "lag": 3,
+      "max_numeric_error": 6.938893903907228e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_gap",
+      "lag": 5,
+      "max_numeric_error": 6.938893903907228e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_gap",
+      "lag": 8,
+      "max_numeric_error": 2.7755575615628914e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_gap",
+      "lag": 10,
+      "max_numeric_error": 5.551115123125783e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_gap",
+      "lag": 15,
+      "max_numeric_error": 3.469446951953614e-17,
+      "counts_match": true
+    },
+    {
+      "reference": "cook_gap",
+      "lag": 20,
+      "max_numeric_error": 2.7755575615628914e-17,
+      "counts_match": true
+    }
+  ]
+}

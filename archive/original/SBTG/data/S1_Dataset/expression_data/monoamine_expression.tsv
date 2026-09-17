@@ -1,0 +1,41 @@
+monoamine	marker	neuron	wormbase_ID	excluded	excluded_reason	reference
+serotonin	tph-1	RIH	Expr959	1	weak/conditional expression	1
+serotonin	tph-1	AIML	Expr959	1	weak/conditional expression	1
+serotonin	tph-1	AIMR	Expr959	1	weak/conditional expression	1
+serotonin	tph-1	ADFL	Expr959	0		1
+serotonin	tph-1	ADFR	Expr959	0		1
+serotonin	tph-1	NSML	Expr959	0		1
+serotonin	tph-1	NSMR	Expr959	0		1
+serotonin	tph-1	HSNL	Expr959	0		1
+serotonin	tph-1	HSNR	Expr959	0		1
+serotonin	tph-1	ASGL	Expr12176	1	weak/conditional expression	2
+serotonin	tph-1	ASGR	Expr12176	1	weak/conditional expression	2
+serotonin	mod-5	AIML	Expr9350	0		3
+serotonin	mod-5	AIMR	Expr9350	0		3
+serotonin	mod-5	NSML	Expr9350	0		3
+serotonin	mod-5	NSMR	Expr9350	0		3
+serotonin	mod-5	ADFL	Expr9350	0		3
+serotonin	mod-5	ADFR	Expr9350	0		3
+serotonin	mod-5	RIH	Expr9350	1	weak/conditional expression	3
+dopamine	cat-2	ADEL	Expr2619	0		4
+dopamine	cat-2	ADER	Expr2619	0		4
+dopamine	cat-2	PDEL	Expr2619	0		4
+dopamine	cat-2	PDER	Expr2619	0		4
+dopamine	cat-2	CEPDL	Expr2619	0		4
+dopamine	cat-2	CEPDR	Expr2619	0		4
+dopamine	cat-2	CEPVL	Expr2619	0		4
+dopamine	cat-2	CEPVR	Expr2619	0		4
+dopamine	dat-1	ADEL	Expr8327	0		5
+dopamine	dat-1	ADER	Expr8327	0		5
+dopamine	dat-1	PDEL	Expr8327	0		5
+dopamine	dat-1	PDER	Expr8327	0		5
+dopamine	dat-1	CEPDL	Expr8327	0		5
+dopamine	dat-1	CEPDR	Expr8327	0		5
+dopamine	dat-1	CEPVL	Expr8327	0		5
+dopamine	dat-1	CEPVR	Expr8327	0		5
+octopamine	tbh-1	RICL	Expr3721	0		6
+octopamine	tbh-1	RICR	Expr3721	0		6
+tyramine	tdc-1	RIML	Expr3722	0		6
+tyramine	tdc-1	RIMR	Expr3722	0		6
+tyramine	tdc-1	RICL	Expr3722	1	co-expression of tbh-1 which converts TA to OA	6
+tyramine	tdc-1	RICR	Expr3722	1	co-expression of tbh-1 which converts TA to OA	6

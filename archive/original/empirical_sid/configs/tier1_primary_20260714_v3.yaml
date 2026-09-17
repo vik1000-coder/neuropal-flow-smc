@@ -1,0 +1,12 @@
+extends: tier1_primary_20260714_v2.yaml
+study_id: sid_tier1_primary_20260714_v3
+output_dir: runs/sid_tier1_primary_20260714_v3
+score_selection:
+  anchored_ridge: 1.0
+  anchored_noise_schedule: [0.03, 0.06, 0.12, 0.25]
+notes:
+  - This is the confirmatory static version.
+  - S7 uses one global development-selected setting: ridge 1.0 and the full multi-noise schedule.
+  - Selection minimized mean typed NRMSE across M1, two M3 constructions, M4, and all eight development seeds.
+  - Development mean typed NRMSE for the selected S7 setting was 1.322; this poor value was retained rather than hiding the method.
+  - Confirmatory seeds 2001-2030 had not been inspected when this file was frozen.

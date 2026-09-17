@@ -1,0 +1,10 @@
+{
+  "energy_cases": 96,
+  "energy_draws": 64,
+  "expected": 64,
+  "observed": 64,
+  "sampler": "exact iid rejection from bounded Gaussian reference tilt",
+  "schema_version": "1",
+  "status": "complete",
+  "successful": 64
+}

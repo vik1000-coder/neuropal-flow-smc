@@ -1,0 +1,5 @@
+{
+  "launcher_pid": 93089,
+  "command": "caffeinate -i ../.venv/bin/python analyze_stopped.py",
+  "started_utc": "2026-09-16T15:24:29.064953+00:00"
+}

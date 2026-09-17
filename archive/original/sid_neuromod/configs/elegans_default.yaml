@@ -1,0 +1,74 @@
+dataset:
+  path: data/elegans/example.npz
+  dataset_id: elegans_example
+  time_column: timestamps_s
+  activity_key: X
+  neuron_ids_key: neuron_ids
+  behavior_key: behavior
+  stimulus_key: stimulus
+
+random_seed: 0
+
+splits:
+  mode: contiguous
+  train_fraction: 0.5
+  calibration_fraction: 0.2
+  debias_fraction: 0.1
+  test_fraction: 0.2
+
+preprocessing:
+  activity_transform: zscore_train
+  detrend: true
+  missing_policy: drop_target_decay_source
+  min_valid_fraction_per_neuron: 0.8
+
+target:
+  mode: delta
+  horizon_s: 1.0
+
+features:
+  source_signals: [raw_zscore, delta]
+  timescales_s: [0.5, 1, 2, 5, 10, 20, 45, 90, 180, 300]
+  include_behavior: true
+  include_stimulus: true
+  include_own_history: true
+  source_screening:
+    enabled: true
+    max_features_per_target: 300
+
+model:
+  class: quadratic_score
+  ridge: auto
+  sigma_grid: [0.0, 0.25, 0.5, 1.0]
+  eta2_min: 1.0e-6
+  var_min: 1.0e-6
+
+inference:
+  hac_lags: auto
+  alpha: 0.05
+  simultaneous_family: target_source_timescale_channel
+  n_mc_sup_t: 10000
+  fdr_method: benjamini_hochberg
+
+monitoring:
+  enabled: true
+  alpha: 0.01
+  delta: 0.01
+  channels: [mean, dispersion, serial, lag_dispersion]
+  dyadic_windows: [16, 32, 64, 128, 256, 512, 1024]
+  lambda_grid: [-1.0, -0.5, -0.25, -0.125, 0.125, 0.25, 0.5, 1.0]
+
+baselines:
+  run_var: true
+  run_ridge_ar: true
+  run_sindy: false
+
+outputs:
+  output_dir: output/elegans/default
+  save_figures: true
+  save_model: true
+  save_readouts: true
+
+mock:
+  T: 4000
+  N: 8

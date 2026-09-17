@@ -1,0 +1,13 @@
+experiment,question,revised_decision,evidence,consequence
+E0,"Algebra, leakage, reproducibility",PASS,20/20 package tests; all new run validations pass,Core implementation sound
+E1,Regular equal-access recovery,PASS / NO POINT WIN,ORTH NRMSE 0.104; coverage 0.940; PLUG ratio 1.002,"Inference benefit, not point-error benefit"
+E2,Orthogonal remainder,PASS,Product-bias R2 > .99999997,Theory realized under controlled nuisances
+E3,One future/dependence,PASS WITH HAC,rho=.9 NRMSE .145/.093; HAC coverage .949/.951,Blocked splits and HAC required
+E4,Moment-blind law change,PASS AT RESOLVING BANK,Power 1.00/.867; moment FWER .067/.067,Finite bank resolution is part of the claim
+E5,Support motion,PASS,ORTH NRMSE .016 at zero noise; likelihood score undefined,Distinctive weak-feature success
+E6,Heavy tails/weak overlap,CONDITIONAL PASS,Targeted sieve stays biased; density-score ORTH reaches .0036 error and 1.00 coverage in gap4 at n=128k,Replace fixed sieve; retain overlap warnings
+E7,Heterogeneous cancellation,PASS AT R=2,Energy 3.982 vs 4.000; sign reversal recovered,Declare history resolution
+E8,Filtered latent recovery,CONDITIONAL PASS,"rho=.98, T=64, n=32k: matched-model CF ORTH NRMSE .141; T=4 NRMSE 2.88",Horizon/model correctness are hard gates
+E9,Dense unknown geometry,TYPED PASS / FULL-FEATURE FAIL,Identified dy8 direct NRMSE .106 at 128k; dy32 low-rank .177 at 32k; full feature NRMSE 1.01,Use structured covariance readout
+E10,Flexible reusable-law baselines,PASS POOLED / LOCAL,"Five MDN/NSF baselines, seven families, 30 fits per cell",No universal family winner or scale frontier
+E11,Path ordering,PASS,Full-path power 1.00; endpoint/unordered FWER .056,Distinctive path-feature success

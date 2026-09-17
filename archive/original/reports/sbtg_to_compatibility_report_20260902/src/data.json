@@ -1,0 +1,992 @@
+{
+  "surface": "report",
+  "title": "What We Learned Trying to Make SBTG Work",
+  "generatedAt": "2026-09-02T23:30:00-04:00",
+  "status": "reviewed",
+  "report": {
+    "asOf": "2026-09-02"
+  },
+  "filters": [],
+  "queries": {
+    "method_map": {
+      "rows": [
+        {
+          "stage": "Classical dynamics",
+          "method": "Ridge VAR, Granger, sparse transition, SINDy",
+          "implementation": "Least squares, ridge regularization, thresholding or sparse libraries on lagged histories",
+          "learned_quantity": "Conditional mean or reduced-form transition support",
+          "key_result": "Best or tied for finite-time conditional means; mandatory baseline",
+          "verdict": "Retain as baseline"
+        },
+        {
+          "stage": "Normalized predictive laws",
+          "method": "Gaussian NLL",
+          "implementation": "Penalized conditional Gaussian mean and log-variance model",
+          "learned_quantity": "Normalized conditional law with mean and dispersion fields",
+          "key_result": "Best matched mean-field and dispersion-field recovery",
+          "verdict": "Primary simple distributional model"
+        },
+        {
+          "stage": "Normalized predictive laws",
+          "method": "Student-t ridge",
+          "implementation": "Linear conditional location and scale under Student-t likelihood",
+          "learned_quantity": "Robust heavy-tailed conditional law",
+          "key_result": "Strong cheap alternative on heavy-tailed data; weak physical dispersion readout in matched panel",
+          "verdict": "Robust baseline"
+        },
+        {
+          "stage": "Normalized predictive laws",
+          "method": "Mixture density network",
+          "implementation": "Factorized conditional mixture likelihood; K=3 in the matched-tail panel and K=4 in later cross-model work",
+          "learned_quantity": "Multimodal conditional density and sample generator",
+          "key_result": "Best matched-tail prediction, but physical tail derivative remained wrong",
+          "verdict": "Use for predictive shape, not mechanism derivative"
+        },
+        {
+          "stage": "Score matching",
+          "method": "Quadratic SID - Hyvarinen",
+          "implementation": "Closed-form quadratic conditional score with Hyvarinen objective and analytic Gaussian reconstruction",
+          "learned_quantity": "Conditional response score and fitted mean/log-variance sensitivities",
+          "key_result": "Recovered matched channels in some settings but lost to Gaussian NLL",
+          "verdict": "Specialized comparator"
+        },
+        {
+          "stage": "Score matching",
+          "method": "Quadratic SID - DSM",
+          "implementation": "Gaussian-corrupted response-score regression over a denoising-noise ladder",
+          "learned_quantity": "Score of a corrupted conditional law",
+          "key_result": "Denoising regularized some fits but did not automatically recover the clean law or physical mechanism",
+          "verdict": "Useful regularizer, not a universal estimator"
+        },
+        {
+          "stage": "Neural density and score models",
+          "method": "Gaussian MLP NLL / DSM",
+          "implementation": "Nonlinear conditional Gaussian network trained by likelihood or denoising score matching",
+          "learned_quantity": "Differentiable Gaussian law and derivative readouts",
+          "key_result": "Neural DSM modestly improved its within-architecture dispersion derivative, but both variants lost to simple Gaussian NLL",
+          "verdict": "Capacity did not solve estimand mismatch"
+        },
+        {
+          "stage": "Original SBTG program",
+          "method": "Linear and feature-bilinear SBTG",
+          "implementation": "Joint-state denoising score model on consecutive standardized states; cross-moments or mixed response-score derivatives used as edge statistics",
+          "learned_quantity": "Joint score and reduced-form localization statistic",
+          "key_result": "Moderate mean-like localization, weak dispersion localization, little mechanism specificity",
+          "verdict": "Reduced-form screen only"
+        },
+        {
+          "stage": "History sensitivity",
+          "method": "Point-history tangents",
+          "implementation": "Differentiate a fitted normalized density or response score with respect to a history direction",
+          "learned_quantity": "Infinitesimal change in conditional law",
+          "key_result": "Optimization converged, but covariance/skew derivative-readiness gates failed",
+          "verdict": "Deprioritize unrestricted point gradients"
+        },
+        {
+          "stage": "Supported finite changes",
+          "method": "Signed classifier, finite density ratio, Riesz/ORTH",
+          "implementation": "Compare two nearby supported history laws by balanced classification, direct ratios, or cross-fitted feature moments",
+          "learned_quantity": "Finite signed contrast or projection onto declared response features",
+          "key_result": "Worked for location and low-rank mixture; initial covariance/skew adapters failed; later typed/ORTH repairs recovered restricted covariance geometry",
+          "verdict": "Promising when support and target channel are explicit"
+        },
+        {
+          "stage": "Mechanistic modeling",
+          "method": "Latent neuromodulated state-space model",
+          "implementation": "Sequential likelihood over release, concentration, receptor occupancy and calcium emissions, with explicit knockout operations",
+          "learned_quantity": "Represented latent mechanism and intervention-like operations",
+          "key_result": "Higher claim ceiling but weak latent alignment, clearance, and controlled knockout recovery",
+          "verdict": "Identification, not capacity, remains limiting"
+        },
+        {
+          "stage": "Path modeling",
+          "method": "Conditional bridge",
+          "implementation": "Heteroskedastic endpoint model plus Brownian-reference path bridge",
+          "learned_quantity": "Reference-relative conditional path distribution",
+          "key_result": "Useful path baseline; sensitivity to reference diffusion dominated and did not identify neuromodulation",
+          "verdict": "D2 path baseline"
+        },
+        {
+          "stage": "Temporal detection",
+          "method": "Typed changepoint probes",
+          "implementation": "Calibrated mean, conditional-rule, dispersion, tail, MMD, energy and segmentation scans",
+          "learned_quantity": "Whether and where a declared channel changes",
+          "key_result": "Matched mean and tail probes succeeded; variance detector was broad and non-specific",
+          "verdict": "Inference wrapper after static validation"
+        },
+        {
+          "stage": "Real-data levers",
+          "method": "Noise ladder, aggregation, gating, shrinkage, functional target, frozen features",
+          "implementation": "Reliability averaging, ganglion pooling, PC1 gating, James-Stein shrinkage, functional-atlas comparison and frozen-trunk analytic heads",
+          "learned_quantity": "More stable or biologically aligned score-derived summaries",
+          "key_result": "Some reproducibility gains, but no robust distributional-specific connectome or kinetics result",
+          "verdict": "Useful diagnostics; mechanistic claim remained negative"
+        },
+        {
+          "stage": "Learned-law response",
+          "method": "Direct repaired-path importance weighting",
+          "implementation": "Generate natural prefixes and futures once, then self-normalize low/high compatibility potentials",
+          "learned_quantity": "Model-relative future law under compatible low/high source histories",
+          "key_result": "Fast and paired, but rare queries can collapse weights",
+          "verdict": "Good supported-query baseline"
+        },
+        {
+          "stage": "Learned-law response",
+          "method": "Progressive bridge SMC",
+          "implementation": "Temper the source/anchor potential through the repair prefix with ESS-adaptive resampling, then release particles and roll forward unchanged dynamics",
+          "learned_quantity": "Same repaired-path law with lower finite-particle error",
+          "key_result": "Best tested finite-particle estimator; cannot repair model misspecification or unsupported queries",
+          "verdict": "Current estimator of choice with diagnostics"
+        }
+      ],
+      "source": {
+        "label": "Reviewed method taxonomy assembled from the project synthesis and repaired-path reports",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/SYNTHETIC_METHODS_REPORT_2026-07-12.md",
+          "/Users/vik/Developer/new_sbtg_neuro/reports/sid_stable_synthesis_2026-07-13/main.tex",
+          "/Users/vik/Developer/new_sbtg_neuro/reports/distributional_sid_adjudication_2026-07-14/main.tex",
+          "/Users/vik/Developer/new_sbtg_neuro/FLOW_REPAIRED_LAG_METHODS_20260828.md"
+        ],
+        "filters": [
+          "Methods with completed local experiments or implemented estimators through 2026-09-02"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Verdict",
+            "definition": "Current role supported by the completed experiments; not a universal ranking across incompatible estimands.",
+            "componentIds": [
+              "method-inventory"
+            ]
+          }
+        ]
+      }
+    },
+    "matched_tail": {
+      "rows": [
+        {
+          "method": "MDN K=3",
+          "heldout_nll": -0.614,
+          "tail_rmse": 0.0095
+        },
+        {
+          "method": "Student-t ridge",
+          "heldout_nll": -0.53,
+          "tail_rmse": 0.0204
+        },
+        {
+          "method": "Gaussian NLL",
+          "heldout_nll": -0.288,
+          "tail_rmse": 0.025
+        },
+        {
+          "method": "Gaussian MLP DSM, sigma 0.25",
+          "heldout_nll": -0.28,
+          "tail_rmse": 0.0263
+        },
+        {
+          "method": "Gaussian MLP DSM, sigma 0.50",
+          "heldout_nll": -0.283,
+          "tail_rmse": 0.0264
+        },
+        {
+          "method": "Gaussian MLP NLL",
+          "heldout_nll": -0.286,
+          "tail_rmse": 0.0268
+        },
+        {
+          "method": "Quadratic DSM, sigma 0.75",
+          "heldout_nll": -0.283,
+          "tail_rmse": 0.0338
+        },
+        {
+          "method": "Quadratic DSM, sigma 1.0",
+          "heldout_nll": -0.283,
+          "tail_rmse": 0.0325
+        },
+        {
+          "method": "Quadratic Hyvarinen",
+          "heldout_nll": 9.18,
+          "tail_rmse": 0.0385
+        }
+      ],
+      "source": {
+        "label": "Matched-tail conditional-law benchmark",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/SYNTHETIC_METHODS_REPORT_2026-07-12.md"
+        ],
+        "filters": [
+          "Matched-tail DGP; common splits, horizons and seeds; lower is better"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Held-out NLL",
+            "definition": "Average negative log likelihood on held-out outcomes under a normalized predictive law; lower is better.",
+            "componentIds": [
+              "tail-table"
+            ]
+          },
+          {
+            "label": "Tail-probability RMSE",
+            "definition": "Root mean squared error of predicted tail probability against the known synthetic conditional law; lower is better.",
+            "componentIds": [
+              "tail-table"
+            ]
+          }
+        ]
+      }
+    },
+    "field_recovery": {
+      "rows": [
+        {
+          "target": "Mean field",
+          "method": "Penalized Gaussian NLL",
+          "nise": 0.369
+        },
+        {
+          "target": "Mean field",
+          "method": "Ridge Gaussian",
+          "nise": 0.395
+        },
+        {
+          "target": "Mean field",
+          "method": "Student-t ridge",
+          "nise": 0.395
+        },
+        {
+          "target": "Mean field",
+          "method": "Quadratic Hyvarinen SID",
+          "nise": 0.473
+        },
+        {
+          "target": "Mean field",
+          "method": "Quadratic DSM SID, best",
+          "nise": 0.475
+        },
+        {
+          "target": "Mean field",
+          "method": "Neural Gaussian NLL",
+          "nise": 0.716
+        },
+        {
+          "target": "Mean field",
+          "method": "MDN K=3",
+          "nise": 0.794
+        },
+        {
+          "target": "Mean field",
+          "method": "Neural Gaussian DSM, best",
+          "nise": 0.824
+        },
+        {
+          "target": "Log-variance field",
+          "method": "Penalized Gaussian NLL",
+          "nise": 0.586
+        },
+        {
+          "target": "Log-variance field",
+          "method": "Neural Gaussian DSM, sigma 0.25",
+          "nise": 0.789
+        },
+        {
+          "target": "Log-variance field",
+          "method": "Quadratic Hyvarinen SID",
+          "nise": 0.791
+        },
+        {
+          "target": "Log-variance field",
+          "method": "Neural Gaussian DSM, sigma 0.50",
+          "nise": 0.794
+        },
+        {
+          "target": "Log-variance field",
+          "method": "Neural Gaussian NLL",
+          "nise": 0.809
+        },
+        {
+          "target": "Log-variance field",
+          "method": "MDN K=3",
+          "nise": 0.872
+        },
+        {
+          "target": "Log-variance field",
+          "method": "Constant-variance ridge",
+          "nise": 1
+        },
+        {
+          "target": "Log-variance field",
+          "method": "Quadratic DSM SID, best",
+          "nise": 1.037
+        },
+        {
+          "target": "Log-variance field",
+          "method": "Student-t ridge",
+          "nise": 2.091
+        }
+      ],
+      "source": {
+        "label": "Matched physical-field recovery panel",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/SYNTHETIC_METHODS_REPORT_2026-07-12.md"
+        ],
+        "filters": [
+          "Five mechanisms; five fresh DGP seeds 8-12; 250/250 cases completed; lower is better"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "nISE",
+            "definition": "Normalized integrated squared error against the known synthetic field. A zero-field prediction has baseline 1.0; lower is better.",
+            "componentIds": [
+              "mean-field-chart",
+              "mean-field-table",
+              "dispersion-field-chart",
+              "dispersion-field-table",
+              "metric-simple"
+            ]
+          }
+        ]
+      }
+    },
+    "gating_recovery": {
+      "rows": [
+        {
+          "method": "Gaussian NLL / ridge / Student-t",
+          "nise": 1,
+          "interpretation": "All emit the zero gated field"
+        },
+        {
+          "method": "Quadratic DSM SID",
+          "nise": 2.1,
+          "interpretation": "Best end of observed 2.10-2.95 range"
+        },
+        {
+          "method": "Quadratic Hyvarinen SID",
+          "nise": 4.42,
+          "interpretation": "Worse than zero"
+        },
+        {
+          "method": "Neural NLL / DSM / MDN",
+          "nise": 20.97,
+          "interpretation": "Best end of observed 20.97-23.40 range"
+        }
+      ],
+      "source": {
+        "label": "Synthetic synaptic-gating field benchmark",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/SYNTHETIC_METHODS_REPORT_2026-07-12.md"
+        ],
+        "filters": [
+          "Lower is better; 1.0 is the zero-field baseline; rows with ranges show the best end of the reported range"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Synaptic-gating nISE",
+            "definition": "Normalized integrated squared error of the total modulator-gated response field against known synthetic truth.",
+            "componentIds": [
+              "gating-table"
+            ]
+          }
+        ]
+      }
+    },
+    "finite_contrasts": {
+      "rows": [
+        {
+          "generator": "G1 location",
+          "best_route": "Signed classifier / Gaussian finite ratio",
+          "mean_witness_nrmse": 0.63,
+          "reported_range": "0.61-0.65",
+          "verdict": "Useful"
+        },
+        {
+          "generator": "G2 covariance-only",
+          "best_route": "Ratio critic",
+          "mean_witness_nrmse": 1.057,
+          "reported_range": "1.057",
+          "verdict": "Did not beat zero"
+        },
+        {
+          "generator": "G3 skew-only",
+          "best_route": "Ratio critic",
+          "mean_witness_nrmse": 1.008,
+          "reported_range": "1.008",
+          "verdict": "Did not beat zero"
+        },
+        {
+          "generator": "G4 low-rank mixture",
+          "best_route": "Ratio critic",
+          "mean_witness_nrmse": 0.656,
+          "reported_range": "0.656",
+          "verdict": "Useful"
+        }
+      ],
+      "source": {
+        "label": "Ten-seed finite central contrast panel",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/SYNTHETIC_METHODS_REPORT_2026-07-12.md"
+        ],
+        "filters": [
+          "Clean law; central contrast delta=0.1; ten adapter/evaluation seeds 5004-5013; 76,760 metric rows"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Witness NRMSE",
+            "definition": "Normalized root mean squared error of the learned finite signed witness. The zero-witness baseline is approximately 1; lower is better.",
+            "componentIds": [
+              "finite-contrast-table"
+            ]
+          }
+        ]
+      }
+    },
+    "later_repairs": {
+      "rows": [
+        {
+          "problem": "E6 bounded tail/gap features",
+          "initial_diagnosis": "Targeted random-feature Riesz sieve reached a bias floor",
+          "repair": "BIC-selected history density, differentiated log density, and cross-fitted ORTH moment estimation",
+          "result": "Density-score learner improved with sample size in tested low-dimensional families",
+          "remaining_limit": "Severe overlap still increases variance"
+        },
+        {
+          "problem": "E8 filtered latent dynamics",
+          "initial_diagnosis": "Short filtered windows appeared recoverable after analytic correction",
+          "repair": "Exact attenuation accounting and longer observation horizons",
+          "result": "Recovery requires a sufficiently long window and credible measurement model",
+          "remaining_limit": "Four-step case remained information-limited"
+        },
+        {
+          "problem": "E9 covariance geometry",
+          "initial_diagnosis": "Characteristic inversion suggested covariance failure",
+          "repair": "Correct population rank and reduce inverse ridge from 1e-4 toward 1e-8; use direct/effective low-rank heads",
+          "result": "At dY=8, direct covariance NRMSE fell 0.404 -> 0.219 -> 0.106 as n rose 8k -> 32k -> 128k",
+          "remaining_limit": "Full feature-tangent NRMSE remained 3.97 -> 1.93 -> 1.01"
+        },
+        {
+          "problem": "Global cancellation",
+          "initial_diagnosis": "A dataset-average response could look null",
+          "repair": "Resolve bounded features by local history regions with an ORTH basis",
+          "result": "Recovered sign reversals hidden by global averaging in matched synthetic designs",
+          "remaining_limit": "Resolution creates a variance tradeoff and remains observational"
+        }
+      ],
+      "source": {
+        "label": "Post-adjudication diagnosis of apparent distributional SID failures",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/reports/sid_stable_synthesis_2026-07-13/main.tex",
+          "/Users/vik/Developer/new_sbtg_neuro/reports/distributional_sid_adjudication_2026-07-14/main.tex"
+        ],
+        "filters": [
+          "Completed E6-E9 diagnostic and sample-scaling experiments"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Repair result",
+            "definition": "Narrow conclusion after correcting identified design or implementation problems; it does not revive unrestricted full-law, latent or causal recovery.",
+            "componentIds": [
+              "repair-table"
+            ]
+          }
+        ]
+      }
+    },
+    "sbtg_localization": {
+      "rows": [
+        {
+          "readout": "Joint-score cross-moment, mean-like support",
+          "observed_range": "0.15-0.39 AP excess",
+          "interpretation": "Moderate localization, but similar across additive, dispersion and gating scenarios"
+        },
+        {
+          "readout": "Log-variance localization",
+          "observed_range": "0.06-0.10 AP excess",
+          "interpretation": "Weak"
+        },
+        {
+          "readout": "Squared-score covariance localization",
+          "observed_range": "0.00-0.05 AP excess",
+          "interpretation": "Near chance"
+        },
+        {
+          "readout": "Linear versus feature-bilinear SBTG",
+          "observed_range": "Linear often equal or better",
+          "interpretation": "Added interaction parameterization did not create mechanism specificity"
+        }
+      ],
+      "source": {
+        "label": "Frozen synthetic SBTG localization panel",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/SYNTHETIC_METHODS_REPORT_2026-07-12.md"
+        ],
+        "filters": [
+          "Reduced-form edge support only; do not read as physical-field or causal recovery"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "AP excess",
+            "definition": "Average precision minus edge prevalence. Zero indicates no gain over prevalence; larger is better for support localization.",
+            "componentIds": [
+              "sbtg-table"
+            ]
+          }
+        ]
+      }
+    },
+    "changepoints": {
+      "rows": [
+        {
+          "probe": "Mean CUSUM",
+          "target_case": "High-signal mean change",
+          "detected": "100/100",
+          "localized": "100/100",
+          "nuisance_result": "Matched claim success"
+        },
+        {
+          "probe": "Residual tail shape",
+          "target_case": "Mean/variance-matched tail change",
+          "detected": "100/100",
+          "localized": "100/100",
+          "nuisance_result": "Matched claim success"
+        },
+        {
+          "probe": "Residual variance",
+          "target_case": "Dispersion change",
+          "detected": "100/100",
+          "localized": "41/100",
+          "nuisance_result": "Also called 95% of mean changes and 99% of matched-tail changes"
+        },
+        {
+          "probe": "Mean",
+          "target_case": "Independent no-change calibration",
+          "detected": "2% FPR",
+          "localized": "n/a",
+          "nuisance_result": "Near nominal"
+        },
+        {
+          "probe": "Conditional rule / variance",
+          "target_case": "Independent no-change calibration",
+          "detected": "4% FPR",
+          "localized": "n/a",
+          "nuisance_result": "Near nominal"
+        },
+        {
+          "probe": "Tail",
+          "target_case": "Independent no-change calibration",
+          "detected": "3% FPR",
+          "localized": "n/a",
+          "nuisance_result": "Near nominal"
+        },
+        {
+          "probe": "MMD",
+          "target_case": "Independent no-change calibration",
+          "detected": "9% FPR",
+          "localized": "n/a",
+          "nuisance_result": "Above nominal"
+        },
+        {
+          "probe": "Energy distance",
+          "target_case": "Independent no-change calibration",
+          "detected": "11% FPR",
+          "localized": "n/a",
+          "nuisance_result": "Above nominal"
+        }
+      ],
+      "source": {
+        "label": "Matched changepoint calibration suite",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/SYNTHETIC_METHODS_REPORT_2026-07-12.md"
+        ],
+        "filters": [
+          "199 calibration trajectories and 100 independent evaluation trajectories per condition"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "FPR",
+            "definition": "False-positive rate on independent matched no-change synthetic trajectories.",
+            "componentIds": [
+              "changepoint-table"
+            ]
+          }
+        ]
+      }
+    },
+    "real_data_results": {
+      "rows": [
+        {
+          "stage": "Original lag signal",
+          "cohort_or_scope": "Six worms, row-level split",
+          "result": "Peptidergic gain-slow dBC +3.35",
+          "interpretation": "Apparent strong lead"
+        },
+        {
+          "stage": "Grouped reanalysis",
+          "cohort_or_scope": "Same six worms, rows grouped by worm",
+          "result": "dBC +1.16",
+          "interpretation": "Substantial attenuation"
+        },
+        {
+          "stage": "Validated all-animal analysis",
+          "cohort_or_scope": "28 worms with ACMMA",
+          "result": "dBC -0.41; monoamine and peptide intervals included zero",
+          "interpretation": "Original lag-specific claim did not replicate"
+        },
+        {
+          "stage": "Conditional variance likelihood",
+          "cohort_or_scope": "Six worms, leave-one-worm-out",
+          "result": "Delta NLL +0.038 versus same mean with constant variance",
+          "interpretation": "Positive predictive value"
+        },
+        {
+          "stage": "Conditional variance likelihood",
+          "cohort_or_scope": "All 28 worms",
+          "result": "Delta NLL +0.364; all targets improved",
+          "interpretation": "Strongest real-data distributional result; not receptor-specific"
+        },
+        {
+          "stage": "Noise ladder",
+          "cohort_or_scope": "Sigma 0, 0.25, 0.5, 1.0",
+          "result": "Split-half stability 0.234 -> 0.254 at lag 15",
+          "interpretation": "Modest reliability gain"
+        },
+        {
+          "stage": "Ganglion aggregation",
+          "cohort_or_scope": "Approximately 8-14 ganglia",
+          "result": "Reproducibility about 0.25 -> 0.54; corrected reference gains +0.14/+0.17",
+          "interpretation": "Real coarsening benefit, but all channels benefited"
+        },
+        {
+          "stage": "Functional target",
+          "cohort_or_scope": "Randi/Leifer atlas; 1,900-edge evaluation mask",
+          "result": "Gain AUROC 0.555 versus pairwise Pearson 0.621; kinetics rho +0.015",
+          "interpretation": "Weak static signal and failed kinetics"
+        },
+        {
+          "stage": "Hierarchical shrinkage",
+          "cohort_or_scope": "James-Stein toward ganglion blocks",
+          "result": "Split-half stability 0.258 -> 0.187 at weight 0.5",
+          "interpretation": "Clean negative"
+        },
+        {
+          "stage": "Corrected 54-neuron atlas",
+          "cohort_or_scope": "17 native-4-Hz OH16230 worms",
+          "result": "102 baseline-mean edges; zero strong-support lag edges; zero rows passed sampler plus quiet-time controls",
+          "interpretation": "Mean prediction did not become experiment-ready lag structure"
+        }
+      ],
+      "source": {
+        "label": "Reviewed real-neural-data results",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/EXPERIMENT_REVIEW_2026-07-12.md",
+          "/Users/vik/Developer/new_sbtg_neuro/sid_elegans/output/newlevers/RESULTS.md",
+          "/Users/vik/Developer/new_sbtg_neuro/results/neural_prediction_atlas_20260829/README.md"
+        ],
+        "filters": [
+          "Animal-level or explicitly described historical comparisons; reported within original estimands"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Delta NLL",
+            "definition": "Improvement in held-out negative log likelihood from modeling conditional variance relative to the same fitted conditional mean with constant variance; positive favors the variance model.",
+            "componentIds": [
+              "real-results-table",
+              "metric-variance"
+            ]
+          },
+          {
+            "label": "dBC",
+            "definition": "Difference in biological correspondence used in the original lag analysis; reported only to show attenuation across increasingly valid analyses.",
+            "componentIds": [
+              "real-results-table"
+            ]
+          }
+        ]
+      }
+    },
+    "repaired_path_config": {
+      "rows": [
+        {"setting":"Observed state","value":"54 standardized neurons","role":"Corrected OH16230 head cohort at native 4 Hz"},
+        {"setting":"History length","value":"80 frames / 20 s","role":"Finite-memory conditional transition input"},
+        {"setting":"Repair/source window","value":"4 frames / 1 s","role":"Generated prefix segment summarized for the source clamp"},
+        {"setting":"Explicit source lags","value":"1, 4, 8, 16 frames","role":"0.25, 1, 2 and 4 s from source-window end to cut"},
+        {"setting":"Low/high targets","value":"Training-fold Q25 / Q75","role":"Phase-specific source-state targets"},
+        {"setting":"Source bandwidth","value":"max(0.25 × IQR, 0.10)","role":"Soft-clamp bias/overlap tradeoff"},
+        {"setting":"Achieved-gap floor","value":"0.10 standardized units","role":"Prevents unstable normalization; does not replace validity gating"},
+        {"setting":"Population anchor","value":"Rank-12 PCA; lambda=0.25","role":"Keeps non-source population context near the factual episode"},
+        {"setting":"Progressive branching","value":"2 children per survivor","role":"Offers alternative continuations during the repair bridge"},
+        {"setting":"Bridge ESS target","value":"At least 65% of candidates","role":"Caps each tempering increment before systematic resampling"},
+        {"setting":"Future features","value":"endpoint/cumulative mean, peak, event probability, SD","role":"Makes the response a comparison of future laws rather than means alone"},
+        {"setting":"Matrix orientation","value":"target rows × source columns","role":"External-comparison convention after one recorded transpose"}
+      ],
+      "source": {
+        "label": "Corrected E26 repaired-path implementation specification",
+        "files": ["/Users/vik/Developer/new_sbtg_neuro/FLOW_REPAIRED_LAG_METHODS_20260828.md"],
+        "filters": ["Corrected 17-worm OH16230 cohort; five held-out-worm folds; binary any-stimulus conditional flow"],
+        "metricDefinitions": [
+          {"label":"Configuration value","definition":"Frozen or declared setting for the corrected repaired-path experiment; historical and later campaigns can use different particle counts or grids.","componentIds":["repaired-config-table"]}
+        ]
+      }
+    },
+    "smc_benchmark": {
+      "rows": [
+        {
+          "estimator": "Direct importance",
+          "response_mse": 0.030689,
+          "bias_squared": 0.013059,
+          "mc_variance": 0.01763,
+          "signed_rho": 0.758,
+          "valid_rate": 0.44,
+          "runtime_minutes": 0.5
+        },
+        {
+          "estimator": "Terminal-clamp SMC",
+          "response_mse": 0.015645,
+          "bias_squared": 0.008098,
+          "mc_variance": 0.007547,
+          "signed_rho": 0.815,
+          "valid_rate": 0.435,
+          "runtime_minutes": 21.2
+        },
+        {
+          "estimator": "Progressive bridge SMC",
+          "response_mse": 0.011008,
+          "bias_squared": 0.00658,
+          "mc_variance": 0.004428,
+          "signed_rho": 0.854,
+          "valid_rate": 0.911,
+          "runtime_minutes": 34.3
+        }
+      ],
+      "source": {
+        "label": "Sealed Stage-A finite-particle estimator benchmark",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/results/compatibility_path_response/EXPERIMENT_INDEX.md",
+          "/Users/vik/Developer/new_sbtg_neuro/FLOW_REPAIRED_LAG_METHODS_20260828.md"
+        ],
+        "filters": [
+          "One frozen flow checkpoint; two 4,096-particle references; three finite-particle repeats; no external atlas used for selection"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Response MSE",
+            "definition": "Finite-particle squared error against the mean of two high-particle estimates of the same learned repaired law; not error against biological truth.",
+            "componentIds": [
+              "smc-table",
+              "smc-mse-chart",
+              "metric-smc"
+            ]
+          },
+          {
+            "label": "Valid rate",
+            "definition": "Fraction of evaluated cells passing the declared compatibility and numerical validity gates.",
+            "componentIds": [
+              "smc-table"
+            ]
+          }
+        ]
+      }
+    },
+    "ood_results": {
+      "rows": [
+        {
+          "finding": "Supported cross-family agreement",
+          "value": "Mean between-family SD 0.01077",
+          "status": "Validated",
+          "meaning": "Qualified models broadly agree for supported queries"
+        },
+        {
+          "finding": "Rare-query direct importance, matched cost",
+          "value": "MAE 0.1189",
+          "status": "Observed",
+          "meaning": "Matched-cost direct estimator beat progressive in this suite"
+        },
+        {
+          "finding": "Rare-query progressive bridge",
+          "value": "MAE 0.1559",
+          "status": "Observed",
+          "meaning": "Better than same-N direct, not better than matched-cost direct"
+        },
+        {
+          "finding": "Rare-query direct importance, same N",
+          "value": "MAE 0.2960",
+          "status": "Observed",
+          "meaning": "Severe finite-particle degradation"
+        },
+        {
+          "finding": "Error versus minimum ESS",
+          "value": "Spearman -0.509",
+          "status": "Validated",
+          "meaning": "Particle health carries information, but is incomplete"
+        },
+        {
+          "finding": "Error versus empirical history distance",
+          "value": "Spearman 0.126",
+          "status": "Validated",
+          "meaning": "This distance alone was weak in the tested summary"
+        },
+        {
+          "finding": "Error versus cross-model disagreement",
+          "value": "Spearman 0.797",
+          "status": "Validated",
+          "meaning": "Strongest tested warning signal"
+        },
+        {
+          "finding": "Stable but wrong",
+          "value": "16 rows",
+          "status": "Validated",
+          "meaning": "SMC gates passed while learned-model error exceeded 0.25"
+        }
+      ],
+      "source": {
+        "label": "Progressive bridge SMC model-error and OOD study",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/results/query_ood_robustness_20260901/REPORT.md"
+        ],
+        "filters": [
+          "Six predictively qualified model families; corrected 17-worm cohort plus nonlinear VAR and FitzHugh-Nagumo synthetic systems"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "MAE",
+            "definition": "Mean absolute estimator error against the study's high-particle target for the same learned-law query.",
+            "componentIds": [
+              "ood-table"
+            ]
+          },
+          {
+            "label": "Stable but wrong",
+            "definition": "Rows passing SMC numerical gates and particle-error tolerance while learned-model error exceeded 0.25.",
+            "componentIds": [
+              "ood-table"
+            ]
+          }
+        ]
+      }
+    },
+    "atlas80_external": {
+      "rows": [
+        {
+          "method": "Progressive bridge SMC",
+          "reference": "Randi wild type",
+          "auroc": 0.657,
+          "source_macro_auroc": 0.623
+        },
+        {
+          "method": "Progressive bridge SMC",
+          "reference": "Cook structural 80",
+          "auroc": 0.614,
+          "source_macro_auroc": 0.601
+        },
+        {
+          "method": "Progressive bridge SMC",
+          "reference": "Cook chemical 80",
+          "auroc": 0.605,
+          "source_macro_auroc": 0.587
+        },
+        {
+          "method": "Progressive bridge SMC",
+          "reference": "Cook gap 80",
+          "auroc": 0.654,
+          "source_macro_auroc": 0.68
+        },
+        {
+          "method": "Published SBTG",
+          "reference": "Randi wild type",
+          "auroc": 0.63,
+          "source_macro_auroc": 0.615
+        },
+        {
+          "method": "Published SBTG",
+          "reference": "Cook structural 80",
+          "auroc": 0.581,
+          "source_macro_auroc": 0.578
+        },
+        {
+          "method": "Published SBTG",
+          "reference": "Cook chemical 80",
+          "auroc": 0.57,
+          "source_macro_auroc": 0.557
+        },
+        {
+          "method": "Published SBTG",
+          "reference": "Cook gap 80",
+          "auroc": 0.613,
+          "source_macro_auroc": 0.652
+        }
+      ],
+      "source": {
+        "label": "Completed historical SBTG80 progressive-bridge atlas",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/results/sbtg80_optimized_full_atlas_20260902/REPORT.md"
+        ],
+        "filters": [
+          "Lag 1; post-freeze correspondence; historical/contextual only because source data used invalid head/tail fusion and donor-trace copying"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "AUROC",
+            "definition": "Probability that the absolute model score ranks a referenced positive edge above a referenced negative edge. It does not measure causal effect calibration.",
+            "componentIds": [
+              "atlas80-table"
+            ]
+          },
+          {
+            "label": "Source-macro AUROC",
+            "definition": "AUROC computed within eligible source neurons and averaged across sources, reducing dominance by sources with many evaluated pairs.",
+            "componentIds": [
+              "atlas80-table"
+            ]
+          }
+        ]
+      }
+    },
+    "current_program": {
+      "rows": [
+        {
+          "artifact": "Historical optimized 80-neuron atlas",
+          "state": "Complete",
+          "scope": "20 historical traces, 80 classes, four lags, six horizons, seven channels, thirteen contexts",
+          "claim_boundary": "Historical/contextual because the released cache used invalid index-wise head/tail fusion and donor imputation"
+        },
+        {
+          "artifact": "Corrected 54-neuron atlas",
+          "state": "Complete negative lag adjudication",
+          "scope": "17 native-4-Hz OH16230 worms with onset and matched quiet controls",
+          "claim_boundary": "No experiment-ready lag edges passed both sampler and temporal-specificity gates"
+        },
+        {
+          "artifact": "Query/OOD robustness suite",
+          "state": "Complete",
+          "scope": "Six model families, nonlinear VAR, FitzHugh-Nagumo and NeuroPAL pseudo-OOD tasks",
+          "claim_boundary": "Support and model disagreement are required; ESS alone is not validity"
+        },
+        {
+          "artifact": "DANDI 000981 prospective campaign",
+          "state": "Prepared; cluster campaign is the next execution stage",
+          "scope": "22 retained hermaphrodites plus 22 retained males, shared exact-name neuron vocabulary expected around 153, combined and sex-specific models, four samplers",
+          "claim_boundary": "Prospective observational/model-relative validation with post-freeze external comparisons"
+        }
+      ],
+      "source": {
+        "label": "Current program status through 2026-09-02",
+        "files": [
+          "/Users/vik/Developer/new_sbtg_neuro/results/sbtg80_optimized_full_atlas_20260902/REPORT.md",
+          "/Users/vik/Developer/new_sbtg_neuro/results/neural_prediction_atlas_20260829/README.md",
+          "/Users/vik/Developer/new_sbtg_neuro/results/query_ood_robustness_20260901/REPORT.md",
+          "/Users/vik/Developer/new_sbtg_neuro/dandi000981_lag_cluster_bundle/README_CLUSTER.md"
+        ],
+        "filters": [
+          "Completed artifacts and explicitly documented next-stage campaign only"
+        ],
+        "metricDefinitions": [
+          {
+            "label": "State",
+            "definition": "Repository status as of 2026-09-02; prepared does not mean executed or biologically confirmed.",
+            "componentIds": [
+              "current-program-table"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "id": "report:e6c39d30-49e2-490a-9765-da0b9ba4d444"
+}

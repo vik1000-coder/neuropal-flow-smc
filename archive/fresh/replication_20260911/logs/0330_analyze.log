@@ -1,0 +1,146 @@
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+[combined] 28 total worms; 56 neurons; 20 complete-case worms (17 OH16230 + 3 OH15500); signal=raw
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=0 seed=1701
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=1.01546 balanced=1.02670 epoch=114 sec=273.5
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=0 heldout_worm_index=1
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=0 heldout_worm_index=2
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=0 heldout_worm_index=4
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=0 heldout_worm_index=7
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=0 heldout_worm_index=1
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=0 heldout_worm_index=2
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=0 heldout_worm_index=4
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=0 heldout_worm_index=7
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=0 heldout_worm_index=1
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=0 heldout_worm_index=2
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=0 heldout_worm_index=4
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=0 heldout_worm_index=7
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=0 heldout_worm_index=1
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=0 heldout_worm_index=2
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=0 heldout_worm_index=4
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=0 heldout_worm_index=7
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=1 seed=1701
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=1.05417 balanced=1.06880 epoch=110 sec=298.5
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=1 heldout_worm_index=0
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=1 heldout_worm_index=3
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=1 heldout_worm_index=9
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=1 heldout_worm_index=16
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=1 heldout_worm_index=0
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=1 heldout_worm_index=3
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=1 heldout_worm_index=9
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=1 heldout_worm_index=16
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=1 heldout_worm_index=0
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=1 heldout_worm_index=3
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=1 heldout_worm_index=9
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=1 heldout_worm_index=16
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=1 heldout_worm_index=0
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=1 heldout_worm_index=3
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=1 heldout_worm_index=9
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=1 heldout_worm_index=16
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=2 seed=1701
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=0.98764 balanced=0.99752 epoch=87 sec=272.7
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=2 heldout_worm_index=6
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=2 heldout_worm_index=11
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=2 heldout_worm_index=14
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=2 heldout_worm_index=6
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=2 heldout_worm_index=11
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=2 heldout_worm_index=14
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=2 heldout_worm_index=6
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=2 heldout_worm_index=11
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=2 heldout_worm_index=14
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=2 heldout_worm_index=6
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=2 heldout_worm_index=11
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=2 heldout_worm_index=14
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=3 seed=1701
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=1.04469 balanced=1.04999 epoch=89 sec=277.7
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=3 heldout_worm_index=5
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=3 heldout_worm_index=8
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=3 heldout_worm_index=12
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=3 heldout_worm_index=5
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=3 heldout_worm_index=8
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=3 heldout_worm_index=12
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=3 heldout_worm_index=5
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=3 heldout_worm_index=8
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=3 heldout_worm_index=12
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=3 heldout_worm_index=5
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=3 heldout_worm_index=8
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=3 heldout_worm_index=12
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=4 seed=1701
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=1.07371 balanced=1.09777 epoch=80 sec=232.0
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=4 heldout_worm_index=10
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=4 heldout_worm_index=13
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=4 heldout_worm_index=15
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=4 heldout_worm_index=10
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=4 heldout_worm_index=13
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=4 heldout_worm_index=15
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=4 heldout_worm_index=10
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=4 heldout_worm_index=13
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=4 heldout_worm_index=15
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=4 heldout_worm_index=10
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=4 heldout_worm_index=13
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=4 heldout_worm_index=15
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=0 seed=2903
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=1.01679 balanced=1.02791 epoch=107 sec=264.8
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=0 heldout_worm_index=1
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=0 heldout_worm_index=2
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=0 heldout_worm_index=4
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=0 heldout_worm_index=7
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=0 heldout_worm_index=1
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=0 heldout_worm_index=2
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=0 heldout_worm_index=4
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=0 heldout_worm_index=7
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=0 heldout_worm_index=1
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=0 heldout_worm_index=2
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=0 heldout_worm_index=4
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=0 heldout_worm_index=7
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=0 heldout_worm_index=1
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=0 heldout_worm_index=2
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=0 heldout_worm_index=4
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=0 heldout_worm_index=7
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=1 seed=2903
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=1.05758 balanced=1.07386 epoch=120 sec=321.5
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=1 heldout_worm_index=0
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=1 heldout_worm_index=3
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=1 heldout_worm_index=9
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=1 heldout_worm_index=16
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=1 heldout_worm_index=0
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=1 heldout_worm_index=3
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=1 heldout_worm_index=9
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=1 heldout_worm_index=16
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=1 heldout_worm_index=0
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=1 heldout_worm_index=3
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=1 heldout_worm_index=9
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=1 heldout_worm_index=16
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=1 heldout_worm_index=0
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=1 heldout_worm_index=3
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=1 heldout_worm_index=9
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=1 heldout_worm_index=16
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=2 seed=2903
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=0.99037 balanced=1.00963 epoch=86 sec=263.6
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=2 heldout_worm_index=6
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=2 heldout_worm_index=11
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=2 heldout_worm_index=14
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=2 heldout_worm_index=6
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=2 heldout_worm_index=11
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=2 heldout_worm_index=14
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=2 heldout_worm_index=6
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=2 heldout_worm_index=11
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=8 fold=2 heldout_worm_index=14
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=2 heldout_worm_index=6
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=2 heldout_worm_index=11
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=16 fold=2 heldout_worm_index=14
+TRIAL_START phase=replication model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 lag=80 fold=3 seed=2903
+TRIAL_DONE model=stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01 energy=1.05758 balanced=1.05914 epoch=103 sec=304.4
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=3 heldout_worm_index=5
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=3 heldout_worm_index=8
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=1 fold=3 heldout_worm_index=12
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=3 heldout_worm_index=5
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=3 heldout_worm_index=8
+ATLAS_WORM_DONE method=progressive_bridge_smc ell=4 fold=3 heldout_worm_index=12

@@ -1,0 +1,26 @@
+schema_version: "1"
+name: causal_smoke
+output_dir: outputs/causal_smoke
+history_lags: [1]
+horizons: [1]
+views: [complete_state, latent]
+seeds: [0]
+validation_fraction: 0.2
+test_fraction: 0.2
+n_predictive_samples: 4
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 4.0
+  max_output_gb: 0.1
+  nice: 19
+  stop_free_disk_gb: 4.0
+scenarios:
+  - id: additive
+    family: mechanistic
+    n_trajectories: 5
+    params: {n_neurons: 4, n_modulators: 1, n_steps: 100, burn_in: 140, mechanism: additive_mean, effect_strength: 0.5, ligand_pulse_rate_hz: 0.1, ligand_pulse_amplitude: 2.5}
+methods:
+  - {name: pysindy_discrete_official, params: {degree: 2, threshold: 0.03, alpha: 0.01}}
+  - {name: pcmci_parcorr, params: {tau_max: 1, pc_alpha: 0.2}}
+  - {name: var_lingam_official, params: {lags: 1, prune: false}}

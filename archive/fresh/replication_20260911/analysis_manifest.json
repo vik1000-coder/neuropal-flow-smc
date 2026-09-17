@@ -1,0 +1,16 @@
+{
+  "spec_id": "a1070d62c99aa323a9200e2c079b0d87e920f4c40ba5ce353ad26f2fc63d7777",
+  "created_utc": "2026-09-11T16:34:37.612756+00:00",
+  "workers": {
+    "diagnostics.py": "e58a70c8d2997eb18a3601ae5e0822ff90346637bb5cd0ebecb82cbd68f52623",
+    "predictive.py": "a4bf14dbd128ca6090e5d0a0f7001193a1e221adececaa859cf1e066cdbf5d82",
+    "analyze.py": "3a03fce1422366b9dfa90d6a5bcc24a4a5979456fc9d3661df2c7d33511c7a57",
+    "extensions.py": "f5ee0a6e6dd32c41b3163389f4af2537a973eb29557ec31d5af17a0f70378118",
+    "statistical_analysis.py": "38b83c740e4f1832164490f37b9c42d71d38351e301ec19554f9cd19e7d70c13",
+    "report.py": "522ef2122ad557bbd8bb0f70d8795dfa365f1f18a2b11f14c80377c2eebdec13",
+    "ANALYSIS_IMPLEMENTATION.md": "a71fc9b12a094dc90fdef9582ffa1b3898e02cd6a4b6efbaf40447e0aa890eee",
+    "test_replication.py": "2273b48879d645f67217c9f1d5af8dabf1e3b10e8d2cf23d463f92bc5d580806"
+  },
+  "stage": "before any response/reference evaluation",
+  "note": "All diagnostic, analysis, extension and reporting code fixed while primary fitting is ongoing."
+}

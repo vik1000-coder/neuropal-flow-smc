@@ -1,0 +1,12 @@
+{
+  "audit_time_utc": "2026-08-31T12:53:52.738446+00:00",
+  "python": "3.14.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "numpy": "2.5.1",
+  "pandas": "3.0.3",
+  "scipy": "1.18.0",
+  "torch": "2.13.0",
+  "probe_device": "cpu",
+  "production_code_modified": false,
+  "note": "Audit-time snapshot, not retrospective launch provenance."
+}

@@ -1,0 +1,9 @@
+law,entropy,descriptive_spearman_with_mean_squared_error,n_dataset_region_groups
+bimodal,mixture_label_entropy,-0.2833333333333333,9
+bimodal,joint_predictive_entropy,0.48333333333333334,9
+heavy_tailed,mixture_label_entropy,0.5666666666666667,9
+heavy_tailed,joint_predictive_entropy,0.5499999999999999,9
+linear_gaussian,mixture_label_entropy,0.08333333333333334,9
+linear_gaussian,joint_predictive_entropy,0.7166666666666667,9
+nonlinear_heteroskedastic,mixture_label_entropy,-0.06666666666666667,9
+nonlinear_heteroskedastic,joint_predictive_entropy,0.6333333333333333,9

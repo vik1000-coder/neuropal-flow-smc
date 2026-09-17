@@ -1,0 +1,7 @@
+{
+  "estimand": "held-out log-density gain from the correct versus permuted shape control",
+  "records": 40,
+  "schema_version": "1",
+  "status": "complete",
+  "test_cases_per_record": 2048
+}

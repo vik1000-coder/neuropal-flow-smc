@@ -1,0 +1,51 @@
+schema_version: "1"
+name: response_smoke
+output_dir: outputs/response_smoke
+history_lags: [1]
+horizons: [1]
+views: [complete_state]
+seeds: [0]
+validation_fraction: 0.2
+test_fraction: 0.2
+n_predictive_samples: 4
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 3.0
+  max_output_gb: 0.1
+  nice: 19
+  checkpoint_minutes: 5
+  stop_free_disk_gb: 4.0
+scenarios:
+  - id: additive_response_smoke
+    family: mechanistic
+    n_trajectories: 5
+    params:
+      n_neurons: 3
+      n_modulators: 1
+      n_steps: 50
+      burn_in: 60
+      mechanism: additive_mean
+      ligand_pulse_rate_hz: 0.08
+      ligand_pulse_amplitude: 2.5
+methods:
+  - name: ridge_var
+    params: {ridge: 1.0}
+response_kernel_evaluation:
+  horizon: 12
+  n_pairs: 2
+  operations:
+    - {id: "null", kind: "null"}
+    - id: ligand_pulse
+      kind: ligand_pulse
+      modulator_index: 0
+      amplitude: 2.5
+      duration_steps: 2
+    - id: receptor_knockout
+      kind: receptor_knockout
+      modulator_index: 0
+      selection: first_active
+    - id: release_source_silencing
+      kind: release_source_silencing
+      modulator_index: 0
+      selection: first_active

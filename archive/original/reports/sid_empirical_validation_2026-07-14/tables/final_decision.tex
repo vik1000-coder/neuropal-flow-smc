@@ -1,0 +1,24 @@
+\begin{landscape}\scriptsize\begin{longtable}{p{0.08\linewidth}p{0.12\linewidth}p{0.12\linewidth}p{0.12\linewidth}p{0.12\linewidth}p{0.08\linewidth}p{0.08\linewidth}p{0.15\linewidth}}
+\caption{Final target-by-target decision table. NRMSE values are mean [95\% DGP-bootstrap interval].}\\
+\toprule Target & Best direct & Best normalized law & Best score-derived & Best finite & Recovered? & Advantage? & Main limitation\\\midrule
+\endfirsthead\toprule Target & Best direct & Best normalized law & Best score-derived & Best finite & Recovered? & Advantage? & Main limitation\\\midrule\endhead
+Mean & Direct moments 0.52 [0.42, 0.62] & Matched normalized law 0.52 [0.42, 0.62] & Clean Hyv\"arinen + Hodge 0.32 [0.29, 0.36] & Direct moments (finite) 0.50 [0.41, 0.61] & Numerically yes & No score advantage & Low-order home field; full nuisance FPR not emitted \\
+Variance lag & Direct moments 0.26 [0.23, 0.29] & Matched gain mixture 0.05 [0.05, 0.06] & Anchored score + Hodge 0.50 [0.44, 0.55] & Direct moments (finite) 0.26 [0.23, 0.29] & Yes: direct/matched & Matched only, with stronger structure & Score slope 0.797; hidden state and filtering add error \\
+Covariance lag & Direct moments 0.22 [0.20, 0.25] & Matched gain mixture 0.05 [0.05, 0.06] & No score readout & Direct moments (finite) 0.22 [0.20, 0.25] & Yes: direct/matched & Matched only, with stronger structure & No generic score covariance estimate in the implemented D2 route \\
+Third-cumulant lag & Direct moments 0.26 [0.22, 0.31] & Matched gain mixture 0.06 [0.05, 0.06] & Anchored score + Hodge 1.33 [1.27, 1.38] & Direct moments (finite) 0.26 [0.22, 0.31] & Yes: direct/matched & Matched only, with stronger structure & Score slope is negative; static clean score is attenuated \\
+Standardized skewness & Direct raw moments available & Matched-law moments available & Not separately confirmed & Endpoint moments available & Unresolved as a primary claim & No & Run emitted third cumulant, not a standalone primary skewness board \\
+Tail probability & Direct moments 8.28 [6.96, 9.73] & Matched normalized law 0.19 [0.10, 0.30] & Clean Hyv\"arinen + Hodge 6.26 [5.63, 6.92] & Direct moments (finite) 8.01 [6.66, 9.39] & Matched law only & No fair general advantage & Positivity capped achieved $\Lambda$ at 0.128 \\
+Mode occupancy & Direct moments 2.57 [2.07, 3.11] & Matched normalized law 0.08 [0.05, 0.12] & Clean Hyv\"arinen + Hodge 1.85 [1.70, 2.00] & Direct moments (finite) 2.48 [2.01, 2.98] & Matched law only & No fair general advantage & Boundary-limited; achieved $\Lambda$ at target 3 is 0.949 \\
+Fourth central / quartic path & Direct moments 4.44 [3.90, 5.04] & Matched normalized law 0.09 [0.07, 0.11] & Clean Hyv\"arinen + Hodge 3.97 [3.70, 4.25] & G8 aligned motif MLP: 1.13\% median relative error (development) & Matched/access-aligned only & No general advantage & G8 is finite and developmental; it is not the M4 local target \\
+Dynamic lag tensor & Direct moments: 0.22--0.26 across D2 distributional channels & Matched gain mixture: 0.054--0.057 & 0.50 variance; 1.33 third cumulant & Direct finite: 0.22--0.26 & Yes: direct/matched & No score advantage & Dense unknown subspaces and multiple gain factors remain untested \\
+\bottomrule\end{longtable}\end{landscape}
+\begin{table}[H]\centering\small
+\caption{Method-selection decision from the implemented evidence.}
+\begin{tabularx}{\linewidth}{p{0.28\linewidth}p{0.28\linewidth}X}\toprule
+Use case & Preferred route & Reason\\\midrule
+Known mean/covariance/cumulant/event target & Targeted direct head & Best general calibration and efficiency in implemented cells \\
+Many queries from one reusable conditional law & Flexible normalized MDN/flow & Promising next baseline; current matched laws are specification upper bounds \\
+Supported finite intervention with known geometry & Contrast-aligned classifier & G8 development evidence; generic classifiers are insufficient \\
+Operator diagnosis or theory study & Clean score + mixed-field/Hodge gates & Useful decomposition, not current production estimator \\
+Primary general SID estimator & Do not select current DSM/anchored score & No calibrated/equal-access advantage and observation-null failure \\
+\bottomrule\end{tabularx}\end{table}

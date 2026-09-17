@@ -1,0 +1,13 @@
+experiment,question,decision,evidence,consequence
+E0,"Algebra, leakage, reproducibility",PASS,10/10 checks pass; 14 package tests pass,Core implementation gate
+E1,Equal-access Gaussian recovery,PASS / NO ADVANTAGE,"ORTH NRMSE 0.104, coverage 0.940; error ratio vs PLUG 1.002","Inference benefit, not point-error benefit"
+E2,Controlled orthogonality,PASS,Product-bias R² > 0.99999997 in three perturbations,Theory realized in population experiment
+E3,One future/high-dimensional history,PASS WITH HAC,Blocked rho=.9 NRMSE 0.145/0.093; HAC coverage 0.949/0.951,Blocked splitting and dependence-aware SE required
+E4,Moment-blind law change,PASS AFTER AMENDMENT,Power 1.00/0.867; moment FWER 0.067/0.067,High-frequency bank required; default bank failed
+E5,Support motion/low-noise limit,PASS,ORTH NRMSE 0.016 at σ=0; likelihood score undefined,Strong distinctive result
+E6,Riesz stability and honest failure,FAIL,Coverage 0 for t3 and gaps 3–4; warning calibration imperfect,No general observational-identification claim
+E7,Heterogeneous cancellation,PASS AT R=2,Opposite signs in 100%; energy 3.982 vs truth 4.000,Declare history-basis resolution
+E8,Observation process,FAIL,Moderate noise/missingness works; rho=.98 and misspecified deconvolution fail,Hard latent-deployment gate remains closed
+E9,Dense unknown geometry,FAIL,Feature NRMSE 1.56–5.95; source angles remain 58–81 degrees,"Use typed head, but do not claim source recovery"
+E10,Flexible reusable-law baselines,PASS POOLED / LOCAL,Pooled neural/ORTH ratios 1.57–1.77; exact MDN readout changes family rankings,"Aggregate advantage, not universal dominance or a scale frontier"
+E11,Path ordering,PASS,"Full-path power 1.00, NRMSE 0.209; endpoint/unordered ORTH FWER 0.056",Second distinctive capability

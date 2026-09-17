@@ -1,0 +1,859 @@
+{
+  "resume": {
+    "actual_run_lag": 80,
+    "altered_lag_accepted_by_guard": 81,
+    "manifest_keys": [
+      "cohort_mode",
+      "created_utc",
+      "encodings",
+      "fold_assignments",
+      "fold_assignments_sha256",
+      "folds",
+      "lag_frames",
+      "n_neurons",
+      "n_worms",
+      "profile",
+      "protocol",
+      "seeds",
+      "selection_firewall",
+      "status",
+      "stimulus_schema",
+      "stimulus_schema_fingerprint",
+      "stimulus_schema_version",
+      "subject_shuffle_orders",
+      "updated_utc"
+    ],
+    "source_manifest_sha256": "1951f87d9ee2d92451fc108c3be7512151c1f86cd42ac683c2db17ec831bee96"
+  },
+  "checkpoint": {
+    "path": "/Users/vik/Developer/new_sbtg_neuro/results/conditional_distribution_benchmark/chemical_encoding_primary_20260828_oh16230/checkpoints/chemical_full_cv/stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01__L80__f0__s1701.pt",
+    "checkpoint_hash_matches": true,
+    "model_config": {
+      "model_id": "stim_binary_any_stimulus_tcn_flow128_dropout15_jitter_p01",
+      "encoder": "tcn",
+      "head": "conditional_flow_matching",
+      "residual_target": true,
+      "width": 128,
+      "dropout": 0.15,
+      "head_params": {
+        "hidden": 128,
+        "layers": 4,
+        "sample_steps": 24
+      },
+      "learning_rate": 0.0003,
+      "weight_decay": 0.00075,
+      "training_scheme": "natural",
+      "history_noise_std": 0.01,
+      "history_noise_copies": 1
+    },
+    "lag": 80,
+    "pre_last_31_gradient_l1": 3.5428080558776855,
+    "last_31_gradient_l1": 51.057518005371094,
+    "context_max_change_when_only_older_frames_change": 0.06634515523910522,
+    "checkpoint_keys": [
+      "format_version",
+      "model_config",
+      "lag",
+      "fold",
+      "seed",
+      "neurons",
+      "input_channels",
+      "stimulus_channels",
+      "scaler",
+      "fit_trace",
+      "training_scheme",
+      "natural_train_stratum_counts",
+      "fit_train_stratum_counts",
+      "history_noise_std",
+      "history_noise_copies",
+      "trial_metadata",
+      "stimulus_schema_version",
+      "stimulus_schema_fingerprint",
+      "stimulus_schema",
+      "state_dict"
+    ]
+  },
+  "gaussian_oracle": [
+    {
+      "lag": 1,
+      "particles": 32,
+      "repeats": 16,
+      "oracle": [
+        [
+          [
+            0.6019293221563426,
+            0.5471420379116445
+          ],
+          [
+            0.30247623856153755,
+            0.3001272337495462
+          ]
+        ],
+        [
+          [
+            0.34694036726119704,
+            0.4032324515487926
+          ],
+          [
+            0.18350191782471464,
+            0.18591544093854537
+          ]
+        ]
+      ],
+      "estimate_mean": [
+        [
+          [
+            0.5874529480934143,
+            0.5323004722595215
+          ],
+          [
+            0.2950262725353241,
+            0.29266157746315
+          ]
+        ],
+        [
+          [
+            0.34267523884773254,
+            0.40400561690330505
+          ],
+          [
+            0.18184340000152588,
+            0.1844729334115982
+          ]
+        ]
+      ],
+      "mean_bias_rmse": 0.008401607799837616,
+      "run_rmse": 0.06379119119068405,
+      "mc_se_max": 0.02559228613972664,
+      "oracle_source_gap": [
+        0.9126174965070455,
+        0.8316232942383738
+      ],
+      "estimated_source_gap_mean": [
+        0.916560173034668,
+        0.8143811225891113
+      ],
+      "valid_fraction": 1.0,
+      "ancestor_fraction_mean": 0.4873046875
+    },
+    {
+      "lag": 1,
+      "particles": 128,
+      "repeats": 16,
+      "oracle": [
+        [
+          [
+            0.6019293221563426,
+            0.5471420379116445
+          ],
+          [
+            0.30247623856153755,
+            0.3001272337495462
+          ]
+        ],
+        [
+          [
+            0.34694036726119704,
+            0.4032324515487926
+          ],
+          [
+            0.18350191782471464,
+            0.18591544093854537
+          ]
+        ]
+      ],
+      "estimate_mean": [
+        [
+          [
+            0.5913865566253662,
+            0.5373718738555908
+          ],
+          [
+            0.2971588671207428,
+            0.29484298825263977
+          ]
+        ],
+        [
+          [
+            0.34834423661231995,
+            0.406998872756958
+          ],
+          [
+            0.18446698784828186,
+            0.18698182702064514
+          ]
+        ]
+      ],
+      "mean_bias_rmse": 0.005926940795354804,
+      "run_rmse": 0.03669576526500143,
+      "mc_se_max": 0.013976803980767727,
+      "oracle_source_gap": [
+        0.9126174965070455,
+        0.8316232942383738
+      ],
+      "estimated_source_gap_mean": [
+        0.9054759740829468,
+        0.8243550658226013
+      ],
+      "valid_fraction": 1.0,
+      "ancestor_fraction_mean": 0.48876953125
+    },
+    {
+      "lag": 1,
+      "particles": 1024,
+      "repeats": 16,
+      "oracle": [
+        [
+          [
+            0.6019293221563426,
+            0.5471420379116445
+          ],
+          [
+            0.30247623856153755,
+            0.3001272337495462
+          ]
+        ],
+        [
+          [
+            0.34694036726119704,
+            0.4032324515487926
+          ],
+          [
+            0.18350191782471464,
+            0.18591544093854537
+          ]
+        ]
+      ],
+      "estimate_mean": [
+        [
+          [
+            0.5978076457977295,
+            0.5453725457191467
+          ],
+          [
+            0.30061113834381104,
+            0.29836300015449524
+          ]
+        ],
+        [
+          [
+            0.347171813249588,
+            0.40518462657928467
+          ],
+          [
+            0.18379981815814972,
+            0.18628710508346558
+          ]
+        ]
+      ],
+      "mean_bias_rmse": 0.0019622012850695914,
+      "run_rmse": 0.011685989147287038,
+      "mc_se_max": 0.004081931430846453,
+      "oracle_source_gap": [
+        0.9126174965070455,
+        0.8316232942383738
+      ],
+      "estimated_source_gap_mean": [
+        0.9112040400505066,
+        0.8295696973800659
+      ],
+      "valid_fraction": 1.0,
+      "ancestor_fraction_mean": 0.50164794921875
+    },
+    {
+      "lag": 4,
+      "particles": 32,
+      "repeats": 16,
+      "oracle": [
+        [
+          [
+            0.2926222972288376,
+            0.2903062048017061
+          ],
+          [
+            0.14958116354563633,
+            0.1494818610828231
+          ]
+        ],
+        [
+          [
+            0.17773817613698586,
+            0.18013170933653117
+          ],
+          [
+            0.09125147201818933,
+            0.09135409475411985
+          ]
+        ]
+      ],
+      "estimate_mean": [
+        [
+          [
+            0.2872033417224884,
+            0.2878578305244446
+          ],
+          [
+            0.14711633324623108,
+            0.1471443921327591
+          ]
+        ],
+        [
+          [
+            0.18682439625263214,
+            0.18502716720104218
+          ],
+          [
+            0.0954667255282402,
+            0.09538966417312622
+          ]
+        ]
+      ],
+      "mean_bias_rmse": 0.004840943235330294,
+      "run_rmse": 0.04200433172513341,
+      "mc_se_max": 0.016159238293766975,
+      "oracle_source_gap": [
+        0.912007186425354,
+        0.8317163309548996
+      ],
+      "estimated_source_gap_mean": [
+        0.9228488802909851,
+        0.8243822455406189
+      ],
+      "valid_fraction": 1.0,
+      "ancestor_fraction_mean": 0.484375
+    },
+    {
+      "lag": 4,
+      "particles": 128,
+      "repeats": 16,
+      "oracle": [
+        [
+          [
+            0.2926222972288376,
+            0.2903062048017061
+          ],
+          [
+            0.14958116354563633,
+            0.1494818610828231
+          ]
+        ],
+        [
+          [
+            0.17773817613698586,
+            0.18013170933653117
+          ],
+          [
+            0.09125147201818933,
+            0.09135409475411985
+          ]
+        ]
+      ],
+      "estimate_mean": [
+        [
+          [
+            0.29119259119033813,
+            0.2915048897266388
+          ],
+          [
+            0.1491231620311737,
+            0.14913654327392578
+          ]
+        ],
+        [
+          [
+            0.17211513221263885,
+            0.17250457406044006
+          ],
+          [
+            0.08816353976726532,
+            0.08818024396896362
+          ]
+        ]
+      ],
+      "mean_bias_rmse": 0.003761821111008551,
+      "run_rmse": 0.022516788617399603,
+      "mc_se_max": 0.0075475238263607025,
+      "oracle_source_gap": [
+        0.912007186425354,
+        0.8317163309548996
+      ],
+      "estimated_source_gap_mean": [
+        0.9130045771598816,
+        0.8146817684173584
+      ],
+      "valid_fraction": 1.0,
+      "ancestor_fraction_mean": 0.490234375
+    },
+    {
+      "lag": 4,
+      "particles": 1024,
+      "repeats": 16,
+      "oracle": [
+        [
+          [
+            0.2926222972288376,
+            0.2903062048017061
+          ],
+          [
+            0.14958116354563633,
+            0.1494818610828231
+          ]
+        ],
+        [
+          [
+            0.17773817613698586,
+            0.18013170933653117
+          ],
+          [
+            0.09125147201818933,
+            0.09135409475411985
+          ]
+        ]
+      ],
+      "estimate_mean": [
+        [
+          [
+            0.2852240800857544,
+            0.28348779678344727
+          ],
+          [
+            0.14585372805595398,
+            0.14577926695346832
+          ]
+        ],
+        [
+          [
+            0.18013980984687805,
+            0.18344539403915405
+          ],
+          [
+            0.09257619082927704,
+            0.09271791577339172
+          ]
+        ]
+      ],
+      "mean_bias_rmse": 0.00431842740332183,
+      "run_rmse": 0.010746412865447048,
+      "mc_se_max": 0.003444219473749399,
+      "oracle_source_gap": [
+        0.912007186425354,
+        0.8317163309548996
+      ],
+      "estimated_source_gap_mean": [
+        0.9081486463546753,
+        0.8303072452545166
+      ],
+      "valid_fraction": 1.0,
+      "ancestor_fraction_mean": 0.49688720703125
+    },
+    {
+      "lag": 16,
+      "particles": 32,
+      "repeats": 16,
+      "oracle": [
+        [
+          [
+            0.019124531083704585,
+            0.019124857678130658
+          ],
+          [
+            0.009791793962325664,
+            0.009791807965061683
+          ]
+        ],
+        [
+          [
+            0.011791481680032058,
+            0.011791695755659574
+          ],
+          [
+            0.00603726093756058,
+            0.0060372701160531115
+          ]
+        ]
+      ],
+      "estimate_mean": [
+        [
+          [
+            0.018556946888566017,
+            0.01854788511991501
+          ],
+          [
+            0.009500209242105484,
+            0.009499823674559593
+          ]
+        ],
+        [
+          [
+            0.011859218589961529,
+            0.011824340559542179
+          ],
+          [
+            0.006068285554647446,
+            0.006066789384931326
+          ]
+        ]
+      ],
+      "mean_bias_rmse": 0.0003226479336596458,
+      "run_rmse": 0.004337785759100144,
+      "mc_se_max": 0.0017804093658924103,
+      "oracle_source_gap": [
+        0.914120966849835,
+        0.8329674871320493
+      ],
+      "estimated_source_gap_mean": [
+        0.9084487557411194,
+        0.8134542107582092
+      ],
+      "valid_fraction": 1.0,
+      "ancestor_fraction_mean": 0.4765625
+    },
+    {
+      "lag": 16,
+      "particles": 128,
+      "repeats": 16,
+      "oracle": [
+        [
+          [
+            0.019124531083704585,
+            0.019124857678130658
+          ],
+          [
+            0.009791793962325664,
+            0.009791807965061683
+          ]
+        ],
+        [
+          [
+            0.011791481680032058,
+            0.011791695755659574
+          ],
+          [
+            0.00603726093756058,
+            0.0060372701160531115
+          ]
+        ]
+      ],
+      "estimate_mean": [
+        [
+          [
+            0.016838720068335533,
+            0.01803051307797432
+          ],
+          [
+            0.008745669387280941,
+            0.008796768262982368
+          ]
+        ],
+        [
+          [
+            0.011606253683567047,
+            0.011780994012951851
+          ],
+          [
+            0.005960619077086449,
+            0.005968110635876656
+          ]
+        ]
+      ],
+      "mean_bias_rmse": 0.0010339296206431957,
+      "run_rmse": 0.003942084826171654,
+      "mc_se_max": 0.0014705798821523786,
+      "oracle_source_gap": [
+        0.914120966849835,
+        0.8329674871320493
+      ],
+      "estimated_source_gap_mean": [
+        0.9216228723526001,
+        0.8295265436172485
+      ],
+      "valid_fraction": 1.0,
+      "ancestor_fraction_mean": 0.490234375
+    },
+    {
+      "lag": 16,
+      "particles": 1024,
+      "repeats": 16,
+      "oracle": [
+        [
+          [
+            0.019124531083704585,
+            0.019124857678130658
+          ],
+          [
+            0.009791793962325664,
+            0.009791807965061683
+          ]
+        ],
+        [
+          [
+            0.011791481680032058,
+            0.011791695755659574
+          ],
+          [
+            0.00603726093756058,
+            0.0060372701160531115
+          ]
+        ]
+      ],
+      "estimate_mean": [
+        [
+          [
+            0.019665364176034927,
+            0.019634399563074112
+          ],
+          [
+            0.010065438225865364,
+            0.010064110159873962
+          ]
+        ],
+        [
+          [
+            0.009782099165022373,
+            0.010044945403933525
+          ],
+          [
+            0.005035837180912495,
+            0.005047106649726629
+          ]
+        ]
+      ],
+      "mean_bias_rmse": 0.001105282268690201,
+      "run_rmse": 0.0028490232900219596,
+      "mc_se_max": 0.0009211904834955931,
+      "oracle_source_gap": [
+        0.914120966849835,
+        0.8329674871320493
+      ],
+      "estimated_source_gap_mean": [
+        0.9074344038963318,
+        0.831575870513916
+      ],
+      "valid_fraction": 1.0,
+      "ancestor_fraction_mean": 0.496551513671875
+    }
+  ],
+  "training_audit": {
+    "scores": [
+      {
+        "encoding": "binary_any_stimulus",
+        "saved_fold_equal": 1.077670929167006,
+        "equal_worm_chemical": 1.0767364811663533
+      },
+      {
+        "encoding": "chemical_onehot",
+        "saved_fold_equal": 1.0792093258765008,
+        "equal_worm_chemical": 1.0785540242989857
+      },
+      {
+        "encoding": "chemical_onehot_subject_shuffle",
+        "saved_fold_equal": 1.0833953152100244,
+        "equal_worm_chemical": 1.0826789964647854
+      },
+      {
+        "encoding": "chemical_plus_position_onehot",
+        "saved_fold_equal": 1.0781661861472658,
+        "equal_worm_chemical": 1.0776132251702102
+      },
+      {
+        "encoding": "chemical_scalar",
+        "saved_fold_equal": 1.0781790188617177,
+        "equal_worm_chemical": 1.0771778149932039
+      },
+      {
+        "encoding": "position_onehot",
+        "saved_fold_equal": 1.0815858888957237,
+        "equal_worm_chemical": 1.0811129691554051
+      }
+    ],
+    "checkpoint_checks": [
+      {
+        "fold": 0,
+        "seed": 1701,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 11,
+        "validation_worms": 3,
+        "test_worms": 3,
+        "splits_disjoint": true
+      },
+      {
+        "fold": 0,
+        "seed": 2903,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 11,
+        "validation_worms": 3,
+        "test_worms": 3,
+        "splits_disjoint": true
+      },
+      {
+        "fold": 1,
+        "seed": 1701,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 11,
+        "validation_worms": 3,
+        "test_worms": 3,
+        "splits_disjoint": true
+      },
+      {
+        "fold": 1,
+        "seed": 2903,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 11,
+        "validation_worms": 3,
+        "test_worms": 3,
+        "splits_disjoint": true
+      },
+      {
+        "fold": 2,
+        "seed": 1701,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 10,
+        "validation_worms": 4,
+        "test_worms": 3,
+        "splits_disjoint": true
+      },
+      {
+        "fold": 2,
+        "seed": 2903,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 10,
+        "validation_worms": 4,
+        "test_worms": 3,
+        "splits_disjoint": true
+      },
+      {
+        "fold": 3,
+        "seed": 1701,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 9,
+        "validation_worms": 4,
+        "test_worms": 4,
+        "splits_disjoint": true
+      },
+      {
+        "fold": 3,
+        "seed": 2903,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 9,
+        "validation_worms": 4,
+        "test_worms": 4,
+        "splits_disjoint": true
+      },
+      {
+        "fold": 4,
+        "seed": 1701,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 10,
+        "validation_worms": 3,
+        "test_worms": 4,
+        "splits_disjoint": true
+      },
+      {
+        "fold": 4,
+        "seed": 2903,
+        "sha256_matches": true,
+        "scaler_mean_max_difference": 0.0,
+        "scaler_scale_max_difference": 0.0,
+        "train_worms": 10,
+        "validation_worms": 3,
+        "test_worms": 4,
+        "splits_disjoint": true
+      }
+    ],
+    "bootstrap_example": {
+      "candidate": "chemical_onehot",
+      "control": "chemical_onehot_subject_shuffle",
+      "seed_delta_correlation_within_folds": 0.9237889620788596,
+      "iid_fold_seed_10_interval": [
+        -0.006629991692801335,
+        -0.0020214416335025804
+      ],
+      "seed_averaged_fold_5_sensitivity_interval": [
+        -0.007356275783644795,
+        -0.0014037360747654938
+      ],
+      "boundary": "Fold bootstrap is a sensitivity, not a replacement for worm-level estimates with model-refit uncertainty."
+    }
+  },
+  "raw_reconstruction": [
+    {
+      "queue_rank": 1,
+      "channel": "peak_mean",
+      "context": "state_average",
+      "source": "URB",
+      "target": "URA",
+      "raw_rebuilt_mean": 0.20108725305865793,
+      "queue_mean": 0.2010872513055801,
+      "max_worm_matrix_difference": 2.9802322387695312e-08,
+      "worm_count": 17,
+      "seeds_per_worm": 2
+    },
+    {
+      "queue_rank": 92,
+      "channel": "endpoint_mean",
+      "context": "baseline",
+      "source": "AWA",
+      "target": "BAG",
+      "raw_rebuilt_mean": 0.30837519291569204,
+      "queue_mean": 0.3083751797676086,
+      "max_worm_matrix_difference": 0.0,
+      "worm_count": 17,
+      "seeds_per_worm": 2
+    }
+  ],
+  "ledgers": {
+    "results/neural_prediction_atlas_20260829": {
+      "checked": 466,
+      "failed": [
+        {
+          "path": "results/neural_prediction_atlas_20260829/../../EXPERIMENT_INDEX.md",
+          "ok": false
+        },
+        {
+          "path": "results/neural_prediction_atlas_20260829/../../EXPERIMENT_REGISTRY.csv",
+          "ok": false
+        }
+      ]
+    },
+    "results/neural_prediction_atlas_20260829/canonical": {
+      "checked": 12,
+      "failed": []
+    },
+    "results/neural_prediction_atlas_20260829/complete_family_evidence_20260830": {
+      "checked": 14,
+      "failed": []
+    },
+    "results/neural_prediction_atlas_20260829/sampling_null_controls_combined8_n128_20260830/analysis": {
+      "checked": 12,
+      "failed": []
+    }
+  },
+  "artifact_counts": {
+    "prediction_rows": 436800,
+    "support_rows": 5616,
+    "tiers": {
+      "model_only": 242247,
+      "unsupported": 166068,
+      "supported_exploratory": 28485
+    },
+    "prediction_columns": 42
+  }
+}

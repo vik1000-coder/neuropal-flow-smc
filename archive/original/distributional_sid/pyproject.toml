@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "distributional-sid"
+version = "0.1.0"
+description = "Cross-fitted Riesz-orthogonal estimation of predictive distributional Jacobians"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "pandas>=2.0",
+  "pyarrow>=12.0",
+  "pyyaml>=6.0",
+  "scikit-learn>=1.3",
+  "matplotlib>=3.7",
+  "psutil>=5.9",
+  "torch>=2.0",
+  "zuko==1.6.0",
+]
+
+[project.scripts]
+distributional-sid = "distributional_sid.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

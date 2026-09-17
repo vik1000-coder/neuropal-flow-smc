@@ -1,0 +1,16 @@
+{
+  "case_id": "g67_d607_m6001_gaussian_nll",
+  "data_seed": 607,
+  "energy_score_fair": 0.7169418266376754,
+  "generator_seed": 67,
+  "minus_best_epoch": 29,
+  "minus_fit_seconds": 0.4256588330026716,
+  "model_name": "gaussian_nll",
+  "model_seed": 6001,
+  "plus_best_epoch": 16,
+  "plus_fit_seconds": 0.2564804579888005,
+  "quartic_nrmse": 1.00004124075198,
+  "quartic_slope": -4.1072962863801375e-05,
+  "status": "ok",
+  "wall_seconds": 0.7186481659882702
+}

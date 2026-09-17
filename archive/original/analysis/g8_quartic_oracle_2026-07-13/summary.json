@@ -1,0 +1,8 @@
+{
+  "analytic_rows": 18,
+  "maximum_absolute_linear_negative_control": 0.025032985598491254,
+  "maximum_absolute_quadratic_negative_control": 0.06472414122092134,
+  "maximum_absolute_z_error": 0.7723335929478271,
+  "monte_carlo_rows": 2,
+  "schema_version": "1"
+}

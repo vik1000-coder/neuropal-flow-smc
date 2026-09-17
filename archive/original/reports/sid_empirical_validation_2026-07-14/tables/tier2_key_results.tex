@@ -1,0 +1,28 @@
+\begin{longtable}{p{0.17\linewidth}p{0.18\linewidth}p{0.08\linewidth}p{0.20\linewidth}p{0.22\linewidth}}
+\caption{Selected Tier 2 results: registered rows use seeds 3001--3030; post-hoc fixed-amplitude rows use seeds 4001--4030.}\\
+\toprule Cell & Method & Metric & Mean [95\% CI] & Audited access\\\midrule
+\endfirsthead\toprule Cell & Method & Metric & Mean [95\% CI] & Audited access\\\midrule\endhead
+D3 context 2, N=8k & Gaussian log-variance & nrmse & 0.183 [0.152, 0.214] & observational \\
+D3 context 2, N=8k & Direct moments & nrmse & 0.236 [0.198, 0.272] & observational \\
+D3 context 2, N=8k & Anchored score + Hodge & nrmse & 0.383 [0.308, 0.457] & observational training plus conditional evaluation queries \\
+D3 context 12, N=32k & Gaussian log-variance & nrmse & 0.178 [0.157, 0.200] & observational \\
+D3 context 12, N=32k & Direct moments & nrmse & 0.212 [0.195, 0.229] & observational \\
+D3 context 12, N=32k & Anchored score + Hodge & nrmse & 0.397 [0.373, 0.424] & observational training plus conditional evaluation queries \\
+D5 primary filter & Direct moments & nrmse & 0.331 [0.302, 0.359] & observational \\
+D5 primary filter & Anchored score + Hodge & nrmse & 0.531 [0.480, 0.580] & observational training plus conditional evaluation queries \\
+D5 observation-only null & Anchored score + Hodge & null\_rms & 0.079 [0.064, 0.102] & observational training plus conditional evaluation queries \\
+M3 bounded, N=2k & Direct moments & NRMSE & 0.972 [0.846, 1.108] & observational \\
+M3 bounded, N=32k & Direct moments & NRMSE & 0.628 [0.527, 0.732] & observational \\
+M4 quartic, N=32k & Direct moments & NRMSE & 3.709 [3.279, 4.138] & observational \\
+M4 quartic, N=32k & Matched normalized law & NRMSE & 0.079 [0.058, 0.101] & known dgp tilt basis plus fitted amplitude \\
+M5 occupancy, N=32k & Direct moments & NRMSE & 1.843 [1.612, 2.086] & observational \\
+M5 occupancy, N=32k & Matched normalized law & NRMSE & 0.109 [0.089, 0.130] & known dgp tilt basis plus fitted amplitude \\
+Post-hoc M3 fixed amp., N=2k & Direct moments & NRMSE & 1.158 [0.982, 1.335] & observational \\
+Post-hoc M3 fixed amp., N=32k & Direct moments & NRMSE & 0.284 [0.247, 0.323] & observational \\
+Post-hoc M4 fixed amp., N=2k & Direct moments & NRMSE & 6.850 [5.594, 8.135] & observational \\
+Post-hoc M4 fixed amp., N=32k & Direct moments & NRMSE & 1.943 [1.665, 2.232] & observational \\
+Post-hoc M4 score, N=2k & Clean Hyv\"arinen + Hodge & NRMSE & 4.679 [4.078, 5.413] & observational training plus oracle density quadrature \\
+Post-hoc M4 score, N=32k & Clean Hyv\"arinen + Hodge & NRMSE & 4.066 [3.888, 4.238] & observational training plus oracle density quadrature \\
+Post-hoc M5 fixed amp., N=2k & Direct moments & NRMSE & 4.312 [3.756, 4.881] & observational \\
+Post-hoc M5 fixed amp., N=32k & Direct moments & NRMSE & 1.474 [1.227, 1.762] & observational \\
+\bottomrule\end{longtable}

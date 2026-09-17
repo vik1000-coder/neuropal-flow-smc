@@ -1,0 +1,26 @@
+name: stable_sid_finite_20260713
+base_output: results/stable_sid_core_20260713
+output_dir: results/stable_sid_finite_20260713
+technical_note: /Users/vik/Downloads/SBTG_Revised_Technical_Note_July_2026.pdf
+
+deltas: [0.05, 0.12, 0.25]
+response_noise_sigmas: [0.0, 0.12]
+
+adapter_seed: 7001
+adapter_train_anchors: 768
+adapter_calibration_anchors: 384
+evaluation_anchors: 16
+evaluation_draws_per_side: 64
+riesz_draws_per_side: 96
+diffusion_center_draws: 24
+
+riesz_ridge: 0.01
+classifier_hidden: 64
+classifier_layers: 2
+classifier_epochs: 50
+classifier_batch_size: 256
+classifier_learning_rate: 0.001
+classifier_patience: 8
+
+min_free_disk_gb: 4.0
+max_output_gb: 0.40

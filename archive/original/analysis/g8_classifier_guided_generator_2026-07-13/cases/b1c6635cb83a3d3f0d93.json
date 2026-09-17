@@ -1,0 +1,21 @@
+{
+  "case_id": "b1c6635cb83a3d3f0d93",
+  "classifier_probability_mean": 0.4820488691329956,
+  "classifier_probability_saturation": 0.0,
+  "data_seed": 601,
+  "generator_seed": 67,
+  "guided_ess_fraction_median": 0.8452559261001813,
+  "guided_quartic_bias": -2.691124155514835,
+  "guided_quartic_nrmse": 0.6618551833548323,
+  "guided_quartic_sd_across_anchors": 0.16137919685688962,
+  "guided_quartic_slope": 0.33918364845121496,
+  "model_name": "affine_flow",
+  "model_seed": 6007,
+  "raw_quartic_bias": -3.8220498860181937,
+  "raw_quartic_nrmse": 0.9392331480182419,
+  "raw_quartic_sd_across_anchors": 0.15934790870043536,
+  "raw_quartic_slope": 0.06148029033138027,
+  "status": "ok",
+  "truth": 4.072423675969165,
+  "wall_seconds": 0.07355462500709109
+}

@@ -1,0 +1,106 @@
+schema_version: "1"
+name: revised_note_v1_base_smoke
+tier: development
+output_dir: results/revised_note_v1_base_20260712
+
+generator_seeds: [17]
+data_seeds: [101]
+model_seeds: [1009]
+
+generators:
+  - id: g1
+    kind: g1
+    params: {q: 8, dy: 4}
+    models: [m0_mean, m1_gaussian, m2_ar_vector, m4_ratio, m5_diffusion]
+  - id: g2
+    kind: g2
+    params: {q: 8, dy: 4, alpha_m: 0.0}
+    models: [m0_mean, m1_gaussian, m2_ar_vector, m4_ratio, m5_diffusion]
+  - id: g3
+    kind: g3
+    params: {q: 8, dy: 1}
+    models: [m0_mean, m1_gaussian, m2_ar_scalar, m4_ratio, m5_diffusion]
+  - id: g4
+    kind: g4
+    params:
+      q: 8
+      dy: 4
+      n_components: 4
+      rank: 2
+      mode_separation: 4.0
+      component_sigma: 1.0
+      interaction_scale: 0.75
+    models: [m0_mean, m1_gaussian, m2_ar_vector, m4_ratio, m5_diffusion]
+
+models:
+  - name: m0_mean
+    kind: mean_mlp
+    parameter_budget: developmental_micro
+    params: {hidden: 48, layers: 2}
+  - name: m1_gaussian
+    kind: heteroscedastic_gaussian
+    parameter_budget: developmental_micro
+    params: {hidden: 48, layers: 2}
+  - name: m2_ar_vector
+    kind: autoregressive_mdn
+    parameter_budget: developmental_micro
+    generators: [g1, g2, g4]
+    params: {hidden: 20, layers: 2, components: 8}
+  - name: m2_ar_scalar
+    kind: autoregressive_mdn
+    parameter_budget: developmental_micro
+    generators: [g3]
+    params: {hidden: 40, layers: 2, components: 8}
+  - name: m4_ratio
+    kind: ratio_critic
+    parameter_budget: developmental_micro
+    params: {hidden: 36, layers: 1, rank: 24}
+  - name: m5_diffusion
+    kind: conditional_vector_diffusion
+    parameter_budget: developmental_micro
+    params: {hidden: 48, layers: 2, sigma_min: 0.01, sigma_max: 2.0}
+
+split:
+  validation_fraction: 0.2
+  validation_min: 400
+  validation_max: 400
+  test_size: 256
+  evaluation_histories: 8
+  conditional_oracle_draws: 32
+
+training:
+  n_train: 2000
+  device: cpu
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  batch_size: 256
+  max_epochs: 10
+  patience: 5
+  gradient_clip: 1.0
+
+evaluation:
+  energy_cases: 64
+  energy_samples: 32
+  tangent_pairs: 64
+  centering_histories: 8
+  centering_draws: 32
+  centering_target_draws: 8
+  finite_delta: 0.1
+  diffusion_sigma: 0.1
+  quadrature_points: 4
+
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 8.0
+  max_accelerator_gb: 0.1
+  max_output_gb: 0.25
+  min_free_disk_gb: 4.0
+  case_timeout_minutes: 30.0
+  checkpoint_minutes: 10.0
+  nice: 10
+
+metadata:
+  purpose: frozen developmental base fits for revised-note central finite-contrast V1
+  hypothesis_decisions: none
+  audit: REVISED_NOTE_V1_AUDIT.md

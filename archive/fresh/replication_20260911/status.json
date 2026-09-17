@@ -1,0 +1,12 @@
+{
+  "stage": "stopped_study_analysis",
+  "state": "complete",
+  "updated_utc": "2026-09-16T17:04:04.996788+00:00",
+  "pid": 95262,
+  "report": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/REPORT_FINAL.md",
+  "validation": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/final_review_20260916/validation.json",
+  "manifest": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/final_review_manifest.json",
+  "further_sampling_authorized": false,
+  "scientific_verdict": "Cook structural/chemical atlas gains; derivative and clean lag reliability unestablished",
+  "extended_training_sensitivity": "incomplete and excluded"
+}

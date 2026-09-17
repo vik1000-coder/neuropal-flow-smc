@@ -1,0 +1,16 @@
+{
+  "case_id": "g73_d601_m6007_affine_flow",
+  "data_seed": 601,
+  "energy_score_fair": 0.7075079142994256,
+  "generator_seed": 73,
+  "minus_best_epoch": 36,
+  "minus_fit_seconds": 2.6114722919883206,
+  "model_name": "affine_flow",
+  "model_seed": 6007,
+  "plus_best_epoch": 36,
+  "plus_fit_seconds": 2.703475582995452,
+  "quartic_nrmse": 0.7898844750770941,
+  "quartic_slope": 0.2104732655030934,
+  "status": "ok",
+  "wall_seconds": 5.405587209010264
+}

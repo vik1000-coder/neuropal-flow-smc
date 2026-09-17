@@ -1,0 +1,353 @@
+TASK_COMPLETE 0 training ['train.py', 'historical80', '0', '1701'] seconds 40
+TASK_COMPLETE 1 training ['train.py', 'historical80', '1', '1701'] seconds 40
+TASK_COMPLETE 2 training ['train.py', 'historical80', '2', '1701'] seconds 40
+TASK_COMPLETE 3 training ['train.py', 'historical80', '3', '1701'] seconds 40
+TASK_COMPLETE 4 training ['train.py', 'historical80', '4', '1701'] seconds 60
+{"time": "2026-09-11T16:16:09.510217+00:00", "stage": "training", "state": "failed", "task": ["train.py", "historical80", "0", "2903"], "task_index": 5, "returncode": 1, "log": "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/logs/0005_train_historical80_0_2903.log"}
+Traceback (most recent call last):
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/dispatcher.py", line 50, in <module>
+    try:run()
+        ~~~^^
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/dispatcher.py", line 44, in run
+    status(stage,'failed',task=args,task_index=index,returncode=child.returncode,log=str(logfile));raise RuntimeError(f'worker failed: {args}')
+                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: worker failed: ['train.py', 'historical80', '0', '2903']
+
+Traceback (most recent call last):
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/dispatcher.py", line 50, in <module>
+    try:run()
+        ~~~^^
+  File "/Users/vik/Developer/new_sbtg_neuro/replication_20260911/dispatcher.py", line 44, in run
+    status(stage,'failed',task=args,task_index=index,returncode=child.returncode,log=str(logfile));raise RuntimeError(f'worker failed: {args}')
+                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: worker failed: ['train.py', 'historical80', '0', '2903']
+TASK_COMPLETE 0 training ['train.py', 'historical80', '0', '1701'] seconds 20
+TASK_COMPLETE 1 training ['train.py', 'historical80', '1', '1701'] seconds 20
+TASK_COMPLETE 2 training ['train.py', 'historical80', '2', '1701'] seconds 20
+TASK_COMPLETE 3 training ['train.py', 'historical80', '3', '1701'] seconds 20
+TASK_COMPLETE 4 training ['train.py', 'historical80', '4', '1701'] seconds 20
+TASK_COMPLETE 5 training ['train.py', 'historical80', '0', '2903'] seconds 40
+TASK_COMPLETE 6 training ['train.py', 'historical80', '1', '2903'] seconds 60
+TASK_COMPLETE 7 training ['train.py', 'historical80', '2', '2903'] seconds 40
+TASK_COMPLETE 8 training ['train.py', 'historical80', '3', '2903'] seconds 40
+TASK_COMPLETE 9 training ['train.py', 'historical80', '4', '2903'] seconds 40
+TASK_COMPLETE 10 training ['train.py', 'historical80', '0', '4307'] seconds 40
+TASK_COMPLETE 11 training ['train.py', 'historical80', '1', '4307'] seconds 40
+TASK_COMPLETE 12 training ['train.py', 'historical80', '2', '4307'] seconds 40
+TASK_COMPLETE 13 training ['train.py', 'historical80', '3', '4307'] seconds 40
+TASK_COMPLETE 14 training ['train.py', 'historical80', '4', '4307'] seconds 40
+TASK_COMPLETE 15 training ['train.py', 'clean54', '0', '1701'] seconds 120
+TASK_COMPLETE 16 training ['train.py', 'clean54', '1', '1701'] seconds 140
+TASK_COMPLETE 17 training ['train.py', 'clean54', '2', '1701'] seconds 140
+TASK_COMPLETE 18 training ['train.py', 'clean54', '3', '1701'] seconds 140
+TASK_COMPLETE 19 training ['train.py', 'clean54', '4', '1701'] seconds 140
+TASK_COMPLETE 20 training ['train.py', 'clean54', '0', '2903'] seconds 120
+TASK_COMPLETE 21 training ['train.py', 'clean54', '1', '2903'] seconds 120
+TASK_COMPLETE 22 training ['train.py', 'clean54', '2', '2903'] seconds 140
+TASK_COMPLETE 23 training ['train.py', 'clean54', '3', '2903'] seconds 140
+TASK_COMPLETE 24 training ['train.py', 'clean54', '4', '2903'] seconds 140
+TASK_COMPLETE 25 training ['train.py', 'clean54', '0', '4307'] seconds 120
+TASK_COMPLETE 26 training ['train.py', 'clean54', '1', '4307'] seconds 140
+TASK_COMPLETE 27 training ['train.py', 'clean54', '2', '4307'] seconds 140
+TASK_COMPLETE 28 training ['train.py', 'clean54', '3', '4307'] seconds 140
+TASK_COMPLETE 29 training ['train.py', 'clean54', '4', '4307'] seconds 140
+TASK_COMPLETE 30 primary ['sample.py', 'historical80', '0', '1701', '1', 'primary'] seconds 1161
+TASK_COMPLETE 31 primary ['sample.py', 'historical80', '1', '1701', '1', 'primary'] seconds 1161
+TASK_COMPLETE 32 primary ['sample.py', 'historical80', '2', '1701', '1', 'primary'] seconds 1180
+TASK_COMPLETE 33 primary ['sample.py', 'historical80', '3', '1701', '1', 'primary'] seconds 1161
+TASK_COMPLETE 34 primary ['sample.py', 'historical80', '4', '1701', '1', 'primary'] seconds 1180
+TASK_COMPLETE 35 primary ['sample.py', 'historical80', '0', '1701', '4', 'primary'] seconds 1340
+TASK_COMPLETE 36 primary ['sample.py', 'historical80', '1', '1701', '4', 'primary'] seconds 1341
+TASK_COMPLETE 37 primary ['sample.py', 'historical80', '2', '1701', '4', 'primary'] seconds 1341
+TASK_COMPLETE 38 primary ['sample.py', 'historical80', '3', '1701', '4', 'primary'] seconds 1341
+TASK_COMPLETE 39 primary ['sample.py', 'historical80', '4', '1701', '4', 'primary'] seconds 1341
+TASK_COMPLETE 40 primary ['sample.py', 'historical80', '0', '1701', '8', 'primary'] seconds 1561
+TASK_COMPLETE 41 primary ['sample.py', 'historical80', '1', '1701', '8', 'primary'] seconds 1561
+TASK_COMPLETE 42 primary ['sample.py', 'historical80', '2', '1701', '8', 'primary'] seconds 1561
+TASK_COMPLETE 43 primary ['sample.py', 'historical80', '3', '1701', '8', 'primary'] seconds 1561
+TASK_COMPLETE 44 primary ['sample.py', 'historical80', '4', '1701', '8', 'primary'] seconds 1561
+TASK_COMPLETE 45 primary ['sample.py', 'historical80', '0', '1701', '16', 'primary'] seconds 2001
+TASK_COMPLETE 46 primary ['sample.py', 'historical80', '1', '1701', '16', 'primary'] seconds 1981
+TASK_COMPLETE 47 primary ['sample.py', 'historical80', '2', '1701', '16', 'primary'] seconds 2001
+TASK_COMPLETE 48 primary ['sample.py', 'historical80', '3', '1701', '16', 'primary'] seconds 2001
+TASK_COMPLETE 49 primary ['sample.py', 'historical80', '4', '1701', '16', 'primary'] seconds 2001
+TASK_COMPLETE 50 primary ['sample.py', 'historical80', '0', '2903', '1', 'primary'] seconds 1161
+TASK_COMPLETE 51 primary ['sample.py', 'historical80', '1', '2903', '1', 'primary'] seconds 1180
+TASK_COMPLETE 52 primary ['sample.py', 'historical80', '2', '2903', '1', 'primary'] seconds 1181
+TASK_COMPLETE 53 primary ['sample.py', 'historical80', '3', '2903', '1', 'primary'] seconds 1181
+TASK_COMPLETE 54 primary ['sample.py', 'historical80', '4', '2903', '1', 'primary'] seconds 1181
+TASK_COMPLETE 55 primary ['sample.py', 'historical80', '0', '2903', '4', 'primary'] seconds 1341
+TASK_COMPLETE 56 primary ['sample.py', 'historical80', '1', '2903', '4', 'primary'] seconds 1381
+TASK_COMPLETE 57 primary ['sample.py', 'historical80', '2', '2903', '4', 'primary'] seconds 1341
+TASK_COMPLETE 58 primary ['sample.py', 'historical80', '3', '2903', '4', 'primary'] seconds 1341
+TASK_COMPLETE 59 primary ['sample.py', 'historical80', '4', '2903', '4', 'primary'] seconds 1341
+TASK_COMPLETE 60 primary ['sample.py', 'historical80', '0', '2903', '8', 'primary'] seconds 1561
+TASK_COMPLETE 61 primary ['sample.py', 'historical80', '1', '2903', '8', 'primary'] seconds 1541
+TASK_COMPLETE 62 primary ['sample.py', 'historical80', '2', '2903', '8', 'primary'] seconds 1541
+TASK_COMPLETE 63 primary ['sample.py', 'historical80', '3', '2903', '8', 'primary'] seconds 1541
+TASK_COMPLETE 64 primary ['sample.py', 'historical80', '4', '2903', '8', 'primary'] seconds 1541
+TASK_COMPLETE 65 primary ['sample.py', 'historical80', '0', '2903', '16', 'primary'] seconds 1981
+TASK_COMPLETE 66 primary ['sample.py', 'historical80', '1', '2903', '16', 'primary'] seconds 1981
+TASK_COMPLETE 67 primary ['sample.py', 'historical80', '2', '2903', '16', 'primary'] seconds 1981
+TASK_COMPLETE 68 primary ['sample.py', 'historical80', '3', '2903', '16', 'primary'] seconds 1981
+TASK_COMPLETE 69 primary ['sample.py', 'historical80', '4', '2903', '16', 'primary'] seconds 1981
+TASK_COMPLETE 70 primary ['sample.py', 'historical80', '0', '4307', '1', 'primary'] seconds 1161
+TASK_COMPLETE 71 primary ['sample.py', 'historical80', '1', '4307', '1', 'primary'] seconds 1161
+TASK_COMPLETE 72 primary ['sample.py', 'historical80', '2', '4307', '1', 'primary'] seconds 1180
+TASK_COMPLETE 73 primary ['sample.py', 'historical80', '3', '4307', '1', 'primary'] seconds 1161
+TASK_COMPLETE 74 primary ['sample.py', 'historical80', '4', '4307', '1', 'primary'] seconds 1181
+TASK_COMPLETE 75 primary ['sample.py', 'historical80', '0', '4307', '4', 'primary'] seconds 1341
+TASK_COMPLETE 76 primary ['sample.py', 'historical80', '1', '4307', '4', 'primary'] seconds 1321
+TASK_COMPLETE 77 primary ['sample.py', 'historical80', '2', '4307', '4', 'primary'] seconds 1341
+TASK_COMPLETE 78 primary ['sample.py', 'historical80', '3', '4307', '4', 'primary'] seconds 1341
+TASK_COMPLETE 79 primary ['sample.py', 'historical80', '4', '4307', '4', 'primary'] seconds 1321
+TASK_COMPLETE 80 primary ['sample.py', 'historical80', '0', '4307', '8', 'primary'] seconds 1561
+TASK_COMPLETE 81 primary ['sample.py', 'historical80', '1', '4307', '8', 'primary'] seconds 1541
+TASK_COMPLETE 82 primary ['sample.py', 'historical80', '2', '4307', '8', 'primary'] seconds 1561
+TASK_COMPLETE 83 primary ['sample.py', 'historical80', '3', '4307', '8', 'primary'] seconds 1541
+TASK_COMPLETE 84 primary ['sample.py', 'historical80', '4', '4307', '8', 'primary'] seconds 1541
+TASK_COMPLETE 85 primary ['sample.py', 'historical80', '0', '4307', '16', 'primary'] seconds 1981
+TASK_COMPLETE 86 primary ['sample.py', 'historical80', '1', '4307', '16', 'primary'] seconds 1981
+TASK_COMPLETE 87 primary ['sample.py', 'historical80', '2', '4307', '16', 'primary'] seconds 1981
+TASK_COMPLETE 88 primary ['sample.py', 'historical80', '3', '4307', '16', 'primary'] seconds 1981
+TASK_COMPLETE 89 primary ['sample.py', 'historical80', '4', '4307', '16', 'primary'] seconds 1981
+TASK_COMPLETE 90 primary ['sample.py', 'clean54', '0', '1701', '1', 'primary'] seconds 1821
+TASK_COMPLETE 91 primary ['sample.py', 'clean54', '1', '1701', '1', 'primary'] seconds 1821
+TASK_COMPLETE 92 primary ['sample.py', 'clean54', '2', '1701', '1', 'primary'] seconds 1361
+TASK_COMPLETE 93 primary ['sample.py', 'clean54', '3', '1701', '1', 'primary'] seconds 1361
+TASK_COMPLETE 94 primary ['sample.py', 'clean54', '4', '1701', '1', 'primary'] seconds 1361
+TASK_COMPLETE 95 primary ['sample.py', 'clean54', '0', '1701', '4', 'primary'] seconds 2081
+TASK_COMPLETE 96 primary ['sample.py', 'clean54', '1', '1701', '4', 'primary'] seconds 2081
+TASK_COMPLETE 97 primary ['sample.py', 'clean54', '2', '1701', '4', 'primary'] seconds 1561
+TASK_COMPLETE 98 primary ['sample.py', 'clean54', '3', '1701', '4', 'primary'] seconds 1561
+TASK_COMPLETE 99 primary ['sample.py', 'clean54', '4', '1701', '4', 'primary'] seconds 1561
+TASK_COMPLETE 100 primary ['sample.py', 'clean54', '0', '1701', '8', 'primary'] seconds 2421
+TASK_COMPLETE 101 primary ['sample.py', 'clean54', '1', '1701', '8', 'primary'] seconds 2441
+TASK_COMPLETE 102 primary ['sample.py', 'clean54', '2', '1701', '8', 'primary'] seconds 1841
+TASK_COMPLETE 103 primary ['sample.py', 'clean54', '3', '1701', '8', 'primary'] seconds 1841
+TASK_COMPLETE 104 primary ['sample.py', 'clean54', '4', '1701', '8', 'primary'] seconds 1821
+TASK_COMPLETE 105 primary ['sample.py', 'clean54', '0', '1701', '16', 'primary'] seconds 3142
+TASK_COMPLETE 106 primary ['sample.py', 'clean54', '1', '1701', '16', 'primary'] seconds 3142
+TASK_COMPLETE 107 primary ['sample.py', 'clean54', '2', '1701', '16', 'primary'] seconds 2601
+TASK_COMPLETE 108 primary ['sample.py', 'clean54', '3', '1701', '16', 'primary'] seconds 2341
+TASK_COMPLETE 109 primary ['sample.py', 'clean54', '4', '1701', '16', 'primary'] seconds 2341
+TASK_COMPLETE 110 primary ['sample.py', 'clean54', '0', '2903', '1', 'primary'] seconds 1841
+TASK_COMPLETE 111 primary ['sample.py', 'clean54', '1', '2903', '1', 'primary'] seconds 1841
+TASK_COMPLETE 112 primary ['sample.py', 'clean54', '2', '2903', '1', 'primary'] seconds 1381
+TASK_COMPLETE 113 primary ['sample.py', 'clean54', '3', '2903', '1', 'primary'] seconds 1381
+TASK_COMPLETE 114 primary ['sample.py', 'clean54', '4', '2903', '1', 'primary'] seconds 1381
+TASK_COMPLETE 115 primary ['sample.py', 'clean54', '0', '2903', '4', 'primary'] seconds 2101
+TASK_COMPLETE 116 primary ['sample.py', 'clean54', '1', '2903', '4', 'primary'] seconds 2101
+TASK_COMPLETE 117 primary ['sample.py', 'clean54', '2', '2903', '4', 'primary'] seconds 1561
+TASK_COMPLETE 118 primary ['sample.py', 'clean54', '3', '2903', '4', 'primary'] seconds 1581
+TASK_COMPLETE 119 primary ['sample.py', 'clean54', '4', '2903', '4', 'primary'] seconds 1561
+TASK_COMPLETE 120 primary ['sample.py', 'clean54', '0', '2903', '8', 'primary'] seconds 2441
+TASK_COMPLETE 121 primary ['sample.py', 'clean54', '1', '2903', '8', 'primary'] seconds 2441
+TASK_COMPLETE 122 primary ['sample.py', 'clean54', '2', '2903', '8', 'primary'] seconds 1841
+TASK_COMPLETE 123 primary ['sample.py', 'clean54', '3', '2903', '8', 'primary'] seconds 1841
+TASK_COMPLETE 124 primary ['sample.py', 'clean54', '4', '2903', '8', 'primary'] seconds 1841
+TASK_COMPLETE 125 primary ['sample.py', 'clean54', '0', '2903', '16', 'primary'] seconds 3142
+TASK_COMPLETE 126 primary ['sample.py', 'clean54', '1', '2903', '16', 'primary'] seconds 3142
+TASK_COMPLETE 127 primary ['sample.py', 'clean54', '2', '2903', '16', 'primary'] seconds 2361
+TASK_COMPLETE 128 primary ['sample.py', 'clean54', '3', '2903', '16', 'primary'] seconds 2361
+TASK_COMPLETE 129 primary ['sample.py', 'clean54', '4', '2903', '16', 'primary'] seconds 2361
+TASK_COMPLETE 130 primary ['sample.py', 'clean54', '0', '4307', '1', 'primary'] seconds 1841
+TASK_COMPLETE 131 primary ['sample.py', 'clean54', '1', '4307', '1', 'primary'] seconds 1841
+TASK_COMPLETE 132 primary ['sample.py', 'clean54', '2', '4307', '1', 'primary'] seconds 1381
+TASK_COMPLETE 133 primary ['sample.py', 'clean54', '3', '4307', '1', 'primary'] seconds 1381
+TASK_COMPLETE 134 primary ['sample.py', 'clean54', '4', '4307', '1', 'primary'] seconds 1421
+TASK_COMPLETE 135 primary ['sample.py', 'clean54', '0', '4307', '4', 'primary'] seconds 2081
+TASK_COMPLETE 136 primary ['sample.py', 'clean54', '1', '4307', '4', 'primary'] seconds 2081
+TASK_COMPLETE 137 primary ['sample.py', 'clean54', '2', '4307', '4', 'primary'] seconds 1561
+TASK_COMPLETE 138 primary ['sample.py', 'clean54', '3', '4307', '4', 'primary'] seconds 1701
+TASK_COMPLETE 139 primary ['sample.py', 'clean54', '4', '4307', '4', 'primary'] seconds 1781
+TASK_COMPLETE 140 primary ['sample.py', 'clean54', '0', '4307', '8', 'primary'] seconds 2421
+TASK_COMPLETE 141 primary ['sample.py', 'clean54', '1', '4307', '8', 'primary'] seconds 2441
+TASK_COMPLETE 142 primary ['sample.py', 'clean54', '2', '4307', '8', 'primary'] seconds 1821
+TASK_COMPLETE 143 primary ['sample.py', 'clean54', '3', '4307', '8', 'primary'] seconds 1841
+TASK_COMPLETE 144 primary ['sample.py', 'clean54', '4', '4307', '8', 'primary'] seconds 1821
+TASK_COMPLETE 145 primary ['sample.py', 'clean54', '0', '4307', '16', 'primary'] seconds 3122
+TASK_COMPLETE 146 primary ['sample.py', 'clean54', '1', '4307', '16', 'primary'] seconds 3121
+TASK_COMPLETE 147 primary ['sample.py', 'clean54', '2', '4307', '16', 'primary'] seconds 2321
+TASK_COMPLETE 148 primary ['sample.py', 'clean54', '3', '4307', '16', 'primary'] seconds 2341
+TASK_COMPLETE 149 primary ['sample.py', 'clean54', '4', '4307', '16', 'primary'] seconds 2341
+TASK_COMPLETE 150 mc_repeat ['sample.py', 'historical80', '0', '1701', '1', 'mc_repeat'] seconds 1161
+TASK_COMPLETE 151 mc_repeat ['sample.py', 'historical80', '1', '1701', '1', 'mc_repeat'] seconds 1161
+TASK_COMPLETE 152 mc_repeat ['sample.py', 'historical80', '2', '1701', '1', 'mc_repeat'] seconds 1181
+TASK_COMPLETE 153 mc_repeat ['sample.py', 'historical80', '3', '1701', '1', 'mc_repeat'] seconds 1161
+TASK_COMPLETE 154 mc_repeat ['sample.py', 'historical80', '4', '1701', '1', 'mc_repeat'] seconds 1181
+TASK_COMPLETE 155 mc_repeat ['sample.py', 'historical80', '0', '1701', '4', 'mc_repeat'] seconds 1341
+TASK_COMPLETE 156 mc_repeat ['sample.py', 'historical80', '1', '1701', '4', 'mc_repeat'] seconds 1341
+TASK_COMPLETE 157 mc_repeat ['sample.py', 'historical80', '2', '1701', '4', 'mc_repeat'] seconds 1341
+TASK_COMPLETE 158 mc_repeat ['sample.py', 'historical80', '3', '1701', '4', 'mc_repeat'] seconds 1341
+TASK_COMPLETE 159 mc_repeat ['sample.py', 'historical80', '4', '1701', '4', 'mc_repeat'] seconds 1341
+TASK_COMPLETE 160 mc_repeat ['sample.py', 'historical80', '0', '1701', '8', 'mc_repeat'] seconds 1561
+TASK_COMPLETE 161 mc_repeat ['sample.py', 'historical80', '1', '1701', '8', 'mc_repeat'] seconds 1561
+TASK_COMPLETE 162 mc_repeat ['sample.py', 'historical80', '2', '1701', '8', 'mc_repeat'] seconds 1561
+TASK_COMPLETE 163 mc_repeat ['sample.py', 'historical80', '3', '1701', '8', 'mc_repeat'] seconds 1561
+TASK_COMPLETE 164 mc_repeat ['sample.py', 'historical80', '4', '1701', '8', 'mc_repeat'] seconds 1561
+TASK_COMPLETE 165 mc_repeat ['sample.py', 'historical80', '0', '1701', '16', 'mc_repeat'] seconds 2001
+TASK_COMPLETE 166 mc_repeat ['sample.py', 'historical80', '1', '1701', '16', 'mc_repeat'] seconds 1981
+TASK_COMPLETE 167 mc_repeat ['sample.py', 'historical80', '2', '1701', '16', 'mc_repeat'] seconds 2001
+TASK_COMPLETE 168 mc_repeat ['sample.py', 'historical80', '3', '1701', '16', 'mc_repeat'] seconds 2001
+TASK_COMPLETE 169 mc_repeat ['sample.py', 'historical80', '4', '1701', '16', 'mc_repeat'] seconds 1981
+TASK_COMPLETE 170 mc_repeat ['sample.py', 'clean54', '0', '1701', '1', 'mc_repeat'] seconds 1821
+TASK_COMPLETE 171 mc_repeat ['sample.py', 'clean54', '1', '1701', '1', 'mc_repeat'] seconds 1821
+TASK_COMPLETE 172 mc_repeat ['sample.py', 'clean54', '2', '1701', '1', 'mc_repeat'] seconds 1381
+TASK_COMPLETE 173 mc_repeat ['sample.py', 'clean54', '3', '1701', '1', 'mc_repeat'] seconds 1381
+TASK_COMPLETE 174 mc_repeat ['sample.py', 'clean54', '4', '1701', '1', 'mc_repeat'] seconds 1381
+TASK_COMPLETE 175 mc_repeat ['sample.py', 'clean54', '0', '1701', '4', 'mc_repeat'] seconds 2101
+TASK_COMPLETE 176 mc_repeat ['sample.py', 'clean54', '1', '1701', '4', 'mc_repeat'] seconds 2121
+TASK_COMPLETE 177 mc_repeat ['sample.py', 'clean54', '2', '1701', '4', 'mc_repeat'] seconds 1541
+TASK_COMPLETE 178 mc_repeat ['sample.py', 'clean54', '3', '1701', '4', 'mc_repeat'] seconds 1541
+TASK_COMPLETE 179 mc_repeat ['sample.py', 'clean54', '4', '1701', '4', 'mc_repeat'] seconds 1541
+TASK_COMPLETE 180 mc_repeat ['sample.py', 'clean54', '0', '1701', '8', 'mc_repeat'] seconds 2401
+TASK_COMPLETE 181 mc_repeat ['sample.py', 'clean54', '1', '1701', '8', 'mc_repeat'] seconds 2381
+TASK_COMPLETE 182 mc_repeat ['sample.py', 'clean54', '2', '1701', '8', 'mc_repeat'] seconds 1801
+TASK_COMPLETE 183 mc_repeat ['sample.py', 'clean54', '3', '1701', '8', 'mc_repeat'] seconds 1801
+TASK_COMPLETE 184 mc_repeat ['sample.py', 'clean54', '4', '1701', '8', 'mc_repeat'] seconds 1801
+TASK_COMPLETE 185 mc_repeat ['sample.py', 'clean54', '0', '1701', '16', 'mc_repeat'] seconds 3082
+TASK_COMPLETE 186 mc_repeat ['sample.py', 'clean54', '1', '1701', '16', 'mc_repeat'] seconds 3062
+TASK_COMPLETE 187 mc_repeat ['sample.py', 'clean54', '2', '1701', '16', 'mc_repeat'] seconds 2321
+TASK_COMPLETE 188 mc_repeat ['sample.py', 'clean54', '3', '1701', '16', 'mc_repeat'] seconds 2301
+TASK_COMPLETE 189 mc_repeat ['sample.py', 'clean54', '4', '1701', '16', 'mc_repeat'] seconds 2321
+TASK_COMPLETE 190 direct ['sample.py', 'historical80', '0', '1701', '1', 'direct'] seconds 260
+TASK_COMPLETE 191 direct ['sample.py', 'historical80', '1', '1701', '1', 'direct'] seconds 260
+TASK_COMPLETE 192 direct ['sample.py', 'historical80', '2', '1701', '1', 'direct'] seconds 260
+TASK_COMPLETE 193 direct ['sample.py', 'historical80', '3', '1701', '1', 'direct'] seconds 260
+TASK_COMPLETE 194 direct ['sample.py', 'historical80', '4', '1701', '1', 'direct'] seconds 260
+TASK_COMPLETE 195 direct ['sample.py', 'historical80', '0', '1701', '4', 'direct'] seconds 280
+TASK_COMPLETE 196 direct ['sample.py', 'historical80', '1', '1701', '4', 'direct'] seconds 280
+TASK_COMPLETE 197 direct ['sample.py', 'historical80', '2', '1701', '4', 'direct'] seconds 280
+TASK_COMPLETE 198 direct ['sample.py', 'historical80', '3', '1701', '4', 'direct'] seconds 280
+TASK_COMPLETE 199 direct ['sample.py', 'historical80', '4', '1701', '4', 'direct'] seconds 280
+TASK_COMPLETE 200 direct ['sample.py', 'historical80', '0', '1701', '8', 'direct'] seconds 300
+TASK_COMPLETE 201 direct ['sample.py', 'historical80', '1', '1701', '8', 'direct'] seconds 300
+TASK_COMPLETE 202 direct ['sample.py', 'historical80', '2', '1701', '8', 'direct'] seconds 300
+TASK_COMPLETE 203 direct ['sample.py', 'historical80', '3', '1701', '8', 'direct'] seconds 300
+TASK_COMPLETE 204 direct ['sample.py', 'historical80', '4', '1701', '8', 'direct'] seconds 300
+TASK_COMPLETE 205 direct ['sample.py', 'historical80', '0', '1701', '16', 'direct'] seconds 320
+TASK_COMPLETE 206 direct ['sample.py', 'historical80', '1', '1701', '16', 'direct'] seconds 320
+TASK_COMPLETE 207 direct ['sample.py', 'historical80', '2', '1701', '16', 'direct'] seconds 320
+TASK_COMPLETE 208 direct ['sample.py', 'historical80', '3', '1701', '16', 'direct'] seconds 320
+TASK_COMPLETE 209 direct ['sample.py', 'historical80', '4', '1701', '16', 'direct'] seconds 320
+TASK_COMPLETE 210 direct ['sample.py', 'clean54', '0', '1701', '1', 'direct'] seconds 460
+TASK_COMPLETE 211 direct ['sample.py', 'clean54', '1', '1701', '1', 'direct'] seconds 460
+TASK_COMPLETE 212 direct ['sample.py', 'clean54', '2', '1701', '1', 'direct'] seconds 340
+TASK_COMPLETE 213 direct ['sample.py', 'clean54', '3', '1701', '1', 'direct'] seconds 340
+TASK_COMPLETE 214 direct ['sample.py', 'clean54', '4', '1701', '1', 'direct'] seconds 340
+TASK_COMPLETE 215 direct ['sample.py', 'clean54', '0', '1701', '4', 'direct'] seconds 480
+TASK_COMPLETE 216 direct ['sample.py', 'clean54', '1', '1701', '4', 'direct'] seconds 480
+TASK_COMPLETE 217 direct ['sample.py', 'clean54', '2', '1701', '4', 'direct'] seconds 380
+TASK_COMPLETE 218 direct ['sample.py', 'clean54', '3', '1701', '4', 'direct'] seconds 360
+TASK_COMPLETE 219 direct ['sample.py', 'clean54', '4', '1701', '4', 'direct'] seconds 380
+TASK_COMPLETE 220 direct ['sample.py', 'clean54', '0', '1701', '8', 'direct'] seconds 520
+TASK_COMPLETE 221 direct ['sample.py', 'clean54', '1', '1701', '8', 'direct'] seconds 540
+TASK_COMPLETE 222 direct ['sample.py', 'clean54', '2', '1701', '8', 'direct'] seconds 400
+TASK_COMPLETE 223 direct ['sample.py', 'clean54', '3', '1701', '8', 'direct'] seconds 400
+TASK_COMPLETE 224 direct ['sample.py', 'clean54', '4', '1701', '8', 'direct'] seconds 400
+TASK_COMPLETE 225 direct ['sample.py', 'clean54', '0', '1701', '16', 'direct'] seconds 620
+TASK_COMPLETE 226 direct ['sample.py', 'clean54', '1', '1701', '16', 'direct'] seconds 620
+TASK_COMPLETE 227 direct ['sample.py', 'clean54', '2', '1701', '16', 'direct'] seconds 460
+TASK_COMPLETE 228 direct ['sample.py', 'clean54', '3', '1701', '16', 'direct'] seconds 460
+TASK_COMPLETE 229 direct ['sample.py', 'clean54', '4', '1701', '16', 'direct'] seconds 460
+TASK_COMPLETE 230 matched_time ['sample.py', 'historical80', '0', '1701', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 231 matched_time ['sample.py', 'historical80', '1', '1701', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 232 matched_time ['sample.py', 'historical80', '2', '1701', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 233 matched_time ['sample.py', 'historical80', '3', '1701', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 234 matched_time ['sample.py', 'historical80', '4', '1701', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 235 matched_time ['sample.py', 'historical80', '0', '1701', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 236 matched_time ['sample.py', 'historical80', '1', '1701', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 237 matched_time ['sample.py', 'historical80', '2', '1701', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 238 matched_time ['sample.py', 'historical80', '3', '1701', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 239 matched_time ['sample.py', 'historical80', '4', '1701', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 240 matched_time ['sample.py', 'historical80', '0', '2903', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 241 matched_time ['sample.py', 'historical80', '1', '2903', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 242 matched_time ['sample.py', 'historical80', '2', '2903', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 243 matched_time ['sample.py', 'historical80', '3', '2903', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 244 matched_time ['sample.py', 'historical80', '4', '2903', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 245 matched_time ['sample.py', 'historical80', '0', '2903', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 246 matched_time ['sample.py', 'historical80', '1', '2903', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 247 matched_time ['sample.py', 'historical80', '2', '2903', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 248 matched_time ['sample.py', 'historical80', '3', '2903', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 249 matched_time ['sample.py', 'historical80', '4', '2903', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 250 matched_time ['sample.py', 'historical80', '0', '4307', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 251 matched_time ['sample.py', 'historical80', '1', '4307', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 252 matched_time ['sample.py', 'historical80', '2', '4307', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 253 matched_time ['sample.py', 'historical80', '3', '4307', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 254 matched_time ['sample.py', 'historical80', '4', '4307', '0', 'matched_time'] seconds 280
+TASK_COMPLETE 255 matched_time ['sample.py', 'historical80', '0', '4307', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 256 matched_time ['sample.py', 'historical80', '1', '4307', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 257 matched_time ['sample.py', 'historical80', '2', '4307', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 258 matched_time ['sample.py', 'historical80', '3', '4307', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 259 matched_time ['sample.py', 'historical80', '4', '4307', '7', 'matched_time'] seconds 660
+TASK_COMPLETE 260 matched_time ['sample.py', 'clean54', '0', '1701', '0', 'matched_time'] seconds 420
+TASK_COMPLETE 261 matched_time ['sample.py', 'clean54', '1', '1701', '0', 'matched_time'] seconds 420
+TASK_COMPLETE 262 matched_time ['sample.py', 'clean54', '2', '1701', '0', 'matched_time'] seconds 320
+TASK_COMPLETE 263 matched_time ['sample.py', 'clean54', '3', '1701', '0', 'matched_time'] seconds 320
+TASK_COMPLETE 264 matched_time ['sample.py', 'clean54', '4', '1701', '0', 'matched_time'] seconds 320
+TASK_COMPLETE 265 matched_time ['sample.py', 'clean54', '0', '1701', '7', 'matched_time'] seconds 1021
+TASK_COMPLETE 266 matched_time ['sample.py', 'clean54', '1', '1701', '7', 'matched_time'] seconds 1021
+TASK_COMPLETE 267 matched_time ['sample.py', 'clean54', '2', '1701', '7', 'matched_time'] seconds 780
+TASK_COMPLETE 268 matched_time ['sample.py', 'clean54', '3', '1701', '7', 'matched_time'] seconds 780
+TASK_COMPLETE 269 matched_time ['sample.py', 'clean54', '4', '1701', '7', 'matched_time'] seconds 780
+TASK_COMPLETE 270 matched_time ['sample.py', 'clean54', '0', '2903', '0', 'matched_time'] seconds 420
+TASK_COMPLETE 271 matched_time ['sample.py', 'clean54', '1', '2903', '0', 'matched_time'] seconds 420
+TASK_COMPLETE 272 matched_time ['sample.py', 'clean54', '2', '2903', '0', 'matched_time'] seconds 320
+TASK_COMPLETE 273 matched_time ['sample.py', 'clean54', '3', '2903', '0', 'matched_time'] seconds 320
+TASK_COMPLETE 274 matched_time ['sample.py', 'clean54', '4', '2903', '0', 'matched_time'] seconds 320
+TASK_COMPLETE 275 matched_time ['sample.py', 'clean54', '0', '2903', '7', 'matched_time'] seconds 1021
+TASK_COMPLETE 276 matched_time ['sample.py', 'clean54', '1', '2903', '7', 'matched_time'] seconds 1021
+TASK_COMPLETE 277 matched_time ['sample.py', 'clean54', '2', '2903', '7', 'matched_time'] seconds 780
+TASK_COMPLETE 278 matched_time ['sample.py', 'clean54', '3', '2903', '7', 'matched_time'] seconds 780
+TASK_COMPLETE 279 matched_time ['sample.py', 'clean54', '4', '2903', '7', 'matched_time'] seconds 760
+TASK_COMPLETE 280 matched_time ['sample.py', 'clean54', '0', '4307', '0', 'matched_time'] seconds 420
+TASK_COMPLETE 281 matched_time ['sample.py', 'clean54', '1', '4307', '0', 'matched_time'] seconds 420
+TASK_COMPLETE 282 matched_time ['sample.py', 'clean54', '2', '4307', '0', 'matched_time'] seconds 320
+TASK_COMPLETE 283 matched_time ['sample.py', 'clean54', '3', '4307', '0', 'matched_time'] seconds 320
+TASK_COMPLETE 284 matched_time ['sample.py', 'clean54', '4', '4307', '0', 'matched_time'] seconds 320
+TASK_COMPLETE 285 matched_time ['sample.py', 'clean54', '0', '4307', '7', 'matched_time'] seconds 1021
+TASK_COMPLETE 286 matched_time ['sample.py', 'clean54', '1', '4307', '7', 'matched_time'] seconds 1021
+TASK_COMPLETE 287 matched_time ['sample.py', 'clean54', '2', '4307', '7', 'matched_time'] seconds 780
+TASK_COMPLETE 288 matched_time ['sample.py', 'clean54', '3', '4307', '7', 'matched_time'] seconds 780
+TASK_COMPLETE 289 matched_time ['sample.py', 'clean54', '4', '4307', '7', 'matched_time'] seconds 780
+TASK_COMPLETE 290 diagnostics ['diagnostics.py', 'historical80', '0'] seconds 2241
+TASK_COMPLETE 291 diagnostics ['diagnostics.py', 'historical80', '1'] seconds 2001
+TASK_COMPLETE 292 diagnostics ['diagnostics.py', 'historical80', '2'] seconds 1321
+TASK_COMPLETE 293 diagnostics ['diagnostics.py', 'historical80', '3'] seconds 1360
+TASK_COMPLETE 294 diagnostics ['diagnostics.py', 'historical80', '4'] seconds 1341
+TASK_COMPLETE 295 diagnostics ['diagnostics.py', 'clean54', '0'] seconds 4562
+TASK_COMPLETE 296 diagnostics ['diagnostics.py', 'clean54', '1'] seconds 4102
+TASK_COMPLETE 297 diagnostics ['diagnostics.py', 'clean54', '2'] seconds 2541
+TASK_COMPLETE 298 diagnostics ['diagnostics.py', 'clean54', '3'] seconds 2521
+TASK_COMPLETE 299 diagnostics ['diagnostics.py', 'clean54', '4'] seconds 2521
+TASK_COMPLETE 300 predictive_validation ['predictive.py', 'historical80', '0', '1701'] seconds 20
+TASK_COMPLETE 301 predictive_validation ['predictive.py', 'historical80', '1', '1701'] seconds 20
+TASK_COMPLETE 302 predictive_validation ['predictive.py', 'historical80', '2', '1701'] seconds 20
+TASK_COMPLETE 303 predictive_validation ['predictive.py', 'historical80', '3', '1701'] seconds 20
+TASK_COMPLETE 304 predictive_validation ['predictive.py', 'historical80', '4', '1701'] seconds 20
+TASK_COMPLETE 305 predictive_validation ['predictive.py', 'historical80', '0', '2903'] seconds 20
+TASK_COMPLETE 306 predictive_validation ['predictive.py', 'historical80', '1', '2903'] seconds 20
+TASK_COMPLETE 307 predictive_validation ['predictive.py', 'historical80', '2', '2903'] seconds 20
+TASK_COMPLETE 308 predictive_validation ['predictive.py', 'historical80', '3', '2903'] seconds 20
+TASK_COMPLETE 309 predictive_validation ['predictive.py', 'historical80', '4', '2903'] seconds 40
+TASK_COMPLETE 310 predictive_validation ['predictive.py', 'historical80', '0', '4307'] seconds 20
+TASK_COMPLETE 311 predictive_validation ['predictive.py', 'historical80', '1', '4307'] seconds 20
+TASK_COMPLETE 312 predictive_validation ['predictive.py', 'historical80', '2', '4307'] seconds 20
+TASK_COMPLETE 313 predictive_validation ['predictive.py', 'historical80', '3', '4307'] seconds 20
+TASK_COMPLETE 314 predictive_validation ['predictive.py', 'historical80', '4', '4307'] seconds 20
+TASK_COMPLETE 315 predictive_validation ['predictive.py', 'clean54', '0', '1701'] seconds 40
+TASK_COMPLETE 316 predictive_validation ['predictive.py', 'clean54', '1', '1701'] seconds 40
+TASK_COMPLETE 317 predictive_validation ['predictive.py', 'clean54', '2', '1701'] seconds 40
+TASK_COMPLETE 318 predictive_validation ['predictive.py', 'clean54', '3', '1701'] seconds 40
+TASK_COMPLETE 319 predictive_validation ['predictive.py', 'clean54', '4', '1701'] seconds 40
+TASK_COMPLETE 320 predictive_validation ['predictive.py', 'clean54', '0', '2903'] seconds 40
+TASK_COMPLETE 321 predictive_validation ['predictive.py', 'clean54', '1', '2903'] seconds 40
+TASK_COMPLETE 322 predictive_validation ['predictive.py', 'clean54', '2', '2903'] seconds 40
+TASK_COMPLETE 323 predictive_validation ['predictive.py', 'clean54', '3', '2903'] seconds 40
+TASK_COMPLETE 324 predictive_validation ['predictive.py', 'clean54', '4', '2903'] seconds 40
+TASK_COMPLETE 325 predictive_validation ['predictive.py', 'clean54', '0', '4307'] seconds 40
+TASK_COMPLETE 326 predictive_validation ['predictive.py', 'clean54', '1', '4307'] seconds 40
+TASK_COMPLETE 327 predictive_validation ['predictive.py', 'clean54', '2', '4307'] seconds 40
+TASK_COMPLETE 328 predictive_validation ['predictive.py', 'clean54', '3', '4307'] seconds 40
+TASK_COMPLETE 329 predictive_validation ['predictive.py', 'clean54', '4', '4307'] seconds 40

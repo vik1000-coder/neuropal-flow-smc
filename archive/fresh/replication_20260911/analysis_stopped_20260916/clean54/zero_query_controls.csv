@@ -1,0 +1,9 @@
+particles,lag,phase,zero_query_raw_mse,mean_achieved_gap
+64,1,baseline,0.0,0.0
+64,1,onset,0.0,0.0
+64,4,baseline,0.0,0.0
+64,4,onset,0.0,0.0
+512,1,baseline,0.0,0.0
+512,1,onset,0.0,0.0
+512,4,baseline,0.0,0.0
+512,4,onset,0.0,0.0

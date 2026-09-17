@@ -1,0 +1,42 @@
+schema_version: "1"
+name: frozen_v2_robustness_latent
+output_dir: outputs/frozen_v2/robustness_latent
+seeds: [3, 4, 5]
+coefficient_cvs: [0.0, 0.15, 0.35]
+views: [calcium]
+history_lags: [1]
+horizon: 1
+n_predictive_samples: 32
+hierarchy_counts: {train: 6, validation: 2, test: 3}
+resource:
+  max_threads: 1
+  max_parallel_jobs: 1
+  max_rss_gb: 6.0
+  max_output_gb: 0.7
+  nice: 19
+  checkpoint_minutes: 15
+  stop_free_disk_gb: 4.0
+observation_variants:
+  - {name: reference}
+  - {name: high_measurement_noise, measurement_noise_multiplier: 2.5}
+  - {name: slow_calcium, calcium_decay_multiplier: 2.0}
+scenarios:
+  - id: "null"
+    params: &robustness_latent_base
+      n_neurons: 8
+      n_modulators: 2
+      n_steps: 650
+      burn_in: 950
+      mechanism: "null"
+      effect_strength: 0.45
+      tail_low_scale: 0.5
+      tail_high_scale: 3.0
+      ligand_pulse_rate_hz: 0.08
+      ligand_pulse_amplitude: 2.5
+      tail_threshold: 0.35
+      shape_tail_z: 2.0
+  - id: mixed
+    params: {<<: *robustness_latent_base, mechanism: mixed, effect_strength: 0.8}
+methods:
+  - name: latent_neuromodulated_mixture_ssm
+    params: {n_modulators: 2, max_epochs: 80, patience: 12, truncation: 112, warmup: 10, effect_l1: 0.01, weight_decay: 0.0001, tail_low_scale: 0.5, tail_high_scale: 3.0, tail_threshold: 0.35, shape_tail_z: 2.0}

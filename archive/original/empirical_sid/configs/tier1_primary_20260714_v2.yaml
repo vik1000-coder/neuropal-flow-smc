@@ -1,0 +1,9 @@
+extends: tier1_primary_20260714.yaml
+study_id: sid_tier1_primary_20260714_v2
+output_dir: runs/sid_tier1_primary_20260714_v2
+notes:
+  - Confirmatory CIs use 30 top-level DGP seeds.
+  - Positive-noise score routes are centered and read out under the matching noised law.
+  - Gaussian corruption identities map mean, covariance, third-cumulant, and matched fourth-order derivatives back to the clean registered channel.
+  - Tail and occupancy score routes at positive noise are reported only as smoothed estimands.
+  - The v1 development output is retained as an immutable evaluation-pipeline diagnostic and is excluded from confirmatory inference.

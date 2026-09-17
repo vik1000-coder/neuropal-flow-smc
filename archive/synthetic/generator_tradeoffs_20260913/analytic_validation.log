@@ -1,0 +1,8 @@
+test_student_gaussian_limit (__main__.AnalyticSupplementTests.test_student_gaussian_limit) ... ok
+test_student_symmetry_and_zero_cross_covariance (__main__.AnalyticSupplementTests.test_student_symmetry_and_zero_cross_covariance) ... ok
+test_teacher_against_independent_direct_samples (__main__.AnalyticSupplementTests.test_teacher_against_independent_direct_samples) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.322s
+
+OK

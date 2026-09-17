@@ -1,0 +1,25 @@
+{
+  "delta": 1.0,
+  "designs": [
+    "unpaired_binary",
+    "paired_rep4"
+  ],
+  "evaluation_anchors": 12,
+  "evaluation_draws_per_side": 512,
+  "expected": 48,
+  "failed": 0,
+  "generator_seeds": [
+    73,
+    79
+  ],
+  "model_seeds": [
+    8101,
+    8107
+  ],
+  "n_train": 8000,
+  "n_validation": 1600,
+  "observed": 48,
+  "schema_version": "1",
+  "status": "complete",
+  "successful": 48
+}

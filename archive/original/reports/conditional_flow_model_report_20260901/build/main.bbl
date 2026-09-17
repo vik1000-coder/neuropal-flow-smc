@@ -1,0 +1,165 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bai et~al.(2018)Bai, Kolter, and Koltun]{bai2018tcn}
+Shaojie Bai, J.~Zico Kolter, and Vladlen Koltun.
+\newblock An empirical evaluation of generic convolutional and recurrent
+  networks for sequence modeling.
+\newblock \emph{arXiv preprint arXiv:1803.01271}, 2018.
+\newblock URL \url{https://arxiv.org/abs/1803.01271}.
+
+\bibitem[Bishop(1994)]{bishop1994mdn}
+Christopher~M. Bishop.
+\newblock Mixture density networks.
+\newblock Technical Report NCRG/94/004, Aston University, 1994.
+\newblock URL \url{https://publications.aston.ac.uk/id/eprint/373/}.
+
+\bibitem[Bishop(1995)]{bishop1995noise}
+Christopher~M. Bishop.
+\newblock Training with noise is equivalent to tikhonov regularization.
+\newblock \emph{Neural Computation}, 7\penalty0 (1):\penalty0 108--116, 1995.
+\newblock \doi{10.1162/neco.1995.7.1.108}.
+
+\bibitem[Brier(1950)]{brier1950verification}
+Glenn~W. Brier.
+\newblock Verification of forecasts expressed in terms of probability.
+\newblock \emph{Monthly Weather Review}, 78\penalty0 (1):\penalty0 1--3, 1950.
+\newblock \doi{10.1175/1520-0493(1950)078<0001:VOFEIT>2.0.CO;2}.
+
+\bibitem[Chen et~al.(2018)Chen, Rubanova, Bettencourt, and
+  Duvenaud]{chen2018neuralode}
+Ricky T.~Q. Chen, Yulia Rubanova, Jesse Bettencourt, and David Duvenaud.
+\newblock Neural ordinary differential equations.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~31, 2018.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper/2018/hash/69386f6bb1dfed68692a24c8686939b9-Abstract.html}.
+
+\bibitem[Dinh et~al.(2017)Dinh, Sohl-Dickstein, and Bengio]{dinh2017realnvp}
+Laurent Dinh, Jascha Sohl-Dickstein, and Samy Bengio.
+\newblock Density estimation using real nvp.
+\newblock In \emph{International Conference on Learning Representations}, 2017.
+\newblock URL \url{https://openreview.net/forum?id=HkpbnH9lx}.
+
+\bibitem[Gneiting and Raftery(2007)]{gneiting2007proper}
+Tilmann Gneiting and Adrian~E. Raftery.
+\newblock Strictly proper scoring rules, prediction, and estimation.
+\newblock \emph{Journal of the American Statistical Association}, 102\penalty0
+  (477):\penalty0 359--378, 2007.
+\newblock \doi{10.1198/016214506000001437}.
+
+\bibitem[Gutmann and Hyv{\"a}rinen(2010)]{gutmann2010nce}
+Michael Gutmann and Aapo Hyv{\"a}rinen.
+\newblock Noise-contrastive estimation: A new estimation principle for
+  unnormalized statistical models.
+\newblock In \emph{Proceedings of the Thirteenth International Conference on
+  Artificial Intelligence and Statistics}, volume~9 of \emph{Proceedings of
+  Machine Learning Research}, pages 297--304, 2010.
+\newblock URL \url{https://proceedings.mlr.press/v9/gutmann10a.html}.
+
+\bibitem[Ho et~al.(2020)Ho, Jain, and Abbeel]{ho2020ddpm}
+Jonathan Ho, Ajay Jain, and Pieter Abbeel.
+\newblock Denoising diffusion probabilistic models.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~33, pages 6840--6851, 2020.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html}.
+
+\bibitem[Holm(1979)]{holm1979multiple}
+Sture Holm.
+\newblock A simple sequentially rejective multiple test procedure.
+\newblock \emph{Scandinavian Journal of Statistics}, 6\penalty0 (2):\penalty0
+  65--70, 1979.
+\newblock URL \url{https://www.jstor.org/stable/4615733}.
+
+\bibitem[Hyv{\"a}rinen(2005)]{hyvarinen2005score}
+Aapo Hyv{\"a}rinen.
+\newblock Estimation of non-normalized statistical models by score matching.
+\newblock \emph{Journal of Machine Learning Research}, 6:\penalty0 695--709,
+  2005.
+\newblock URL \url{https://jmlr.org/papers/v6/hyvarinen05a.html}.
+
+\bibitem[Lange et~al.(1989)Lange, Little, and Taylor]{lange1989student}
+Kenneth~L. Lange, Roderick J.~A. Little, and Jeremy M.~G. Taylor.
+\newblock Robust statistical modeling using the $t$ distribution.
+\newblock \emph{Journal of the American Statistical Association}, 84\penalty0
+  (408):\penalty0 881--896, 1989.
+\newblock \doi{10.1080/01621459.1989.10478852}.
+
+\bibitem[Lipman et~al.(2023)Lipman, Chen, Ben-Hamu, Nickel, and
+  Le]{lipman2023flow}
+Yaron Lipman, Ricky T.~Q. Chen, Heli Ben-Hamu, Maximilian Nickel, and Matt Le.
+\newblock Flow matching for generative modeling.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=PqvMRDCJT9t}.
+
+\bibitem[Liu et~al.(2023)Liu, Gong, and Liu]{liu2023rectified}
+Xingchao Liu, Chengyue Gong, and Qiang Liu.
+\newblock Flow straight and fast: Learning to generate and transfer data with
+  rectified flow.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=XVjTT1nw5z}.
+
+\bibitem[Loshchilov and Hutter(2019)]{loshchilov2019adamw}
+Ilya Loshchilov and Frank Hutter.
+\newblock Decoupled weight decay regularization.
+\newblock In \emph{International Conference on Learning Representations}, 2019.
+\newblock URL \url{https://openreview.net/forum?id=Bkg6RiCqY7}.
+
+\bibitem[Scheuerer and Hamill(2015)]{scheuerer2015variogram}
+Michael Scheuerer and Thomas~M. Hamill.
+\newblock Variogram-based proper scoring rules for probabilistic forecasts of
+  multivariate quantities.
+\newblock \emph{Monthly Weather Review}, 143\penalty0 (4):\penalty0 1321--1334,
+  2015.
+\newblock \doi{10.1175/MWR-D-14-00269.1}.
+
+\bibitem[Song et~al.(2021)Song, Sohl-Dickstein, Kingma, Kumar, Ermon, and
+  Poole]{song2021sde}
+Yang Song, Jascha Sohl-Dickstein, Diederik~P. Kingma, Abhishek Kumar, Stefano
+  Ermon, and Ben Poole.
+\newblock Score-based generative modeling through stochastic differential
+  equations.
+\newblock In \emph{International Conference on Learning Representations}, 2021.
+\newblock URL \url{https://openreview.net/forum?id=PxTIG12RRHS}.
+
+\bibitem[Srivastava et~al.(2014)Srivastava, Hinton, Krizhevsky, Sutskever, and
+  Salakhutdinov]{srivastava2014dropout}
+Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
+  Salakhutdinov.
+\newblock Dropout: A simple way to prevent neural networks from overfitting.
+\newblock \emph{Journal of Machine Learning Research}, 15:\penalty0 1929--1958,
+  2014.
+\newblock URL \url{https://jmlr.org/papers/v15/srivastava14a.html}.
+
+\bibitem[Tong et~al.(2024)Tong, Fatras, Malkin, Huguet, Zhang, Rector-Brooks,
+  Wolf, and Bengio]{tong2024otcfm}
+Alexander Tong, Kilian Fatras, Nikolay Malkin, Guillaume Huguet, Yanlei Zhang,
+  Jarrid Rector-Brooks, Guy Wolf, and Yoshua Bengio.
+\newblock Improving and generalizing flow-based generative models with
+  minibatch optimal transport.
+\newblock \emph{Transactions on Machine Learning Research}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2302.00482}.
+
+\bibitem[Vincent(2011)]{vincent2011denoising}
+Pascal Vincent.
+\newblock A connection between score matching and denoising autoencoders.
+\newblock \emph{Neural Computation}, 23\penalty0 (7):\penalty0 1661--1674,
+  2011.
+\newblock \doi{10.1162/NECO_a_00142}.
+
+\bibitem[Yemini et~al.(2021)Yemini, Lin, Nejatbakhsh, Varol, Sun, Mena, Samuel,
+  Paninski, Venkatachalam, and Hobert]{yemini2021neuropal}
+Eviatar Yemini, Albert Lin, Amin Nejatbakhsh, Erdem Varol, Ruoxi Sun,
+  Gonzalo~E. Mena, Andrew D.~T. Samuel, Liam Paninski, Vivek Venkatachalam, and
+  Oliver Hobert.
+\newblock Neuropal: A multicolor atlas for whole-brain neuronal identification
+  in {C. elegans}.
+\newblock \emph{Cell}, 184\penalty0 (1):\penalty0 272--288.e11, 2021.
+\newblock \doi{10.1016/j.cell.2020.12.012}.
+
+\end{thebibliography}

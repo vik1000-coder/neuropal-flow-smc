@@ -1,0 +1,11 @@
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+[combined] 28 total worms; 56 neurons; 20 complete-case worms (17 OH16230 + 3 OH15500); signal=raw
+
+Loading NeuroPAL data from: Head_Activity_OH16230.mat
+  D/V collapsing: Averaging variants for 14 neuron classes
+ATLAS_WORM_DONE method=direct_importance ell=8 fold=0 heldout_worm_index=1
+ATLAS_WORM_DONE method=direct_importance ell=8 fold=0 heldout_worm_index=2
+ATLAS_WORM_DONE method=direct_importance ell=8 fold=0 heldout_worm_index=4
+ATLAS_WORM_DONE method=direct_importance ell=8 fold=0 heldout_worm_index=7

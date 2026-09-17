@@ -1,0 +1,58 @@
+\contentsline {section}{\numberline {1}Executive verdict}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}What should carry the project forward}{4}{subsection.1.1}%
+\contentsline {section}{\numberline {2}One mathematical object, four layers}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The population object}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Infinitesimal history sensitivity}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Finite signed contrasts: the preferred estimand}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}How SBTG fits}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}How diffusion fits}{7}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}How changepoints fit}{7}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Consolidating the named methods}{7}{section.3}%
+\contentsline {section}{\numberline {4}What each objective actually identifies}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Normalized likelihood}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Hyv\"arinen score matching}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Denoising score matching}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Joint-state SBTG score}{9}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Ratio and classification objectives}{9}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Moment/Riesz projection}{9}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Alternative approaches and required baselines by subproblem}{9}{section.5}%
+\contentsline {section}{\numberline {6}Empirical evidence: what works and what does not}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Evidence standard and comparability}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Predictive law and physical fields}{11}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Synaptic gating: no current winner}{12}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}History tangents and finite contrasts}{12}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}SBTG localization}{13}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Classical graph baselines and hidden confounding}{13}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Changepoints}{13}{subsection.6.7}%
+\contentsline {section}{\numberline {7}Where our approaches have an advantage---and where they do not}{14}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Potential advantages}{14}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Costs and failure modes}{15}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}When diffusion/score methods have a credible hope}{15}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Theory agenda}{15}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Finite-witness stability bounds}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Bias--variance theory for \(\delta \) and \(\sigma \)}{16}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Orthogonal and cross-fitted channel estimation}{16}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Reconstructing SID from SBTG}{16}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Higher-order parity stencils}{16}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Route-agreement tests}{16}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Mechanism-confusion and nuisance invariance}{17}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}Sequential inference}{17}{subsection.8.8}%
+\contentsline {section}{\numberline {9}The next decisive experiment program}{17}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Phase 0: oracle adapter tournament}{17}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Phase 1: backend \(\times \) adapter \(\times \) channel factorial}{18}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Phase 2: scaling and stress map}{18}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Phase 3: mechanism-confusion battery}{18}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Phase 4: changepoints only for validated channels}{19}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Phase 5: long-horizon and pathwise extension}{19}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Preregistered decision rules}{19}{subsection.9.7}%
+\contentsline {section}{\numberline {10}Research priorities and stop/go decisions}{20}{section.10}%
+\contentsline {subsection}{\numberline {10.1}What would count as an impactful result?}{20}{subsection.10.1}%
+\contentsline {section}{\numberline {11}Recommended paper-level narrative}{20}{section.11}%
+\contentsline {section}{\numberline {12}Expanded out-of-family neuromodulation benchmark}{21}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Gaussian NLL is the empirical winner}{21}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Unconstrained quadratic SID fails expected-risk and stability gates}{22}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Paired intervention response favors direct regularized dynamics}{22}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Updated decision}{22}{subsection.12.4}%
+\contentsline {section}{\numberline {13}Final answer to the strategic questions}{23}{section.13}%
+\contentsline {section}{\numberline {A}Reproducibility and evidence map}{23}{appendix.A}%
+\contentsline {section}{\numberline {B}Compact claim ladder}{24}{appendix.B}%

@@ -1,0 +1,62 @@
+{
+  "dataset": "full_traces_imputed",
+  "p_max": 20,
+  "lags": [
+    1,
+    2,
+    3,
+    5,
+    8,
+    10,
+    15,
+    20
+  ],
+  "approach": "C",
+  "noise_std": 0.1,
+  "hidden_dim": 64,
+  "epochs": 100,
+  "n_folds": 5,
+  "fdr_alpha": 0.1,
+  "tune_hp": true,
+  "n_hp_trials": 20,
+  "device": "cuda",
+  "seed": 42,
+  "timestamp": "20260123_112016",
+  "n_neurons": 80,
+  "approach_times": {
+    "C": 8980.827011346817
+  },
+  "stimulus_periods": true,
+  "4period_analysis": true,
+  "period_lags": {
+    "NOTHING": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      10,
+      15,
+      20
+    ],
+    "ON": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "SHOWING": [
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "OFF": [
+      1,
+      2,
+      3,
+      5
+    ]
+  }
+}

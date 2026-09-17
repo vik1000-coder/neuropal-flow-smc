@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore frozen NeuroPAL model effects, individual worms, and distinct sources of uncertainty.">
+  <title>Neural atlas · effects & uncertainty</title>
+  <link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to figures</a>
+  <header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true">n</span><h1>Neural atlas <span>v2</span></h1></div><div class="top-meta">17 worms <span>·</span> 54 head classes <span>·</span> frozen data</div><a id="original-link" href="http://127.0.0.1:18780/gui/atlas_explorer.html" target="_blank" rel="noopener">Original explorer ↗</a></header>
+  <main id="main">
+    <section class="selection" aria-label="Select a modeled effect">
+      <div class="pair-controls"><label>Source<select id="source" aria-label="Source neuron"></select></label><span class="direction" aria-hidden="true">→</span><label>Target<select id="target" aria-label="Target neuron"></select></label><button id="swap" class="icon-button" aria-label="Swap source and target" title="Swap source and target">⇄</button></div>
+      <label class="outcome-control">Measure<select id="channel" aria-label="Outcome"></select></label>
+      <label class="context-control">Context<select id="context" aria-label="Stimulus context"></select></label>
+      <details class="options"><summary>Options</summary><div class="options-panel"><label>Estimator<select id="method" aria-label="Estimator"></select></label><label class="check"><input type="checkbox" id="compare"> Compare estimators</label><label class="check"><input type="checkbox" id="worms" checked> Show individual worms</label><button id="reset" class="text-button">Reset selection</button></div></details>
+    </section>
+    <div class="preset-row"><span>Calibrated examples</span><div id="presets"></div><span id="load-status" role="status" aria-live="polite"></span></div>
+    <div class="view-row"><nav class="view-tabs" aria-label="Dashboard views"><button class="active" data-view="effects" aria-pressed="true">Model effects</button><button data-view="signals" aria-pressed="false">Recorded activity</button><button data-view="references" aria-pressed="false">Reference checks</button></nav><button id="download" class="text-button">↓ Download figure data</button></div>
+    <div id="global-error" class="error" role="alert" hidden></div>
+
+    <section id="effects-view" class="view">
+      <div class="effect-layout">
+        <article class="plot-card hero-plot" id="effect-card" aria-busy="true">
+          <div class="card-heading"><div><h2 id="effect-title">Effect over forecast time</h2><p id="effect-subtitle">High-source minus low-source prediction</p></div><div class="segmented" aria-label="Horizontal axis"><button data-axis="horizon" class="active" aria-pressed="true">Forecast time</button><button data-axis="lag" aria-pressed="false">History lag</button></div></div>
+          <div id="timing-control" class="timing-control"></div>
+          <div id="effect-chart" class="chart big-chart"><div class="loading">Loading the selected effect and its uncertainty…</div></div>
+          <div class="legend"><span><i class="line effect"></i>Mean effect</span><span><i class="swatch band"></i>95% interval for the mean</span><span id="worm-legend"><i class="line faint"></i>Individual worms</span><span id="direct-legend" hidden><i class="line comparison"></i>Other estimator + its interval</span></div>
+          <p class="chart-note">Intervals are pointwise, conditional on fitted models. A band excluding zero is <strong>not</strong> a corrected significance test.</p>
+        </article>
+        <aside class="estimate-card" aria-label="Selected estimate and evidence"><div class="label" id="estimate-pair">Selected effect</div><div class="estimate-value" id="estimate-value">—</div><div id="estimate-ci" class="estimate-ci">95% interval</div><p id="estimate-units">Source-gap-normalized units</p><div id="selected-timing" class="selected-timing"></div><div class="evidence-list" id="evidence-summary"></div><p class="boundary">Model-relative association. Not a causal connection or a physical transmission delay.</p></aside>
+      </div>
+      <div class="secondary-grid">
+        <article class="plot-card"><div class="card-heading"><div><h2>Variation across worms</h2><p id="worm-subtitle">One dot is one worm, after averaging model seeds and events.</p></div><span class="count-tag" id="worm-count">17</span></div><div id="worm-chart" class="chart worm-chart"></div><p class="chart-note">The spread of individual dots and uncertainty in their mean answer different questions.</p></article>
+        <article class="plot-card"><div class="card-heading"><div><h2>Effect versus sampling noise</h2><p id="control-subtitle">Exact matched N128 follow-up, when available.</p></div></div><div id="control-chart" class="chart control-chart"></div><div id="control-caption" class="chart-note"></div></article>
+      </div>
+      <details id="prediction-details" class="detail-section"><summary><span>Predicted activity distributions</span><span class="summary-note">Low / high source · saved samples</span></summary><div class="detail-body"><div id="prediction-controls" class="inline-controls"></div><div id="prediction-chart" class="chart prediction-chart"></div><p id="prediction-caption" class="chart-note"></p></div></details>
+      <details id="targets-details" class="detail-section"><summary><span>All targets for this source</span><span class="summary-note">54 estimates and intervals</span></summary><div class="detail-body"><p class="chart-note">Alphabetical order. Select a row to explore that target. Intervals are descriptive, not a significance ranking.</p><div id="targets-chart" class="target-grid"></div></div></details>
+      <details class="detail-section"><summary><span>How to read the uncertainty</span></summary><div class="uncertainty-guide"><div><h3>Uncertainty in the mean effect</h3><p>The shaded 95% interval comes from resampling the 17 worms. It holds the trained models fixed and is not corrected for exploring different cells.</p></div><div><h3>Variation between worms</h3><p>Individual lines and dots show how the model effect varies across the same 17 worms. Seeds, events, and particles are not additional animals.</p></div><div><h3>Spread of possible outcomes</h3><p>Low/high prediction distributions show generated outcomes for a single saved worm, event, model seed and sampling repeat. Their width is not a confidence interval for an effect.</p></div><div><h3>Sampling noise and support</h3><p>Finite-particle controls test numerical distinguishability. Support and ancestry checks still apply, even for a narrow interval or small p-value.</p></div></div><p class="detail-boundary" id="ci-method"></p></details>
+    </section>
+
+    <section id="signals-view" class="view" hidden>
+      <div class="signal-intro"><div><h2>Recorded source and target activity</h2><p>Observed signals around one actual chemical onset per worm. These are not repaired model paths.</p></div><div class="inline-controls"><label>Actual event<select id="signal-chemical" aria-label="Recorded chemical event"><option value="butanone">Butanone</option><option value="pentanedione">Pentanedione</option><option value="nacl">NaCl</option></select></label><label>Show<select id="signal-worm" aria-label="Observed worm"><option value="all">All 17 worms</option></select></label></div></div>
+      <div class="plot-card"><div class="card-heading"><h2 id="source-signal-title">Source activity</h2><span class="muted">Display z-score</span></div><div id="source-signal-chart" class="chart signal-chart"></div></div>
+      <div class="plot-card signal-second"><div class="card-heading"><h2 id="target-signal-title">Target activity</h2><span class="muted">Display z-score</span></div><div id="target-signal-chart" class="chart signal-chart"></div></div>
+      <div class="legend" id="signal-legend"><span><i class="line effect"></i>Median across worms</span><span><i class="swatch band"></i>10th–90th percentile between worms</span><span><i class="line faint"></i>Individual observations</span><span><i class="swatch stimulus"></i>Stimulus present</span></div><p class="chart-note">Preprocessed calcium signals, standardized within each worm and neuron for display. Shading is observed variation, <strong>not measurement uncertainty or a confidence interval</strong>. Missing observations remain gaps. This view does not test a difference between chemicals.</p>
+    </section>
+
+    <section id="references-view" class="view" hidden><div class="signal-intro"><div><h2>External reference comparisons</h2><p>Frozen comparisons made after model selection. These do not validate causal connections.</p></div><label>Reference<select id="reference-filter" aria-label="External reference"></select></label></div><div id="reference-chart" class="reference-grid"></div><article class="plot-card reference-table-card"><div class="card-heading"><div><h2>Exact saved comparisons</h2><p>Every row retains its declared panel, scope, context and timing.</p></div></div><div class="table-scroll" id="reference-table"></div></article><p class="chart-note">AUROC describes edge ranking (chance = 0.5); Spearman describes continuous rank agreement (zero = no monotone agreement). Each dot is one saved comparison, not a worm or an uncertainty interval. Panels use different masks and scopes, so the dots are not a single model leaderboard. AUPRC remains in the table because its chance level changes with reference prevalence. Missing values, intervals and tests were not invented. The historical 80-class sensitivity does not reproduce the 54-class advantage.</p></section>
+    <footer><span id="provenance">Read-only · loading verified data</span><span>Frozen model ≠ biological confirmation</span></footer>
+  </main><div id="tooltip" role="tooltip" hidden></div>
+</body>
+</html>

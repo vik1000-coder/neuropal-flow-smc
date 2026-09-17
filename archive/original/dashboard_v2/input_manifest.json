@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-08-31T20:37:42.292102+00:00",
+  "scope": "Current inputs used by this presentation. Not a retrospective training-launch receipt. Frozen atlas and sampling archives have their own verified ledgers.",
+  "inputs": [
+    {
+      "path": "SBTG/data/Head_Activity_OH16230.mat",
+      "sha256": "3d89eebac57ac95833662d00c977993a8e45bc10270c24dbcbce3a7eb401d930"
+    },
+    {
+      "path": "SBTG/data/Head_Activity_OH15500.mat",
+      "sha256": "34d71610b763510b7566047253c3db626f50fc280752df7a54e240daaf30d7c2"
+    },
+    {
+      "path": "sid_elegans/combined_data.py",
+      "sha256": "141784ca49d9cb894966115e92b1dfcfb4a0609230b2886285e43057ffe5b453"
+    },
+    {
+      "path": "conditional_neural_benchmark/data.py",
+      "sha256": "aa9c3baa4a348ec92680a83f4aa141d499f38449b82bcc32348bcd68e006e3d6"
+    },
+    {
+      "path": "compatibility_neural_benchmark/prediction_atlas_runner.py",
+      "sha256": "6a1a0df883c42127576524f50984e7d5722129919b42d5c6b0c2be7a35c77194"
+    },
+    {
+      "path": "results/conditional_distribution_benchmark/atlas_blind_world_model_20260827/fold_assignments.csv",
+      "sha256": "5cd9da4a0999063792513b1d7642964cfd1fbf8a223a3abc3fc080c997163c53"
+    }
+  ]
+}

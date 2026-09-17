@@ -1,0 +1,134 @@
+{
+  "status": "pass",
+  "comparisons": [
+    {
+      "cohort": "clean54",
+      "reference": "randi_wild_type",
+      "method": "flow_ensemble",
+      "auroc": 0.6714734681660751,
+      "average_precision": 0.3545690268378635,
+      "n_edges": 1349
+    },
+    {
+      "cohort": "clean54",
+      "reference": "randi_wild_type",
+      "method": "published_sbtg",
+      "auroc": 0.6217164806658969,
+      "average_precision": 0.3218949299957574,
+      "n_edges": 1349
+    },
+    {
+      "cohort": "clean54",
+      "reference": "cook_struct",
+      "method": "flow_ensemble",
+      "auroc": 0.6142483973233546,
+      "average_precision": 0.38451311315747083,
+      "n_edges": 2862
+    },
+    {
+      "cohort": "clean54",
+      "reference": "cook_struct",
+      "method": "published_sbtg",
+      "auroc": 0.5651460467309409,
+      "average_precision": 0.34817743039072857,
+      "n_edges": 2862
+    },
+    {
+      "cohort": "clean54",
+      "reference": "cook_chem",
+      "method": "flow_ensemble",
+      "auroc": 0.601492654786542,
+      "average_precision": 0.34968711837816085,
+      "n_edges": 2862
+    },
+    {
+      "cohort": "clean54",
+      "reference": "cook_chem",
+      "method": "published_sbtg",
+      "auroc": 0.5575893704565732,
+      "average_precision": 0.3124478282448434,
+      "n_edges": 2862
+    },
+    {
+      "cohort": "clean54",
+      "reference": "cook_gap",
+      "method": "flow_ensemble",
+      "auroc": 0.6779839030403172,
+      "average_precision": 0.13217963606796884,
+      "n_edges": 2862
+    },
+    {
+      "cohort": "clean54",
+      "reference": "cook_gap",
+      "method": "published_sbtg",
+      "auroc": 0.6206799570220405,
+      "average_precision": 0.13340813965637646,
+      "n_edges": 2862
+    },
+    {
+      "cohort": "historical80",
+      "reference": "randi_wild_type",
+      "method": "flow_ensemble",
+      "auroc": 0.6799527251093165,
+      "average_precision": 0.3300529408685393,
+      "n_edges": 1646
+    },
+    {
+      "cohort": "historical80",
+      "reference": "randi_wild_type",
+      "method": "published_sbtg",
+      "auroc": 0.6302367212782362,
+      "average_precision": 0.30025857600226885,
+      "n_edges": 1646
+    },
+    {
+      "cohort": "historical80",
+      "reference": "cook_struct",
+      "method": "flow_ensemble",
+      "auroc": 0.6328923669560433,
+      "average_precision": 0.3251951727537779,
+      "n_edges": 6320
+    },
+    {
+      "cohort": "historical80",
+      "reference": "cook_struct",
+      "method": "published_sbtg",
+      "auroc": 0.5806514091904424,
+      "average_precision": 0.28876393256914845,
+      "n_edges": 6320
+    },
+    {
+      "cohort": "historical80",
+      "reference": "cook_chem",
+      "method": "flow_ensemble",
+      "auroc": 0.6222250068561063,
+      "average_precision": 0.2845077929379135,
+      "n_edges": 6320
+    },
+    {
+      "cohort": "historical80",
+      "reference": "cook_chem",
+      "method": "published_sbtg",
+      "auroc": 0.5697796342003671,
+      "average_precision": 0.25193280106824384,
+      "n_edges": 6320
+    },
+    {
+      "cohort": "historical80",
+      "reference": "cook_gap",
+      "method": "flow_ensemble",
+      "auroc": 0.6689427469479596,
+      "average_precision": 0.1245924353094555,
+      "n_edges": 6320
+    },
+    {
+      "cohort": "historical80",
+      "reference": "cook_gap",
+      "method": "published_sbtg",
+      "auroc": 0.6132974395005606,
+      "average_precision": 0.10689812399758286,
+      "n_edges": 6320
+    }
+  ],
+  "scope": "independent name alignment, masks, AUROC/AP and edge counts; no retraining"
+}

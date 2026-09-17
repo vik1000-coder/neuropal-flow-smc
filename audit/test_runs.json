@@ -1,0 +1,44 @@
+[
+  {
+    "suite": "original",
+    "returncode": 0,
+    "seconds": 35.070302042000094,
+    "command": [
+      "-m",
+      "pytest",
+      "--import-mode=importlib",
+      "-q",
+      "--disable-warnings",
+      "conditional_neural_benchmark/tests",
+      "compatibility_neural_benchmark/tests",
+      "query_ood_robustness/tests"
+    ]
+  },
+  {
+    "suite": "replication",
+    "returncode": 0,
+    "seconds": 2.254781249999951,
+    "command": [
+      "-m",
+      "pytest",
+      "--import-mode=importlib",
+      "-q",
+      "--disable-warnings",
+      "test_replication.py"
+    ]
+  },
+  {
+    "suite": "synthetic",
+    "returncode": 0,
+    "seconds": 2.4750657090000914,
+    "command": [
+      "-m",
+      "pytest",
+      "--import-mode=importlib",
+      "-q",
+      "--disable-warnings",
+      "test_benchmark.py",
+      "test_analytic_supplement.py"
+    ]
+  }
+]

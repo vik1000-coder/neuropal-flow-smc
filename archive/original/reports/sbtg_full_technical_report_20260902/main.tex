@@ -1,0 +1,1335 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.72in,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[table]{xcolor}
+\usepackage{booktabs,longtable,tabularx,array,multirow}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{lastpage}
+
+\definecolor{ink}{HTML}{17212B}
+\definecolor{navy}{HTML}{173B57}
+\definecolor{teal}{HTML}{187B80}
+\definecolor{pale}{HTML}{EEF4F5}
+\definecolor{warn}{HTML}{8B5E00}
+\definecolor{softgray}{HTML}{F4F5F6}
+\definecolor{linegray}{HTML}{D5DADF}
+\hypersetup{colorlinks=true,linkcolor=navy,urlcolor=teal,citecolor=navy,pdfauthor={SBTG project technical synthesis},pdftitle={From SBTG Gradient Readouts to Compatibility-Aware Path Responses}}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{SBTG technical record}
+\rhead{2 September 2026}
+\cfoot{\thepage\ of \pageref{LastPage}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\setlist{nosep,leftmargin=1.4em}
+\emergencystretch=2em
+\sloppy
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\best}[1]{\ifmmode\boldsymbol{#1}\else\textbf{#1}\fi}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\source}[1]{\par\vspace{2pt}{\footnotesize\color{navy}\textbf{Source:} #1}\par}
+\newcommand{\claim}[1]{\par\noindent\colorbox{pale}{\parbox{0.965\linewidth}{\textbf{Interpretation.} #1}}\par}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+
+\title{\vspace{-2.5em}\textbf{From SBTG Gradient Readouts to\\Compatibility-Aware Path Responses}\\[0.45em]
+\large A technical record of the models, synthetic systems, metrics, failures, repairs, and empirical results}
+\author{Repository synthesis for \code{new\_sbtg\_neuro}}
+\date{Evidence reviewed through 2 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report reconstructs the full methodological arc of the repository. The project began with score-based temporal graph (SBTG) statistics intended to reveal directed, lagged, and distributional neural relationships. Repeated improvements changed the architecture, score objective, derivative readout, regularization, scale, conditioning scheme, and inference wrapper. Those changes produced real but narrow advances: nonlinear edge-local SBTG improved over the original feature-bilinear window model; a residual-score temporal map made clean mean-channel recovery competitive with ridge VAR; and conditional variance improved held-out neural prediction. They did not produce a robust receptor-specific, anatomical, or physical-delay claim.
+
+The decisive synthetic lesson was that a conditional-mean model is excellent when the truth is encoded in the mean, but mean-only summaries are mathematically blind when histories alter covariance, reliability, skewness, mixture occupancy, or higher-order path shape while leaving the mean fixed. Flexible conditional laws can predict those distributions better, yet derivatives of the learned law can remain noisy or wrong. Averaging conditional-mean effects over heterogeneous histories can also cancel signal and amplify finite-sample instability.
+
+The current program therefore changes the scientific object. It defines a finite, supported, compatibility-aware contrast between complete model-generated histories, rather than an arbitrary coordinate edit. Direct weighting and sequential Monte Carlo estimate the corresponding future laws; progressive bridge SMC improves finite-particle approximation for selective queries. This is a model-relative predictive response, not an identified physical intervention. Support, cross-model disagreement, quiet-time controls, and learned-model error remain mandatory because a numerically healthy sampler cannot repair a wrong predictive model.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+
+\section{The result in one page}
+
+\begin{longtable}{L{0.19\linewidth}L{0.25\linewidth}L{0.27\linewidth}L{0.22\linewidth}}
+\toprule
+Stage & What worked & What failed & Current interpretation \\
+\midrule
+\endfirsthead
+\toprule Stage & What worked & What failed & Current interpretation \\
+\midrule
+\endhead
+Original SBTG & Moderate mean-like edge localization; edge-local nonlinear terms added small AUROC gains & Weak variance/gating specificity; feature-bilinear SBTG often near chance at 50--100 nodes & Reduced-form screen, not a conditional density or mechanism estimator \\
+Conditional-score repair & Corrected conditional-score math; residual temporal map reached AUROC $0.720\pm0.045$ without measurement noise & Unconstrained score Jacobian stayed near $0.50$; measurement noise reduced the repaired result to $0.578\pm0.014$ & The useful signal was mostly the conditional mean map \\
+Matched conditional laws & Gaussian NLL led mean and variance-field recovery; MDN led matched-tail prediction & Tail derivatives and synaptic gating remained worse than zero baselines & Predictive fit and derivative/mechanism recovery are different endpoints \\
+Finite law contrasts & Location and low-rank mixture witnesses beat zero; later ORTH/typed repairs recovered selected covariance geometry & Initial covariance/skew adapters failed even with oracle samples; unrestricted full-feature recovery remained poor & Use supported finite contrasts and declared response channels \\
+Neural application & Conditional variance improved leave-one-worm-out NLL by $+0.364$ on 28 worms; aggregation improved reproducibility & Original peptide lag signal attenuated from $+3.35$ to $-0.41$; kinetics, gating, shrinkage, and receptor localization failed & Strong predictive-distribution result, negative mechanistic result \\
+Compatibility response & Progressive SMC reduced finite-particle MSE to $0.0110$ and raised valid rate to $0.911$ & Sixteen synthetic rows were numerically stable but scientifically wrong because the learned model was wrong & Current estimator of choice only with support/model diagnostics \\
+Current atlases & Corrected 54-neuron and historical 80-class artifacts are complete and audited & Corrected atlas had zero rows passing both sampler and quiet-time controls; historical 80-class lineage is invalid for prospective evidence & Observational hypothesis generator, not a causal or anatomical graph \\
+\bottomrule
+\end{longtable}
+
+\claim{The central shift is from asking whether a local score derivative resembles an edge to asking how the fitted future law changes between two supported classes of complete histories. The first is an ill-conditioned derivative/localization problem; the second is a declared finite-law contrast with explicit overlap and Monte Carlo diagnostics.}
+
+\section{Claim axes and terminology}
+
+The same numerical object must not be promoted across scientific claim levels. We use the following hierarchy throughout.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{1.15cm}L{3.15cm}Y Y}
+\toprule
+Axis & Question & Examples & Maximum defensible wording \\
+\midrule
+P1 & Does the model predict held-out observations? & NLL, CRPS, energy score, coverage, RMSE & Predictive accuracy or calibration \\
+D1/D2 & Does the conditional law or path law change? & Variance, tail, W1, finite witness, path contrast & Observed conditional/distributional response \\
+M1/M2 & Does a fitted readout align with a declared mean or dispersion field? & Mean Jacobian, log-variance field, typed covariance derivative & Model-relative or synthetic mechanism-matched recovery \\
+L1 & Is a represented latent state recovered? & Modulator concentration, clearance, occupancy & Latent alignment under the specified model \\
+C1 & Does a physical intervention have a controlled effect? & Shared-noise knockout, randomized perturbation & Causal only under explicit identification assumptions \\
+\bottomrule
+\end{tabularx}
+\caption{Claim axes used to prevent predictive success from being mislabeled as mechanism or causality.}
+\end{table}
+
+Real neural results in this document are observational and model-relative unless explicitly stated. Anatomical connectomes, receptor maps, and perturbational atlases are external correspondence references, not ground truth for the fitted response matrices.
+
+\section{Mathematical objects and why the original route became unstable}
+
+\subsection{Conditional law, mean, and variability}
+
+Let $H\in\mathcal H$ be a neural/stimulus history and $Y\in\R^d$ a future response. The fundamental predictive object is
+\begin{equation}
+ P_h(A)=\Pr(Y\in A\mid H=h), \qquad p_h(y)=p(y\mid h).
+\end{equation}
+The conditional mean and covariance are
+\begin{equation}
+ m(h)=\E[Y\mid H=h], \qquad \Sigma(h)=\E[(Y-m(h))(Y-m(h))^\top\mid H=h].
+\end{equation}
+A mean model estimates $m(h)$. It is optimal for squared-error prediction, and it recovers mean-driven synthetic wiring well. But if $P_{h_+}$ and $P_{h_-}$ have equal means and differ only in covariance, skew, mixture weights, reliability, or path topology, then $m(h_+)-m(h_-)=0$ even when the laws are different.
+
+Dataset averaging creates a second difficulty. A reported average response
+\begin{equation}
+ \bar\Delta=\frac{1}{n}\sum_{i=1}^n\{m(h_i^+)-m(h_i^-)\}
+\end{equation}
+can be noisy or nearly zero when local effects vary in sign across histories. More rows do not necessarily create more independent information when rows share worms, events, or overlapping time windows.
+
+\subsection{History score, SBTG operator, and derivative amplification}
+
+For a history direction $v$ and perturbation $T_{\epsilon,v}h$, define the infinitesimal history witness
+\begin{equation}
+ \ell_v(y;h)=D_v\log p_h(y)=\left.\frac{\partial}{\partial\epsilon}\log p_{T_{\epsilon,v}h}(y)\right|_{\epsilon=0}.
+\end{equation}
+It satisfies $\E_h[\ell_v(Y;h)]=0$ and, for a declared response feature $\phi$,
+\begin{equation}
+ D_v\E_h[\phi(Y)]=\E_h[\phi(Y)\ell_v(Y;h)].
+\end{equation}
+The conditional outcome score is $s_y(y;h)=\nabla_y\log p_h(y)$. The ideal SBTG mixed operator is
+\begin{equation}
+ K_v(y;h)=D_v s_y(y;h)=\nabla_y\ell_v(y;h).
+\end{equation}
+Thus SBTG sees a response-space gradient of the history witness. Recovering $\ell_v$ from $K_v$ requires integration, centering, support, and boundary conditions. A cross-moment of a learned joint-state score is not automatically a conditional-law derivative, a physical field, or a causal graph.
+
+Hyv\"arinen score matching minimizes, up to constants,
+\begin{equation}
+ \mathcal L_{\mathrm{SM}}(\theta)=\E\!\left[\tfrac12\|s_\theta(Y,H)\|_2^2+\nabla_Y\cdot s_\theta(Y,H)\right].
+\end{equation}
+Denoising score matching instead regresses the score of a Gaussian-corrupted law. A small response-score error does not imply a small history derivative error:
+\begin{equation}
+ s_{\theta,n}\to s_y \quad\not\Rightarrow\quad D_v s_{\theta,n}\to D_vs_y.
+\end{equation}
+This was observed directly: autodifferentiation and finite differences agreed to relative error about $1.4\times10^{-4}$, while graph AUROC stayed near chance. The code was differentiating the learned model correctly; the learned derivative was the wrong scientific statistic.
+
+\subsection{Finite supported contrast}
+
+For $h_\pm=h\pm\delta v$, define
+\begin{equation}
+ M_\delta=\tfrac12(P_{h_+}+P_{h_-}),\qquad
+ W_\delta(y)=\frac{1}{\delta}\tanh\!\left(\frac{\log p_{h_+}(y)-\log p_{h_-}(y)}{2}\right).
+\end{equation}
+The bounded witness $W_\delta$ represents the central signed contrast at a declared scale. More generally, if $\nu_c=\sum_r c_rP_{h_r}$, $\sum_rc_r=0$, and $M_c=C^{-1}\sum_r|c_r|P_{h_r}$ with $C=\sum_r|c_r|$, then
+\begin{equation}
+ W_c=\frac{d\nu_c}{dM_c},\qquad |W_c|\le C,\qquad
+ \sum_rc_r\E_{h_r}[\phi(Y)]=\E_{M_c}[\phi(Y)W_c(Y)].
+\end{equation}
+This target can be estimated by normalized densities, density ratios, balanced classifiers, projected moments, or samples. It avoids differentiating a flexible model with respect to history, but it still requires overlap and a response feature capable of seeing the target change.
+
+\subsection{Compatibility-aware repaired paths}
+
+The later neural work uses complete generated path prefixes. For prediction cut $c$, source $j$, lag $\ell$, and source-window width $w$, let
+\begin{equation}
+ A_j(Z)=\frac1w\sum_{r=c-\ell-w+1}^{c-\ell}Z_{rj}.
+\end{equation}
+Training-fold quartiles $q_{j,.25},q_{j,.75}$ define soft source potentials
+\begin{equation}
+ G_j^a(Z)=\exp\!\left[-\frac12\left(\frac{A_j(Z)-q_{j,a}}{b_j}\right)^2\right],
+ \quad b_j=\max(0.25\,\mathrm{IQR}_j,0.10).
+\end{equation}
+An anchor potential $G_{\mathrm{anc},j}(Z)=\exp[-\lambda C_j(Z,Y)]$ keeps non-source population context near the factual episode. The repaired path law is
+\begin{equation}
+ Q_j^a(dZ)\propto P_\theta(dZ\mid H_{c-w-\ell},U)G_{\mathrm{anc},j}(Z)G_j^a(Z).
+\end{equation}
+For future target feature $\phi_k$, the saved response per achieved source unit is
+\begin{equation}
+ M_{kj}^{(\ell)}=
+ \frac{\E_{Q_j^{.75}}[\phi_k]-\E_{Q_j^{.25}}[\phi_k]}
+ {\max(|\widehat A_{j,\mathrm{high}}-\widehat A_{j,\mathrm{low}}|,0.10)}.
+\end{equation}
+This resembles backtracking counterfactual reasoning because the past is revised while downstream dynamics remain generated by the same model. It is deliberately called a compatibility-aware, model-relative response rather than a structural counterfactual.
+
+\section{Metrics and evaluation rules}
+
+\begin{longtable}{L{0.20\linewidth}L{0.22\linewidth}L{0.31\linewidth}L{0.20\linewidth}}
+\toprule
+Metric & Formula/implementation & What it measures & Critical caveat \\
+\midrule
+\endfirsthead
+\toprule Metric & Formula/implementation & What it measures & Critical caveat \\
+\midrule\endhead
+NLL & $-n^{-1}\sum_i\log q_\theta(y_i\mid h_i)$ & Proper score for a normalized predictive density; lower is better & Not available for unnormalized score models \\
+RMSE/NRMSE & $\sqrt{n^{-1}\sum(\hat t-t)^2}$, divided by target scale & Point or witness error; zero-estimator NRMSE is near 1 & Depends on target normalization and panel \\
+nISE & $\int\|\hat f-f\|^2/\int\|f\|^2$ over occupied synthetic states & Field recovery against known truth; zero field equals 1 & Synthetic/mechanism-specific only \\
+Tail RMSE & RMSE of fitted versus oracle tail probabilities & Predictive tail calibration & Does not test the derivative of tail probability \\
+AUROC/AUPRC & Ranking of positive versus negative reference edges & Support/localization correspondence & Not coefficient calibration or causality \\
+AP excess & AUPRC minus positive-edge prevalence & Graph recovery adjusted for class prevalence & Still observational under hidden confounding \\
+Energy/CRPS & Proper sample scores using predictive draws & Full distributional prediction without density evaluation & Does not certify derivative quality \\
+Coverage & Fraction of oracle coefficients covered by intervals & Calibration of stated uncertainty & Requires correct inferential unit and multiplicity policy \\
+Hit within 5s & Scan maximum lies within 5 seconds of the known boundary & Localization & Can be high while calibrated detection is zero \\
+Detected within 5s & Localized and passes the calibrated p/q threshold & Detection plus localization & Calibration scheme must preserve time/subject dependence \\
+ESS fraction & $(\sum_iw_i)^2/(N\sum_iw_i^2)$ & Particle-weight degeneracy & Healthy ESS validates sampling of a model, not the model \\
+Response MSE & Error versus two independent 4,096-particle references for the same fitted law & Finite-particle estimator accuracy & Not error versus biological truth \\
+Worm sign-flip/max-$T$ & Joint sign flips of worm-level vectors & Frozen-model animal-level evidence with family correction & Overlapping training folds remain coupled \\
+\bottomrule
+\end{longtable}
+
+\section{Synthetic data actually used}
+
+\subsection{Matched mechanistic objective panel}
+
+The most direct objective comparison used one mechanistic simulator, identical splits, horizon, and DGP seeds across ten methods. Each scenario had 10 trajectories, 10 neurons, 3 hidden modulators, 1 history lag, one-step horizon, 20\% validation and 20\% test fractions, 64 predictive samples, and complete-state observations. DGP seeds were 8--12. All 250 method-by-mechanism-by-seed cases completed.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{2.4cm}L{1.2cm}L{1.7cm}L{2.0cm}Y}
+\toprule
+Scenario & Strength & Steps/burn-in & Ligand process & Changed part of one-step law \\
+\midrule
+Null & 0.45 & 1000/1500 & amplitude 2.5; rate 0.08 Hz & No active neuromodulatory channel \\
+Additive mean & 0.35 & 1000/1500 & same & Receptor occupancy adds to conditional mean \\
+Synaptic gain & 1.20 & 1000/1500 & same & Occupancy multiplicatively gates recurrent weights \\
+Stochastic dispersion & 1.50 & 1000/1500 & same & Occupancy changes log innovation variance \\
+Matched tail & 2.50 & 1000/1500 & same & Occupancy changes mixture probability while normalization preserves mean/variance scale \\
+\bottomrule
+\end{tabularx}
+\caption{Frozen matched-panel data-generating conditions.}
+\end{table}
+
+The simulator used positive release, persistent concentration, Hill receptor occupancy, recurrent dynamics, additive drive, log-variance modulation, and a two-scale Gaussian mixture for the matched-tail mechanism. Counterfactual arms shared exogenous noise where controlled operations were evaluated.
+
+\subsection{History-tangent generators G1--G8}
+
+Histories were sampled independently from $N(0,I)$ except G7 and G8, whose support/path processes were explicit. Exact log densities and automatic-differentiation oracles were implemented in double precision, separately from trainable models.
+
+\begin{longtable}{L{0.08\linewidth}L{0.16\linewidth}L{0.46\linewidth}L{0.22\linewidth}}
+\toprule
+DGP & Default size & Exact construction & Purpose \\
+\midrule
+\endfirsthead
+\toprule DGP & Default size & Exact construction & Purpose \\
+\midrule\endhead
+G1 & $q=8,d_y=4$ & $Y=\tanh(HW_1^\top)W_2^\top+\epsilon$ with rotated Gaussian covariance and SDs 0.5--1.0; hidden width 16 & Nonlinear location-only law \\
+G2 & $q=8,d_y=4$ & Rotated Gaussian with eigenvariance $\exp\{b+0.6\tanh(AH/\sqrt q)\}$; mean coefficient $\alpha_m\in\{0,0.3\}$ & Covariance-only or covariance-plus-mean change \\
+G3 & $q=8,d_y=1$ & Four Gaussian components at $(-3,-1,1,2)$, SD 0.25; weights $0.25+0.12\tanh(H^\top v)(-0.2,2/3,-1,8/15)$ & Skew change with exactly fixed mean and variance \\
+G4 & $q=8,d_y=8$ & Four isotropic Gaussian components; softmax logits $BH$, rank 2; mode separation $4\sigma$ & Low-rank multimodal occupancy change \\
+G5 & $q=8,d_y=32$ (focused $d_y=64$) & Eight components in a 2-D (focused 4-D) latent manifold embedded in response space; $\sigma_z=0.5$, $\sigma_{obs}=0.1$ & Difficult high-dimensional generation geometry \\
+G6 & $q=8,d_y=8$ & Smooth location plus $(0.5/8)\sin(8H_1)u$ and unit Gaussian noise & Small density perturbation with order-one high-frequency derivative \\
+G7 & $q=32,d_y=8$ & $H=ZB^\top+0.1\epsilon$, intrinsic dimension 4, with G2 or G4 conditional law on $Z$ & Near-manifold history support and off-support directions \\
+G8 & $q=25,d_y=48$ & Six history steps and 12 future steps over four channels; 16 signed motif components, motif scale 0.45, noise SD 0.08, correlated scale 0.06; a control changes frame mixture with sensitivity 1.2 while mean/covariance stay fixed & Pure higher-order whole-path shape/order effect \\
+\bottomrule
+\end{longtable}
+
+\subsection{Distributional-versus-mean circuit battery}
+
+The comparable battery used $N=40$ latent nodes, a randomly observed $M=12$, $L=3$ lags, $T=20{,}000$ unit-stride steps, and sparse off-diagonal operators with Bernoulli density $0.05$. Per-lag spectral radii were $0.6/\sqrt L$ for mean operators, $1.0/\sqrt L$ for variance operators, and $3.0/\sqrt L$ for covariance routing. Each trajectory was clipped to $[-12,12]$; the observed $[H\mid Y]$ block was column-standardized. The primary metric was off-diagonal lag-union graph AUROC against the known observed-to-observed parent support. Held-out mean $R^2$ diagnosed whether the conditional mean carried usable signal.
+
+\begin{longtable}{L{0.14\linewidth}L{0.43\linewidth}L{0.20\linewidth}L{0.14\linewidth}}
+\toprule
+Mechanism & Exact one-step construction & Edge-bearing object & Conditions \\
+\midrule
+\endfirsthead
+\toprule Mechanism & Exact one-step construction & Edge-bearing object & Conditions \\
+\midrule\endhead
+Linear & $X_{t+1}=\sum_{\ell=0}^{L-1}X_{t-1-\ell}A_\ell^\top+0.5\eta$, $\eta\sim N(0,I)$ & Conditional mean & Clean \\
+Tanh & $X_{t+1}=\tanh(\sum_\ell X_{t-1-\ell}A_\ell^\top)+0.4\eta$ & Conditional mean & Clean \\
+Gated & $X_{t+1}=(0.5+0.5\tanh X_{t,g})\sum_\ell X_{t-1-\ell}A_\ell^\top+0.4\eta$ & Conditional mean with state gate & Clean \\
+Branch & $X_{t+1}=b\odot\sum_\ell X_{t-1-\ell}A_\ell^\top+\eta$, with coordinatewise random sign $b\in\{-1,+1\}^N$ & Marginal variance; $\E[Y\mid H]=0$ & Clean; observed noise $0.4N(0,I)$ \\
+Variance gate & $X_{t+1}=s(H)\odot\eta$, $s(H)=0.3[1+2\tanh|\sum_\ell X_{t-1-\ell}V_\ell^\top|]$ & Marginal conditional variance/reliability & Clean; observed noise $0.4N(0,I)$ \\
+Cross covariance & $X_{t+1,j}=\sqrt{1-a_j}\,\epsilon_j+\sqrt{a_j}\,\xi_{c(j)}$, $a_j=\operatorname{sigmoid}(2.5[C\!\cdot\!H]_j)$ & Off-diagonal covariance; every marginal has mean 0 and variance 1 & Clean; observed noise $0.4N(0,I)$ \\
+\bottomrule
+\end{longtable}
+
+For the covariance row, $c(j)$ assigns a node to one of three clusters at $N=40$; $\epsilon_j$ is private unit Gaussian noise and $\xi_{c(j)}$ is a cluster-shared unit Gaussian innovation. Thus $\operatorname{Cov}(Y_a,Y_b\mid H)=\sqrt{a_a a_b}\,\mathbf 1\{c(a)=c(b)\}$ while every per-target conditional marginal remains $N(0,1)$. The first per-target study used three seeds and seven mean/variance conditions; the later no-free-lunch adjudication used ten seeds and added the joint covariance rung.
+
+\section{Every implemented method and what it technically estimated}
+
+The tables below list distinct implemented estimators or materially different readouts. Hyperparameter variants of the same mathematical estimator are grouped only when their target and conclusion were identical.
+
+\subsection{Classical dynamics and normalized predictive laws}
+
+\begin{longtable}{L{0.18\linewidth}L{0.27\linewidth}L{0.25\linewidth}L{0.22\linewidth}}
+\toprule
+Method & Technical implementation & Learned quantity & Empirical role \\
+\midrule
+\endfirsthead
+\toprule Method & Technical implementation & Learned quantity & Empirical role \\
+\midrule\endhead
+Constant Gaussian & History-independent mean/variance reference & Marginal Gaussian law & Null/simple prediction baseline \\
+Ridge VAR & Ridge least squares on lagged neural history & Linear conditional mean and lag coefficients & Strongest routine mean baseline \\
+VAR-LASSO & L1-penalized lag regression & Sparse conditional-mean graph & Strong clean gated baseline \\
+Conditional Granger ridge & Restricted versus full ridge regression by source history & Predictive contribution of a source & Strong graph baseline; observational \\
+Sparse transition & Thresholded/penalized transition matrix & Sparse one-step mean dynamics & Strong matched mean recovery \\
+Polynomial SINDy-LASSO & Sparse library regression over polynomial state features & Nonlinear conditional mean & Competitive but weaker than oracle library \\
+OracleLibrary SINDy & SINDy using the generator-matched nonlinear basis & Best-case sparse mean dynamics & Strongest clean synthetic comparator \\
+PCMCI partial correlation & Conditional-independence graph from lagged partial correlations & Observed lag support & Degrades under hidden drive \\
+VAR-LiNGAM & Linear non-Gaussian acyclic mixing applied to VAR residual structure & Directed linear support under non-Gaussian assumptions & Best tested strong-confounder graph baseline, still not identified \\
+Heteroskedastic ridge & Ridge mean plus regression for conditional scale & Gaussian mean/variance law & Cheap distributional baseline \\
+Variance regression & Fit a mean, then regress squared residuals on $H$ and differentiate the fitted variance & Marginal conditional-variance support & Matched or beat the residual-score variance head \\
+Cross-product regression & Regress residual products $R_aR_b$ on $H$ and differentiate/partner-average & Off-diagonal conditional covariance support & Matched or beat joint score/transport readers \\
+Penalized Gaussian NLL & Jointly optimized conditional mean and log variance with ridge penalty & Normalized Gaussian law and analytic fields & Best matched mean/dispersion-field method \\
+Student-$t$ ridge & Linear location/scale with normalized Student-$t$ likelihood; df tuned in the matched panel & Heavy-tailed conditional law & Best cheap robust tail baseline \\
+Gaussian MLP NLL & Two-layer 64-unit MLP heads for mean/log variance; early stopping by validation likelihood & Nonlinear normalized Gaussian law & More capacity did not beat simple Gaussian NLL \\
+Mixture density network & Neural mixture weights, locations, and scales; $K=3$ matched panel, $K=4$ later OOD work & Multimodal normalized law and sampler & Best matched-tail prediction \\
+Autoregressive MDN & Coordinate-wise mixture conditionals with ancestral sampling & Normalized vector law and direct history gradient & Tangent error near/above zero baseline \\
+Causal autoregressive Transformer & Teacher-forced continuous mixture likelihood under three fixed coordinate orders & Normalized autoregressive law & Good location tangents; no hard-channel validity \\
+Affine conditional flow & Invertible conditional affine transport with exact density & Normalized flexible law & No tangent advantage in pooled benchmark \\
+Neural spline flow (NSF-6/10) & Conditional rational-quadratic spline flow with 6 or 10 transforms & Reusable normalized conditional law & E10 flexible-law comparator; no universal winner \\
+\bottomrule
+\end{longtable}
+
+\subsection{Score, diffusion, and SBTG variants}
+
+\begin{longtable}{L{0.20\linewidth}L{0.28\linewidth}L{0.24\linewidth}L{0.20\linewidth}}
+\toprule
+Method & Technical implementation & Readout/target & Result \\
+\midrule
+\endfirsthead
+\toprule Method & Technical implementation & Readout/target & Result \\
+\midrule\endhead
+Quadratic SID, Hyv\"arinen & Quadratic response-score basis; closed-form penalized score-matching solve; Gaussian reconstruction & Mean, log-variance, and tail-field derivatives & Viable in matched panels, weaker than Gaussian NLL \\
+Quadratic SID, DSM & Same quadratic family trained on Gaussian-corrupted outcomes with 4 corruptions; $\sigma=0.75,1.0$ & Corrupted-law score and reconstructed fields & Regularized some fits; dispersion remained at/worse than zero \\
+Conditional score MLP & Future-only neural score fit by Gaussian or Student-$t$ DSM & $\nabla_y\log p_\sigma(y\mid h)$ and mixed history Jacobian & Score reconstruction high while edge AUROC near chance \\
+Gaussian MLP DSM & Gaussian parameter heads optimized through DSM; $\sigma=0.25,0.50$ & Corrupted Gaussian score and analytic parameter readouts & Small within-architecture dispersion gain, no overall win \\
+Legacy VE diffusion & Variance-exploding denoising score network and reverse sampler & Noisy response score, samples, reconstructed history tangent & Pooled tangent median NRMSE 1.022 \\
+EDM diffusion & EDM-preconditioned score network; deterministic Heun sampler & Same with improved sampling parameterization & Pooled tangent median NRMSE 1.743; G5 generation not better \\
+Gaussian-anchored diffusion & Diffusion score anchored to a Gaussian source/reference & Stabilized noisy-law score & Pooled tangent median NRMSE 2.692 \\
+Gaussian DSM baseline & Direct Gaussian denoising score network without full diffusion sampling & Corrupted response score & Pooled tangent median NRMSE 1.260 \\
+Stochastic interpolant / flow matching & Conditional drift regression along stochastic interpolation; Euler generation & Transport drift and samples & Stable on G1, nearly zero G8 quartic slope \\
+Bounded energy model & Conditional bounded energy with score/autodiff readout & Unnormalized law and history tangent & Pooled tangent median NRMSE 1.181 \\
+SBTG linear & Linear joint score over consecutive standardized states & Score cross-moments by source/target & Often matched or beat feature-bilinear SBTG in frozen mechanism panel \\
+SBTG FeatureBilinear & Joint-window DSM with within-time features and bilinear cross-time terms & Edge energy from score-product/cross-block terms & Original default; moderate mean-like, weak variance/gating specificity \\
+SBTG NonlinearEdge & Edge-local nonlinear basis for each candidate cross-time edge & Edge-local window energy & Added roughly 0.061 AUROC at 50 nodes \\
+SBTG NonlinearEdgeSparse & Edge-local nonlinear basis plus group sparsity & Sparse nonlinear edge energy & Best window extension; still far below VAR \\
+SBTG HybridEdgeSparse & Feature-bilinear and edge-local nonlinear terms with sparsity & Hybrid window energy & Similar small gain, no overall win \\
+SBTG ConditionalPairDSM & Conditional pair score trained on history/future partitions & Conditional-pair window statistic & Some tuned cells improved, still below ridge \\
+Direct conditional-score Jacobian & Train $s_\theta(y\mid H,\sigma)$ and differentiate score w.r.t. each lagged history coordinate & Corrected score-history Jacobian & Mean parents recoverable; variance parents near chance \\
+SmoothGrad, finite-difference, jacrev readouts & Average perturbed gradients; central finite differences; vectorized Jacobian & Robustness of the same learned derivative & Agreed numerically; no material AUROC improvement \\
+Jacobian-consistency/Sobolev penalties & Penalize disagreement or oracle/local derivative mismatch during training & Smoother score Jacobian & Did not fix graph readout \\
+Residual-score temporal Jacobian & Constrain $s_\theta=-(y-\mu_\theta(H))/(v_\theta(H)+\sigma^2)$ and score edges with $\partial\mu_\theta/\partial H$ & Conditional-mean temporal map & Largest SBTG repair; competitive with ridge only in clean mean channel \\
+Residual variance / Hessian DSM & Differentiate predicted log variance or score curvature with respect to history & Reliability/second-order routing & Only robust distributional win in mean-blind battery; Hessian itself never won \\
+Residual covariance MLP & Residualize $Y$, regress all $R_aR_b$ on $H$, differentiate, then average over pairs incident to each target & Off-diagonal covariance routing & Recovered the joint rung; linear cross-product regression was stronger \\
+\bottomrule
+\end{longtable}
+
+\subsection{Finite, orthogonal, path, and inference methods}
+
+\begin{longtable}{L{0.20\linewidth}L{0.29\linewidth}L{0.23\linewidth}L{0.19\linewidth}}
+\toprule
+Method & Technical implementation & Target & Result \\
+\midrule
+\endfirsthead
+\toprule Method & Technical implementation & Target & Result \\
+\midrule\endhead
+Point-history tangent & Autodifferentiate $\log q(y\mid h)$ or a response score in direction $v$ & Infinitesimal $D_v\log p_h$ & Optimization passed; hard-channel readiness failed \\
+Central model log ratio & Evaluate $\log q(y\mid h+\delta v)-\log q(y\mid h-\delta v)$ & Finite law contrast & Useful when density normalized and histories supported \\
+Joint/product ratio critic & Binary classifier separating joint history-response pairs from product pairs & Interaction ratio without history-only term & Best pooled legacy tangent median, but not a full history witness \\
+Balanced signed classifier & Classify samples from $P_{h+}$ versus $P_{h-}$; held-out affine calibration & Bounded finite witness $W_\delta$ & Good G1 and G4; oracle adapter failed G2/G3 \\
+Signed Riesz dictionary & Solve regularized moment equations over linear/quadratic/cross/cubic/tail features & Projection of finite witness & Dictionary-limited; original hard-channel results worse than zero \\
+PLUG & Plug nuisance estimates into a feature derivative functional & Point estimate of bounded-feature derivative & Similar point error in regular cells; naive intervals undercovered \\
+RIESZ-only & Estimate history-side Riesz representer without orthogonal correction & Feature derivative functional & Useful diagnostic; nuisance-sensitive \\
+ORTH & Cross-fit feature regression and Riesz representer; add orthogonal residual correction & Average derivative of declared predictive features & Best calibrated framework after target-specific repairs \\
+Density-score Riesz & Fit BIC-selected history density/GMM and differentiate log density & Improved history representer for tails/gaps & Removed E6 fixed-sieve bias at large $n$ \\
+Characteristic features/inversion & Regress complex exponentials $e^{it^\top Y}$; invert to typed covariance target & Moment-blind/full-law feature derivatives & Works only with resolving frequencies and small inversion ridge \\
+Direct covariance/low-rank head & Estimate covariance derivative directly and project to effective rank & Typed covariance geometry & Strong E9 scaling; full feature tensor remained hard \\
+Latent neuromodulated SSM & Sequential likelihood for release, concentration, Hill occupancy, recurrent state, and emission; explicit knockout mask & Represented latent/operation response & Higher claim ceiling, weak current recovery \\
+Conditional Brownian bridge & Heteroskedastic endpoint regression plus Brownian reference bridge & Reference-relative path law & Useful D2 baseline; reference diffusion dominated \\
+Schr\"odinger/transport bridge & Learn a conditional path transport and read the history dependence of transported samples & Joint conditional-law response & Recovered covariance routing, but did not beat matched regression \\
+Direct repaired-path importance & Generate natural path bank and self-normalize low/high compatibility weights & Compatibility-aware future-law contrast & Fast; collapses for rare source states \\
+Terminal SMC & Sequential proposal; apply source potential at window end; defer source resampling to cut & Same repaired law & Lower MSE than direct, but terminal collapse persists \\
+Progressive bridge SMC & Branch proposals, partial-window look-ahead, adaptive tempering to ESS target, resample, release & Same repaired law with lower particle error & Best sealed finite-particle result \\
+Temporal-cut SMC & Apply full lagged source constraint when its window closes; ESS-resample through gap & Earlier constraint placement under same general law & Explicit-lag sensitivity; early ancestry collapse risk \\
+Changepoint scans & CUSUM, Hotelling, Chow, variance/reliability, MMD, energy, PELT, binary segmentation, score-product scans & Whether/where a declared statistic changes & Useful only after static channel validation \\
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\section{Experiment results: the SBTG repair sequence}
+
+\subsection{Original window score and the marginal \texorpdfstring{$g_k$}{g-k} term}
+
+The original joint-window energy decomposed into within-time features and cross-time interactions. Ablating the marginal score term $g_k$ tested whether more flexible within-state score capacity explained graph recovery. It did not: gains were small and shrank with dimension.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{rrrrrr}
+\toprule
+Nodes & Pairs & Full $g_k$ AUROC & No-$g$ AUROC & $\Delta$ AUROC & $\Delta$ AUPRC \\
+\midrule
+10 & 32 & 0.745 & 0.728 & 0.017 & 0.028 \\
+50 & 32 & 0.545 & 0.536 & 0.008 & 0.008 \\
+\bottomrule
+\end{tabular}
+\caption{Marginal-term ablation in the original SBTG window model.}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{llrrr}
+\toprule
+Nodes & Synthetic family & Full $g_k$ AUROC & No-$g$ AUROC & $\Delta$ AUROC \\
+\midrule
+10 & Tanh mean dynamics & 0.974 & 0.950 & 0.024 \\
+10 & Variance dynamics & 0.763 & 0.742 & 0.021 \\
+50 & Tanh mean dynamics & 0.625 & 0.609 & 0.016 \\
+50 & Variance dynamics & 0.504 & 0.498 & 0.006 \\
+\bottomrule
+\end{tabular}
+\caption{The marginal term helped slightly but did not solve high-dimensional or variance-channel recovery.}
+\end{table}
+
+\subsection{Edge-local nonlinear window energies}
+
+The next repair replaced or augmented the global feature-bilinear interaction with edge-local nonlinear bases and optional group sparsity. Improvements over FeatureBilinear were reproducible but modest, and classical conditional-mean methods remained much stronger.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{1cm}Y r L{2.5cm}rr}
+\toprule
+Nodes & Candidate versus FeatureBilinear & $\Delta$ AUROC & 95\% interval & $\Delta$ AUPRC & $\Delta$ F1 \\
+\midrule
+50 & NonlinearEdgeSparse & 0.063 & [0.034, 0.094] & 0.093 & 0.088 \\
+50 & HybridEdgeSparse & 0.062 & [0.037, 0.089] & 0.090 & 0.084 \\
+50 & NonlinearEdge & 0.061 & [0.031, 0.092] & 0.090 & 0.086 \\
+100 & HybridEdgeSparse & 0.052 & [0.033, 0.072] & 0.045 & 0.057 \\
+100 & NonlinearEdgeSparse & 0.050 & [0.030, 0.071] & 0.047 & 0.058 \\
+100 & NonlinearEdge & 0.049 & [0.029, 0.069] & 0.045 & 0.056 \\
+\bottomrule
+\end{tabularx}
+\caption{Nonlinear edge-local extensions. Improved fraction was 0.75--0.94 across the listed cells.}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{llrrr}
+\toprule
+Nodes & Method & AUROC & AUPRC & Top-true F1 \\
+\midrule
+50 & VAR-Ridge & $0.910\pm0.011$ & $0.766\pm0.024$ & $0.703\pm0.027$ \\
+50 & VAR-LASSO & $0.889\pm0.013$ & $0.729\pm0.019$ & $0.673\pm0.022$ \\
+50 & Polynomial SINDy-LASSO & $0.864\pm0.046$ & $0.708\pm0.060$ & $0.651\pm0.054$ \\
+50 & SBTG NonlinearEdgeSparse & $0.665\pm0.015$ & $0.332\pm0.006$ & $0.329\pm0.022$ \\
+50 & SBTG FeatureBilinear & $0.578\pm0.085$ & $0.164\pm0.066$ & $0.189\pm0.101$ \\
+100 & VAR-Ridge & $0.876\pm0.019$ & $0.715\pm0.029$ & $0.648\pm0.025$ \\
+100 & SBTG NonlinearEdgeSparse & $0.588\pm0.009$ & $0.195\pm0.016$ & $0.215\pm0.011$ \\
+100 & SBTG FeatureBilinear & $0.499\pm0.003$ & $0.104\pm0.001$ & $0.105\pm0.002$ \\
+\bottomrule
+\end{tabular}
+\caption{Absolute graph recovery after the nonlinear SBTG repair.}
+\end{table}
+
+\subsection{Null-contrast tuning did not close the gap}
+
+Optuna searches compared selection by held-out DSM loss, temporal contrast, and a controls-first null contrast. Hyperparameter selection improved individual window models but did not overtake ridge.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{1.2cm}L{3.0cm}Y rr}
+\toprule
+Length & Selection rule & Selected method & AUROC & AUPRC \\
+\midrule
+Short & Best null contrast & FeatureBilinear & $0.746\pm0.033$ & $0.424\pm0.027$ \\
+Short & Best control & ConditionalPairDSM, temporal contrast & $0.761\pm0.038$ & $0.460\pm0.053$ \\
+Short & Baseline & VAR-Ridge & $0.882\pm0.026$ & $0.699\pm0.045$ \\
+Long & Best null contrast & ConditionalPairDSM & $0.771\pm0.076$ & $0.502\pm0.114$ \\
+Long & Best control & ConditionalPairDSM, DSM loss & $0.833\pm0.027$ & $0.608\pm0.020$ \\
+Long & Baseline & VAR-Ridge & $0.898\pm0.016$ & $0.738\pm0.034$ \\
+\bottomrule
+\end{tabularx}
+\caption{Window-model tuning: density-objective selection and graph recovery remained misaligned.}
+\end{table}
+
+\subsection{Direct conditional-score Jacobian and typed mechanism screen}
+
+Theoretically, fitting the future-only conditional score removed marginal-history contamination from the original joint score. Empirically, it improved mean-channel parent recovery but did not expose variance parents.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{2.0cm}Y rr}
+\toprule
+Measurement noise & Method & AUROC & AUPRC \\
+\midrule
+0.00 & ConditionalScoreJacobian, fixed & $0.692\pm0.046$ & $0.515\pm0.080$ \\
+0.00 & ConditionalScoreJacobian, stability tuned & $0.710\pm0.039$ & $0.558\pm0.072$ \\
+0.00 & VAR(10)-LASSO & $0.809\pm0.056$ & $0.689\pm0.113$ \\
+0.00 & OracleLibrary SINDy(10) & $0.895\pm0.028$ & $0.852\pm0.037$ \\
+0.35 & ConditionalScoreJacobian, fixed & $0.565\pm0.020$ & $0.324\pm0.036$ \\
+0.35 & ConditionalScoreJacobian, stability tuned & $0.515\pm0.017$ & $0.246\pm0.018$ \\
+0.35 & VAR(10)-LASSO & $0.664\pm0.022$ & $0.460\pm0.022$ \\
+0.35 & OracleLibrary SINDy(10) & $0.565\pm0.025$ & $0.308\pm0.049$ \\
+\bottomrule
+\end{tabularx}
+\caption{Conditional-score graph recovery in nonlinear gated systems.}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{Y L{2.6cm} rr}
+\toprule
+Method variant & Truth/score channel & AUROC & AUPRC \\
+\midrule
+ConditionalScoreJacobian, fixed & Mean/mean & $0.863\pm0.060$ & 0.671 \\
+DSM-loss tuned & Mean/mean & $0.732\pm0.165$ & 0.485 \\
+Stability tuned & Mean/mean & $0.791\pm0.040$ & 0.530 \\
+ConditionalScoreJacobian, fixed & Variance/variance & $0.501\pm0.041$ & 0.108 \\
+DSM-loss tuned & Variance/variance & $0.511\pm0.031$ & 0.112 \\
+Stability tuned & Variance/variance & $0.503\pm0.032$ & 0.107 \\
+\bottomrule
+\end{tabularx}
+\caption{Typed screen: the conditional score found mean parents but not reliability/variance parents.}
+\end{table}
+
+\subsection{Gradient-readout robustness ruled out a differentiation bug}
+
+Across linear VAR, nonlinear additive, and nonlinear gated $p=10$ systems, automatic differentiation and central finite differences had relative L2 discrepancy $1.41$--$1.49\times10^{-4}$ with Pearson/Spearman and top-$k$ overlap equal to 1.000. Yet support AUROC remained 0.446--0.459 and Jacobian correlations were only 0.060--0.089. SmoothGrad, finite-difference readout, jacrev, Jacobian-consistency regularization, and the small oracle-Sobolev diagnostic produced no material ($>0.03$ AUROC) repair.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{Y L{2.4cm} rrr}
+\toprule
+Family & Training & AD/FD relative L2 & Support AUROC & Jacobian Pearson \\
+\midrule
+Linear VAR $p=10$ & None & 0.000141 & 0.453 & 0.076 \\
+Linear VAR $p=10$ & Consistency & 0.000143 & 0.457 & 0.083 \\
+Nonlinear additive $p=10$ & None & 0.000142 & 0.453 & 0.082 \\
+Nonlinear additive $p=10$ & Consistency & 0.000141 & 0.456 & 0.089 \\
+Nonlinear gated $p=10$ & None & 0.000146 & 0.446 & 0.062 \\
+Nonlinear gated $p=10$ & Consistency & 0.000149 & 0.459 & 0.060 \\
+\bottomrule
+\end{tabularx}
+\caption{The derivative implementation was accurate for the learned network; the learned derivative was not the graph.}
+\end{table}
+
+\subsection{Residual temporal-Jacobian: the strongest SBTG repair}
+
+The residual repair constrained the score through a global temporal conditional-mean map $\mu_\theta(H)$, then read edges from $\partial\mu_\theta/\partial H$. The full paired experiment used five regenerated DGP seeds, two training seeds, 96 tuning trials, 8 selected configurations, and 2,640 completed metric rows.
+
+\begin{table}[H]
+\centering\footnotesize
+\begin{tabularx}{\linewidth}{L{1.0cm}Y rrr}
+\toprule
+Noise & Method & AUROC & AUPRC & Top-true F1 \\
+\midrule
+0.00 & OracleLibrary SINDy(10) & $0.848\pm0.037$ & $0.779\pm0.055$ & $0.668\pm0.061$ \\
+0.00 & VAR(10)-LASSO & $0.765\pm0.051$ & $0.634\pm0.095$ & $0.563\pm0.067$ \\
+0.00 & VAR(10)-Ridge & $0.717\pm0.062$ & $0.569\pm0.105$ & $0.501\pm0.075$ \\
+0.00 & Polynomial SINDy & $0.646\pm0.025$ & $0.438\pm0.057$ & $0.376\pm0.048$ \\
+0.00 & ResidualScoreMeanDSM, fixed & $0.690\pm0.036$ & $0.513\pm0.070$ & $0.453\pm0.043$ \\
+0.00 & ResidualScoreMeanDSM+MSE, DSM-loss tuned & $\best{0.720\pm0.045}$ & $0.570\pm0.081$ & $0.502\pm0.055$ \\
+0.00 & Unconstrained score Jacobian & $0.499\pm0.015$ & $0.228\pm0.011$ & $0.229\pm0.017$ \\
+0.35 & VAR(10)-LASSO & $0.617\pm0.019$ & $0.401\pm0.031$ & $0.366\pm0.025$ \\
+0.35 & VAR(10)-Ridge & $0.603\pm0.009$ & $0.373\pm0.024$ & $0.348\pm0.009$ \\
+0.35 & ResidualScoreMeanDSM, null-contrast tuned & $\best{0.578\pm0.014}$ & $0.329\pm0.030$ & $0.309\pm0.019$ \\
+0.35 & ResidualScoreMeanDSM, fixed & $0.569\pm0.022$ & $0.326\pm0.039$ & $0.312\pm0.028$ \\
+0.35 & Unconstrained score Jacobian & $0.496\pm0.015$ & $0.227\pm0.012$ & $0.228\pm0.020$ \\
+\bottomrule
+\end{tabularx}
+\caption{Residual-score temporal-Jacobian benchmark. Bold denotes the best SBTG-family row, not the overall winner.}
+\end{table}
+
+\claim{This repair explains why the ``simple conditional mean'' story is central. Forcing the score through $\mu_\theta(H)$ recovered much of the useful mean-channel graph signal. It did not establish that the full conditional score, variance channel, or physical mechanism had been learned.}
+
+\section{Matched conditional-law and physical-field adjudication}
+
+\subsection{Training details}
+
+Ridge penalties were tuned over $\{0.1,1,10\}$ for ridge VAR. Student-$t$ location/scale used mean ridge 1, variance ridge 10, and degrees of freedom $3.5$ or $10$. Penalized Gaussian NLL used ridge 0.1 and 300 optimizer iterations. Quadratic SID used ridge 0.01; DSM variants used four corruptions. Neural Gaussian and MDN models used two hidden layers of width 64, batch size 256, at most 60 epochs, patience 9, and weight-decay/dropout grids selected on validation data. Reported results average five independent DGP seeds; lower is better.
+
+\subsection{Predictive law on matched-tail data}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{0.86\linewidth}{Y rr}
+\toprule
+Method & Held-out NLL & Tail-probability RMSE \\
+\midrule
+MDN $K=3$ & \best{-0.614} & \best{0.0095} \\
+Student-$t$ ridge & -0.530 & 0.0204 \\
+Ridge Gaussian & -0.294 & 0.0287 \\
+Gaussian NLL & -0.288 & 0.0250 \\
+Gaussian MLP NLL & -0.286 & 0.0268 \\
+Gaussian MLP DSM, $\sigma=.25$ & -0.280 & 0.0263 \\
+Gaussian MLP DSM, $\sigma=.50$ & -0.283 & 0.0264 \\
+Quadratic DSM, $\sigma=.75$ & -0.283 & 0.0338 \\
+Quadratic DSM, $\sigma=1.0$ & -0.283 & 0.0325 \\
+Quadratic Hyv\"arinen & 9.176 & 0.0385 \\
+\bottomrule
+\end{tabularx}
+\caption{Matched-tail predictive performance, five DGP seeds.}
+\end{table}
+
+\subsection{Physical additive-mean field}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{0.78\linewidth}{Y r}
+\toprule Method & Mean-field nISE \\
+\midrule
+Penalized Gaussian NLL & \best{0.369} \\
+Ridge Gaussian & 0.395 \\
+Student-$t$ ridge & 0.395 \\
+Quadratic Hyv\"arinen SID & 0.473 \\
+Quadratic DSM SID, best & 0.475 \\
+Gaussian MLP NLL & 0.716 \\
+MDN $K=3$ & 0.794 \\
+Gaussian MLP DSM, best & 0.824 \\
+\bottomrule
+\end{tabularx}
+\caption{Mean-field recovery. The earlier frozen mechanism panel also gave SINDy 0.194, sparse transition 0.201, Gaussian NLL 0.246, and Hyv\"arinen SID 0.268.}
+\end{table}
+
+\subsection{Physical stochastic-dispersion field}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{0.82\linewidth}{Y r}
+\toprule Method & Log-variance-field nISE \\
+\midrule
+Penalized Gaussian NLL & \best{0.586} \\
+Gaussian MLP DSM, $\sigma=.25$ & 0.789 \\
+Quadratic Hyv\"arinen SID & 0.791 \\
+Gaussian MLP DSM, $\sigma=.50$ & 0.794 \\
+Gaussian MLP NLL & 0.809 \\
+MDN $K=3$ & 0.872 \\
+Constant-variance ridge & 1.000 \\
+Quadratic DSM SID, best & 1.037 \\
+Student-$t$ ridge & 2.091 \\
+\bottomrule
+\end{tabularx}
+\caption{Dispersion-field recovery. Neural DSM improved slightly over neural NLL but both lost to the simpler parameterized likelihood.}
+\end{table}
+
+\subsection{Predicting a variable law did not guarantee its derivative}
+
+All Gaussian families emitted a constant standardized shape-tail probability and therefore sat at the zero-field nISE baseline 1. The MDN predicted the tail probability best but its physical shape-tail derivative had nISE 2.0165. This is the cleanest demonstration that learning $P(Y\mid H)$ well in a predictive score does not guarantee accurate $D_hP$.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{0.88\linewidth}{Y r Y}
+\toprule Method & Shape-tail field nISE & Interpretation \\
+\midrule
+Gaussian/Student-$t$/quadratic SID families & 1.000 & Zero-field baseline \\
+Gaussian MLP NLL/DSM & 1.000 & No fitted shape variation \\
+MDN $K=3$ & 2.017 & Predictive tail win, derivative worse than zero \\
+\bottomrule
+\end{tabularx}
+\caption{Physical standardized shape-tail derivative.}
+\end{table}
+
+\subsection{Synaptic gating remained unsolved}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{0.90\linewidth}{Y L{2.5cm} Y}
+\toprule Method & Gating-field nISE & Interpretation \\
+\midrule
+Gaussian NLL / ridge / Student-$t$ & 1.000 & Emit zero field; best result \\
+Quadratic DSM SID & 2.10--2.95 & Worse than zero \\
+Quadratic Hyv\"arinen SID & 4.42 & Worse than zero \\
+Neural NLL / DSM / MDN & 20.97--23.40 & Highly unstable mixed derivative \\
+\bottomrule
+\end{tabularx}
+\caption{Total modulator-gated response field.}
+\end{table}
+
+\section{Mean-visible, mean-blind, and joint synthetic circuits}
+
+\subsection{Earlier per-target battery}
+
+\begin{table}[H]
+\centering\footnotesize
+\begin{tabularx}{\linewidth}{Y rrrrrrrrr}
+\toprule
+Condition & Mean $R^2$ & Ridge & SINDy & MLP & Residual mean & Residual var & Bridge & Score Jac. & Hessian DSM \\
+\midrule
+Linear & 0.07 & 0.756 & 0.757 & 0.767 & 0.753 & 0.459 & 0.736 & 0.760 & 0.649 \\
+Tanh & 0.03 & 0.776 & 0.766 & 0.777 & 0.763 & 0.469 & 0.745 & 0.763 & 0.637 \\
+Gated & -0.02 & 0.777 & 0.726 & 0.725 & 0.772 & 0.433 & 0.733 & 0.717 & 0.568 \\
+Branch/multimodal & -0.05 & 0.521 & 0.552 & 0.541 & 0.531 & \best{0.692} & 0.510 & 0.429 & 0.534 \\
+Variance gate & -0.05 & 0.488 & 0.549 & 0.554 & 0.544 & \best{0.632} & 0.545 & 0.514 & 0.488 \\
+Branch + noise .4 & -0.05 & 0.493 & 0.517 & 0.501 & 0.569 & \best{0.606} & 0.497 & 0.422 & 0.521 \\
+Variance gate + noise .4 & -0.05 & 0.497 & 0.509 & 0.526 & 0.474 & 0.541 & 0.527 & 0.488 & 0.476 \\
+\bottomrule
+\end{tabularx}
+\caption{Graph AUROC in the earlier per-target distributional-versus-mean battery. Bold identifies the targeted second-moment win.}
+\end{table}
+
+Mean methods win when the generator encodes parents in $\E[Y\mid H]$. The residual log-variance derivative wins only in mean-blind branch and reliability-routing cases. At measurement noise 0.4 even that advantage is fragile. The result supports a ``moment ladder,'' not a universal distributional estimator.
+
+\subsection{Later moment-ladder and joint-covariance adjudication}
+
+The follow-up put a plain regression and a score/diffusion reader on the same conditional-moment rung. Mean edges were read by ridge versus residual-mean or a transport bridge; diagonal variance edges by squared-residual regression versus residual-variance; and off-diagonal covariance edges by residual cross-product regression versus residual-covariance. All comparisons used ten seeds on the common $N=40,M=12,L=3,T=20{,}000$ backbone.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{1.6cm}Y L{2.2cm}L{2.2cm}rrrr}
+\toprule
+Rung & Mechanisms & Regression & Score/diffusion & Reg. & Diff. & $\Delta$ & Wilcoxon $p$ \\
+\midrule
+Mean & Linear, tanh, gated & Ridge & Residual mean & 0.820 & 0.799 & +0.020 & 0.020 \\
+Mean & Linear, tanh, gated & Ridge & SB bridge & 0.820 & 0.812 & +0.008 & 0.271 \\
+Variance & Branch, variance gate & Variance regression & Residual variance & 0.678 & 0.635 & +0.043 & 0.009 \\
+Covariance & Cross covariance & Cross-product regression & Residual covariance & 0.698 & 0.636 & +0.062 & 0.049 \\
+\bottomrule
+\end{tabularx}
+\caption{Ten-seed no-free-lunch adjudication. $\Delta=$ regression minus score/diffusion AUROC. A matched regression was never worse on the conditional moment that carried the edge.}
+\end{table}
+
+\begin{table}[H]
+\centering\scriptsize
+\begin{tabularx}{\linewidth}{Y rrrrrrrrrrr}
+\toprule
+Mechanism & Mean $R^2$ & Ridge & SINDy & MLP-J & Res.-mean & Res.-var & Res.-cov & SB bridge & Score-J & Hessian \\
+\midrule
+Linear & 0.11 & 0.807 & 0.798 & 0.802 & 0.791 & 0.487 & 0.392 & 0.811 & 0.791 & 0.648 \\
+Tanh & 0.06 & 0.817 & 0.812 & 0.815 & 0.798 & 0.495 & 0.379 & 0.821 & 0.795 & 0.619 \\
+Gated & -0.01 & 0.834 & 0.806 & 0.793 & 0.809 & 0.469 & 0.443 & 0.804 & 0.762 & 0.534 \\
+Branch & -0.05 & 0.496 & 0.547 & 0.527 & 0.471 & 0.658 & 0.580 & 0.518 & 0.517 & 0.475 \\
+Variance gate & -0.05 & 0.522 & 0.596 & 0.574 & 0.489 & 0.612 & 0.602 & 0.521 & 0.544 & 0.533 \\
+Cross covariance & -0.05 & 0.488 & 0.483 & 0.503 & 0.504 & 0.492 & 0.636 & 0.697 & 0.651 & 0.509 \\
+Branch + noise .4 & -0.05 & 0.492 & 0.511 & 0.494 & 0.500 & 0.582 & 0.522 & 0.534 & 0.486 & 0.448 \\
+Variance gate + noise .4 & -0.05 & 0.504 & 0.549 & 0.566 & 0.480 & 0.557 & 0.580 & 0.514 & 0.509 & 0.526 \\
+Cross covariance + noise .4 & -0.04 & 0.527 & 0.478 & 0.463 & 0.486 & 0.475 & 0.625 & 0.685 & 0.607 & 0.505 \\
+\bottomrule
+\end{tabularx}
+\caption{Full ten-seed moment-ladder battery: off-diagonal lag-union AUROC. The table replaces the original heatmap and includes the Hessian control numerically.}
+\end{table}
+
+\claim{The later result sharpened the earlier one. Distributional information can matter, but fitting a full score or transport is not necessary for graph recovery when the relevant conditional moment is declared: a regression on that moment matches or beats it. Generative models become valuable again for a different task - drawing complete, compatible path samples for finite model-relative queries.}
+
+\section{Point tangents, finite contrasts, and the ORTH repairs}
+
+\subsection{Point-history-gradient readiness}
+
+All 96 convergence-sweep fits completed; fixed-batch overfit checks passed; selected checkpoints did not stop at the epoch limit; exact replay reproduced the decision. Nevertheless, the preregistered derivative gates failed.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{0.88\linewidth}{L{1.4cm}Y r Y}
+\toprule DGP & Model/readout & Tangent NRMSE & Decision \\
+\midrule
+G1 & Gaussian normalized model & 0.589 & Failed readiness threshold \\
+G1 & Autoregressive MDN & 0.719 & Failed readiness threshold \\
+G2 & Best clean covariance tangent & 1.068 & Did not beat zero \\
+G3 & Best clean skew tangent & 1.167 & Did not beat zero \\
+\bottomrule
+\end{tabularx}
+\caption{Optimization success did not imply derivative validity.}
+\end{table}
+
+\subsection{Ten-seed finite central contrasts}
+
+The finite panel used one clean rebuilt predictive source, $\delta=0.1$, and ten adapter/evaluation seeds 5004--5013. All 76,760 metric rows completed. It tests adapter randomness, not ten independently trained generators.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{2.2cm}Y r L{2.5cm}}
+\toprule Generator & Best practical route & Witness NRMSE & Verdict \\
+\midrule
+G1 location & Signed classifier / Gaussian finite ratio & 0.61--0.65 & Useful \\
+G2 covariance-only & Ratio critic & 1.057 & Did not beat zero \\
+G3 skew-only & Ratio critic & 1.008 & Did not beat zero \\
+G4 low-rank mixture & Ratio critic & \best{0.656} & Useful \\
+\bottomrule
+\end{tabularx}
+\caption{Finite supported contrasts. Oracle-sample classifiers were also near 1.14 NRMSE for covariance and skew, locating the bottleneck in the adapter/dictionary.}
+\end{table}
+
+\subsection{Legacy tangent-model comparison}
+
+These medians aggregate heterogeneous strata and are descriptive rather than a paired leaderboard.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lrrr}
+\toprule Method & Metric rows & Median tangent NRMSE & Mean \\
+\midrule
+Ratio critic & 64 & \best{0.616} & 0.826 \\
+Autoregressive Transformer & 16 & 0.629 & 0.694 \\
+Affine flow & 64 & 0.946 & 2.098 \\
+Autoregressive MDN & 64 & 1.015 & 2.030 \\
+Legacy diffusion & 192 & 1.022 & 1.659 \\
+Bounded energy & 64 & 1.181 & 4.396 \\
+Gaussian NLL tangent & 64 & 1.216 & 4.279 \\
+Gaussian DSM & 64 & 1.260 & 3.828 \\
+EDM diffusion & 192 & 1.743 & 3.240 \\
+Gaussian-anchored diffusion & 192 & 2.692 & 3.968 \\
+\bottomrule
+\end{tabular}
+\caption{Earlier stabilized score/generative history-tangent benchmark.}
+\end{table}
+
+\subsection{E0--E11 adjudication after targeted repairs}
+
+\begin{longtable}{L{0.07\linewidth}L{0.22\linewidth}L{0.22\linewidth}L{0.40\linewidth}}
+\toprule
+ID & Question & Decision & Key evidence and consequence \\
+\midrule
+\endfirsthead
+\toprule ID & Question & Decision & Key evidence and consequence \\
+\midrule\endhead
+E0 & Algebra, leakage, reproducibility & Pass & 20/20 package tests and all new validation checks passed \\
+E1 & Regular equal-access recovery & Pass / no point win & ORTH NRMSE 0.104, coverage 0.940, PLUG ratio 1.002; benefit was inference, not point error \\
+E2 & Orthogonal remainder & Pass & Product-bias $R^2>0.99999997$ \\
+E3 & One future/dependence & Pass with HAC & At $\rho=.9$, NRMSE 0.145/0.093 and HAC coverage 0.949/0.951; blocked splits/HAC required \\
+E4 & Moment-blind law change & Pass at resolving bank & Power 1.00/0.867; moment FWER 0.067/0.067; frequency bank is part of estimand \\
+E5 & Support motion & Pass & ORTH NRMSE 0.016 at zero noise where ordinary likelihood score is undefined \\
+E6 & Heavy tails/weak overlap & Conditional pass & Fixed sieve biased; density-score ORTH error 0.0036 with 1.00 coverage at gap4, $n=128$k \\
+E7 & Heterogeneous cancellation & Pass at $R=2$ & Energy 3.982 versus oracle 4.000; local sign reversal recovered \\
+E8 & Filtered latent recovery & Conditional pass & At $\rho=.98,T=64,n=32$k: CF ORTH NRMSE 0.141; at $T=4$: 2.88 \\
+E9 & Dense unknown geometry & Typed pass / full-feature fail & $d_y=8$ direct covariance NRMSE 0.106 at 128k; $d_y=32$ low-rank 0.177; native feature NRMSE 1.01 \\
+E10 & Flexible reusable laws & Local pooled pass & MDN $K=5/10/20$ and NSF-6/10, seven families, three initializations and ten DGP seeds; no universal winner \\
+E11 & Path ordering & Pass & Full-path power 1.00; endpoint/unordered FWER 0.056 \\
+\bottomrule
+\end{longtable}
+
+\subsection{E6: fixing a representer bias floor}
+
+The original targeted random-feature Riesz sieve stopped improving with $n$. The repair fit a BIC-selected history density, differentiated its log density, and used cross-fitted ORTH moments. In the difficult gap-$\mu_4$ cell, the targeted representer retained alpha NRMSE about 0.965, while the density-score alpha error decreased to 0.029.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{rrrrr}
+\toprule
+$n$ & Method & Target abs. error & Alpha NRMSE & Coverage \\
+\midrule
+8,000 & ORTH density score & 0.02218 & 0.0659 & 0.90 \\
+32,000 & ORTH density score & 0.01180 & 0.0317 & 1.00 \\
+128,000 & ORTH density score & \best{0.00357} & \best{0.0287} & 1.00 \\
+128,000 & ORTH targeted sieve & 0.02719 & 0.9661 & 0.00 \\
+128,000 & PLUG & 0.03463 & -- & 0.00 \\
+\bottomrule
+\end{tabular}
+\caption{E6 gap-$\mu_4$ sample scaling. Severe overlap still raises the representer norm and variance.}
+\end{table}
+
+\subsection{E8: filtered latent recovery is an inverse problem}
+
+With known or accurately fitted linear filtering, exact characteristic-function correction can recover the latent target only when the observation window makes the inverse attenuation tolerable. Accurate estimation of the filter coefficient is not sufficient at short horizons.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{0.92\linewidth}{L{1.1cm}L{1.2cm}L{1.4cm}Y rr}
+\toprule
+$\rho$ & Horizon & $n$ & Method & NRMSE & Coverage \\
+\midrule
+.98 & 4 & 8k & Exact CF ORTH, known filter & 1.652 & -- \\
+.98 & 16 & 8k & Exact CF ORTH, known filter & 0.412 & -- \\
+.98 & 64 & 8k & Exact CF ORTH, known filter & 0.235 & -- \\
+.98 & 4 & 32k & Exact CF ORTH, fitted mixture filter & 2.880 & -- \\
+.98 & 64 & 32k & Exact CF ORTH, fitted mixture filter & \best{0.141} & 0.992 \\
+.98 & 64 & 32k & Latent oracle & 0.049 & -- \\
+\bottomrule
+\end{tabularx}
+\caption{E8 horizon/measurement-model sensitivity. At $T=64,n=32$k, absolute $\rho$ error was $5.5\times10^{-4}$.}
+\end{table}
+
+\subsection{E9: rank, inversion ridge, and typed covariance}
+
+The nominal rank-three symmetric generator had effective rank two because one population coefficient averaged to zero. An identified intercept scheme $(-1.2,-0.4,0.9)$ restored rank three. Separately, the characteristic inverse ridge $10^{-4}$ caused oracle NRMSE 0.667; reducing it to $10^{-8}$ gave oracle NRMSE 0.0111 on the same 64-query bank.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{rrrrrr}
+\toprule
+$d_y$ & $n$ & Readout & Cov. NRMSE & Feature NRMSE & Coverage \\
+\midrule
+8 & 8k & ORTH direct covariance & 0.404 & 0.404 & 0.958 \\
+8 & 32k & ORTH direct covariance & 0.219 & 0.219 & 0.943 \\
+8 & 128k & ORTH direct covariance & 0.106 & 0.106 & 0.960 \\
+8 & 128k & Effective-rank projection & \best{0.081} & 0.081 & 0.960 \\
+8 & 128k & ORTH characteristic inverse & 0.106 & 1.012 & 0.953 \\
+32 & 32k & ORTH direct covariance & 0.475 & 0.475 & 0.949 \\
+32 & 32k & Effective-rank projection & \best{0.177} & 0.177 & 0.949 \\
+\bottomrule
+\end{tabular}
+\caption{E9 corrected identified geometry. Full characteristic-feature recovery remained much harder than the typed covariance target.}
+\end{table}
+
+\section{Changepoint experiments}
+
+\subsection{Matched synthetic detection and confusion}
+
+The frozen-v2 changepoint panel used 199 matched calibration trajectories and 100 independent evaluation trajectories per condition. It separates detection from localization and checks nuisance mechanisms.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{Y L{2.3cm}L{2.1cm}Y}
+\toprule Probe & Target condition & Detection / localization & Nuisance behavior \\
+\midrule
+Mean CUSUM & High-signal mean change & 100/100 detected and localized & Matched channel success \\
+Residual tail shape & Mean/variance-matched tail change & 100/100 detected and localized & Matched channel success \\
+Residual variance & Dispersion change & 100/100 detected; 41\% localized & Also called 95\% mean and 99\% tail changes; broad instability alarm \\
+Mean / rule / variance nulls & Independent no-change & 2\% / 4\% / 4\% FPR & Near nominal \\
+Tail null & Independent no-change & 3\% FPR & Near nominal \\
+MMD / energy null & Independent no-change & 9\% / 11\% FPR & Above nominal 5\% \\
+\bottomrule
+\end{tabularx}
+\caption{Matched synthetic changepoint calibration.}
+\end{table}
+
+\subsection{June full 14-method benchmark}
+
+The last fully synthesized extended run contained 740 event windows, 10,360 method-event tests, 8,960 matched synthetic no-change calibration scans, and 14 methods. Neural p-values came from quiet pseudo-boundaries, not iid row permutations. Synthetic p-values used independent matched no-change time series.
+
+\begin{table}[H]
+\centering\scriptsize
+\begin{tabularx}{\linewidth}{L{1.55cm}L{1.40cm}L{1.10cm}L{0.75cm}L{0.65cm}L{1.00cm}Y}
+\toprule
+Cohort / event & Method & Detected & Hit in 5s & MAE (s) & Median $p/q$ & Interpretation \\
+\midrule
+Imputed onset & Hotelling mean CUSUM & 0.667 & 0.933 & 1.933 & $q\approx.071$ & Strongest marginal onset detector \\
+Complete onset & Hotelling mean CUSUM & 0.778 & 1.000 & -- & -- & Consistent six-worm sensitivity \\
+Imputed onset & Chow/ridge mean scan & 0.000 & 1.000 & 0.883 & $.704$ / $.902$ & Localized but not significant \\
+Imputed onset & Fixed SBTG score product & 0.000 & -- & -- & -- & No calibrated hit \\
+Imputed onset & Tuned SBTG score product & 0.000 & -- & -- & -- & No calibrated hit \\
+Imputed offset & Hotelling mean CUSUM & 0.150 & -- & -- & -- & Offsets weaker than onsets \\
+Quiet controls & All method families & -- & -- & -- & -- & Pseudo-boundary FPR: 0.050 imputed, 0.042 complete \\
+\bottomrule
+\end{tabularx}
+\caption{Primary findings from the 9 June 2026 extended changepoint benchmark.}
+\end{table}
+
+The 14 methods were marginal CUSUM, Hotelling mean CUSUM, residualized endpoint CUSUM, residualized product CUSUM, residualized SBTG score-product CUSUM, tuned SBTG score-product CUSUM, variance CUSUM, reliability-variance CUSUM, MMD scan, energy-distance scan, local PELT L2, binary segmentation L2, window L2 scan, and Chow/ridge conditional-mean scan.
+
+\subsection{July score-dynamics follow-up}
+
+Later probes added quadratic score-dynamics mean, variance/Fisher, and joint readouts plus pooled history-DSM reliability scans. These were subsequent focused runs, not replacements for the full 14-method matrix.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{2.2cm}L{2.0cm}rrrrY}
+\toprule
+Cohort & Method & $n$ & Detected within 5s & Hit within 5s & MAE (s) & Result \\
+\midrule
+Imputed butanone onset & Pooled history-DSM v2 & 20 & 0.350 & -- & -- & Strongest calibrated conditional/reliability row \\
+Imputed butanone onset & Score-dynamics variance & 20 & 0.150 & 0.850 & 2.363 & Good localization, weak calibrated power \\
+Imputed butanone onset & Hotelling mean & 20 & 0.300 & -- & -- & Strong marginal comparator \\
+Complete butanone onset & Pooled history-DSM v2 & 6 & 0.167 & 0.667 & 4.750 & Incomplete sensitivity \\
+Complete butanone onset & Score-dynamics variance & 6 & 0.000 & 0.833 & 2.875 & Localized, no calibrated detections \\
+Complete butanone onset & Hotelling mean & 6 & 0.333 & 0.833 & 2.125 & Strongest complete-cohort row \\
+\bottomrule
+\end{tabularx}
+\caption{Score-dynamics follow-up. In the synthetic gate, the variance readout localized 0.667 matched-marginal, 0.667 precision-routing, and 1.000 rule-change cases, but 0.000 nonlinear-precision cases.}
+\end{table}
+
+\section{Real neural-data evidence}
+
+\subsection{Cohorts and grouping}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{2.6cm}L{2.1cm}Y Y}
+\toprule Dataset/cohort & Size & Use & Independence/claim boundary \\
+\midrule
+Six-worm clean subset & 6 worms & Original deconvolved lag and leave-one-worm analyses & Row splits are invalid for confirmation; group by worm \\
+ACMMA head cohort & 28 worms & Incomplete multi-worm estimator and real predictive likelihood & Animal is the inferential unit; no imputed biological edges \\
+Corrected OH16230 & 17 worms, 54 classes, 4 Hz & Conditional-flow repaired-path atlas & Five held-out-worm folds; binary any-stimulus input \\
+Historical SBTG80 & 20 released traces, 80 classes & Historical reproduction/context & Invalid head/tail index fusion and donor trace copying \\
+DANDI 000981 planned & 22 hermaphro\-dites + 22 males; expected $\sim153$ shared classes & Prospective sex-aware validation & Prepared campaign, not completed evidence \\
+\bottomrule
+\end{tabularx}
+\caption{Neural cohorts used across the repository.}
+\end{table}
+
+\subsection{The original biological signal attenuated under valid grouping}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{3.0cm}L{2.7cm}L{2.8cm}Y}
+\toprule Analysis & Scope & Result & Interpretation \\
+\midrule
+Original peptide gain-slow & Six worms, 80\% row split & dBC $+3.35$ & Apparent strong lead, optimistic dependence structure \\
+Grouped reanalysis & Same six worms, rows grouped by worm & dBC $+1.16$ & Substantial attenuation \\
+Validated all-animal ACMMA & 28 worms & dBC $-0.41$; monoamine/peptide intervals include zero & Original lag claim did not replicate \\
+Global-mode removal / DSM / variance-VAR & Multiple reanalyses & No stable recovery & Not rescued by objective or preprocessing variants \\
+\bottomrule
+\end{tabularx}
+\caption{Chronology of the original lag-resolved neuromodulator result.}
+\end{table}
+
+\subsection{Eight real-data levers}
+
+Eight controls-first analyses used 200 surrogate/bootstrap replicates and 5,000 permutations where applicable, on the six-worm and 28-worm configurations.
+
+\begin{longtable}{L{0.18\linewidth}L{0.34\linewidth}L{0.38\linewidth}}
+\toprule
+Lever & Implementation and result & Verdict \\
+\midrule
+\endfirsthead
+\toprule Lever & Implementation and result & Verdict \\
+\midrule\endhead
+Predictive likelihood & Leave-one-worm-out variance model versus the same fitted mean with constant variance: $\Delta$NLL $+0.038$ on 6 worms (85\% targets; CI [.033,.042]) and $+0.364$ on 28 worms (100\%; CI [.245,.484]) & Strongest real result; predictive, not receptor-specific \\
+Self-gain diagonal & Exposed previously zeroed $d\log\mathrm{Var}(Y_j)/dx_j$; initial peptide slow gain $+0.032$, $p\approx.09$ & Readout valid synthetically, biological lead retracted after reliability/mechanism tests \\
+Denoising ladder & $\sigma=0,.25,.5,1.0$, each variance-corrected and averaged; split-half stability 0.234 to 0.254 & Modest reliability gain; weak biology \\
+Ganglion aggregation & Pool about 8--14 ganglia; stability 0.25 to 0.54; corrected reference gains $+.14/+.17$, $p=.005$ & Real coarsening benefit, not distributional-specific \\
+Functional atlas & Randi/Leifer mask, 309 significant edges over 1,900 pairs; gain AUROC .555 ($p=.025$), Pearson .621 & Weak static signal; simple correlation wins \\
+Functional kinetics & Preferred gain lag versus measured atlas time scale; Spearman .015, $p=.30$ & Negative \\
+Frozen features & Freeze neural trunk, fit analytic quadratic-score head, map through trunk Jacobian; .513 versus end-to-end .503 versus raw .497 & Near chance; data-limited \\
+Global-state gating & PC1 as modulator; peptide state gain $+.08$, $p\approx.11$; ridge sign changed $+.23$ to $-.007$ & Fragile negative \\
+Hierarchical shrinkage & James--Stein toward ganglion blocks; stability .258 to .187 at weight .5 & Clean negative \\
+\bottomrule
+\end{longtable}
+
+\subsection{Self-gain falsification}
+
+Synthetic injection passed through the actual calcium, OASIS deconvolution, and standardization pipeline. Clean recovery had Spearman 0.86 and AUROC 1.00; after calcium processing it retained Spearman 0.75 and AUROC 0.94 with a $+0.026$ group difference. At zero true effect, high variance, autocorrelation, and slower calcium produced differences $-0.010,-0.010,-0.001$. The readout was therefore valid, but the biological pattern lacked reliability and a metabotropic fingerprint.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{rrrrr}
+\toprule Worms & Observation noise & Synthetic reliability & Median $p$ & Power at .05 \\
+\midrule
+6 & 0.3 & 0.21 & 0.017 & 0.67 \\
+6 & 1.5 & 0.13 & 0.047 & 0.53 \\
+6 & 3.0 & 0.08 & 0.250 & 0.33 \\
+28 & 3.0 & 0.47 & 0.067 & 0.47 \\
+\bottomrule
+\end{tabular}
+\caption{Synthetic self-gain power after degradation. Real cross-estimator per-neuron reliability was about 0.05.}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{Y rr}
+\toprule Partial correlation test & Six worms & 28 worms \\
+\midrule
+Slow self-gain vs. metabotropic receptor load & $-0.13$ ($p=.28$) & $-0.03$ ($p=.79$) \\
+Slow self-gain vs. ionotropic load & $-0.09$ & $-0.11$ \\
+Double dissociation, metabotropic minus ionotropic & $-0.04$ & $+0.07$ \\
+Slow self-gain vs. neuropeptide GPCR & $+0.03$ ($p=.77$) & $+0.27$ ($p=.02$) \\
+\bottomrule
+\end{tabularx}
+\caption{The core metabotropic prediction failed; the single 28-worm peptide-GPCR flicker did not replicate in six worms.}
+\end{table}
+
+\section{Compatibility-aware response sampling}
+
+\subsection{Corrected 54-neuron implementation}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{2.8cm}L{3.0cm}Y}
+\toprule Setting & Value & Role \\
+\midrule
+Observed state & 54 standardized neurons, 17 OH16230 worms, native 4 Hz & Corrected head-only cohort \\
+History & 80 frames / 20 s & Finite-memory conditional transition input \\
+Source window & 4 frames / 1 s & Average activity used by the clamp \\
+Explicit lags & 1, 4, 8, 16 frames & 0.25, 1, 2, 4 s from source-window end to cut \\
+Source targets & Training-fold Q25/Q75 & Phase-specific low/high states \\
+Bandwidth & $\max(.25\,\mathrm{IQR},.10)$ & Soft-clamp bias/overlap tradeoff \\
+Population anchor & Rank-12 training-fold PCA, $\lambda=.25$ & Keeps non-source context compatible \\
+Particle screen & 32 survivors; progressive branch 2, future factor 2 & Frozen E26 comparison \\
+Bridge ESS floor & 65\% of candidates & Adaptive tempering increment \\
+Future channels & Endpoint/cumulative mean, peak, event probability, SD, log-SD, W1 & Compares future laws, not means alone \\
+Orientation & Target rows $\times$ source columns & External comparison convention \\
+\bottomrule
+\end{tabularx}
+\caption{Frozen repaired-path configuration.}
+\end{table}
+
+\subsection{Four samplers}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{2.6cm}ccccY}
+\toprule Workflow & Natural bank & Sequential & Bridge & Source resampling & Main tradeoff \\
+\midrule
+Direct importance & Yes & No & No & Never & Fast; rare queries collapse \\
+Terminal SMC & No & Yes & No & Deferred to cut & Equal-weight future particles; terminal collapse \\
+Progressive bridge & No & Branched & Across source window & ESS-adaptive & Lowest sealed particle error; expensive \\
+Temporal cut & No & Yes & No & From source-window end & Explicit historical placement; early ancestry loss \\
+\bottomrule
+\end{tabularx}
+\caption{Sampler taxonomy. The first three mainly differ as estimators; temporal cut also changes constraint placement.}
+\end{table}
+
+\subsection{Sealed Stage-A estimator benchmark}
+
+The comparison used one frozen flow checkpoint, two independent 4,096-particle references, and three finite-particle repeats. No atlas was used for selection.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Estimator & MSE & Bias$^2$ & MC variance & Signed $\rho$ & Valid rate & Runtime (min) \\
+\midrule
+Direct importance & 0.030689 & 0.013059 & 0.017630 & 0.758 & 0.440 & 0.5 \\
+Terminal SMC & 0.015645 & 0.008098 & 0.007547 & 0.815 & 0.435 & 21.2 \\
+Progressive bridge SMC & \best{0.011008} & \best{0.006580} & \best{0.004428} & \best{0.854} & \best{0.911} & 34.3 \\
+\bottomrule
+\end{tabular}
+\caption{Finite-particle error against the same learned repaired law, not biological truth.}
+\end{table}
+
+\subsection{External correspondence on the corrected 54-neuron axis}
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Method & Randi & Cook structural & Cook chemical & Cook gap \\
+\midrule
+Progressive bridge N=32 & 0.647 & 0.611 & 0.600 & 0.672 \\
+Direct importance N=256 & 0.617 & 0.619 & 0.610 & 0.660 \\
+Published SBTG, restricted to 54 & 0.622 & 0.565 & 0.558 & 0.621 \\
+Current SBTG & 0.524 & 0.524 & 0.517 & 0.585 \\
+\bottomrule
+\end{tabular}
+\caption{Lag-1/horizon-1 AUROC on identical 54-class denominators. External reference correspondence is contextual, not causal validation.}
+\end{table}
+
+Continuous agreement was weaker: progressive Randi absolute-response Spearman was 0.211; Cook structural Spearman was 0.172 over all pairs and 0.064 among positive edges. The corrected complete-family analysis retained 102 baseline-mean edges and 492 cells after joint max-$T$, but zero strong-support non-flat lag profiles and zero strict stimulus-modulated discoveries. In the targeted N=128 calibration, zero rows exceeded both sampler and quiet-time controls.
+
+\section{Model error and out-of-distribution queries}
+
+\subsection{Predictive qualification across six families}
+
+\begin{table}[H]
+\centering\footnotesize
+\begin{tabular}{lrrrrr}
+\toprule
+Model & Energy & CRPS & RMSE & 90\% coverage & Tail Brier \\
+\midrule
+EDM diffusion & 1.0371 & 0.1005 & 0.1985 & 0.9007 & 0.06385 \\
+Flow & 1.0454 & 0.1022 & 0.1998 & 0.8917 & 0.06964 \\
+MDN-4 & 1.0788 & 0.1018 & 0.2056 & 0.8501 & 0.06149 \\
+Gaussian rank 8 & 1.0878 & 0.1034 & 0.2069 & 0.8843 & 0.06165 \\
+Student-$t$ rank 8 & 1.0879 & 0.1030 & 0.2070 & 0.8927 & 0.06135 \\
+Diagonal Gaussian & 1.0888 & 0.1033 & 0.2072 & 0.8743 & 0.06163 \\
+\bottomrule
+\end{tabular}
+\caption{All six model families passed the study's predictive qualification gate.}
+\end{table}
+
+The synthetic suite included ten seeds spanning nonlinear location, state-dependent variance/covariance, heavy tails, switching, multimodality, hidden global state, calcium filtering, and independently parameterized eight-node FitzHugh--Nagumo networks with common-random-number pulse truth.
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{Y L{2.6cm}L{2.3cm}Y}
+\toprule Finding & Value & Status & Meaning \\
+\midrule
+Supported-query between-family SD & 0.01077 & Validated & Families broadly agree on in-support queries \\
+Rare query, direct matched cost & MAE 0.1189 & Observed & Beat progressive under matched compute \\
+Rare query, progressive bridge & MAE 0.1559 & Observed & Beat same-$N$ direct, not matched-cost direct \\
+Rare query, direct same $N$ & MAE 0.2960 & Observed & Severe finite-particle error \\
+Error vs. minimum ESS & Spearman $-0.509$ & Validated & ESS informative but incomplete \\
+Error vs. history distance & Spearman 0.126 & Validated & This scalar distance was weak \\
+Error vs. cross-model disagreement & Spearman 0.797 & Validated & Strongest tested warning signal \\
+Stable but wrong & 16 rows & Validated & Sampler gates passed while learned-model error exceeded 0.25 \\
+\bottomrule
+\end{tabularx}
+\caption{Particle error and learned-model error are separate.}
+\end{table}
+
+\claim{Progressive SMC can repair a particle approximation to a fixed model-relative query. It cannot repair extrapolation bias, omitted state, a wrong conditional law, or a biologically invalid query. Every reported response therefore needs event rarity, empirical support, cross-model spread, and particle convergence together.}
+
+\section{Historical 80-class atlas and current program}
+
+The completed historical atlas contains 20 raw archives across four lags, 13,977,600 dense response cells, seven channels, thirteen contexts, six horizons, 80-by-80 matrices, and 256 whole-worm bootstrap replicates. It preserves the released SBTG80 lineage for comparison but cannot become prospective evidence because that cache fused head and tail recordings by index and copied donor traces into missing classes.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{llrr}
+\toprule Method & Reference & AUROC & Source-macro AUROC \\
+\midrule
+Progressive bridge & Randi wild type & 0.657 & 0.623 \\
+Progressive bridge & Cook structural 80 & 0.614 & 0.601 \\
+Progressive bridge & Cook chemical 80 & 0.605 & 0.587 \\
+Progressive bridge & Cook gap 80 & 0.654 & 0.680 \\
+Published SBTG & Randi wild type & 0.630 & 0.615 \\
+Published SBTG & Cook structural 80 & 0.581 & 0.578 \\
+Published SBTG & Cook chemical 80 & 0.570 & 0.557 \\
+Published SBTG & Cook gap 80 & 0.613 & 0.652 \\
+\bottomrule
+\end{tabular}
+\caption{Historical/contextual lag-1 correspondence. The data lineage prevents prospective interpretation.}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{3.0cm}L{2.5cm}Y Y}
+\toprule Artifact & State & Scope & Claim boundary \\
+\midrule
+Historical 80-class atlas & Complete & 20 traces, 80 classes, four lags, six horizons, seven channels & Context only because of invalid fusion/imputation lineage \\
+Corrected 54-neuron atlas & Complete negative lag adjudication & 17 native-4-Hz worms with onset and matched quiet controls & No experiment-ready lag edge passed both gates \\
+OOD robustness suite & Complete & Six model families, nonlinear VAR, FHN, NeuroPAL pseudo-OOD & ESS alone is not scientific validity \\
+DANDI 000981 campaign & Prepared, not executed & 22 hermaphrodites + 22 males, expected $\sim153$ shared exact labels & Prospective observational/model-relative validation \\
+\bottomrule
+\end{tabularx}
+\caption{Repository status at the report freeze.}
+\end{table}
+
+\subsection{Prepared DANDI 000981 campaign}
+
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\linewidth}{L{3.0cm}Y Y}
+\toprule Design element & Frozen plan & Reason \\
+\midrule
+Cohort & Exactly 22 retained hermaphrodites and 22 retained males & Stop if runtime exclusions differ \\
+Neuron axis & Exact-name intersection observed in at least 20/22 subjects per sex; minimum 101, expected about 153 & Same ordered axis across all models \\
+Models & Combined shared90, hermaphrodite shared90, male shared90 & Combined model alone selects preprocessing/architecture \\
+Cross-validation & Five whole-subject folds; validation fold $(k+1)\bmod5$ & No window-level leakage \\
+Preprocessing screen & Raw, causal MA3, causal MA11--MA241, causal 90-s EWMA; noncausal published filter only sensitivity & Causal primary pipeline \\
+Sampling & Direct, terminal, progressive, temporal-cut & Same four estimators in every analysis \\
+Lags & 1,2,3,5,11,21,32,53 frames at 2.66 Hz & About 0.376--19.925 s \\
+Horizons & 1,2,4,8,16 frames; timing jitter $-1,0,+1$ & Timing robustness \\
+Primary estimand & Onset minus matched-quiet endpoint-mean response & Event specificity before external atlas use \\
+External firewall & Cook/Randi/Bentley/SBTG loaded only after matrices and sampler selection freeze & Avoid atlas-driven tuning \\
+\bottomrule
+\end{tabularx}
+\caption{Prospective campaign design.}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule Stage & Combined & Hermaphrodite & Male & Total \\
+\midrule
+NWB extraction & 47 shared & -- & -- & 47 \\
+Preprocessing screen & 50 & -- & -- & 50 \\
+Encoding screen & 70 & -- & -- & 70 \\
+History screen & 60 & -- & -- & 60 \\
+Architecture/density screen & 160 & -- & -- & 160 \\
+Three-seed confirmation & 15 & 15 & 15 & 45 \\
+Four-method primary sampling & 3,840 & 3,840 & 3,840 & 11,520 \\
+Particle convergence & 1,920 & 1,920 & 1,920 & 5,760 \\
+\midrule
+All array tasks & -- & -- & -- & 17,712 \\
+\bottomrule
+\end{tabular}
+\caption{Prepared DANDI task inventory. These are planned jobs, not completed results.}
+\end{table}
+
+\section{What the complete program now supports}
+
+\begin{longtable}{L{0.24\linewidth}L{0.28\linewidth}L{0.38\linewidth}}
+\toprule
+Conclusion & Status & Evidence boundary \\
+\midrule
+\endfirsthead
+\toprule Conclusion & Status & Evidence boundary \\
+\midrule\endhead
+Simple mean models are the default for mean dynamics & Supported & Ridge/VAR/SINDy repeatedly win mean-visible simulations and explain the residual-score SBTG repair \\
+Conditional variability matters for prediction & Supported & Real held-out $\Delta$NLL $+0.364$ on 28 worms; synthetic second-moment wins in mean-blind cases \\
+A good predictive law guarantees a good history derivative & Rejected & MDN tail prediction versus wrong tail derivative; tangent failures despite good NLL/score fit \\
+Original SBTG identifies physical neuromodulator edges & Rejected & Weak mechanism specificity, near-chance variance parents, nonreplicated biological lag signature \\
+Finite supported contrasts can recover selected law changes & Supported, scoped & G1/G4 finite witnesses, G8 path feature, repaired E6/E9 typed targets \\
+One generic finite classifier handles covariance and skew & Rejected & Oracle-sample adapters failed G2/G3 at the original resolution \\
+Progressive bridge SMC improves finite-particle estimation & Supported & Stage-A MSE/variance/validity versus the same learned-law target \\
+Progressive SMC validates an unsupported model query & Rejected & Sixteen stable-but-wrong rows; disagreement correlated 0.797 with total error \\
+Current neural matrices are causal/anatomical graphs & Rejected & Observational fitted-law contrasts and external correspondence only \\
+The next campaign can test transfer prospectively & Prepared & DANDI protocol is frozen; execution and results remain outstanding \\
+\bottomrule
+\end{longtable}
+
+\section{Reproducibility and evidence map}
+
+\begin{longtable}{L{0.27\linewidth}L{0.64\linewidth}}
+\toprule
+Evidence lane & Repository artifact \\
+\midrule
+\endfirsthead
+\toprule Evidence lane & Repository artifact \\
+\midrule\endhead
+Matched objective results & \path{SYNTHETIC_METHODS_REPORT_2026-07-12.md}; \path{neuromod_benchmark/outputs/objective_adjudication_20260712/} \\
+Real-data synthesis & \path{EXPERIMENT_REVIEW_2026-07-12.md} \\
+Eight neural levers & \path{sid_elegans/output/newlevers/RESULTS.md} and \path{VALIDATION.md} \\
+History-tangent DGPs & \path{history_tangent_benchmark/src/history_tangent_benchmark/dgps.py} \\
+Finite contrast protocol & \path{history_tangent_benchmark/REVISED_NOTE_V1_AUDIT.md} \\
+Diffusion/autoregression audit & \path{history_tangent_benchmark/DIFFUSION_VS_AUTOREGRESSION_AUDIT.md} \\
+ORTH adjudication & \path{reports/distributional_sid_adjudication_2026-07-14/} \\
+SBTG synthetic chronology & \path{/Users/vik/Developer/diffusionCircuit/docs/sbtg_synthetic_experiment_synthesis.md} \\
+Moment-ladder/covariance battery & \path{/Users/vik/Developer/diffusionCircuit/docs/distributional_circuit_recovery.tex}; \path{/Users/vik/Developer/diffusionCircuit/docs/nofreelunch_circuit_recovery.tex} \\
+Changepoint results & \path{/Users/vik/Developer/diffusionCircuit/docs/RESULTS.md} and dated benchmark folders \\
+Repaired-path specification & \path{FLOW_REPAIRED_LAG_METHODS_20260828.md} \\
+Compatibility experiment registry & \path{results/compatibility_path_response/EXPERIMENT_INDEX.md} \\
+Corrected 54-neuron atlas & \path{results/neural_prediction_atlas_20260829/README.md} \\
+Neuron-class interpretation & \path{results/neuron_class_effects_20260831/README.md} \\
+OOD/model-error study & \path{results/query_ood_robustness_20260901/REPORT.md} \\
+Historical 80-class atlas & \path{results/sbtg80_optimized_full_atlas_20260902/REPORT.md} \\
+Prospective DANDI campaign & \path{dandi000981_lag_cluster_bundle/README_CLUSTER.md} \\
+\bottomrule
+\end{longtable}
+
+All aggregate values in the report were transcribed from reviewed local reports, machine-readable summaries, manifests, or current code defaults. Raw row-level exports remain in the listed result folders. The report does not reproduce millions of row-level records; it includes the complete set of key protocol parameters and decision-relevant aggregate results needed to audit the narrative.
+
+\section{Conclusion}
+
+The program did not discover that ``SBTG simply needs a larger neural network.'' It discovered a sequence of estimand distinctions. Joint-window score products could localize some mean-like dependence but were weak for the distributional mechanisms that motivated them. Conditional-score cleanup and derivative regularization ruled out several coding and numerical explanations. The strongest SBTG repair forced the score through a conditional-mean transition map, which made explicit that the recovered signal was primarily mean dynamics. Simple mean models consequently remained the strongest default.
+
+Synthetic systems then showed exactly where this default ends. Covariance-only, skew-only, multimodal, reliability, and higher-order path changes can leave the conditional mean unchanged. Predictive densities and samplers can represent those changes, but downstream history derivatives can remain unstable, and dataset-level averaging can cancel heterogeneous effects. The viable alternative is not an unconstrained point derivative. It is a finite, supported, typed contrast whose response feature is declared before fitting and whose adapter passes an oracle gate.
+
+Compatibility-aware repaired paths instantiate that idea for neural trajectories. A source history is softly constrained inside a complete generated population context, the constraint is released at a declared cut, and the subsequent learned dynamics generate the future law of interest. Progressive bridge SMC is currently the most accurate finite-particle estimator of this frozen learned-law target. The final scientific claim remains deliberately narrow: the result is a model-implied predictive response under compatible histories. It becomes useful only when predictive qualification, empirical support, cross-model agreement, particle diagnostics, quiet-time specificity, and prospective validation agree.
+
+\begin{thebibliography}{9}
+\bibitem{backtracking}
+J. von K\"ugelgen, S. Mohamed, and S. Beckers.
+\newblock \emph{Backtracking Counterfactuals}.
+\newblock arXiv:2211.00472, 2022. \url{https://arxiv.org/abs/2211.00472}.
+
+\bibitem{necessary}
+Z. Hao et al.
+\newblock \emph{Natural Counterfactuals With Necessary Backtracking}.
+\newblock arXiv:2402.01607, 2024. \url{https://arxiv.org/abs/2402.01607}.
+
+\bibitem{transport}
+L. de Lara et al.
+\newblock \emph{Transport-based Counterfactual Models}.
+\newblock arXiv:2108.13025, 2021. \url{https://arxiv.org/abs/2108.13025}.
+
+\bibitem{hyvarinen}
+A. Hyv\"arinen.
+\newblock Estimation of non-normalized statistical models by score matching.
+\newblock \emph{Journal of Machine Learning Research}, 6:695--709, 2005.
+
+\bibitem{vincent}
+P. Vincent.
+\newblock A connection between score matching and denoising autoencoders.
+\newblock \emph{Neural Computation}, 23(7):1661--1674, 2011.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,544 @@
+monoamine	receptor	neuron	wormbase_id	excluded	excluded_reason	reference
+serotonin	ser-1	RIAL	Expr7825	0		7
+serotonin	ser-1	RIAR	Expr7825	0		7
+serotonin	ser-1	RICL	Expr7825	0		7
+serotonin	ser-1	RICR	Expr7825	0		7
+serotonin	ser-1	PVT	Expr7825	0		7
+serotonin	ser-1	DVC	Expr7825	0		7
+serotonin	ser-1	URYDL	Expr7825	0		7
+serotonin	ser-1	URYDR	Expr7825	0		7
+serotonin	ser-1	URYVL	Expr7825	0		7
+serotonin	ser-1	URYVR	Expr7825	0		7
+serotonin	ser-1	PVQL	Expr8282	0		8
+serotonin	ser-1	PVQR	Expr8282	0		8
+serotonin	ser-1	RMDDL	Expr3962	0		9
+serotonin	ser-1	RMDDR	Expr3962	0		9
+serotonin	ser-1	RMDL	Expr3962	0		9
+serotonin	ser-1	RMDR	Expr3962	0		9
+serotonin	ser-1	RMDVL	Expr3962	0		9
+serotonin	ser-1	RMDVR	Expr3962	0		9
+serotonin	ser-1	RMFL	Expr3962	0		9
+serotonin	ser-1	RMFR	Expr3962	0		9
+serotonin	ser-1	RMHL	Expr3962	0		9
+serotonin	ser-1	RMHR	Expr3962	0		9
+serotonin	ser-4	RIBL	Expr2710	0		10
+serotonin	ser-4	RIBR	Expr2710	0		10
+serotonin	ser-4	PVT	Expr2710	0		10
+serotonin	ser-4	DVC	Expr2710	0		10
+serotonin	ser-4	DVA	Expr2710	0		10
+serotonin	ser-4	RIS	Expr2710	0		10
+serotonin	ser-4	AIBL	Expr10554	0		11
+serotonin	ser-4	AIBR	Expr10554	0		11
+serotonin	ser-4	NSML	Expr10554	0		11
+serotonin	ser-4	NSMR	Expr10554	0		11
+serotonin	ser-4	M1		0		12
+serotonin	ser-4	RIML		0		12
+serotonin	ser-4	RIMR		0		12
+serotonin	ser-5	ASHL	Expr12174	0		7
+serotonin	ser-5	ASHR	Expr12174	0		7
+serotonin	ser-5	AWBL	Expr12174	0		7
+serotonin	ser-5	AWBR	Expr12174	0		7
+serotonin	ser-5	AVJL	Expr12172	0		14
+serotonin	ser-5	AVJR	Expr12172	0		14
+serotonin	ser-7	MCL	Expr3759	0		15
+serotonin	ser-7	MCR	Expr3759	0		15
+serotonin	ser-7	M2L	Expr3759	0		15
+serotonin	ser-7	M2R	Expr3759	0		15
+serotonin	ser-7	M3L	Expr3759	0		15
+serotonin	ser-7	M3R	Expr3759	0		15
+serotonin	ser-7	M4	Expr3759	0		15
+serotonin	ser-7	M5	Expr3759	0		15
+serotonin	ser-7	I2L	Expr3759	0		15
+serotonin	ser-7	I2R	Expr3759	0		15
+serotonin	ser-7	I3	Expr3759	0		15
+serotonin	ser-7	I4	Expr3759	0		15
+serotonin	ser-7	I6	Expr3759	0		15
+serotonin	mod-1	RIML	Expr10023	0		16
+serotonin	mod-1	RIMR	Expr10023	0		16
+serotonin	mod-1	RID	Expr10023	0		16
+serotonin	mod-1	RICL	Expr10023	0		16
+serotonin	mod-1	RICR	Expr10023	0		16
+serotonin	mod-1	AIZL	Expr10023	0		16
+serotonin	mod-1	AIZR	Expr10023	0		16
+serotonin	mod-1	AIYL	Expr10023	0		16
+serotonin	mod-1	AIYR	Expr10023	0		16
+serotonin	mod-1	AIBL	Expr10023	0		16
+serotonin	mod-1	AIBR	Expr10023	0		16
+serotonin	mod-1	AIAL	Expr10023	0		16
+serotonin	mod-1	AIAR	Expr10023	0		16
+serotonin	mod-1	RMED	Expr10553	0		11
+serotonin	mod-1	RMEL	Expr10553	0		11
+serotonin	mod-1	RMER	Expr10553	0		11
+serotonin	mod-1	RMEV	Expr10553	0		11
+serotonin	mod-1	DD1	Expr10553	0		11
+serotonin	mod-1	DD2	Expr10553	0		11
+serotonin	mod-1	DD3	Expr10553	0		11
+serotonin	mod-1	DD4	Expr10553	0		11
+serotonin	mod-1	DD5	Expr10553	0		11
+serotonin	mod-1	DD6	Expr10553	0		11
+serotonin	mod-1	VD1	Expr10553	0		11
+serotonin	mod-1	VD10	Expr10553	0		11
+serotonin	mod-1	VD11	Expr10553	0		11
+serotonin	mod-1	VD12	Expr10553	0		11
+serotonin	mod-1	VD13	Expr10553	0		11
+serotonin	mod-1	VD2	Expr10553	0		11
+serotonin	mod-1	VD3	Expr10553	0		11
+serotonin	mod-1	VD4	Expr10553	0		11
+serotonin	mod-1	VD5	Expr10553	0		11
+serotonin	mod-1	VD6	Expr10553	0		11
+serotonin	mod-1	VD7	Expr10553	0		11
+serotonin	mod-1	VD8	Expr10553	0		11
+serotonin	mod-1	VD9	Expr10553	0		11
+dopamine	dop-1	AUAL	Expr2882	0		21
+dopamine	dop-1	AUAR	Expr2882	0		21
+dopamine	dop-1	RIML	Expr2882	0		21
+dopamine	dop-1	RIMR	Expr2882	0		21
+dopamine	dop-1	ALML	Expr2882	0		21
+dopamine	dop-1	ALMR	Expr2882	0		21
+dopamine	dop-1	RIBL	Expr2882	0		21
+dopamine	dop-1	RIBR	Expr2882	0		21
+dopamine	dop-1	PLML	Expr2882	0		21
+dopamine	dop-1	PLMR	Expr2882	0		21
+dopamine	dop-1	PHCL	Expr2882	0		21
+dopamine	dop-1	PHCR	Expr2882	0		21
+dopamine	dop-1	AVM	Expr2708	0		10
+dopamine	dop-1	ALNL	Expr2708	0		10
+dopamine	dop-1	ALNR	Expr2708	0		10
+dopamine	dop-1	PVQL	Expr2708	0		10
+dopamine	dop-1	PVQR	Expr2708	0		10
+dopamine	dop-1	PLNL	Expr2708	0		10
+dopamine	dop-1	PLNR	Expr2708	0		10
+dopamine	dop-1	RIS	Expr2708	0		10
+dopamine	dop-1	PVDL	Expr3047	0		22
+dopamine	dop-1	PVDR	Expr3047	0		22
+dopamine	dop-1	VA1	Expr3047	0		22
+dopamine	dop-1	VA10	Expr3047	0		22
+dopamine	dop-1	VA11	Expr3047	0		22
+dopamine	dop-1	VA12	Expr3047	0		22
+dopamine	dop-1	VA2	Expr3047	0		22
+dopamine	dop-1	VA3	Expr3047	0		22
+dopamine	dop-1	VA4	Expr3047	0		22
+dopamine	dop-1	VA5	Expr3047	0		22
+dopamine	dop-1	VA6	Expr3047	0		22
+dopamine	dop-1	VA7	Expr3047	0		22
+dopamine	dop-1	VA8	Expr3047	0		22
+dopamine	dop-1	VA9	Expr3047	0		22
+dopamine	dop-1	VB1	Expr3047	0		22
+dopamine	dop-1	VB10	Expr3047	0		22
+dopamine	dop-1	VB11	Expr3047	0		22
+dopamine	dop-1	VB2	Expr3047	0		22
+dopamine	dop-1	VB3	Expr3047	0		22
+dopamine	dop-1	VB4	Expr3047	0		22
+dopamine	dop-1	VB5	Expr3047	0		22
+dopamine	dop-1	VB6	Expr3047	0		22
+dopamine	dop-1	VB7	Expr3047	0		22
+dopamine	dop-1	VB8	Expr3047	0		22
+dopamine	dop-1	VB9	Expr3047	0		22
+dopamine	dop-1	AS1	Expr3047	0		22
+dopamine	dop-1	AS10	Expr3047	0		22
+dopamine	dop-1	AS11	Expr3047	0		22
+dopamine	dop-1	AS2	Expr3047	0		22
+dopamine	dop-1	AS3	Expr3047	0		22
+dopamine	dop-1	AS4	Expr3047	0		22
+dopamine	dop-1	AS5	Expr3047	0		22
+dopamine	dop-1	AS6	Expr3047	0		22
+dopamine	dop-1	AS7	Expr3047	0		22
+dopamine	dop-1	AS8	Expr3047	0		22
+dopamine	dop-1	AS9	Expr3047	0		22
+dopamine	dop-1	DA1	Expr3047	0		22
+dopamine	dop-1	DA2	Expr3047	0		22
+dopamine	dop-1	DA3	Expr3047	0		22
+dopamine	dop-1	DA4	Expr3047	0		22
+dopamine	dop-1	DA5	Expr3047	0		22
+dopamine	dop-1	DA6	Expr3047	0		22
+dopamine	dop-1	DA7	Expr3047	0		22
+dopamine	dop-1	DA8	Expr3047	0		22
+dopamine	dop-1	DA9	Expr3047	0		22
+dopamine	dop-1	DB1	Expr3047	0		22
+dopamine	dop-1	DB2	Expr3047	0		22
+dopamine	dop-1	DB3	Expr3047	0		22
+dopamine	dop-1	DB4	Expr3047	0		22
+dopamine	dop-1	DB5	Expr3047	0		22
+dopamine	dop-1	DB6	Expr3047	0		22
+dopamine	dop-1	DB7	Expr3047	0		22
+dopamine	dop-2	ADEL	Expr2618	0		4
+dopamine	dop-2	ADER	Expr2618	0		4
+dopamine	dop-2	PDEL	Expr2618	0		4
+dopamine	dop-2	PDER	Expr2618	0		4
+dopamine	dop-2	CEPDL	Expr2618	0		4
+dopamine	dop-2	CEPDR	Expr2618	0		4
+dopamine	dop-2	CEPVL	Expr2618	0		4
+dopamine	dop-2	CEPVR	Expr2618	0		4
+dopamine	dop-2	RID	Expr2709	0		10
+dopamine	dop-2	RIAL	Expr2709	0		10
+dopamine	dop-2	RIAR	Expr2709	0		10
+dopamine	dop-2	PDA	Expr2709	0		10
+dopamine	dop-2	SIBDL	Expr2709	0		10
+dopamine	dop-2	SIBDR	Expr2709	0		10
+dopamine	dop-2	SIBVL	Expr2709	0		10
+dopamine	dop-2	SIBVR	Expr2709	0		10
+dopamine	dop-2	SIADL	Expr2709	0		10
+dopamine	dop-2	SIADR	Expr2709	0		10
+dopamine	dop-2	SIAVL	Expr2709	0		10
+dopamine	dop-2	SIAVR	Expr2709	0		10
+dopamine	dop-3	PVDL	Expr3048	0		22
+dopamine	dop-3	PVDR	Expr3048	0		22
+dopamine	dop-3	VA1	Expr3048	0		22
+dopamine	dop-3	VA10	Expr3048	0		22
+dopamine	dop-3	VA11	Expr3048	0		22
+dopamine	dop-3	VA12	Expr3048	0		22
+dopamine	dop-3	VA2	Expr3048	0		22
+dopamine	dop-3	VA3	Expr3048	0		22
+dopamine	dop-3	VA4	Expr3048	0		22
+dopamine	dop-3	VA5	Expr3048	0		22
+dopamine	dop-3	VA6	Expr3048	0		22
+dopamine	dop-3	VA7	Expr3048	0		22
+dopamine	dop-3	VA8	Expr3048	0		22
+dopamine	dop-3	VA9	Expr3048	0		22
+dopamine	dop-3	VB1	Expr3048	0		22
+dopamine	dop-3	VB10	Expr3048	0		22
+dopamine	dop-3	VB11	Expr3048	0		22
+dopamine	dop-3	VB2	Expr3048	0		22
+dopamine	dop-3	VB3	Expr3048	0		22
+dopamine	dop-3	VB4	Expr3048	0		22
+dopamine	dop-3	VB5	Expr3048	0		22
+dopamine	dop-3	VB6	Expr3048	0		22
+dopamine	dop-3	VB7	Expr3048	0		22
+dopamine	dop-3	VB8	Expr3048	0		22
+dopamine	dop-3	VB9	Expr3048	0		22
+dopamine	dop-3	AS1	Expr3048	0		22
+dopamine	dop-3	AS10	Expr3048	0		22
+dopamine	dop-3	AS11	Expr3048	0		22
+dopamine	dop-3	AS2	Expr3048	0		22
+dopamine	dop-3	AS3	Expr3048	0		22
+dopamine	dop-3	AS4	Expr3048	0		22
+dopamine	dop-3	AS5	Expr3048	0		22
+dopamine	dop-3	AS6	Expr3048	0		22
+dopamine	dop-3	AS7	Expr3048	0		22
+dopamine	dop-3	AS8	Expr3048	0		22
+dopamine	dop-3	AS9	Expr3048	0		22
+dopamine	dop-3	DA1	Expr3048	0		22
+dopamine	dop-3	DA2	Expr3048	0		22
+dopamine	dop-3	DA3	Expr3048	0		22
+dopamine	dop-3	DA4	Expr3048	0		22
+dopamine	dop-3	DA5	Expr3048	0		22
+dopamine	dop-3	DA6	Expr3048	0		22
+dopamine	dop-3	DA7	Expr3048	0		22
+dopamine	dop-3	DA8	Expr3048	0		22
+dopamine	dop-3	DA9	Expr3048	0		22
+dopamine	dop-3	DB1	Expr3048	0		22
+dopamine	dop-3	DB2	Expr3048	0		22
+dopamine	dop-3	DB3	Expr3048	0		22
+dopamine	dop-3	DB4	Expr3048	0		22
+dopamine	dop-3	DB5	Expr3048	0		22
+dopamine	dop-3	DB6	Expr3048	0		22
+dopamine	dop-3	DB7	Expr3048	0		22
+dopamine	dop-3	DD1	Expr3048	0		22
+dopamine	dop-3	DD2	Expr3048	0		22
+dopamine	dop-3	DD3	Expr3048	0		22
+dopamine	dop-3	DD4	Expr3048	0		22
+dopamine	dop-3	DD5	Expr3048	0		22
+dopamine	dop-3	DD6	Expr3048	0		22
+dopamine	dop-3	VD1	Expr3048	0		22
+dopamine	dop-3	VD10	Expr3048	0		22
+dopamine	dop-3	VD11	Expr3048	0		22
+dopamine	dop-3	VD12	Expr3048	0		22
+dopamine	dop-3	VD13	Expr3048	0		22
+dopamine	dop-3	VD2	Expr3048	0		22
+dopamine	dop-3	VD3	Expr3048	0		22
+dopamine	dop-3	VD4	Expr3048	0		22
+dopamine	dop-3	VD5	Expr3048	0		22
+dopamine	dop-3	VD6	Expr3048	0		22
+dopamine	dop-3	VD7	Expr3048	0		22
+dopamine	dop-3	VD8	Expr3048	0		22
+dopamine	dop-3	VD9	Expr3048	0		22
+dopamine	dop-3	ASEL	Expr7939	0		23
+dopamine	dop-3	ASER	Expr7939	0		23
+dopamine	dop-3	RICL	Expr8667	0		24
+dopamine	dop-3	RICR	Expr8667	0		24
+dopamine	dop-3	SIADL	Expr8667	0		24
+dopamine	dop-3	SIADR	Expr8667	0		24
+dopamine	dop-3	SIAVL	Expr8667	0		24
+dopamine	dop-3	SIAVR	Expr8667	0		24
+dopamine	dop-3	NSML	Expr11452	0		25
+dopamine	dop-3	NSMR	Expr11452	0		25
+dopamine	dop-3	ASKL	Expr12177	0		26
+dopamine	dop-3	ASKR	Expr12177	0		26
+dopamine	dop-4	AVL	Expr3687	0		27
+dopamine	dop-4	ASGL	Expr3687	0		27
+dopamine	dop-4	ASGR	Expr3687	0		27
+dopamine	dop-4	PQR	Expr3687	0		27
+dopamine	dop-4	I2L	Expr3687	0		27
+dopamine	dop-4	I2R	Expr3687	0		27
+dopamine	dop-4	I1L	Expr3687	0		27
+dopamine	dop-4	I1R	Expr3687	0		27
+dopamine	dop-4	CANL	Expr3687	0		27
+dopamine	dop-4	CANR	Expr3687	0		27
+dopamine	dop-5	ASEL	Expr7939	1	hypothetical DA receptor	23
+dopamine	dop-5	ASER	Expr7939	1	hypothetical DA receptor	23
+dopamine	dop-5	MI		1	hypothetical DA receptor	this study
+dopamine	dop-5	M5		1	hypothetical DA receptor	this study
+dopamine	dop-5	BDUL		1	hypothetical DA receptor	this study
+dopamine	dop-5	BDUR		1	hypothetical DA receptor	this study
+dopamine	dop-5	RIBL		1	hypothetical DA receptor	this study
+dopamine	dop-5	RIBR		1	hypothetical DA receptor	this study
+dopamine	dop-5	PHAL		1	hypothetical DA receptor	this study
+dopamine	dop-5	PHAR		1	hypothetical DA receptor	this study
+dopamine	dop-5	PHBL		1	hypothetical DA receptor	this study
+dopamine	dop-5	PHBR		1	hypothetical DA receptor	this study
+dopamine	dop-5	DVA		1	hypothetical DA receptor	this study
+dopamine	dop-5	AIML		1	hypothetical DA receptor	this study
+dopamine	dop-5	AIMR		1	hypothetical DA receptor	this study
+dopamine	dop-5	ADAL		1	hypothetical DA receptor	this study
+dopamine	dop-5	ADAR		1	hypothetical DA receptor	this study
+dopamine	dop-5	AIYL		1	hypothetical DA receptor	this study
+dopamine	dop-5	AIYR		1	hypothetical DA receptor	this study
+dopamine	dop-5	PVT		1	hypothetical DA receptor	this study
+dopamine	dop-5	DVC		1	hypothetical DA receptor	this study
+dopamine	dop-5	RMGL		1	hypothetical DA receptor	this study
+dopamine	dop-5	RMGR		1	hypothetical DA receptor	this study
+dopamine	dop-5	PVCL		1	hypothetical DA receptor	this study
+dopamine	dop-5	PVCR		1	hypothetical DA receptor	this study
+dopamine	dop-5	URXL		1	hypothetical DA receptor	this study
+dopamine	dop-5	URXR		1	hypothetical DA receptor	this study
+dopamine	dop-5	ASIL		1	hypothetical DA receptor	this study
+dopamine	dop-5	ASIR		1	hypothetical DA receptor	this study
+dopamine	dop-5	RIFL		1	hypothetical DA receptor	this study
+dopamine	dop-5	RIFR		1	hypothetical DA receptor	this study
+dopamine	dop-6	OLLL	Expr11993	1	hypothetical DA receptor	28
+dopamine	dop-6	OLLR	Expr11993	1	hypothetical DA receptor	28
+dopamine	dop-6	RIBL		1	hypothetical DA receptor	this study
+dopamine	dop-6	RIBR		1	hypothetical DA receptor	this study
+dopamine	dop-6	ASIL		1	hypothetical DA receptor	this study
+dopamine	dop-6	ASIR		1	hypothetical DA receptor	this study
+dopamine	dop-6	PHAL		1	hypothetical DA receptor	this study
+dopamine	dop-6	PHAR		1	hypothetical DA receptor	this study
+dopamine	dop-6	IL2DL		1	hypothetical DA receptor	this study
+dopamine	dop-6	IL2DR		1	hypothetical DA receptor	this study
+dopamine	dop-6	IL2L		1	hypothetical DA receptor	this study
+dopamine	dop-6	IL2R		1	hypothetical DA receptor	this study
+dopamine	dop-6	IL2VL		1	hypothetical DA receptor	this study
+dopamine	dop-6	IL2VR		1	hypothetical DA receptor	this study
+dopamine	dop-6	PVQL		1	hypothetical DA receptor	this study
+dopamine	dop-6	PVQR		1	hypothetical DA receptor	this study
+dopamine	dop-6	URADL		1	hypothetical DA receptor	this study
+dopamine	dop-6	URADR		1	hypothetical DA receptor	this study
+dopamine	dop-6	URAVL		1	hypothetical DA receptor	this study
+dopamine	dop-6	URAVR		1	hypothetical DA receptor	this study
+dopamine	dop-6	AVFL		1	hypothetical DA receptor	this study
+dopamine	dop-6	AVFR		1	hypothetical DA receptor	this study
+dopamine	dop-6	ADFL		1	hypothetical DA receptor	this study
+dopamine	dop-6	ADFR		1	hypothetical DA receptor	this study
+dopamine	dop-6	RIH		1	hypothetical DA receptor	this study
+dopamine	dop-6	URXL		1	hypothetical DA receptor	this study
+dopamine	dop-6	URXR		1	hypothetical DA receptor	this study
+dopamine	dop-6	AUAL		1	hypothetical DA receptor	this study
+dopamine	dop-6	AUAR		1	hypothetical DA receptor	this study
+dopamine	dop-6	RID		1	hypothetical DA receptor	this study
+dopamine	dop-6	RMDDL		1	hypothetical DA receptor	this study
+dopamine	dop-6	RMDDR		1	hypothetical DA receptor	this study
+dopamine	dop-6	RMDL		1	hypothetical DA receptor	this study
+dopamine	dop-6	RMDR		1	hypothetical DA receptor	this study
+dopamine	dop-6	RMDVL		1	hypothetical DA receptor	this study
+dopamine	dop-6	RMDVR		1	hypothetical DA receptor	this study
+dopamine	lgc-53	HSNL		0		this study
+dopamine	lgc-53	HSNR		0		this study
+dopamine	lgc-53	PVDL		0		this study
+dopamine	lgc-53	PVDR		0		this study
+dopamine	lgc-53	CANL		0		this study
+dopamine	lgc-53	CANR		0		this study
+dopamine	lgc-53	IL2DL		0		this study
+dopamine	lgc-53	IL2DR		0		this study
+dopamine	lgc-53	IL2L		0		this study
+dopamine	lgc-53	IL2R		0		this study
+dopamine	lgc-53	IL2VL		0		this study
+dopamine	lgc-53	IL2VR		0		this study
+dopamine	lgc-53	VA1		0		this study
+dopamine	lgc-53	VA10		0		this study
+dopamine	lgc-53	VA11		0		this study
+dopamine	lgc-53	VA12		0		this study
+dopamine	lgc-53	VA2		0		this study
+dopamine	lgc-53	VA3		0		this study
+dopamine	lgc-53	VA4		0		this study
+dopamine	lgc-53	VA5		0		this study
+dopamine	lgc-53	VA6		0		this study
+dopamine	lgc-53	VA7		0		this study
+dopamine	lgc-53	VA8		0		this study
+dopamine	lgc-53	VA9		0		this study
+dopamine	lgc-53	AIML		0		this study
+dopamine	lgc-53	AIMR		0		this study
+dopamine	lgc-53	FLPL		0		this study
+dopamine	lgc-53	FLPR		0		this study
+dopamine	lgc-53	AVFL		0		this study
+dopamine	lgc-53	AVFR		0		this study
+dopamine	lgc-53	URYDL		0		this study
+dopamine	lgc-53	URYDR		0		this study
+dopamine	lgc-53	URYVL		0		this study
+dopamine	lgc-53	URYVR		0		this study
+octopamine	octr-1	ASHL	Expr7846	0		17
+octopamine	octr-1	ASHR	Expr7846	0		17
+octopamine	octr-1	ASIL	Expr7846	0		17
+octopamine	octr-1	ASIR	Expr7846	0		17
+octopamine	octr-1	AIYL	Expr7846	0		17
+octopamine	octr-1	AIYR	Expr7846	0		17
+octopamine	octr-1	ADEL	Expr7846	0		17
+octopamine	octr-1	ADER	Expr7846	0		17
+octopamine	octr-1	CEPDL	Expr7846	0		17
+octopamine	octr-1	CEPDR	Expr7846	0		17
+octopamine	octr-1	CEPVL	Expr7846	0		17
+octopamine	octr-1	CEPVR	Expr7846	0		17
+octopamine	ser-3	PVQL	Expr8275	0		18
+octopamine	ser-3	PVQR	Expr8275	0		18
+octopamine	ser-3	PHBL	Expr8275	0		18
+octopamine	ser-3	PHBR	Expr8275	0		18
+octopamine	ser-3	PHAL	Expr8275	0		18
+octopamine	ser-3	PHAR	Expr8275	0		18
+octopamine	ser-3	SIADL	Expr8275	0		18
+octopamine	ser-3	SIADR	Expr8275	0		18
+octopamine	ser-3	SIAVL	Expr8275	0		18
+octopamine	ser-3	SIAVR	Expr8275	0		18
+octopamine	ser-3	ASHL	Expr10640	0		19
+octopamine	ser-3	ASHR	Expr10640	0		19
+octopamine	ser-6	AWBL	Expr10641	0		19
+octopamine	ser-6	AWBR	Expr10641	0		19
+octopamine	ser-6	ASIL	Expr10641	0		19
+octopamine	ser-6	ASIR	Expr10641	0		19
+octopamine	ser-6	ADLL	Expr10641	0		19
+octopamine	ser-6	ADLR	Expr10641	0		19
+octopamine	ser-6	RICL	Expr11709	0		20
+octopamine	ser-6	RICR	Expr11709	0		20
+octopamine	ser-6	SIADL	Expr11709	0		20
+octopamine	ser-6	SIADR	Expr11709	0		20
+octopamine	ser-6	SIAVL	Expr11709	0		20
+octopamine	ser-6	SIAVR	Expr11709	0		20
+tyramine	ser-2	BDUL	Expr2707	0		10
+tyramine	ser-2	BDUR	Expr2707	0		10
+tyramine	ser-2	AVHL	Expr2707	0		10
+tyramine	ser-2	AVHR	Expr2707	0		10
+tyramine	ser-2	AUAL	Expr2707	0		10
+tyramine	ser-2	AUAR	Expr2707	0		10
+tyramine	ser-2	ALNL	Expr2707	0		10
+tyramine	ser-2	ALNR	Expr2707	0		10
+tyramine	ser-2	RID	Expr2707	0		10
+tyramine	ser-2	RICL	Expr2707	0		10
+tyramine	ser-2	RICR	Expr2707	0		10
+tyramine	ser-2	AIZL	Expr2707	0		10
+tyramine	ser-2	AIZR	Expr2707	0		10
+tyramine	ser-2	RIAL	Expr2707	0		10
+tyramine	ser-2	RIAR	Expr2707	0		10
+tyramine	ser-2	AIYL	Expr2707	0		10
+tyramine	ser-2	AIYR	Expr2707	0		10
+tyramine	ser-2	PVT	Expr2707	0		10
+tyramine	ser-2	PVDL	Expr2707	0		10
+tyramine	ser-2	PVDR	Expr2707	0		10
+tyramine	ser-2	PVCL	Expr2707	0		10
+tyramine	ser-2	PVCR	Expr2707	0		10
+tyramine	ser-2	OLLL	Expr2707	0		10
+tyramine	ser-2	OLLR	Expr2707	0		10
+tyramine	ser-2	NSML	Expr2707	0		10
+tyramine	ser-2	NSMR	Expr2707	0		10
+tyramine	ser-2	LUAL	Expr2707	0		10
+tyramine	ser-2	LUAR	Expr2707	0		10
+tyramine	ser-2	DVA	Expr2707	0		10
+tyramine	ser-2	DA9	Expr2707	0		10
+tyramine	ser-2	CANL	Expr2707	0		10
+tyramine	ser-2	CANR	Expr2707	0		10
+tyramine	ser-2	SIADL	Expr2707	0		10
+tyramine	ser-2	SIADR	Expr2707	0		10
+tyramine	ser-2	SIAVL	Expr2707	0		10
+tyramine	ser-2	SIAVR	Expr2707	0		10
+tyramine	ser-2	SDQL	Expr2707	0		10
+tyramine	ser-2	SDQR	Expr2707	0		10
+tyramine	ser-2	SABD	Expr2707	0		10
+tyramine	ser-2	SABVL	Expr2707	0		10
+tyramine	ser-2	SABVR	Expr2707	0		10
+tyramine	ser-2	RMED	Expr2707	0		10
+tyramine	ser-2	RMEL	Expr2707	0		10
+tyramine	ser-2	RMER	Expr2707	0		10
+tyramine	ser-2	RMEV	Expr2707	0		10
+tyramine	ser-2	PDA	Expr3206	0		29
+tyramine	ser-2	VD1	Expr10758	0		30
+tyramine	ser-2	VD10	Expr10758	0		30
+tyramine	ser-2	VD11	Expr10758	0		30
+tyramine	ser-2	VD12	Expr10758	0		30
+tyramine	ser-2	VD13	Expr10758	0		30
+tyramine	ser-2	VD2	Expr10758	0		30
+tyramine	ser-2	VD3	Expr10758	0		30
+tyramine	ser-2	VD4	Expr10758	0		30
+tyramine	ser-2	VD5	Expr10758	0		30
+tyramine	ser-2	VD6	Expr10758	0		30
+tyramine	ser-2	VD7	Expr10758	0		30
+tyramine	ser-2	VD8	Expr10758	0		30
+tyramine	ser-2	VD9	Expr10758	0		30
+tyramine	tyra-2	ASIL	Expr3415	0		31
+tyramine	tyra-2	ASIR	Expr3415	0		31
+tyramine	tyra-2	ASHL	Expr3415	0		31
+tyramine	tyra-2	ASHR	Expr3415	0		31
+tyramine	tyra-2	ASGL	Expr3415	0		31
+tyramine	tyra-2	ASGR	Expr3415	0		31
+tyramine	tyra-2	ASEL	Expr3415	0		31
+tyramine	tyra-2	ASER	Expr3415	0		31
+tyramine	tyra-2	ALML	Expr3415	0		31
+tyramine	tyra-2	ALMR	Expr3415	0		31
+tyramine	tyra-2	PVDL	Expr3415	0		31
+tyramine	tyra-2	PVDR	Expr3415	0		31
+tyramine	tyra-2	NSML	Expr3415	0		31
+tyramine	tyra-2	NSMR	Expr3415	0		31
+tyramine	tyra-2	MCL	Expr3415	0		31
+tyramine	tyra-2	MCR	Expr3415	0		31
+tyramine	tyra-2	CANL	Expr3415	0		31
+tyramine	tyra-2	CANR	Expr3415	0		31
+tyramine	tyra-3	BAGL	Expr11003	0		32
+tyramine	tyra-3	BAGR	Expr11003	0		32
+tyramine	tyra-3	AWCL	Expr11003	0		32
+tyramine	tyra-3	AWCR	Expr11003	0		32
+tyramine	tyra-3	AUAL	Expr11003	0		32
+tyramine	tyra-3	AUAR	Expr11003	0		32
+tyramine	tyra-3	ASKL	Expr11003	0		32
+tyramine	tyra-3	ASKR	Expr11003	0		32
+tyramine	tyra-3	AIML	Expr11003	0		32
+tyramine	tyra-3	AIMR	Expr11003	0		32
+tyramine	tyra-3	AFDL	Expr11003	0		32
+tyramine	tyra-3	AFDR	Expr11003	0		32
+tyramine	tyra-3	ADLL	Expr11003	0		32
+tyramine	tyra-3	ADLR	Expr11003	0		32
+tyramine	tyra-3	OLQDL	Expr11003	0		32
+tyramine	tyra-3	OLQDR	Expr11003	0		32
+tyramine	tyra-3	OLQVL	Expr11003	0		32
+tyramine	tyra-3	OLQVR	Expr11003	0		32
+tyramine	tyra-3	CEPDL	Expr11003	0		32
+tyramine	tyra-3	CEPDR	Expr11003	0		32
+tyramine	tyra-3	CEPVL	Expr11003	0		32
+tyramine	tyra-3	CEPVR	Expr11003	0		32
+tyramine	tyra-3	SDQL	Expr11003	0		32
+tyramine	tyra-3	SDQR	Expr11003	0		32
+tyramine	tyra-3	PVT	Expr6415	0		33
+tyramine	tyra-3	ADEL	Expr12173	0		17
+tyramine	tyra-3	ADER	Expr12173	0		17
+tyramine	lgc-55	AVBL	Expr8613	0		34
+tyramine	lgc-55	AVBR	Expr8613	0		34
+tyramine	lgc-55	ALNL	Expr8613	0		34
+tyramine	lgc-55	ALNR	Expr8613	0		34
+tyramine	lgc-55	IL1DL	Expr8613	0		34
+tyramine	lgc-55	IL1DR	Expr8613	0		34
+tyramine	lgc-55	IL1L	Expr8613	0		34
+tyramine	lgc-55	IL1R	Expr8613	0		34
+tyramine	lgc-55	IL1VL	Expr8613	0		34
+tyramine	lgc-55	IL1VR	Expr8613	0		34
+tyramine	lgc-55	HSNL	Expr8613	0		34
+tyramine	lgc-55	HSNR	Expr8613	0		34
+tyramine	lgc-55	SMDDL	Expr8613	0		34
+tyramine	lgc-55	SMDDR	Expr8613	0		34
+tyramine	lgc-55	SMDVL	Expr8613	0		34
+tyramine	lgc-55	SMDVR	Expr8613	0		34
+tyramine	lgc-55	SDQL	Expr8613	0		34
+tyramine	lgc-55	SDQR	Expr8613	0		34
+tyramine	lgc-55	RMDDL	Expr8613	0		34
+tyramine	lgc-55	RMDDR	Expr8613	0		34
+tyramine	lgc-55	RMDL	Expr8613	0		34
+tyramine	lgc-55	RMDR	Expr8613	0		34
+tyramine	lgc-55	RMDVL	Expr8613	0		34
+tyramine	lgc-55	RMDVR	Expr8613	0		34
+tyramine	lgc-55	AVM	Expr8997	0		35
+tyramine	lgc-55	ALML	Expr8997	0		35
+tyramine	lgc-55	ALMR	Expr8997	0		35

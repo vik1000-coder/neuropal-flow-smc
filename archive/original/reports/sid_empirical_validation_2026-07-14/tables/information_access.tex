@@ -1,0 +1,12 @@
+\begin{table}[H]\centering\small
+\caption{Audited information access.}
+\begin{tabularx}{\linewidth}{p{0.22\linewidth}p{0.27\linewidth}X}\toprule
+Method class & Effective access & Consequence\\\midrule
+Direct moments & observational training & Target-specific raw moment/event heads; analytic derivatives \\
+Ratio critic & training plus conditional evaluation queries & Fresh conditional draws center and integrate the witness \\
+Generic score readouts (Tier 1) & training plus oracle-density quadrature & Favorable best case; not an observational-only comparison \\
+Generic score readouts (Tier 2 static) & training plus oracle-density quadrature & Same favorable quadrature audit as Tier 1 \\
+Matched normalized law & known DGP tilt basis & Fits the amplitude of supplied $\psi(y)$ \\
+Matched dynamic mixture & known gain/noise family & Fits the mixing law with supplied structural form \\
+Endpoint adapters & endpoint labels or conditional queries & Stronger access than observational local regression \\
+\bottomrule\end{tabularx}\end{table}

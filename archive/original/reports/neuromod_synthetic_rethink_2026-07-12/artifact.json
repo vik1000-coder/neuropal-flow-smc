@@ -1,0 +1,256 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Rethinking the Synthetic Benchmark for Neuromodulatory SID",
+    "description": "A technical audit of current synthetic evidence and a staged out-of-family benchmark for nonlinear, high-dimensional, partially observed neuromodulatory dynamics.",
+    "generatedAt": "2026-07-13T02:12:11Z",
+    "charts": [
+      {
+        "id": "coverage_status_chart",
+        "title": "Coverage status across target-domain requirements",
+        "subtitle": "Ten requirements audited from the hierarchical theory against the strongest current synthetic lanes.",
+        "type": "bar",
+        "dataset": "coverage_summary",
+        "sourceId": "coverage_audit_notes",
+        "encodings": {
+          "x": {"field": "coverage_class", "type": "nominal", "label": "Coverage class"},
+          "y": {"field": "requirement_count", "type": "quantitative", "label": "Requirements", "format": "number"}
+        },
+        "valueFormat": "number"
+      }
+    ],
+    "tables": [
+      {
+        "id": "coverage_table",
+        "title": "Coverage of the intended use case",
+        "subtitle": "Current strongest coverage versus the requirements implied by the hierarchical neuromodulatory theory.",
+        "dataset": "coverage_audit",
+        "sourceId": "coverage_audit_notes",
+        "density": "spacious",
+        "defaultSort": {"field": "requirement", "direction": "asc"},
+        "columns": [
+          {"field": "requirement", "label": "Requirement", "type": "text"},
+          {"field": "current_coverage", "label": "Current strongest coverage", "type": "text"},
+          {"field": "assessment", "label": "Assessment", "type": "text"},
+          {"field": "required_test", "label": "Required new test", "type": "text"}
+        ]
+      },
+      {
+        "id": "first_wave_table",
+        "title": "First decisive experiment wave",
+        "subtitle": "A staged pilot that separates law complexity, observation corruption, and out-of-distribution intervention transfer.",
+        "dataset": "first_wave",
+        "sourceId": "first_wave_design",
+        "density": "spacious",
+        "defaultSort": {"field": "experiment", "direction": "asc"},
+        "columns": [
+          {"field": "experiment", "label": "Experiment", "type": "text"},
+          {"field": "isolates", "label": "What it isolates", "type": "text"},
+          {"field": "design", "label": "Pilot design", "type": "text"},
+          {"field": "primary_gate", "label": "Primary advance gate", "type": "text"}
+        ]
+      },
+      {
+        "id": "baseline_table",
+        "title": "Baselines matched to the estimand",
+        "subtitle": "Every SID result must beat the strongest simple method for the quantity being estimated.",
+        "dataset": "baseline_map",
+        "sourceId": "baseline_design",
+        "density": "spacious",
+        "defaultSort": {"field": "estimand", "direction": "asc"},
+        "columns": [
+          {"field": "estimand", "label": "Estimand", "type": "text"},
+          {"field": "mandatory_baselines", "label": "Mandatory baselines", "type": "text"},
+          {"field": "sid_success", "label": "What would count as SID success", "type": "text"}
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "hierarchical_theory",
+        "label": "A Hierarchical Theory of Neuromodulatory Dynamics",
+        "path": "documents/Hierarchical_Theory_of_Neuromodulatory_Dynamics_LaTeX_2.pdf"
+      },
+      {
+        "id": "coverage_audit_notes",
+        "label": "Local simulator and configuration coverage audit",
+        "path": "reports/neuromod_synthetic_rethink_2026-07-12/source_notes.md",
+        "query": {
+          "engine": "sqlite",
+          "language": "sql",
+          "description": "Counts the ten audited requirements by decision-relevant coverage class.",
+          "executed_at": "2026-07-13T02:12:11Z",
+          "sql": "WITH audit(coverage_class) AS (VALUES ('Absent or major gap'),('Absent or major gap'),('Absent or major gap'),('Absent or major gap'),('Partial or insufficient'),('Partial or insufficient'),('Partial or insufficient'),('Partial or insufficient'),('Partial or insufficient'),('Useful but narrow')) SELECT coverage_class, COUNT(*) AS requirement_count FROM audit GROUP BY coverage_class ORDER BY coverage_class"
+        }
+      },
+      {
+        "id": "prior_synthesis",
+        "label": "Unified SID synthetic-methods synthesis",
+        "path": "reports/sid_synthesis_2026-07-12/main.tex"
+      },
+      {
+        "id": "benchmark_design",
+        "label": "Revised benchmark design developed from the audited evidence",
+        "path": "reports/neuromod_synthetic_rethink_2026-07-12/artifact.json"
+      },
+      {
+        "id": "first_wave_design",
+        "label": "First decisive experiment wave",
+        "path": "reports/neuromod_synthetic_rethink_2026-07-12/artifact.json",
+        "query": {
+          "engine": "sqlite",
+          "language": "sql",
+          "description": "Materializes the five staged experiments in the recommended first wave.",
+          "executed_at": "2026-07-13T02:12:11Z",
+          "sql": "WITH first_wave(step_order,experiment,isolates,design,primary_gate) AS (VALUES (1,'E1: law and adapter misspecification','Out-of-family backend and adapter validity','G-A clean latent pilot','Oracle and learned routes beat zero/direct baselines'),(2,'E2: paired measurement stress','Observation-layer degradation','Paired calcium, artifact and missing views','Bounded degradation and controlled confusion'),(3,'E3: OOD and intervention transfer','Unseen regime and operation transfer','Held-out noise, input, state and intervention','Response and contrast gains persist OOD'),(4,'E4: mechanistic confirmation','Release and receptor complexity','Independent G-B generator','Advantage repeats in a second family'),(5,'E5: state/path confirmation','Entry, exit, dwell and sequences','Independent G-C generator','Path metrics beat HMM/HSMM and one-step baselines')) SELECT * FROM first_wave ORDER BY step_order"
+        }
+      },
+      {
+        "id": "baseline_design",
+        "label": "Estimand-matched baseline map",
+        "path": "reports/neuromod_synthetic_rethink_2026-07-12/artifact.json",
+        "query": {
+          "engine": "sqlite",
+          "language": "sql",
+          "description": "Materializes the mandatory baseline family for each primary estimand.",
+          "executed_at": "2026-07-13T02:12:11Z",
+          "sql": "WITH baselines(step_order,estimand,mandatory_baselines,sid_success) AS (VALUES (1,'Conditional mean','Persistence, ridge/VAR, SINDy, nonlinear autoregression','Useful non-mean channels or amortization'),(2,'Conditional law','Gaussian/Student-t NLL, MDN, flow, autoregressive density','Calibration or unique sample-only capability'),(3,'Finite law contrast','Exact/direct ratio, classifier, uLSIF/KLIEP, MMD, energy, moments','Lower localized witness/channel error'),(4,'Variance/covariance','Residual variance, shrinkage covariance, factor Gaussian','Beats direct channel estimators and confusion controls'),(5,'Tail/threshold','Quantile/distribution regression, Student-t, MDN, flow, event classifier','Tail contrast without variance leakage'),(6,'State/path law','HMM/HSMM, recurrent density, direct multi-horizon','Better entry/exit/dwell/path effects'),(7,'Perturbational response','Paired empirical response, response regression, generative rollout','Lower OOD common-history response error')) SELECT * FROM baselines ORDER BY step_order"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "layout": "full",
+        "body": "# Rethinking the Synthetic Benchmark for Neuromodulatory SID"
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Technical summary\n\n**Yes: the current experiments are necessary unit tests, but they are not a persuasive test of the intended use case.** The matched objective panel deliberately uses a small one-step complete-state generator whose conditional law is close to the Gaussian and low-order models being compared. Its result—Gaussian likelihood and classical dynamics win—correctly answers the narrow matched-regime question. It does not show that Gaussian likelihood remains best on high-dimensional nonlinear partially observed dynamics. Equally importantly, it does not show that SID or diffusion will win there.\n\nThe benchmark should therefore be split into two tiers. Keep the current simulator as an **oracle and estimand-validation tier**. Add an **out-of-family generalization tier** in which no candidate estimator matches the generator, the modulator is hidden, the observation process is complex, and test data differ in animal parameters, state occupancy, input amplitude, observation quality, and interventions. The principal targets should be observable finite law contrasts, typed channel effects, calibrated predictive distributions, perturbational response kernels, and path/state effects—not recovery of convenient generator coefficients.\n\nThe most decisive near-term test is a 32-neuron nonlinear hidden-state pilot with multivariate non-Gaussian noise and a separately applied calcium/measurement layer. Run the predictive backends and finite-SID adapters first on clean latent observations, then on corrupted partial observations, then on held-out interventions. This three-stage decomposition will show whether failure comes from the predictive model, the contrast adapter, or the observation process."
+      },
+      {
+        "id": "current_scope",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## The current evidence is closer to a unit-test suite than a target-domain benchmark\n\nThe strongest matched objective run uses ten neurons, three modulators, a single observed lag, a one-step horizon, five DGP seeds, and the complete latent state. Release and clearance are deterministic conditional on the current state; receptor occupancy is an instantaneous Hill map; innovations are Gaussian except in the explicit matched-tail lane. The calcium measurement process is absent from that comparison.\n\nOther frozen suites add useful pieces: up to twelve neurons, horizons one and four, calcium observations, maximum history lags through sixteen, held-out simulated worms, parameter coefficient variation, 2.5x measurement noise, and 2x calcium decay. These are real strengths. But all remain generated from the same basic simulator family, and none combines high dimension, hidden modulatory state, nonlinear measurement saturation, stochastic release, shared artifacts, missing sources, switching regimes, long-memory dynamics, and non-Gaussian multivariate innovations.\n\nThe correct interpretation is therefore: **current wins and failures are internally valid for the registered synthetic family; their transport to the motivating regime is unknown.**"
+      },
+      {"id": "coverage_chart", "type": "chart", "layout": "full", "chartId": "coverage_status_chart"},
+      {"id": "coverage", "type": "table", "layout": "full", "tableId": "coverage_table"},
+      {
+        "id": "matched_winners",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Why the matched generator changes the meaning of the leaderboard\n\nA simple method winning on its own home field is not a defect in the experiment. It establishes a lower bound on what a more flexible method must justify. The problem arises only if that result is interpreted as a final choice for the real target domain.\n\nThree conclusions must remain separate:\n\n1. **Matched-regime efficiency:** Gaussian NLL and sparse mean dynamics are currently best when the law is near their assumptions.\n2. **Adapter validity:** finite contrasts currently work for location and low-rank mixture changes but fail covariance and skew even with oracle samples. This failure will persist in a more complex generator unless the adapter is redesigned.\n3. **Flexible-backend value:** diffusion or score models have not yet been tested in a regime that actually requires their expressivity. A harder generator could reveal an advantage, but only if the same finite contrast and channel metrics improve relative to flows, mixtures, direct channel estimators, and generic two-sample methods.\n\nThe new benchmark must be hard because of scientifically relevant misspecification, not because it contains arbitrary chaos or an impossibly low signal-to-noise ratio."
+      },
+      {
+        "id": "new_architecture",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## A new benchmark should separate four sources of difficulty\n\n### Lane A: out-of-family predictive law\n\nGenerate latent neural dynamics with a simulator that is not used by any candidate estimator: a nonlinear reservoir or neural SDE with sparse recurrent structure, hidden low-dimensional modulatory drive, state-dependent gain, multivariate skew/heavy-tail/jump innovations, and low-rank conditional covariance. Candidate models receive only histories and future observations; they are not told the generator features.\n\n### Lane B: measurement and partial observation\n\nRender the exact same latent trajectories through heterogeneous calcium rise/decay kernels, saturating fluorescence, bleaching drift, shot/read noise, a low-rank motion artifact, temporal downsampling, and random or source-targeted missing neurons. Because latent realizations are paired across observation variants, degradation can be attributed to measurement rather than biological variation.\n\n### Lane C: controlled neuromodulatory perturbations\n\nAt common branch-point histories, apply randomized input changes, source silencing, ligand pulses, receptor attenuation, and factorial co-perturbations using common random numbers. Score observable response kernels and typed finite contrasts. This gives causal synthetic truth without requiring a fitted method to identify a unique latent concentration or receptor parameter.\n\n### Lane D: state and path laws\n\nAdd semi-Markov regimes with distinct entry and exit effects, state-dependent channel action, and distributed memory. Evaluate transition hazards, dwell survival, entry-within-horizon probability, and block/path energy. One-step mean accuracy is not allowed to stand in for path-law recovery."
+      },
+      {
+        "id": "generator_spec",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Recommended generator families\n\nUse at least three independently specified families so the benchmark cannot be optimized to one simulator.\n\n**G-A: nonlinear stochastic reservoir.** A 32–128 dimensional latent process with random sparse nonlinear interactions, multiplicative modulatory control, low-rank conditional covariance, and skew-t plus jump innovations. Its purpose is statistical misspecification, not biophysical realism.\n\n**G-B: hybrid release–receptor circuit.** Stochastic event or graded release, heterogeneous clearance, dynamic receptor binding/desensitization, nonlinear target action, and separate calcium observation. Its purpose is mechanistic consistency with the attached theory without exposing the fitted model to the true latent states.\n\n**G-C: switching path-law system.** Semi-Markov behavioral/network states, state-specific emissions and coupling, interaction between modulators, feedback, and a broad timescale mixture. Its purpose is to test persistence and trajectory effects invisible to one-step mean models.\n\nA later semi-synthetic lane can fit an unlabeled null generator to realistic calcium statistics and inject known perturbations. That can improve realism without using real-data performance as ground truth."
+      },
+      {
+        "id": "first_wave_intro",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## The first wave should be small enough to finish and strong enough to decide\n\nDo not start with a full factorial over every biological mechanism. The first wave should decompose errors in a fixed order: predictive law, adapter, observation layer, then OOD intervention. Use six independent generator seeds for engineering and failure discovery; freeze the design and expand decisive comparisons to at least twenty generator seeds."
+      },
+      {"id": "first_wave", "type": "table", "layout": "full", "tableId": "first_wave_table"},
+      {
+        "id": "pilot_details",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Concrete pilot specification\n\nUse 32 latent neurons, observe 24 in the reference condition and 16 in the missing-source condition, four hidden modulatory processes, three behavioral regimes, 32 independent episodes per generator seed, and prediction horizons 1, 4, 16, and 64 frames. Draw recurrent and modulatory functions independently for each seed.\n\nUse four innovation conditions: Gaussian; Student-t with 3–5 degrees of freedom; skewed mixture; and correlated jump noise. Use three observation conditions: latent clean; heterogeneous calcium plus saturation; and the same observation with shared artifact and structured missingness. Train, validation, and test splits are by episode and generator instance. The final test additionally holds out one noise family, one state-occupancy mixture, stronger input amplitudes, and at least one intervention type.\n\nHistory perturbations must be supported. Prefer randomized exogenous input or experimentally defined branch-point operations over arbitrary off-manifold edits to an observed calcium history. For every finite contrast, retain an oracle Monte Carlo truth with common random numbers and report its Monte Carlo standard error."
+      },
+      {
+        "id": "baselines_intro",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Baselines must be chosen by the target, not by methodological family\n\nA flexible SID stack is only useful if it beats methods that directly estimate the requested channel. A diffusion backend should also be compared with flexible normalized alternatives such as mixtures and flows; otherwise any win could be attributed to capacity rather than the score representation."
+      },
+      {"id": "baselines", "type": "table", "layout": "full", "tableId": "baseline_table"},
+      {
+        "id": "metrics_and_gates",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Decision metrics and preregistered gates\n\n**Predictive law.** Report held-out NLL where available, energy score, marginal CRPS, calibration, coverage, and block/path energy. A good native DSM loss is not a predictive-law win.\n\n**Finite SID witness.** Report witness NRMSE and channel nISE against the zero baseline of 1, conditional centering, support/overlap diagnostics, and agreement between density, classifier, direct-moment, and score/sample routes.\n\n**Neuromodulatory effects.** Report perturbational response-kernel error, mean/gain/variance/covariance/tail effects, and the observable source–target–timescale–channel tensor. Do not require recovery of arbitrary latent rotations or uniquely unidentifiable physical parameters.\n\n**Path/state effects.** Report transition-hazard calibration, entry versus exit effects, dwell survival error, state-entry-within-horizon probability, and path-law score.\n\nA result advances only if:\n\n- the practical oracle adapter beats the zero baseline before learned backends are compared;\n- the learned method beats the strongest direct estimator for that channel with uncertainty;\n- the result repeats in at least two generator families and survives one held-out regime;\n- null and nuisance-confusion controls pass;\n- improvement is not limited to native training loss or in-distribution prediction; and\n- failure counts, compute, overlap, and Monte Carlo truth precision are reported."
+      },
+      {
+        "id": "what_not_to_do",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## What should not be done next\n\n- Do not merely increase the current simulator from 10 to 100 neurons while retaining the same one-step Gaussian law. That tests scaling, not generalization.\n- Do not combine every difficulty immediately. A single catastrophic realistic condition will not reveal whether the model, adapter, or measurement layer failed.\n- Do not expose true concentration or receptor occupancy to the main predictive methods. Retain those only as oracle-information ceilings.\n- Do not call recovery of a generator coefficient biological mechanism recovery. Score observable laws, finite contrasts, response kernels, and controlled operations first.\n- Do not run changepoint scans until the corresponding static channel passes oracle, learned-model, and nuisance-confusion gates.\n- Do not let diffusion avoid comparison with conditional flows, mixtures, direct channel regression, and sample-only two-sample methods."
+      },
+      {
+        "id": "next_steps",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Recommended next steps\n\n1. Freeze the current suite as **Tier 1: estimand and implementation validation**; do not discard it.\n2. Implement G-A first because it is the cheapest clean test of out-of-family predictive and adapter performance.\n3. Run oracle direct moments, exact ratios where available, classifiers, uLSIF/KLIEP, and the redesigned Riesz/Hodge adapters before training diffusion.\n4. Add the paired measurement renderer and repeat the same latent trajectories under clean, calcium, artifact, and missing-source views.\n5. Add held-out branch-point interventions and OOD regimes.\n6. Only if a flexible backend survives those gates, implement G-B and G-C for mechanistic and path-law confirmation.\n\nThe strategic test is no longer “can SID recover the coefficient we put into a SID-shaped simulator?” It is “can one learned predictive generator plus finite typed contrasts recover stable, useful, supported changes of a complex observed law better than direct and generative alternatives under partial observation and distribution shift?”"
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Further questions\n\n- Which observed intervention axis is scientifically primary: randomized stimulus amplitude, source activation, ligand pulse, or receptor perturbation?\n- Should the first high-dimensional target be a population covariance/interaction contrast, a tail event, or a state-transition probability? The existing adapter failures make covariance and skew scientifically important but high risk.\n- What dimensionality and recording length are realistic enough to matter while keeping twenty-seed confirmation affordable?\n- Is the central product one reusable predictive generator supporting many contrasts, or the best single contrast estimator? The benchmark should measure amortization across requested channels.\n- Which aspects of calcium kinetics can be calibrated externally and which must remain nuisance uncertainty?"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-07-13T02:12:11Z",
+    "status": "ready",
+    "datasets": {
+      "coverage_audit": [
+        {"priority": 1, "requirement": "High-dimensional population law", "current_coverage": "10 neurons in objective parity; 12 in the core suite", "assessment": "Not established", "required_test": "32/64/128-dimensional generators with intrinsic-rank and sample-size sweeps"},
+        {"priority": 2, "requirement": "Out-of-family nonlinear dynamics", "current_coverage": "Bounded tanh transition; every main mechanism uses the same simulator family", "assessment": "Major gap", "required_test": "Independent reservoir/SDE, hybrid, and switching generator families"},
+        {"priority": 3, "requirement": "Complex non-Gaussian noise", "current_coverage": "Gaussian innovations plus isolated matched-tail or correlation lanes", "assessment": "Partial and factorized", "required_test": "Skew-t, correlated jumps, mixtures, colored and state-dependent noise"},
+        {"priority": 4, "requirement": "Partial observation", "current_coverage": "Calcium view exists, but all neurons are retained", "assessment": "Partial", "required_test": "Random and source-targeted missing neurons; hidden modulators in every main lane"},
+        {"priority": 5, "requirement": "Realistic measurement process", "current_coverage": "Single exponential calcium filter plus additive Gaussian noise", "assessment": "Major gap", "required_test": "Heterogeneous rise/decay, saturation, bleaching, shot noise, shared motion, downsampling"},
+        {"priority": 6, "requirement": "Stochastic release and receptor kinetics", "current_coverage": "Release is deterministic conditional on state; Hill occupancy is instantaneous", "assessment": "Major gap", "required_test": "Event release, vesicle variability, binding, desensitization, and feedback"},
+        {"priority": 7, "requirement": "Regime and dwell dynamics", "current_coverage": "No explicit semi-Markov state process in the main benchmark", "assessment": "Absent", "required_test": "State-specific effects, distinct entry/exit control, and dwell-law scoring"},
+        {"priority": 8, "requirement": "Long-horizon path law", "current_coverage": "Direct horizons to 4; bridge path lane is separate and reference-dependent", "assessment": "Insufficient", "required_test": "Joint horizons 16–64, path energy, recurrence and state-entry metrics"},
+        {"priority": 9, "requirement": "Held-out distribution shift", "current_coverage": "Held-out worms and coefficient CVs; each observation variant is refit", "assessment": "Useful but narrow", "required_test": "Hold out noise family, input amplitude, state occupancy, observation quality and intervention type"},
+        {"priority": 10, "requirement": "Supported causal perturbation truth", "current_coverage": "Narrow high-signal branch interventions and low-dimensional finite contrasts", "assessment": "Partial", "required_test": "Randomized branch-point operations with common-random-number response and contrast truth"}
+      ],
+      "coverage_summary": [
+        {"coverage_class": "Absent or major gap", "requirement_count": 4},
+        {"coverage_class": "Partial or insufficient", "requirement_count": 5},
+        {"coverage_class": "Useful but narrow", "requirement_count": 1}
+      ],
+      "first_wave": [
+        {"order": 1, "experiment": "E1: law and adapter misspecification", "isolates": "Whether flexible backends and finite adapters work when the generator matches none of them", "design": "G-A, 32 neurons, clean latent view, four noise families, horizons 1/4/16, six pilot seeds", "primary_gate": "Oracle practical adapter and learned route both beat zero/direct channel baselines"},
+        {"order": 2, "experiment": "E2: paired measurement stress", "isolates": "Loss caused by calcium filtering, saturation, shared artifacts and missing sources", "design": "Reuse identical E1 latent trajectories; render clean, calcium, artifact and structured-missing views", "primary_gate": "Effect degradation is bounded and channel confusion remains controlled"},
+        {"order": 3, "experiment": "E3: OOD and intervention transfer", "isolates": "Whether learned sensitivities predict unseen regimes and controlled branch operations", "design": "Hold out noise family, input range, state mixture and one intervention type", "primary_gate": "Response-kernel and typed contrast gains persist outside the training distribution"},
+        {"order": 4, "experiment": "E4: mechanistic confirmation", "isolates": "Whether results survive stochastic release, receptor kinetics and hidden molecular degeneracy", "design": "G-B after E1–E3 pass; score observable tensor and intervention responses", "primary_gate": "Same qualitative advantage in a second independent generator family"},
+        {"order": 5, "experiment": "E5: state/path confirmation", "isolates": "Effects on entry, exit, dwell and future sequences", "design": "G-C semi-Markov regimes, state-dependent action and distributed memory", "primary_gate": "Improves path/state metrics beyond one-step and HMM/HSMM baselines"}
+      ],
+      "baseline_map": [
+        {"order": 1, "estimand": "Conditional mean", "mandatory_baselines": "Persistence, ridge/VAR, SINDy, nonlinear autoregression", "sid_success": "Adds value only if the law has useful non-mean channels or many contrasts are amortized"},
+        {"order": 2, "estimand": "Conditional law", "mandatory_baselines": "Gaussian and Student-t NLL, MDN, conditional flow, autoregressive density", "sid_success": "Better calibrated law or usable sample-only capability, not lower DSM loss alone"},
+        {"order": 3, "estimand": "Finite law contrast", "mandatory_baselines": "Exact/direct ratio, classifier ratio, uLSIF/KLIEP, MMD, energy, direct sample moments", "sid_success": "Localized witness and typed effects with lower error or better amortization"},
+        {"order": 4, "estimand": "Variance/covariance", "mandatory_baselines": "Direct residual variance regression, shrinkage covariance, low-rank factor Gaussian", "sid_success": "Beats direct channel estimators and passes mean/artifact confusion controls"},
+        {"order": 5, "estimand": "Tail/threshold", "mandatory_baselines": "Quantile and distribution regression, Student-t/MDN/flow, direct event classifier", "sid_success": "Improves tail contrast without variance or outlier leakage"},
+        {"order": 6, "estimand": "State/path law", "mandatory_baselines": "HMM/HSMM, recurrent density model, direct multi-horizon predictor", "sid_success": "Improves entry/exit/dwell/path effects, not only one-step fit"},
+        {"order": 7, "estimand": "Perturbational response", "mandatory_baselines": "Paired empirical response, direct response-kernel regression, normalized generative rollout", "sid_success": "Lower common-history response error on unseen operations and regimes"}
+      ]
+    }
+  },
+  "sources": [
+    {"id": "hierarchical_theory", "label": "A Hierarchical Theory of Neuromodulatory Dynamics", "path": "documents/Hierarchical_Theory_of_Neuromodulatory_Dynamics_LaTeX_2.pdf"},
+    {"id": "coverage_audit_notes", "label": "Local simulator and configuration coverage audit", "path": "reports/neuromod_synthetic_rethink_2026-07-12/source_notes.md", "query": {"engine": "sqlite", "language": "sql", "description": "Counts the ten audited requirements by decision-relevant coverage class.", "executed_at": "2026-07-13T02:12:11Z", "sql": "WITH audit(coverage_class) AS (VALUES ('Absent or major gap'),('Absent or major gap'),('Absent or major gap'),('Absent or major gap'),('Partial or insufficient'),('Partial or insufficient'),('Partial or insufficient'),('Partial or insufficient'),('Partial or insufficient'),('Useful but narrow')) SELECT coverage_class, COUNT(*) AS requirement_count FROM audit GROUP BY coverage_class ORDER BY coverage_class"}},
+    {"id": "prior_synthesis", "label": "Unified SID synthetic-methods synthesis", "path": "reports/sid_synthesis_2026-07-12/main.tex"},
+    {"id": "benchmark_design", "label": "Revised benchmark design developed from the audited evidence", "path": "reports/neuromod_synthetic_rethink_2026-07-12/artifact.json"},
+    {"id": "first_wave_design", "label": "First decisive experiment wave", "path": "reports/neuromod_synthetic_rethink_2026-07-12/artifact.json", "query": {"engine": "sqlite", "language": "sql", "description": "Materializes the five staged experiments in the recommended first wave.", "executed_at": "2026-07-13T02:12:11Z", "sql": "WITH first_wave(step_order,experiment,isolates,design,primary_gate) AS (VALUES (1,'E1: law and adapter misspecification','Out-of-family backend and adapter validity','G-A clean latent pilot','Oracle and learned routes beat zero/direct baselines'),(2,'E2: paired measurement stress','Observation-layer degradation','Paired calcium, artifact and missing views','Bounded degradation and controlled confusion'),(3,'E3: OOD and intervention transfer','Unseen regime and operation transfer','Held-out noise, input, state and intervention','Response and contrast gains persist OOD'),(4,'E4: mechanistic confirmation','Release and receptor complexity','Independent G-B generator','Advantage repeats in a second family'),(5,'E5: state/path confirmation','Entry, exit, dwell and sequences','Independent G-C generator','Path metrics beat HMM/HSMM and one-step baselines')) SELECT * FROM first_wave ORDER BY step_order"}},
+    {"id": "baseline_design", "label": "Estimand-matched baseline map", "path": "reports/neuromod_synthetic_rethink_2026-07-12/artifact.json", "query": {"engine": "sqlite", "language": "sql", "description": "Materializes the mandatory baseline family for each primary estimand.", "executed_at": "2026-07-13T02:12:11Z", "sql": "WITH baselines(step_order,estimand,mandatory_baselines,sid_success) AS (VALUES (1,'Conditional mean','Persistence, ridge/VAR, SINDy, nonlinear autoregression','Useful non-mean channels or amortization'),(2,'Conditional law','Gaussian/Student-t NLL, MDN, flow, autoregressive density','Calibration or unique sample-only capability'),(3,'Finite law contrast','Exact/direct ratio, classifier, uLSIF/KLIEP, MMD, energy, moments','Lower localized witness/channel error'),(4,'Variance/covariance','Residual variance, shrinkage covariance, factor Gaussian','Beats direct channel estimators and confusion controls'),(5,'Tail/threshold','Quantile/distribution regression, Student-t, MDN, flow, event classifier','Tail contrast without variance leakage'),(6,'State/path law','HMM/HSMM, recurrent density, direct multi-horizon','Better entry/exit/dwell/path effects'),(7,'Perturbational response','Paired empirical response, response regression, generative rollout','Lower OOD common-history response error')) SELECT * FROM baselines ORDER BY step_order"}}
+  ]
+}

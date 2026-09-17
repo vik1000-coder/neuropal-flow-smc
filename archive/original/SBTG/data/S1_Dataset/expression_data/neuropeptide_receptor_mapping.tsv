@@ -1,0 +1,23 @@
+neuropeptide	receptor	group	EC50	reference
+flp-18	npr-1	NPY(npr)/ RFamide receptor group	~100 nM	54
+flp-21	npr-1	NPY(npr)/ RFamide receptor group	2.5 nM	55
+flp-21	npr-2	NPY(npr)/ RFamide receptor group	34.4 nM	56
+flp-15	npr-3	NPY(npr)/ RFamide receptor group	162-599 nM	57
+flp-1	npr-4	NPY(npr)/ RFamide receptor group	0.4-9 μM	58
+flp-4	npr-4	NPY(npr)/ RFamide receptor group	5-80 nM	58
+flp-18	npr-4	NPY(npr)/ RFamide receptor group	5 nM-1.2 μM	48
+flp-18	npr-5	NPY(npr)/ RFamide receptor group	13.3-117.2 nM	59
+flp-21	npr-5	NPY(npr)/ RFamide receptor group	267 nM	59
+flp-1	npr-11	NPY(npr)/ RFamide receptor group	1-8 μM	58
+flp-5	npr-11	NPY(npr)/ RFamide receptor group	1-8 μM	58
+flp-18	npr-11	NPY(npr)/ RFamide receptor group	180-800 nM	58
+flp-21	npr-11	NPY(npr)/ RFamide receptor group	1-10 nM	58
+nlp-1	npr-11	NPY(npr)/ RFamide receptor group	1-100 μM?	49
+flp-13	frpr-4	NPY(npr)/ RFamide receptor group	67-541 nM	37
+flp-24	npr-17	Somatostatin / Urotensin II receptor group	0.1-1 μM	60
+nlp-12	ckr-2	Gastrin / CCK-like receptor group	15-30 nM	61
+ntc-1	ntr-1	Vasopressin-like receptor group	19 nM	43
+flp-10	egl-6	Neurotensin / TPH-like receptor group	11 nM	53
+flp-17	egl-6	Neurotensin / TPH-like receptor group	1-28nM	53
+pdf-1	pdfr-1	Class B / Secretin receptor group	0.4-5 μM	41
+pdf-2	pdfr-1	Class B / Secretin receptor group	114 nM	41

@@ -1,0 +1,15 @@
+{
+  "bayes_auc": 0.7733890400000001,
+  "case_id": "g89_s0p020",
+  "generator_seed": 89,
+  "history_tangent_abs_mean": 0.5798518280340295,
+  "history_tangent_rms": 0.584694693404575,
+  "jensen_shannon_nats": 0.1494843147367716,
+  "n_per_side": 5000,
+  "relative_response_score_gap": 0.06153417918409418,
+  "response_score_gap_rms": 4.0762116242511945,
+  "response_score_rms": 66.24304863247195,
+  "sigma": 0.02,
+  "status": "ok",
+  "witness_rms": 0.5233500531982935
+}

@@ -1,0 +1,14 @@
+baseline_family,target,coverage,status,source
+Plug-in derivative,Same bounded-feature estimand,"E1,E3,E4,E5,E7,E8,E9,E11",Run,Family-specific confirmations
+Riesz-only,Same bounded-feature estimand,"E1,E3,E4,E5,E7,E8,E9,E11",Run,Family-specific confirmations
+ORTH,Primary bounded-feature estimand,E1-E11 where applicable,Run,All confirmations
+Oracle m / oracle alpha / oracle Riesz,Component upper bounds,"E1,E4,E5,E6",Run,"OR_M, OR_A, OR_R, OR_PW"
+Zero estimator,NRMSE reference,"E1,E4,E5,E6,E8,E9",Run,Seed-level files
+Direct mean/moment heads,Known typed target,"E1,E4",Run,DIRECT and MOMENT_ORTH
+Direct covariance / low-rank,Known typed covariance target,"E1,E9",Run,E9 includes identified dy8 and dy32
+Known/estimated deconvolution,Latent characteristic target,E8,Run,"Point, exact CF, oracle and fitted measurement models"
+Full-covariance MDN K=5/10/20,Reusable normalized law,E10 all seven families,Run,Analytic and sampled readouts; 3 inits x 10 seeds
+Spline flow NSF-6/10,Reusable normalized law,E10 all seven families,Run,Common sampling budgets 64/256/1024
+Diffusion/DSM/flow matching,Response-score/history-tangent models,Earlier eight-family benchmark,"Run, different estimand",stable_sid_core_20260713
+Ratio critic / signed classifier,Density-ratio or finite contrast,Earlier tangent/finite grids,"Run, different estimand",stable_sid_core and stable_sid_finite
+Finite contrast,h+delta v versus h-delta v,Earlier eight-family benchmark,"Run, not a derivative baseline",stable_sid_finite_20260713

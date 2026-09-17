@@ -1,0 +1,16 @@
+{
+  "case_id": "g73_d607_m6001_autoregressive_mdn",
+  "data_seed": 607,
+  "energy_score_fair": 0.7254653016728329,
+  "generator_seed": 73,
+  "minus_best_epoch": 6,
+  "minus_fit_seconds": 4.6104952080058865,
+  "model_name": "autoregressive_mdn",
+  "model_seed": 6001,
+  "plus_best_epoch": 6,
+  "plus_fit_seconds": 4.540237208013423,
+  "quartic_nrmse": 0.8042107728219452,
+  "quartic_slope": 0.19733651991313492,
+  "status": "ok",
+  "wall_seconds": 9.37788095799624
+}

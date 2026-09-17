@@ -1,0 +1,6 @@
+{
+  "_comment": "Regression baseline for E3 change detection. Power/false-alarm bounds asserted by tests/regression/test_regression.py.",
+  "null_false_alarm_rate_max": 0.05,
+  "scale_detection_power_min": 0.80,
+  "memory_detection_power_min_long_run": 0.60
+}

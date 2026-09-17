@@ -1,0 +1,53 @@
+schema_version: "1"
+name: frozen_v2_memory_light
+output_dir: outputs/frozen_v2/memory_light
+seeds: [3, 4, 5, 6, 7]
+views: [latent, calcium]
+max_lags: [1, 2, 4, 8, 16]
+validation_fraction: 0.2
+test_fraction: 0.2
+n_predictive_samples: 32
+resource:
+  max_threads: 2
+  max_parallel_jobs: 1
+  max_rss_gb: 6.0
+  max_output_gb: 0.8
+  nice: 19
+  checkpoint_minutes: 15
+  stop_free_disk_gb: 4.0
+scenarios:
+  - id: "null"
+    family: mechanistic
+    n_trajectories: 10
+    params: &memory_base
+      n_neurons: 8
+      n_modulators: 2
+      n_steps: 800
+      burn_in: 1200
+      mechanism: "null"
+      effect_strength: 0.45
+      ligand_pulse_rate_hz: 0.08
+      ligand_pulse_amplitude: 2.5
+      tail_threshold: 0.35
+      shape_tail_z: 2.0
+  - id: mixed
+    family: mechanistic
+    n_trajectories: 10
+    params: {<<: *memory_base, mechanism: mixed, effect_strength: 0.8}
+methods:
+  - {name: constant_gaussian}
+  - name: ridge_var
+    tune: {ridge: [0.1, 1.0, 10.0]}
+  - name: heteroskedastic_ridge
+    tune: {mean_ridge: [0.1, 1.0], variance_ridge: [10.0, 100.0]}
+  - name: student_t_ridge
+    params: {mean_ridge: 1.0, variance_ridge: 10.0}
+    tune: {df: [3.5, 10.0]}
+  - name: gaussian_nll
+    params: {maxiter: 260, ridge: 0.1}
+  - name: sid_hyvarinen
+    params: {ridge: 0.01, tail_threshold: 0.35}
+  - name: sid_dsm_s075
+    params: {ridge: 0.01, n_corruptions: 4, tail_threshold: 0.35}
+  - name: sid_dsm_s100
+    params: {ridge: 0.01, n_corruptions: 4, tail_threshold: 0.35}
