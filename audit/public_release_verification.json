@@ -1,0 +1,91 @@
+{
+  "public_repository_verified_anonymously": true,
+  "assets": [
+    {
+      "name": "archive-part-01.tar.gz",
+      "bytes": 580512263,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-02.tar.gz",
+      "bytes": 336141097,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-03.tar.gz",
+      "bytes": 824480249,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-04.tar.gz",
+      "bytes": 513184300,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-05.tar.gz",
+      "bytes": 444127909,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-06.tar.gz",
+      "bytes": 875192258,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-07.tar.gz",
+      "bytes": 889714781,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-08.tar.gz",
+      "bytes": 871784822,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-09.tar.gz",
+      "bytes": 882186664,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-10.tar.gz",
+      "bytes": 885455252,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-11.tar.gz",
+      "bytes": 892501093,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-12.tar.gz",
+      "bytes": 884052505,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-13.tar.gz",
+      "bytes": 880104865,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-14.tar.gz",
+      "bytes": 865661916,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-15.tar.gz",
+      "bytes": 862942411,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-16.tar.gz",
+      "bytes": 868747443,
+      "sha256_verified": true
+    },
+    {
+      "name": "archive-part-17.tar.gz",
+      "bytes": 430924185,
+      "sha256_verified": true
+    }
+  ],
+  "total_compressed_bytes": 12787714013
+}

@@ -14,3 +14,18 @@ add comparative/robustness/neuron-level figures and an executed four-neuron tuto
 Original files and frozen hashes are not rewritten. Missing historical results are
 listed explicitly. No expensive NeuroPAL retraining is required for this publication;
 the tutorial is a new, separately labeled synthetic demonstration.
+
+## Completed publication work
+
+- Archive assembled: 31,768 files; all source hashes checked; 995 Python files parse.
+- Packaged scientific suites: 324 original tests, 11 replication tests, nine synthetic
+  tests passed; two original tests skipped. Five new publication tests passed.
+- Public repository created; all 17 data-release assets uploaded and server hashes
+  verified; anonymous visibility and a clean download/restore checked.
+- Eighteen publication figures and seven tutorial figures generated and inspected.
+- Notebook executed end to end through the portable active-environment runner.
+- Sixteen primary AUROC/AP comparisons independently recomputed from saved arrays.
+- Analysis branch prepared for GitHub CI and merge to main.
+
+Scientific limitations and missing historical artifacts remain documented rather
+than being hidden by a successful software/test/publication outcome.

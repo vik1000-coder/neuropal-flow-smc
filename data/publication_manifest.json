@@ -1,0 +1,202 @@
+[
+  {
+    "path": "data/publication/clean54/all_corrected_tests.csv.gz",
+    "bytes": 6683375,
+    "sha256": "b7eb0ef413524fe3a6be27ab7fb484fb37822d099218769f6ba02952f21a0136"
+  },
+  {
+    "path": "data/publication/clean54/matrices.npz",
+    "bytes": 6238905,
+    "sha256": "d61fc6a138f13f08b367874588828110111fe466cbd45ca65bb3de4fac36bb67"
+  },
+  {
+    "path": "data/publication/clean54/neuron_pair_summary.csv",
+    "bytes": 1065110,
+    "sha256": "fd192017639bc24c8f78eeca12eb2f6d4b051ad969bed3c0cd0811a982fff982"
+  },
+  {
+    "path": "data/publication/clean54/predictive_summary.csv",
+    "bytes": 2429,
+    "sha256": "b4055f01da3374ac32ad3c0287cf0638000a8e0c78ff8de7fba158478c1e93fa"
+  },
+  {
+    "path": "data/publication/clean54/reference_deltas.csv",
+    "bytes": 3566,
+    "sha256": "2d2f0d6f1c0816e4bd98b3c121c2c3368dc270605a7dfb49eff3d8a96c10c07b"
+  },
+  {
+    "path": "data/publication/clean54/reference_lag_profiles.csv",
+    "bytes": 914867,
+    "sha256": "cea642fdf55f0b6971b8ba255e019b7ade3795b39177d31ead52f2a2c6323ce3"
+  },
+  {
+    "path": "data/publication/clean54/reference_matrices.npz",
+    "bytes": 17281,
+    "sha256": "9e61541968566cfbadaa1a1563823ad67844617186c0666d07a03355d4ac17e7"
+  },
+  {
+    "path": "data/publication/clean54/reference_metrics.csv",
+    "bytes": 5070,
+    "sha256": "45815e611f684c2403d382c0189c0d5ed783891819f94600cf1e370a547be2af"
+  },
+  {
+    "path": "data/publication/clean54/selected_baseline_edges.csv",
+    "bytes": 830,
+    "sha256": "d3b0659cd66544e1b195d108b1a12482385aae5e57b076420e995944ec12eeec"
+  },
+  {
+    "path": "data/publication/clean54/selected_edge_recordings.csv",
+    "bytes": 118160,
+    "sha256": "9967329fd1ce3da35c914d6799931981e677e3e9c1d0d39483a23ff380611d95"
+  },
+  {
+    "path": "data/publication/clean54/significant_cells.csv.gz",
+    "bytes": 57675,
+    "sha256": "6711932f2645f4d4676130438f705f8fedd208888ed60676a43248d30f899a46"
+  },
+  {
+    "path": "data/publication/clean54/stability.csv",
+    "bytes": 231713,
+    "sha256": "30ad5a2dfa7e5c9004b24dc8c94bf9ae7f75a2608ad69aac2905cd6bfca2f2be"
+  },
+  {
+    "path": "data/publication/computation.csv",
+    "bytes": 975,
+    "sha256": "0ef52ee8caa92495c5b81770371618e0ea260464281c6c966572f50ea5826ffd"
+  },
+  {
+    "path": "data/publication/historical80/all_corrected_tests.csv.gz",
+    "bytes": 17344289,
+    "sha256": "d61f6e6c60878aedc8414fdc39c512cce97794baede22a19093a3faf4d3c4d6a"
+  },
+  {
+    "path": "data/publication/historical80/matrices.npz",
+    "bytes": 13674590,
+    "sha256": "717b41b577a7eb2082c208822588c767874a357170b5707fe562475542e7266d"
+  },
+  {
+    "path": "data/publication/historical80/neuron_pair_summary.csv",
+    "bytes": 2744600,
+    "sha256": "6aa00ccb72118f85b75764b97f2d939c8ec0614175db9a23c12397dd92a19fc3"
+  },
+  {
+    "path": "data/publication/historical80/predictive_summary.csv",
+    "bytes": 2368,
+    "sha256": "1c17cc8e8bc255f022a5ace6a27b6d1ff31d39160de52f22a66d0de452f420e7"
+  },
+  {
+    "path": "data/publication/historical80/reference_deltas.csv",
+    "bytes": 5323,
+    "sha256": "11c8e8b025541cf56ba1f7c0c53e3752177653f06ac72b0d47d87ad2decb8aae"
+  },
+  {
+    "path": "data/publication/historical80/reference_lag_profiles.csv",
+    "bytes": 945922,
+    "sha256": "7d160414139ff5701bec3d41f485e1dd83feb760c982a4f8b4b6e1cd0a5cbd5e"
+  },
+  {
+    "path": "data/publication/historical80/reference_matrices.npz",
+    "bytes": 34120,
+    "sha256": "29999e0958b6b93b35a60edff95509b26d089ab754513774987d2c804b1cf91a"
+  },
+  {
+    "path": "data/publication/historical80/reference_metrics.csv",
+    "bytes": 8285,
+    "sha256": "3cceee918a592cf29bf542f5071adf9b46460632413d87a4ccb7facf2fa1a1dc"
+  },
+  {
+    "path": "data/publication/historical80/selected_baseline_edges.csv",
+    "bytes": 872,
+    "sha256": "543b93013876618bb7d6af76e913f1fbd5612e1d0770dc17b788042e27d241d1"
+  },
+  {
+    "path": "data/publication/historical80/selected_edge_recordings.csv",
+    "bytes": 129762,
+    "sha256": "1126c998b22e675bcfd81282650ab97b6b6f946895725af0eaabdab7ac0c7f94"
+  },
+  {
+    "path": "data/publication/historical80/significant_cells.csv.gz",
+    "bytes": 205099,
+    "sha256": "8e60c57800aa7adf2c01cffe2384037f1c6a0fa287984a36aa4194dba0dfd8dc"
+  },
+  {
+    "path": "data/publication/historical80/stability.csv",
+    "bytes": 241726,
+    "sha256": "1d7098dcf0c8f34ea2a9c3a5d5b61980a8edad28acd07015335c244216111f02"
+  },
+  {
+    "path": "data/publication/historical_reported_auroc.csv",
+    "bytes": 312,
+    "sha256": "9553cc906669b889aa374c2c43a59ce1cb5666104873320a53a522e6aa48cf58"
+  },
+  {
+    "path": "data/publication/lag_counts.csv",
+    "bytes": 1375,
+    "sha256": "af85dc2ad1df714e18a0f2ee20b4347ebc8bd9fdc20b77f66575f00ea4d8dd20"
+  },
+  {
+    "path": "data/publication/numerical_adjudication.csv",
+    "bytes": 21270,
+    "sha256": "6e3f0f8263db76a34857facd7fd924d3ea0fd785321aa7040040de404e186eff"
+  },
+  {
+    "path": "data/publication/original_four_sampler_reported.csv",
+    "bytes": 293,
+    "sha256": "d4e6cbd7ffae0fdf309e6bb5aab55facc3a7bf5c5aa40fbe5dc161805980d36d"
+  },
+  {
+    "path": "data/publication/original_generator_screen.csv",
+    "bytes": 2398,
+    "sha256": "933c50f7b167ecf38ebda7f14c6c4ef98b0c19a1aeb5a8846c8282d1f2ad4c64"
+  },
+  {
+    "path": "data/publication/particle_convergence.csv",
+    "bytes": 1010,
+    "sha256": "e198c63fe1bdfd93425704452229ffc4608b3e617e066af94e4be1b7bd17c8f2"
+  },
+  {
+    "path": "data/publication/strict_reference_sensitivity.csv",
+    "bytes": 2793,
+    "sha256": "af8d81a920445d85ca4e4f4e0c7e24896219d991ba00f0d3ad8d0f8513c6dc5a"
+  },
+  {
+    "path": "data/publication/support.csv",
+    "bytes": 96,
+    "sha256": "237c762a60a9422df2c89be0ca43df29a609e0f82b0417162cb79d763f04debf"
+  },
+  {
+    "path": "data/publication/synthetic/analytic_effects_dataset_means.csv",
+    "bytes": 45698,
+    "sha256": "21a25ce5f40a6c47183070f604849528688083bc71eec522f537b078dfc453a0"
+  },
+  {
+    "path": "data/publication/synthetic/cost_summary.csv",
+    "bytes": 740,
+    "sha256": "9d060db23292fd21a790dfe4e331cdd7c48e8b307ad3ceaa850d8fcc1ffc4deb"
+  },
+  {
+    "path": "data/publication/synthetic/derivative_dataset_means.csv",
+    "bytes": 82636,
+    "sha256": "4b121d749e40b30e221433cc02ee15f24cd04f8e9925c95825e168855755f9b3"
+  },
+  {
+    "path": "data/publication/synthetic/predictive_dataset_means.csv",
+    "bytes": 57882,
+    "sha256": "1c656c234ce2a4ad6d0000929d91c2b340dc870222030265e0218bd3e5456612"
+  },
+  {
+    "path": "data/publication/synthetic/solver_summary.csv",
+    "bytes": 673,
+    "sha256": "71dd6137863a4d4f49583d50bf2c808a7f9efaa2dab2d766ca715569194eb4ba"
+  },
+  {
+    "path": "data/publication/training.csv",
+    "bytes": 2254,
+    "sha256": "bf28b86335702d3805f3671ca705d2b6138a57db1610b61a12c056b913bdf5fe"
+  },
+  {
+    "path": "data/publication/worker_cost.csv",
+    "bytes": 451,
+    "sha256": "845992719594535cdaaac3f79ad87bcbd7c99027ecc56091f867a5c3556f9fcf"
+  }
+]

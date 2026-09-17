@@ -1,0 +1,11 @@
+cohort,stage,archives,worker_hours
+clean54,primary,60,33.52683581955881
+clean54,mc_repeat,20,10.998444844062485
+clean54,direct,20,2.407649967997018
+clean54,matched_time,30,5.019957649954465
+clean54,training,15,0.48820299930527755
+historical80,primary,60,24.940408060392762
+historical80,mc_repeat,20,8.320187315393333
+historical80,direct,20,1.5269584076160876
+historical80,matched_time,30,3.807565579201101
+historical80,training,15,0.12710363049750514

@@ -1,0 +1,173 @@
+[
+  {
+    "id": "clean54/01_atlas_comparison",
+    "title": "Corrected 54 classes \u00b7 17 recordings | Lag-1 atlas ranking",
+    "caption": "Fixed nominal lag 1 / horizon 1. Bars: 95% paired source-column bootstrap intervals, fitted matrices fixed.\nMultiplicity-protected lower bounds are in the accompanying tables. Existing recordings; fitted-model uncertainty is not fully represented.",
+    "inputs": [
+      "data/publication/clean54/reference_metrics.csv",
+      "data/publication/clean54/reference_deltas.csv"
+    ]
+  },
+  {
+    "id": "clean54/02_sampling_and_cost",
+    "title": "Corrected 54 classes \u00b7 17 recordings | Sampling accuracy and feasibility",
+    "caption": "Reference qualified on 41.8% of diagnostic cells. Direct N16384 uses leave-one-repeat-out comparison.\nSelected worker hours exclude diagnostics, predictive runs and partial extension. No matched fresh SBTG timing.",
+    "inputs": [
+      "data/publication/particle_convergence.csv",
+      "data/publication/computation.csv",
+      "data/publication/worker_cost.csv"
+    ]
+  },
+  {
+    "id": "clean54/03_robustness",
+    "title": "Corrected 54 classes \u00b7 17 recordings | What replicates and what remains noisy",
+    "caption": "15 primary fits; 15 reached the epoch cap; 15 met the predeclared extension criterion. Smaller-contrast MC spread is not a confidence interval.\nZero strict-complete sources does not mean every individual episode fails. Existing recordings; fitted-model uncertainty is not fully represented.",
+    "inputs": [
+      "data/publication/clean54/stability.csv",
+      "data/publication/numerical_adjudication.csv",
+      "data/publication/support.csv",
+      "data/publication/training.csv"
+    ]
+  },
+  {
+    "id": "clean54/04_prediction_and_lag",
+    "title": "Corrected 54 classes \u00b7 17 recordings | Prediction and two time axes",
+    "caption": "Predictive curves are equal-recording summaries, averaged over training seeds. No independent refit interval is implied.\nSource placement lag, forecast horizon, and source-to-endpoint separation (their sum) are different quantities.",
+    "inputs": [
+      "data/publication/clean54/predictive_summary.csv",
+      "data/publication/clean54/reference_lag_profiles.csv"
+    ]
+  },
+  {
+    "id": "clean54/05_selected_neuron_effects",
+    "title": "Corrected 54 classes \u00b7 17 recordings | Selected baseline effects",
+    "caption": "Selection: six largest |baseline mean| among corrected p\u2264.05 at fixed lag1/h1. Shading is training-seed range, not CI.\nStars: corrected lag-minus-1 test at the same horizon. Selected on these data; not independent confirmation. Existing recordings; fitted-model uncertainty is not fully represented.",
+    "inputs": [
+      "data/publication/clean54/selected_baseline_edges.csv",
+      "data/publication/clean54/matrices.npz",
+      "data/publication/clean54/all_corrected_tests.csv.gz"
+    ]
+  },
+  {
+    "id": "clean54/06_significance_and_lag_change",
+    "title": "Corrected 54 classes \u00b7 17 recordings | Nonzero effect \u2260 identified lag",
+    "caption": "Left: fixed lag1/h1, baseline endpoint mean, joint max-T p\u2264.05; blank cells are not discoveries.\nRight: all registered lag/horizon cells, not distinct neuron pairs. Full corrected family and names are supplied. Existing recordings; fitted-model uncertainty is not fully represented.",
+    "inputs": [
+      "data/publication/clean54/all_corrected_tests.csv.gz",
+      "data/publication/lag_counts.csv",
+      "data/publication/clean54/matrices.npz"
+    ]
+  },
+  {
+    "id": "clean54/07_neuron_lag_surfaces",
+    "title": "Corrected 54 classes \u00b7 17 recordings | Two-dimensional responses of selected pairs",
+    "caption": "First three examples from the documented baseline selection. Separate color ranges emphasize each pair\u2019s shape.\nSource-to-endpoint separation equals placement lag + horizon; a maximum is not a physical delay. Existing recordings; fitted-model uncertainty is not fully represented.",
+    "inputs": [
+      "data/publication/clean54/selected_baseline_edges.csv",
+      "data/publication/clean54/matrices.npz"
+    ]
+  },
+  {
+    "id": "historical80/01_atlas_comparison",
+    "title": "Historical 80 classes \u00b7 20 prepared traces | Lag-1 atlas ranking",
+    "caption": "Fixed nominal lag 1 / horizon 1. Bars: 95% paired source-column bootstrap intervals, fitted matrices fixed.\nMultiplicity-protected lower bounds are in the accompanying tables. Historical head/tail pseudo-pairing and donor copying; conditional model summaries only.",
+    "inputs": [
+      "data/publication/historical80/reference_metrics.csv",
+      "data/publication/historical80/reference_deltas.csv"
+    ]
+  },
+  {
+    "id": "historical80/02_sampling_and_cost",
+    "title": "Historical 80 classes \u00b7 20 prepared traces | Sampling accuracy and feasibility",
+    "caption": "Reference qualified on 48.5% of diagnostic cells. Direct N16384 uses leave-one-repeat-out comparison.\nSelected worker hours exclude diagnostics, predictive runs and partial extension. No matched fresh SBTG timing.",
+    "inputs": [
+      "data/publication/particle_convergence.csv",
+      "data/publication/computation.csv",
+      "data/publication/worker_cost.csv"
+    ]
+  },
+  {
+    "id": "historical80/03_robustness",
+    "title": "Historical 80 classes \u00b7 20 prepared traces | What replicates and what remains noisy",
+    "caption": "15 primary fits; 0 reached the epoch cap; 0 met the predeclared extension criterion. Smaller-contrast MC spread is not a confidence interval.\nZero strict-complete sources does not mean every individual episode fails. Historical head/tail pseudo-pairing and donor copying; conditional model summaries only.",
+    "inputs": [
+      "data/publication/historical80/stability.csv",
+      "data/publication/numerical_adjudication.csv",
+      "data/publication/support.csv",
+      "data/publication/training.csv"
+    ]
+  },
+  {
+    "id": "historical80/04_prediction_and_lag",
+    "title": "Historical 80 classes \u00b7 20 prepared traces | Prediction and two time axes",
+    "caption": "Predictive curves are equal-recording summaries, averaged over training seeds. No independent refit interval is implied.\nSource placement lag, forecast horizon, and source-to-endpoint separation (their sum) are different quantities.",
+    "inputs": [
+      "data/publication/historical80/predictive_summary.csv",
+      "data/publication/historical80/reference_lag_profiles.csv"
+    ]
+  },
+  {
+    "id": "historical80/05_selected_neuron_effects",
+    "title": "Historical 80 classes \u00b7 20 prepared traces | Selected baseline effects",
+    "caption": "Selection: six largest |baseline mean| among corrected p\u2264.05 at fixed lag1/h1. Shading is training-seed range, not CI.\nStars: corrected lag-minus-1 test at the same horizon. Selected on these data; not independent confirmation. Historical head/tail pseudo-pairing and donor copying; conditional model summaries only.",
+    "inputs": [
+      "data/publication/historical80/selected_baseline_edges.csv",
+      "data/publication/historical80/matrices.npz",
+      "data/publication/historical80/all_corrected_tests.csv.gz"
+    ]
+  },
+  {
+    "id": "historical80/06_significance_and_lag_change",
+    "title": "Historical 80 classes \u00b7 20 prepared traces | Nonzero effect \u2260 identified lag",
+    "caption": "Left: fixed lag1/h1, baseline endpoint mean, joint max-T p\u2264.05; blank cells are not discoveries.\nRight: all registered lag/horizon cells, not distinct neuron pairs. Full corrected family and names are supplied. Historical head/tail pseudo-pairing and donor copying; conditional model summaries only.",
+    "inputs": [
+      "data/publication/historical80/all_corrected_tests.csv.gz",
+      "data/publication/lag_counts.csv",
+      "data/publication/historical80/matrices.npz"
+    ]
+  },
+  {
+    "id": "historical80/07_neuron_lag_surfaces",
+    "title": "Historical 80 classes \u00b7 20 prepared traces | Two-dimensional responses of selected pairs",
+    "caption": "First three examples from the documented baseline selection. Separate color ranges emphasize each pair\u2019s shape.\nSource-to-endpoint separation equals placement lag + horizon; a maximum is not a physical delay. Historical head/tail pseudo-pairing and donor copying; conditional model summaries only.",
+    "inputs": [
+      "data/publication/historical80/selected_baseline_edges.csv",
+      "data/publication/historical80/matrices.npz"
+    ]
+  },
+  {
+    "id": "models/01_original_screen",
+    "title": "Original pooled54 | Sixteen-candidate generator screen",
+    "caption": "Historical report table; original raw runs and uncertainty unavailable. This is the early pooled cohort, not corrected clean54.\nThese predictive rankings do not establish repaired-effect or derivative accuracy.",
+    "inputs": [
+      "data/publication/original_generator_screen.csv"
+    ]
+  },
+  {
+    "id": "models/02_synthetic_prediction_vs_effect",
+    "title": "Known-law synthetic comparison | Prediction and effects can disagree",
+    "caption": "Each dot is one independently generated dataset; neural initializations averaged first. Black tick: descriptive mean.\nEffects: central common query, analytic/quadrature truth and qualified learned references. Three inputs/outputs, not NeuroPAL dimensions.",
+    "inputs": [
+      "data/publication/synthetic/predictive_dataset_means.csv",
+      "data/publication/synthetic/analytic_effects_dataset_means.csv"
+    ]
+  },
+  {
+    "id": "models/03_synthetic_derivatives_and_cost",
+    "title": "Generator choices | Extrapolation reliability and sampling cost",
+    "caption": "Derivative panel averages the four laws and three datasets at finite-difference step 0.1; see source tables for spread.\nSampling: 256 draws for a three-output history on this CPU. These timings do not predict 54/80-dimensional runtime.",
+    "inputs": [
+      "data/publication/synthetic/derivative_dataset_means.csv",
+      "data/publication/synthetic/cost_summary.csv"
+    ]
+  },
+  {
+    "id": "models/04_original_four_sampler_comparison",
+    "title": "Corrected 54 classes | Original four-sampler comparison",
+    "caption": "Historical E26 report table; raw outputs unavailable. Same particle count, unequal computation: progressive branches proposals and futures.\nAll methods target the same declared repaired law. This panel does not establish matched-cost superiority or biological lag identification.",
+    "inputs": [
+      "data/publication/original_four_sampler_reported.csv",
+      "archive/original/FLOW_REPAIRED_LAG_METHODS_20260828.md"
+    ]
+  }
+]

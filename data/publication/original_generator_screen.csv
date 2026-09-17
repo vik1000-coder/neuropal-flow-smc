@@ -1,0 +1,17 @@
+candidate,energy,balanced_energy,variogram,rmse,coverage90,evidence,cohort
+"CFM, width 128, dropout 0.10",1.737,1.7609,0.05767,0.33664,0.8339,historical report table; original raw runs unavailable,early pooled54
+"CFM, width 64, dropout 0.10, WD 10^{-3}",1.7413,1.7628,0.05831,0.33741,0.8444,historical report table; original raw runs unavailable,early pooled54
+"CFM, compact width 48",1.7466,1.7641,0.05947,0.33888,0.8555,historical report table; original raw runs unavailable,early pooled54
+"CFM, unregularized control",1.7559,1.7769,0.05894,0.33996,0.8384,historical report table; original raw runs unavailable,early pooled54
+"MDN, 4 autoregressive components",1.7868,1.8051,0.06078,0.35329,0.7766,historical report table; original raw runs unavailable,early pooled54
+"MDN, 8 autoregressive components",1.7914,1.8103,0.06103,0.35478,0.7797,historical report table; original raw runs unavailable,early pooled54
+"Bounded energy ratio, B=0.5, base weight 0.25",1.8009,1.8189,0.06177,0.35492,0.8133,historical report table; original raw runs unavailable,early pooled54
+"Bounded energy ratio, B=1.0, base weight 0.25",1.8033,1.8196,0.06163,0.35456,0.8129,historical report table; original raw runs unavailable,early pooled54
+"Bounded energy ratio, B=1.0, base weight 0.50",1.803,1.8201,0.06161,0.35454,0.8132,historical report table; original raw runs unavailable,early pooled54
+"Bounded energy ratio, B=1.5, base weight 0.50",1.8049,1.821,0.06152,0.35476,0.8123,historical report table; original raw runs unavailable,early pooled54
+"Gaussian-source CFM, base weight 0.10",1.8068,1.8241,0.06159,0.35539,0.8081,historical report table; original raw runs unavailable,early pooled54
+"Gaussian-source CFM, base weight 0.25",1.8075,1.8248,0.06162,0.35553,0.8072,historical report table; original raw runs unavailable,early pooled54
+"Gaussian-source CFM, base weight 1.00",1.807,1.8249,0.06204,0.35594,0.8064,historical report table; original raw runs unavailable,early pooled54
+"Gaussian-source CFM, base weight 0.50",1.807,1.8249,0.06205,0.35595,0.8065,historical report table; original raw runs unavailable,early pooled54
+"RealNVP, 8 affine coupling layers",1.8141,1.8306,0.06343,0.35814,0.8059,historical report table; original raw runs unavailable,early pooled54
+"Gaussian, conditional rank 16",1.8112,1.8311,0.06283,0.35722,0.8261,historical report table; original raw runs unavailable,early pooled54

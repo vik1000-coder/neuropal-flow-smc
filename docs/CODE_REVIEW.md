@@ -23,7 +23,7 @@ Paths below are relative to `archive/fresh/replication_20260911/` unless stated.
 | Inputs/cohorts | `source/conditional_neural_benchmark/data.py` | MAT `norm_traces`; neuron-class averaging; corrected schedules; historical donor/pseudo-pairing retained |
 | Folds/scaling | same and `source/conditional_neural_benchmark/runner.py` | Whole-recording test/validation folds; scaler fit on training recordings; pooled vocabulary selection precedes splitting |
 | Targets/training | `train.py`, runner `_neural_trial` | One-step standardized residual; held-out validation checkpoint; no Cook/Randi labels in model loss |
-| Flow | `source/history_tangent_benchmark/models.py`, `ConditionalFlowMatching` | Independent Gaussian/data coupling, velocity MSE, fixed validation noise, Heun ODE generation |
+| Flow | `source/history_tangent_benchmark/src/history_tangent_benchmark/models.py`, `ConditionalFlowMatching` | Independent Gaussian/data coupling, velocity MSE, fixed validation noise, Heun ODE generation |
 | History encoder | `source/conditional_neural_benchmark/models.py` | Legacy TCN local receptive field 31; GroupNorm gives indirect earlier-history influence |
 | Repair law | `source/compatibility_neural_benchmark/core.py` | Soft Gaussian source-window clamp and low-rank anchor; no factual future after forecast cut |
 | Progressive bridge | `source/compatibility_neural_benchmark/progressive_smc.py` | Potential increments telescope; both changing provisional energy and increasing clamp strength are accounted for |

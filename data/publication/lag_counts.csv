@@ -1,0 +1,17 @@
+cohort,channel,context,test,tested_cells,significant_cells,distinct_directed_pairs,minimum_adjusted_p
+historical80,endpoint_log_sd,baseline,effect,108072,0,0,0.0907821655273437
+historical80,endpoint_log_sd,baseline,lag_minus_1,81054,0,0,0.7443675994873047
+historical80,endpoint_log_sd,onset_minus_baseline,effect,108072,0,0,0.2569637298583984
+historical80,endpoint_log_sd,onset_minus_baseline,lag_minus_1,81054,0,0,0.9971694946289062
+historical80,endpoint_mean,baseline,effect,108072,7554,746,1.9073486328125e-06
+historical80,endpoint_mean,baseline,lag_minus_1,81054,92,29,7.62939453125e-06
+historical80,endpoint_mean,onset_minus_baseline,effect,108072,0,0,0.8601474761962891
+historical80,endpoint_mean,onset_minus_baseline,lag_minus_1,81054,0,0,0.8773880004882812
+clean54,endpoint_log_sd,baseline,effect,41976,0,0,0.2074737548828125
+clean54,endpoint_log_sd,baseline,lag_minus_1,31482,0,0,0.9928131103515624
+clean54,endpoint_log_sd,onset_minus_baseline,effect,41976,0,0,0.8184051513671875
+clean54,endpoint_log_sd,onset_minus_baseline,lag_minus_1,31482,0,0,0.77960205078125
+clean54,endpoint_mean,baseline,effect,41976,2242,272,1.52587890625e-05
+clean54,endpoint_mean,baseline,lag_minus_1,31482,0,0,0.1475982666015625
+clean54,endpoint_mean,onset_minus_baseline,effect,41976,0,0,0.827392578125
+clean54,endpoint_mean,onset_minus_baseline,lag_minus_1,31482,0,0,0.9912872314453124

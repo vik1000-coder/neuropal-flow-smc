@@ -1,0 +1,155 @@
+{
+  "status": "pass",
+  "publication_figures": 18,
+  "figure_files": [
+    {
+      "path": "figures/clean54/01_atlas_comparison.png",
+      "sha256": "d2cd3a3ee853765ed6c08befcad9a6575ab3adcc5ab012379a72ba31294a11ac"
+    },
+    {
+      "path": "figures/clean54/01_atlas_comparison.pdf",
+      "sha256": "1f0ef6d4ae70fb6167f705578a61f4428ced1b32e08f114933dbfac36c052d51"
+    },
+    {
+      "path": "figures/clean54/02_sampling_and_cost.png",
+      "sha256": "25a0ef10b4e1a7d073e85238fc331ff9922924d28cd5fa3bf3f5adfd8f8e8da4"
+    },
+    {
+      "path": "figures/clean54/02_sampling_and_cost.pdf",
+      "sha256": "05d950e2d675a7021ee4be60149ad021dbbece10e610729d32fe0bb2b537c6b4"
+    },
+    {
+      "path": "figures/clean54/03_robustness.png",
+      "sha256": "79b83d0a13c8cd39a5f32272bf69b644c5195bff13248599e3c849513cb5dd68"
+    },
+    {
+      "path": "figures/clean54/03_robustness.pdf",
+      "sha256": "119dd60d11d9ef12ea6dc5a1e354cc80786b0332d3d66ddf9bf095e1bf29e37a"
+    },
+    {
+      "path": "figures/clean54/04_prediction_and_lag.png",
+      "sha256": "cc9c7bd421ec5bd256ce83b08189cd502c580cddc3c0220c2247e8a224c6bf03"
+    },
+    {
+      "path": "figures/clean54/04_prediction_and_lag.pdf",
+      "sha256": "a96c8dec76080f5442ecb7b9cbda4fedf919ca6a45a8773610ad92a7b2b5bcb6"
+    },
+    {
+      "path": "figures/clean54/05_selected_neuron_effects.png",
+      "sha256": "7ad866f79c65cad89f9b42ae4cf55638d3b23f9f2eb2efa7129edfb7dccd0f8d"
+    },
+    {
+      "path": "figures/clean54/05_selected_neuron_effects.pdf",
+      "sha256": "f84b84333ff35db6a69bae122310295590117d329ceec85796d7ad1f2f6dd1da"
+    },
+    {
+      "path": "figures/clean54/06_significance_and_lag_change.png",
+      "sha256": "af2e1afa74b0f7cada870b17d7d942c495ac72a36fe0a610ae1a3b909dbab0d8"
+    },
+    {
+      "path": "figures/clean54/06_significance_and_lag_change.pdf",
+      "sha256": "0a2938c218f79d0198234856e23d88116cdd5eed79b20c5bb81a7e30533039c1"
+    },
+    {
+      "path": "figures/clean54/07_neuron_lag_surfaces.png",
+      "sha256": "47fdde8c05593309331ede6f371b728ad23fb43170c5394771f8d7085e0ba887"
+    },
+    {
+      "path": "figures/clean54/07_neuron_lag_surfaces.pdf",
+      "sha256": "09d14c511761e007f950e9e0c242f1e016f4372746cee3f97be1f6db3f956600"
+    },
+    {
+      "path": "figures/historical80/01_atlas_comparison.png",
+      "sha256": "b2d6509bfecabac4397c62cb6cfb8f55bda630a887bc1f16920a6689a96543e8"
+    },
+    {
+      "path": "figures/historical80/01_atlas_comparison.pdf",
+      "sha256": "ca8d6dbbed827c11b04c9c803045cc656a5e97389161d4b482a3a7a2b4fdb101"
+    },
+    {
+      "path": "figures/historical80/02_sampling_and_cost.png",
+      "sha256": "44b5572372411b9eb1ebdbdb0b36c612b4d00a9eae3f2001946e3f1f3d7ee0de"
+    },
+    {
+      "path": "figures/historical80/02_sampling_and_cost.pdf",
+      "sha256": "9d2fcd36f1208f1c61aae66beaf6ffe6f50149d8183c014fd111ddd8ed0e7ca9"
+    },
+    {
+      "path": "figures/historical80/03_robustness.png",
+      "sha256": "74517680c17b812926e313484a696ee30858b789d59880a29fcaa542cc165da5"
+    },
+    {
+      "path": "figures/historical80/03_robustness.pdf",
+      "sha256": "f8fe79317412d4b55314d2fc5d35f6cf6060f6130026c546099a22a6d8e30b85"
+    },
+    {
+      "path": "figures/historical80/04_prediction_and_lag.png",
+      "sha256": "1d3e06efed4aa0b399933978f227c687bdafee4d25f50cfa40a2c663e0eb3cb1"
+    },
+    {
+      "path": "figures/historical80/04_prediction_and_lag.pdf",
+      "sha256": "65ca1a4da1745d4b4e0f9c4387ade13aef13e393b0f2fd68dad802bc68a9f02c"
+    },
+    {
+      "path": "figures/historical80/05_selected_neuron_effects.png",
+      "sha256": "f68a8b95974f499d5c4d4d3ad0bb8949f97af53cf72edc27786f391d8c9b4cc8"
+    },
+    {
+      "path": "figures/historical80/05_selected_neuron_effects.pdf",
+      "sha256": "a6d1cbac4b614a08c978683ed58c909f8e8153c8d6aa3a51b634e9eff0d2381b"
+    },
+    {
+      "path": "figures/historical80/06_significance_and_lag_change.png",
+      "sha256": "e68a6bb63c534712cb7dac721b4aa33b0164d578440e50632d7561a1df6cbd0d"
+    },
+    {
+      "path": "figures/historical80/06_significance_and_lag_change.pdf",
+      "sha256": "9e17360ff41be5cbdaabda80f49f8a07f528db68dc02bb7a25b8947760392d4b"
+    },
+    {
+      "path": "figures/historical80/07_neuron_lag_surfaces.png",
+      "sha256": "ad9b03079aa6d0a2c66bc0acc9eb256e85aa293ed5a91e32b880be8e78ef87e0"
+    },
+    {
+      "path": "figures/historical80/07_neuron_lag_surfaces.pdf",
+      "sha256": "32d17060d1d6aafcec162d7ff1508b5bbb4ae49055eb4437b4967d01670fd8c3"
+    },
+    {
+      "path": "figures/models/01_original_screen.png",
+      "sha256": "c8d5dac6d85ff9a8db6bfaec0a77709cc03719e2ed1a19a4ab82374ffa224e04"
+    },
+    {
+      "path": "figures/models/01_original_screen.pdf",
+      "sha256": "8cfb1d0f74de3d5208865d31c3f49a6ad2ef41f0c8d5231e227f1e1ebc9dc245"
+    },
+    {
+      "path": "figures/models/02_synthetic_prediction_vs_effect.png",
+      "sha256": "9cd846c0be001d8b0d2c798e134bc03b0e7463019f11ee881ba575b1d4e4d93d"
+    },
+    {
+      "path": "figures/models/02_synthetic_prediction_vs_effect.pdf",
+      "sha256": "b8d5bd3e6dc3aa27abefc0a15fef82e493a284aaffd050598f8e02458573cad0"
+    },
+    {
+      "path": "figures/models/03_synthetic_derivatives_and_cost.png",
+      "sha256": "bfb69ff74791023b5e9ca46795d988f17e171d7213d53d62dddf6a546f9f16f5"
+    },
+    {
+      "path": "figures/models/03_synthetic_derivatives_and_cost.pdf",
+      "sha256": "885bc008566e507f3cd2fd4ca55a8c0efbfcfc106345ef67d2c5422de5d8ebd8"
+    },
+    {
+      "path": "figures/models/04_original_four_sampler_comparison.png",
+      "sha256": "180da9c6de80330030e996d05b63a9438764b3779ab501f12777af4f7f77ebc6"
+    },
+    {
+      "path": "figures/models/04_original_four_sampler_comparison.pdf",
+      "sha256": "1a3eb868af64c0c332c38d50773cd512590e137328088d19c86e40fa3a75d901"
+    }
+  ],
+  "toy_figures": 7,
+  "executed_notebook_cells": 10,
+  "broken_new_documentation_links": [],
+  "visual_review": "All 18 publication and seven toy figures inspected via contact sheets and targeted full-size views. Toy multi-panel spacing corrected and re-executed.",
+  "scope": "Numerical/artifact validation, not proof of biological identification; original archive remains immutable."
+}
