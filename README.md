@@ -14,11 +14,14 @@ lag-minus-lag-1 discoveries. These are model-relative observational responses.
 
 ## Start here
 
+- **[New comparative analysis and figure guide](docs/ANALYSIS.md)**
+- **[Executed four-neuron tutorial](notebooks/four_neuron_tutorial.ipynb)**
+
 - [Collection guide and evidence status](docs/COLLECTIONS.md)
 - [Code review and documentation corrections](docs/CODE_REVIEW.md)
 - [Reproduction instructions](docs/REPRODUCING.md)
-- [Fresh replication final report](archive/fresh/replication_20260911/REPORT_FINAL.md)
-- [Nine-generator synthetic comparison](archive/synthetic/generator_tradeoffs_20260913/SUMMARY.md)
+- [Fresh replication final report](docs/reports/fresh_report.md)
+- [Nine-generator synthetic comparison](docs/reports/synthetic_summary.md)
 - [Original conditional-model report](archive/original/reports/conditional_flow_model_report_20260901/conditional_flow_model_report_20260901.pdf)
 
 ## Layout
@@ -31,6 +34,8 @@ lag-minus-lag-1 discoveries. These are model-relative observational responses.
 | `analysis/`, `figures/`, `data/` | New reproducible synthesis, cohort-separated figures and their plotted values |
 | `notebooks/` | Executed four-neuron nonlinear lag tutorial |
 | `tools/`, `audit/`, `docs/` | Restore/verification tools, audit receipts and documentation |
+
+![Clean54 lag-1 comparison](figures/clean54/01_atlas_comparison.png)
 
 ## Data access
 

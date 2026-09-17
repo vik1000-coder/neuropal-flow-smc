@@ -20,8 +20,8 @@ that requirements file describes a historical environment, not this assembled on
 The new figure workflow uses compact, checked inputs under `data/publication/`.
 The build script regenerates these from the archived raw/aggregate results when
 `--refresh-data` is requested; the default build works on a normal Git clone.
-See the analysis guide for figure and notebook commands when the analysis branch
-has been merged.
+See [the analysis guide](ANALYSIS.md) for figure and notebook commands.
+The executed notebook uses the active environment via `tools/run_notebook.py`.
 
 ## Original execution records
 

@@ -1,0 +1,24 @@
+[
+  {
+    "output": "docs/reports/fresh_report.md",
+    "source": "archive/fresh/replication_20260911/REPORT_FINAL.md",
+    "source_sha256": "306dd866f8fd99ec4d152328ff7a6530a73dcd17938de05d5095fbf7543ca411",
+    "unavailable_links": []
+  },
+  {
+    "output": "docs/reports/synthetic_summary.md",
+    "source": "archive/synthetic/generator_tradeoffs_20260913/SUMMARY.md",
+    "source_sha256": "e97654bda359fd9caadb6486fd1bca6406c4aff47b3629c10d438297b28d2f55",
+    "unavailable_links": []
+  },
+  {
+    "output": "docs/reports/repaired_path_methods.md",
+    "source": "archive/original/FLOW_REPAIRED_LAG_METHODS_20260828.md",
+    "source_sha256": "4b2e2bad05bb5f3b1943347641105e9f510d6fbfe55f123800d4539894504683",
+    "unavailable_links": [
+      "results/four_sampler_lag_connectome_20260828/analysis/PROGRESSIVE_BRIDGE_SMC_TECHNICAL_REPORT.md",
+      "results/neural_prediction_atlas_20260829/README.md",
+      "results/neuron_class_effects_20260831/README.md"
+    ]
+  }
+]

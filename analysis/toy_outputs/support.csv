@@ -1,0 +1,145 @@
+model,lag,repeat,source,valid,gap
+Known law / direct reference,0,0,A,True,0.8311102720855807
+Known law / direct reference,0,0,B,True,0.7255752657472239
+Known law / direct reference,0,0,C,True,0.6082501383747895
+Known law / direct reference,0,0,D,True,0.6527741008429581
+Known law / direct reference,0,1,A,True,0.8383317573484613
+Known law / direct reference,0,1,B,True,0.7194642380283724
+Known law / direct reference,0,1,C,True,0.6118793844757884
+Known law / direct reference,0,1,D,True,0.682224933329733
+Known law / direct reference,0,2,A,True,0.8183248010119221
+Known law / direct reference,0,2,B,True,0.729315817501488
+Known law / direct reference,0,2,C,True,0.6131007532996191
+Known law / direct reference,0,2,D,True,0.6948110623022588
+Known law / direct reference,1,0,A,True,0.840967268200888
+Known law / direct reference,1,0,B,True,0.7222104511445375
+Known law / direct reference,1,0,C,True,0.6118383554432687
+Known law / direct reference,1,0,D,True,0.6463242712920155
+Known law / direct reference,1,1,A,True,0.8380352637423876
+Known law / direct reference,1,1,B,True,0.7203669354275767
+Known law / direct reference,1,1,C,True,0.6037929124627401
+Known law / direct reference,1,1,D,True,0.6785359752599966
+Known law / direct reference,1,2,A,True,0.8365298475844032
+Known law / direct reference,1,2,B,True,0.7274030770599411
+Known law / direct reference,1,2,C,True,0.611417571237294
+Known law / direct reference,1,2,D,True,0.6887317271279481
+Known law / direct reference,2,0,A,True,0.844933637706052
+Known law / direct reference,2,0,B,True,0.7234470128593459
+Known law / direct reference,2,0,C,True,0.6037586680172649
+Known law / direct reference,2,0,D,True,0.6597100605320683
+Known law / direct reference,2,1,A,True,0.8377185387562602
+Known law / direct reference,2,1,B,True,0.7176595165819298
+Known law / direct reference,2,1,C,True,0.5839166851654991
+Known law / direct reference,2,1,D,True,0.6723797106692185
+Known law / direct reference,2,2,A,True,0.8478261212865508
+Known law / direct reference,2,2,B,True,0.7124410845488456
+Known law / direct reference,2,2,C,True,0.6143842133551214
+Known law / direct reference,2,2,D,True,0.6712525872505563
+Known law / direct reference,3,0,A,True,0.8437796694751468
+Known law / direct reference,3,0,B,True,0.712680794946404
+Known law / direct reference,3,0,C,True,0.5924262138219144
+Known law / direct reference,3,0,D,True,0.6464536768816398
+Known law / direct reference,3,1,A,True,0.835832784603481
+Known law / direct reference,3,1,B,True,0.7200560394911919
+Known law / direct reference,3,1,C,True,0.582222125800798
+Known law / direct reference,3,1,D,True,0.6586123110544175
+Known law / direct reference,3,2,A,True,0.853350745175578
+Known law / direct reference,3,2,B,True,0.7026832804027204
+Known law / direct reference,3,2,C,True,0.6076584120668149
+Known law / direct reference,3,2,D,True,0.658023467609641
+Known law / progressive,0,0,A,True,0.8778122067451477
+Known law / progressive,0,0,B,True,0.6920080184936523
+Known law / progressive,0,0,C,True,0.660921037197113
+Known law / progressive,0,0,D,True,0.6375688910484314
+Known law / progressive,0,1,A,True,0.8762895464897156
+Known law / progressive,0,1,B,True,0.748788595199585
+Known law / progressive,0,1,C,True,0.5854014754295349
+Known law / progressive,0,1,D,True,0.603509783744812
+Known law / progressive,0,2,A,True,0.7745407819747925
+Known law / progressive,0,2,B,True,0.7022596001625061
+Known law / progressive,0,2,C,True,0.5718005299568176
+Known law / progressive,0,2,D,True,0.5010008811950684
+Known law / progressive,1,0,A,True,0.8514631986618042
+Known law / progressive,1,0,B,True,0.7023940682411194
+Known law / progressive,1,0,C,True,0.6677477359771729
+Known law / progressive,1,0,D,True,0.6427168250083923
+Known law / progressive,1,1,A,True,0.8228040933609009
+Known law / progressive,1,1,B,True,0.7346131801605225
+Known law / progressive,1,1,C,True,0.5888339877128601
+Known law / progressive,1,1,D,True,0.5475946068763733
+Known law / progressive,1,2,A,True,0.8343163132667542
+Known law / progressive,1,2,B,True,0.7320070266723633
+Known law / progressive,1,2,C,True,0.5342331528663635
+Known law / progressive,1,2,D,True,0.527286946773529
+Known law / progressive,2,0,A,True,0.8468459248542786
+Known law / progressive,2,0,B,True,0.702827513217926
+Known law / progressive,2,0,C,True,0.6203179955482483
+Known law / progressive,2,0,D,True,0.6594224572181702
+Known law / progressive,2,1,A,True,0.7873297333717346
+Known law / progressive,2,1,B,True,0.758300244808197
+Known law / progressive,2,1,C,True,0.5784258842468262
+Known law / progressive,2,1,D,True,0.6371193528175354
+Known law / progressive,2,2,A,True,0.8414760231971741
+Known law / progressive,2,2,B,True,0.6919498443603516
+Known law / progressive,2,2,C,True,0.45478954911231995
+Known law / progressive,2,2,D,True,0.6334152221679688
+Known law / progressive,3,0,A,True,0.810571551322937
+Known law / progressive,3,0,B,True,0.7372896671295166
+Known law / progressive,3,0,C,True,0.5831943154335022
+Known law / progressive,3,0,D,True,0.6195580959320068
+Known law / progressive,3,1,A,True,0.8287997245788574
+Known law / progressive,3,1,B,True,0.894524872303009
+Known law / progressive,3,1,C,True,0.5607444047927856
+Known law / progressive,3,1,D,True,0.674873411655426
+Known law / progressive,3,2,A,True,0.8651604056358337
+Known law / progressive,3,2,B,True,0.542980968952179
+Known law / progressive,3,2,C,True,0.44929200410842896
+Known law / progressive,3,2,D,True,0.6704344749450684
+Learned flow / progressive,0,0,A,True,0.7667189836502075
+Learned flow / progressive,0,0,B,True,0.6662741303443909
+Learned flow / progressive,0,0,C,True,0.6021517515182495
+Learned flow / progressive,0,0,D,True,0.5728411078453064
+Learned flow / progressive,0,1,A,True,0.7820935249328613
+Learned flow / progressive,0,1,B,True,0.7122548222541809
+Learned flow / progressive,0,1,C,True,0.5796639919281006
+Learned flow / progressive,0,1,D,True,0.6945247650146484
+Learned flow / progressive,0,2,A,True,0.8045942187309265
+Learned flow / progressive,0,2,B,True,0.732586145401001
+Learned flow / progressive,0,2,C,True,0.5924708247184753
+Learned flow / progressive,0,2,D,True,0.6660664677619934
+Learned flow / progressive,1,0,A,True,0.8681042194366455
+Learned flow / progressive,1,0,B,True,0.6379590630531311
+Learned flow / progressive,1,0,C,True,0.6122899055480957
+Learned flow / progressive,1,0,D,True,0.5715271830558777
+Learned flow / progressive,1,1,A,True,0.831674337387085
+Learned flow / progressive,1,1,B,True,0.6984835267066956
+Learned flow / progressive,1,1,C,True,0.6074413061141968
+Learned flow / progressive,1,1,D,True,0.6693520545959473
+Learned flow / progressive,1,2,A,True,0.800454318523407
+Learned flow / progressive,1,2,B,True,0.7525544762611389
+Learned flow / progressive,1,2,C,True,0.5779297947883606
+Learned flow / progressive,1,2,D,True,0.6307346820831299
+Learned flow / progressive,2,0,A,True,0.8509248495101929
+Learned flow / progressive,2,0,B,True,0.7688559889793396
+Learned flow / progressive,2,0,C,True,0.81539386510849
+Learned flow / progressive,2,0,D,True,0.7599167823791504
+Learned flow / progressive,2,1,A,True,0.8304309844970703
+Learned flow / progressive,2,1,B,True,0.8120515942573547
+Learned flow / progressive,2,1,C,True,0.7121376991271973
+Learned flow / progressive,2,1,D,True,0.7366273999214172
+Learned flow / progressive,2,2,A,True,0.8307739496231079
+Learned flow / progressive,2,2,B,True,0.8117005228996277
+Learned flow / progressive,2,2,C,True,0.4196036458015442
+Learned flow / progressive,2,2,D,True,0.7499098181724548
+Learned flow / progressive,3,0,A,True,0.8296890258789062
+Learned flow / progressive,3,0,B,True,0.6739557981491089
+Learned flow / progressive,3,0,C,True,0.8638246655464172
+Learned flow / progressive,3,0,D,True,0.7815113663673401
+Learned flow / progressive,3,1,A,True,0.7347437143325806
+Learned flow / progressive,3,1,B,True,0.8284951448440552
+Learned flow / progressive,3,1,C,True,0.7768118977546692
+Learned flow / progressive,3,1,D,True,0.7712693214416504
+Learned flow / progressive,3,2,A,True,0.799806535243988
+Learned flow / progressive,3,2,B,True,0.9109761118888855
+Learned flow / progressive,3,2,C,True,0.3838074505329132
+Learned flow / progressive,3,2,D,True,0.7629289031028748

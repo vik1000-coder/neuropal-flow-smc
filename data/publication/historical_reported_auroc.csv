@@ -1,0 +1,6 @@
+cohort,analysis,Randi,Cook structural,Cook chemical,Cook gap
+clean54,published SBTG,0.622,0.565,0.558,0.621
+clean54,original atlas,0.647,0.611,0.6,0.672
+historical80,published SBTG,0.63,0.581,0.57,0.613
+historical80,initial attempt,0.523,0.535,0.534,0.543
+historical80,optimized two-seed,0.674,0.629,0.617,0.666

@@ -1,0 +1,15 @@
+{
+  "seed": 401,
+  "recordings": 24,
+  "training_recordings": 16,
+  "validation_recordings": 4,
+  "test_recordings": 4,
+  "best_epoch": 61,
+  "training_epochs": 82,
+  "training_seconds": 0.8310275420003563,
+  "sampling_seconds": 6.243373874999634,
+  "heldout_mean_rmse_standardized": 0.08039520590884987,
+  "reference_resolved_fraction": 0.9140625,
+  "analytic_jacobian_check": "passed for all 48 entries",
+  "interpretation": "educational single-fit/single-anchor synthetic demonstration"
+}

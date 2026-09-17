@@ -1,0 +1,16 @@
+name: Publication reproducibility
+on: [push, pull_request]
+jobs:
+  compact-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install compact-analysis dependencies
+        run: python -m pip install numpy scipy pandas scikit-learn matplotlib pytest
+      - name: Check metrics, corrected selections, and executed notebook record
+        run: python -m pytest tests -q
+      - name: Rebuild all publication figures from checked inputs
+        run: python analysis/make_figures.py

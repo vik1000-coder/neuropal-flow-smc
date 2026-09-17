@@ -1,0 +1,121 @@
+[
+  {
+    "name": "archive-part-02.tar.gz",
+    "returncode": 0,
+    "seconds": 44.29993966699999,
+    "output": "",
+    "bytes": 336141097
+  },
+  {
+    "name": "archive-part-01.tar.gz",
+    "returncode": 0,
+    "seconds": 55.36757008299992,
+    "output": "",
+    "bytes": 580512263
+  },
+  {
+    "name": "archive-part-04.tar.gz",
+    "returncode": 0,
+    "seconds": 54.604523541999924,
+    "output": "",
+    "bytes": 513184300
+  },
+  {
+    "name": "archive-part-03.tar.gz",
+    "returncode": 0,
+    "seconds": 84.41735058300014,
+    "output": "",
+    "bytes": 824480249
+  },
+  {
+    "name": "archive-part-05.tar.gz",
+    "returncode": 0,
+    "seconds": 37.980496625000114,
+    "output": "",
+    "bytes": 444127909
+  },
+  {
+    "name": "archive-part-06.tar.gz",
+    "returncode": 0,
+    "seconds": 82.14755204200014,
+    "output": "",
+    "bytes": 875192258
+  },
+  {
+    "name": "archive-part-07.tar.gz",
+    "returncode": 0,
+    "seconds": 90.10175229099991,
+    "output": "",
+    "bytes": 889714781
+  },
+  {
+    "name": "archive-part-08.tar.gz",
+    "returncode": 0,
+    "seconds": 80.65704479099986,
+    "output": "",
+    "bytes": 871784822
+  },
+  {
+    "name": "archive-part-09.tar.gz",
+    "returncode": 0,
+    "seconds": 87.7419951249999,
+    "output": "",
+    "bytes": 882186664
+  },
+  {
+    "name": "archive-part-10.tar.gz",
+    "returncode": 0,
+    "seconds": 97.33426070799987,
+    "output": "",
+    "bytes": 885455252
+  },
+  {
+    "name": "archive-part-11.tar.gz",
+    "returncode": 0,
+    "seconds": 82.37927508300004,
+    "output": "",
+    "bytes": 892501093
+  },
+  {
+    "name": "archive-part-12.tar.gz",
+    "returncode": 0,
+    "seconds": 69.35847366600001,
+    "output": "",
+    "bytes": 884052505
+  },
+  {
+    "name": "archive-part-13.tar.gz",
+    "returncode": 0,
+    "seconds": 92.55661962500017,
+    "output": "",
+    "bytes": 880104865
+  },
+  {
+    "name": "archive-part-14.tar.gz",
+    "returncode": 0,
+    "seconds": 78.40771524999991,
+    "output": "",
+    "bytes": 865661916
+  },
+  {
+    "name": "archive-part-15.tar.gz",
+    "returncode": 0,
+    "seconds": 84.91476229200043,
+    "output": "",
+    "bytes": 862942411
+  },
+  {
+    "name": "archive-part-16.tar.gz",
+    "returncode": 0,
+    "seconds": 82.79634912500023,
+    "output": "",
+    "bytes": 868747443
+  },
+  {
+    "name": "archive-part-17.tar.gz",
+    "returncode": 0,
+    "seconds": 38.02249970799994,
+    "output": "",
+    "bytes": 430924185
+  }
+]

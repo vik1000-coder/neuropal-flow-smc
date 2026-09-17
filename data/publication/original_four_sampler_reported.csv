@@ -1,0 +1,5 @@
+method,valid_fraction,reported_minutes,Randi functional,Cook structural,Cook chemical,Cook gap
+Direct N32,0.16,4.3,0.567,0.552,0.538,0.616
+Terminal SMC N32,0.161,64.4,0.586,0.561,0.555,0.616
+Progressive N32,0.802,139.8,0.637,0.611,0.603,0.65
+Temporal-cut N32,0.161,63.5,0.59,0.563,0.558,0.621

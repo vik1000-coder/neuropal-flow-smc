@@ -1,0 +1,12 @@
+{
+  "returncode": 0,
+  "asset": "archive-part-02.tar.gz",
+  "verified_member": {
+    "path": "archive/original/distributional_sid/runs/e1_confirmation_20260714/checkpoints/e1_gaussian__seed_1001__init_0.npz",
+    "original_path": "distributional_sid/runs/e1_confirmation_20260714/checkpoints/e1_gaussian__seed_1001__init_0.npz",
+    "bytes": 133016,
+    "sha256": "9afddf8c64e3c0ee7d9bd30689c7ad62a91a78eef42de836ec4b4021eb245553",
+    "storage": "release"
+  },
+  "output": "Downloading archive-part-02.tar.gz\nSelected archive restored and downloaded members verified.\n"
+}
